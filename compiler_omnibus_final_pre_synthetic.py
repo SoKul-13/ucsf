@@ -5,11 +5,11 @@ import os
 import numpy as np
 
 # --- CONFIGURATION ---
-BASE_PATH = os.path.abspath("./dataset") 
-OUTPUT_FOLDER = os.path.abspath("./output_omnibus_5min")
+BASE_PATH = os.path.abspath(".") 
+OUTPUT_FOLDER = os.path.abspath("./output_omnibus_final")
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
-# --- 1. STATIC METADATA EXTRACTORS ---
+# --- STATIC METADATA EXTRACTORS ---
 
 def get_clinical_conditions(p_str):
     files = glob.glob(os.path.join(BASE_PATH, "clinical_data", "**", "condition_occurrence.csv"), recursive=True)
@@ -94,7 +94,7 @@ def load_participants_tsv():
             print(f"Warning: Could not load participants.tsv -> {e}")
     return meta_dict
 
-# --- 2. MAIN COMPILER ENGINE ---
+# --- MAIN COMPILER ENGINE ---
 
 def compile_individual(p_id, global_meta):
     p_str = str(p_id)
@@ -108,7 +108,6 @@ def compile_individual(p_id, global_meta):
                 data = json.load(j)
                 body = data.get('body', {})
                 
-                # Dynamic Unpacker
                 df = pd.DataFrame()
                 if isinstance(body, dict):
                     for key, val in body.items():
@@ -119,12 +118,10 @@ def compile_individual(p_id, global_meta):
                     df = pd.json_normalize(body)
                 
                 if not df.empty:
-                    # Force ALL 'value' columns to numeric (Handles empty strings "")
                     val_cols = [c for c in df.columns if 'value' in c.lower()]
                     for vc in val_cols:
                         df[vc] = pd.to_numeric(df[vc], errors='coerce')
 
-                    # Timestamp parsing: Interval end_date_time first, fallback to standard date_time
                     t_col = next((c for c in df.columns if 'end_date_time' in c.lower()), None)
                     if not t_col:
                         t_col = next((c for c in df.columns if 'date_time' in c.lower()), None)
@@ -139,14 +136,12 @@ def compile_individual(p_id, global_meta):
     env_files = glob.glob(os.path.join(BASE_PATH, "environment", "**", f"*{p_str}*ENV.csv"), recursive=True)
     for f in env_files:
         try:
-            # 45-line metadata skip
             df = pd.read_csv(f, comment='#', low_memory=False, on_bad_lines='skip')
             t_col = next((c for c in df.columns if c.lower() == 'ts' or 'time' in c.lower()), None)
             if t_col:
                 df['timestamp'] = pd.to_datetime(df[t_col], utc=True, errors='coerce')
                 df = df.dropna(subset=['timestamp']).set_index('timestamp')
                 
-                # Force sensors to numeric to prevent mean() failures
                 sensor_cols = [c for c in df.columns if any(x in c.lower() for x in ['pm', 'temp', 'hum', 'voc', 'nox', 'lch'])]
                 for col in sensor_cols:
                     df[col] = pd.to_numeric(df[col], errors='coerce')
@@ -157,15 +152,12 @@ def compile_individual(p_id, global_meta):
     if not all_dfs: return None
 
     # C. MASTER MERGE & AGGREGATION
-    # Stacking all files into a single timeline
     combined = pd.concat(all_dfs, axis=0).sort_index()
 
-    # PHYSIOLOGICAL VALIDATOR: Cleans Zeros and Negative Error Codes (-1, -2)
     vitals = [c for c in combined.columns if 'value' in c.lower() and any(x in c.lower() for x in ['heart', 'oxygen', 'glucose', 'respiratory', 'stress'])]
     for v in vitals:
         combined[v] = combined[v].where(combined[v] > 0, np.nan)
 
-    # DYNAMIC AGGREGATION RULES
     agg_rules = {}
     for col in combined.columns:
         if pd.api.types.is_numeric_dtype(combined[col]):
@@ -173,36 +165,13 @@ def compile_individual(p_id, global_meta):
             if any(x in c_low for x in ['calor', 'step']):
                 agg_rules[col] = 'sum'  
             elif any(x in c_low for x in ['stress', 'score']):
-                agg_rules[col] = 'max'  
+                agg_rules[col] = 'max'
             else:
                 agg_rules[col] = 'mean' 
         else:
             agg_rules[col] = 'first'    
 
-    # 1. CREATE THE STRICT 5-MINUTE GRID (Perfect Outer Join)
-    resampled = combined.resample('5min').agg(agg_rules)
-
-    # --- THE IMPUTATION ENGINE (Carry Over & Estimate) ---
-    
-    # 2. Zero-Fill Burst Metrics (If no steps recorded, steps = 0)
-    burst_cols = [c for c in resampled.columns if any(x in c.lower() for x in ['step', 'calor'])]
-    if burst_cols:
-        resampled[burst_cols] = resampled[burst_cols].fillna(0)
-
-    # 3. Interpolate Continuous Vitals (Connects the dots for missing readings up to 2 hours)
-    continuous_cols = [c for c in resampled.columns if pd.api.types.is_numeric_dtype(resampled[c]) and c not in burst_cols]
-    if continuous_cols:
-        resampled[continuous_cols] = resampled[continuous_cols].interpolate(method='linear', limit=24)
-
-    # 4. Forward-Fill Categorical Data (Carry over text, sleep stages, units for up to 2 hours)
-    cat_cols = [c for c in resampled.columns if not pd.api.types.is_numeric_dtype(resampled[c])]
-    if cat_cols:
-        resampled[cat_cols] = resampled[cat_cols].ffill(limit=24)
-
-    # 5. Final Trim: Drop rows only if the participant generated absolutely NO sensor data yet
-    sensor_cols = [c for c in resampled.columns if 'meta' not in c and 'clinical' not in c]
-    if sensor_cols:
-        resampled = resampled.dropna(how='all', subset=sensor_cols)
+    resampled = combined.resample('5min').agg(agg_rules).dropna(how='all')
 
     # D. BROADCAST STATIC METADATA
     conds = get_clinical_conditions(p_str)
@@ -226,8 +195,8 @@ def compile_individual(p_id, global_meta):
 
     return resampled
 
-# --- 3. EXECUTION ---
-print("Initializing Final Omnibus Compiler with Imputation Engine...")
+# --- EXECUTION ---
+print("Initializing Final Omnibus Compiler...")
 global_metadata = load_participants_tsv()
 
 success_count = 0
@@ -235,7 +204,7 @@ for i in range(1001, 7819):
     try:
         result = compile_individual(i, global_metadata)
         if result is not None and not result.empty:
-            out_path = os.path.join(OUTPUT_FOLDER, f"AIREADI_P{i}_OMNIBUS_5MIN.csv")
+            out_path = os.path.join(OUTPUT_FOLDER, f"AIREADI_P{i}_OMNIBUS_FINAL.csv")
             result.to_csv(out_path)
             print(f"SUCCESS: P{i} | {len(result)} intervals | {len(result.columns)} columns")
             success_count += 1

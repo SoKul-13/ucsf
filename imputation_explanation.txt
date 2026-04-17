@@ -1,0 +1,32 @@
+Step 1: Pre-Aggregation Data Cleaning (The Physiological Validator)
+Before any grouping or filling occurred, the compiler scrubbed impossible values.
+
+Targeted Columns: Any column containing the word value AND relating to heart, oxygen, glucose, respiratory, or stress.
+Action: If a reading was 0 or negative (e.g., -1, -2 which are common wearable error codes indicating sensor disconnects), it was forced to NaN (blank). You cannot have a heart rate or oxygen saturation of 0 if the wearer is alive.
+Step 2: The 5-Minute Aggregation Rules
+When the raw, high-frequency data was crushed down into 5-minute bins, the script had to decide how to mathematically combine multiple readings that fell inside the exact same 5-minute window. It applied these dynamic rules based on column names:
+
+Accumulation Data (Keywords: calor, step)
+Rule: sum (Sum/Total)
+Why: To capture the total steps taken or total calories burned across that entire 5-minute window.
+Intensity Data (Keywords: stress, score)
+Rule: max (Maximum Value)
+Why: Stress is a peak-oriented metric. The script captures the highest intensity or maximum stress score the participant hit during those 5 minutes.
+All Other Continuous Vitals (e.g., Heart Rate, Glucose, SpO2, Temperature, PM2.5)
+Rule: mean (Average)
+Why: Numeric data without the keywords above were simply averaged to smooth out micro-fluctuations and hardware noise that occurred inside the 5-minute block.
+All Categorical & Text Data (e.g., Sleep Stages, Device Names)
+Rule: first
+Why: You cannot mathematically average text. The script simply grabs the very first state/string that appeared chronologically inside that 5-minute window and assigns it to the bin.
+Step 3: The Imputation Engine (Filling the Gaps)
+Once the data was locked into a perfect 5-minute grid, the script evaluated where intervals were completely empty and applied synthetic gap-filling:
+
+Accumulation Gaps (Steps, Calories)
+Rule: Zero-Fill
+Why: If the 5-minute bin had no steps or calories, it was explicitly filled with 0 (assuming the participant was inactive).
+Continuous Vital Gaps (Heart Rate, Glucose, Environment, etc.)
+Rule: Linear Interpolation (Max limit: 2 hours)
+Why: It drew a straight mathematical line between the last known reading and the next upcoming reading, and synthetically estimated the missing values along that slope. Crucially, if the sensor was offline for more than 2 consecutive hours (24 intervals), it stopped guessing and left the data blank (NaN).
+Categorical & Text Gaps (Sleep Stages, Strings)
+Rule: Forward-Fill (Max limit: 2 hours)
+Why: It took the last known recorded state (e.g., "Deep Sleep") and carried that text forward into the empty blocks, assuming the state hadn't changed. Like the vitals, it only let a state carry forward for a maximum of 2 hours.
