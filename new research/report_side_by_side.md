@@ -2,14 +2,23 @@
 
 This report compares multivariable models adjusting for GMI alongside models adjusting for HbA1c to predict cognitive impairment.
 
+## Understanding This Terminology
+- **Adj Mean**: Adjusted Mean. This is the estimated average MoCA score after mathematically leveling the playing field for age, BMI, education, and other medical conditions.
+- **OR (Odds Ratio)**: A measure of association. An OR > 1 means higher odds of having cognitive impairment compared to the healthy control group. For example, an OR of 1.63 means 63% higher odds.
+- **95% CI**: 95% Confidence Interval. We are 95% confident the true Odds Ratio falls within this range.
+- **Control**: Healthy Controls (No Diabetes)
+- **Pre-diab**: Pre-diabetes
+- **Med-Ctrl**: Medication-controlled Diabetes
+- **Insulin**: Insulin-dependent Diabetes
+
 ## Table 2: Adjusted MoCA Total and Domain Scores (GMI vs HbA1c)
 
 | Cognitive Domain | Unadjusted Mean | Adj Mean (GMI) | p-value (GMI) | Adj Mean (HbA1c) | p-value (HbA1c) |
 | --- | --- | --- | --- | --- | --- |
-| Total Score | 1_C: 26.1, 2_P: 25.9, 3_M: 25.4, 4_I: 24.2 | Con: 31.6, 2_P: 31.5, 3_M: 31.3, 4_I: 30.6 | **0.019** ⭐ | Con: 29.3, 2_P: 29.2, 3_M: 28.9, 4_I: 28.0 | **<0.001** ⭐ |
-| Memory | 1_C: 12.7, 2_P: 12.7, 3_M: 12.4, 4_I: 11.9 | Con: 18.0, 2_P: 18.1, 3_M: 18.2, 4_I: 18.0 | 0.925 | Con: 16.5, 2_P: 16.5, 3_M: 16.5, 4_I: 16.3 | 0.888 |
-| Orientation | 1_C: 5.9, 2_P: 5.9, 3_M: 5.9, 4_I: 5.8 | Con: 6.1, 2_P: 6.1, 3_M: 6.1, 4_I: 6.1 | 0.507 | Con: 6.1, 2_P: 6.2, 3_M: 6.2, 4_I: 6.1 | 0.616 |
-| Abstraction | 1_C: 1.9, 2_P: 1.9, 3_M: 1.9, 4_I: 1.8 | Con: 1.8, 2_P: 1.8, 3_M: 1.8, 4_I: 1.7 | 0.061 | Con: 1.9, 2_P: 1.9, 3_M: 1.8, 4_I: 1.8 | 0.086 |
+| Total Score | Control: 26.1, Pre-diab: 25.9, Med-Ctrl: 25.4, Insulin: 24.2 | Control: 31.6, Pre-diab: 31.5, Med-Ctrl: 31.3, Insulin: 30.6 | **0.019** ⭐ | Control: 29.3, Pre-diab: 29.2, Med-Ctrl: 28.9, Insulin: 28.0 | **<0.001** ⭐ |
+| Memory | Control: 12.7, Pre-diab: 12.7, Med-Ctrl: 12.4, Insulin: 11.9 | Control: 18.0, Pre-diab: 18.1, Med-Ctrl: 18.2, Insulin: 18.0 | 0.925 | Control: 16.5, Pre-diab: 16.5, Med-Ctrl: 16.5, Insulin: 16.3 | 0.888 |
+| Orientation | Control: 5.9, Pre-diab: 5.9, Med-Ctrl: 5.9, Insulin: 5.8 | Control: 6.1, Pre-diab: 6.1, Med-Ctrl: 6.1, Insulin: 6.1 | 0.507 | Control: 6.1, Pre-diab: 6.2, Med-Ctrl: 6.2, Insulin: 6.1 | 0.616 |
+| Abstraction | Control: 1.9, Pre-diab: 1.9, Med-Ctrl: 1.9, Insulin: 1.8 | Control: 1.8, Pre-diab: 1.8, Med-Ctrl: 1.8, Insulin: 1.7 | 0.061 | Control: 1.9, Pre-diab: 1.9, Med-Ctrl: 1.8, Insulin: 1.8 | 0.086 |
 
 ## Table 3: Association with Cognitive Impairment (MoCA < 26) - Multivariable OR
 

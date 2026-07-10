@@ -41,6 +41,29 @@ In addition to the code, refer to the following analytical reports for a deep di
 - **[`stratification_details.md`](stratification_details.md)**: Details precisely how the cohorts were grouped, how outcome variables were separated, and how covariates were adjusted.
 - **[`cgm_vs_hba1c_holistic_comparison.md`](cgm_vs_hba1c_holistic_comparison.md)**: A comprehensive, ground-up comparison of how CGM (GMI/TIR) compares to HbA1c in predicting cognitive impairment, separated by specific conditions and as a total cohort.
 
+## Statistical Explanations & Methodology
+
+### Understanding Report Terminology
+- **Adj Mean**: Adjusted Mean. This is the estimated average MoCA score after mathematically leveling the playing field for all covariates (age, BMI, education, and other medical conditions) in the multivariable model.
+- **OR (Odds Ratio)**: A measure of association. An OR > 1 means higher odds of having cognitive impairment compared to the healthy control group. For example, an OR of 1.63 means 63% higher odds of cognitive impairment.
+- **95% CI**: 95% Confidence Interval. We are 95% confident the true Odds Ratio falls within this range.
+
+### How Specific Conditions Are Defined (Covariates)
+The models adjust for a set of covariates to ensure a fair, apples-to-apples comparison. The specific medical condition covariates are extracted by searching the raw clinical `condition_occurrence.csv` file for specific shorthand strings:
+- **Hypertension**: Anyone with a condition containing `'mhoccur_hbp'` (High Blood Pressure).
+- **High Cholesterol**: Anyone with `'mhoccur_clsh'` (Cholesterol).
+- **Kidney Disease**: Anyone with `'mhoccur_rnl'` (Renal).
+- **Circulatory Problems**: Anyone with `'mhoccur_circ'`, `'mhoccur_strk'` (Stroke), or `'mhoccur_mi'` (Myocardial Infarction).
+- **Neurodegenerative**: Anyone with `'mhoccur_pd'` (Parkinson's), `'mhoccur_ad'` (Alzheimer's), `'mhoccur_cogn'` (Cognitive), `'mhoccur_ms'` (Multiple Sclerosis), or `'mhoccur_cns'` (Central Nervous System).
+
+If a patient has *any* of those specific codes logged in their file, they receive a `1` (True) for that covariate; otherwise, a `0` (False).
+
+### How the Permutation (Bootstrap) Test Works
+The bootstrap test evaluated the construct validity of the MoCA score by running a permutation test 10,000 times for each stratification. Here is how the `bootstrap_test()` function works:
+1. **Observed Reality**: Calculates the actual difference in Mean MoCA scores between the Healthy group and the Condition group.
+2. **Pool & Resplit**: Pools all MoCA scores together, randomly shuffles them, and randomly re-assigns them to two fake groups matching the original sample sizes.
+3. **P-Value Calculation**: Counts how many times (out of 10,000) the randomly shuffled groups produced a difference *as big or bigger* than the actual observed difference. This 1-sided test proves whether lower MoCA scores in the cognitive disease group are statistically significant or just a coincidence.
+
 ---
 
 *Note: You may need to create a Python virtual environment and install the required statistical packages (`pandas`, `numpy`, `scipy`, `statsmodels`) before running steps 2, 3, and 4.*

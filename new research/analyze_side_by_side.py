@@ -40,10 +40,26 @@ def generate_side_by_side_report():
     
     groups = sorted(df['group'].unique())
     
+    abbr = {
+        '1_Controls': 'Control',
+        '2_Pre-diabetes': 'Pre-diab',
+        '3_Medication-controlled': 'Med-Ctrl',
+        '4_Insulin-dependent': 'Insulin'
+    }
+
     report = []
     report.append("# Side-by-Side Comparison: CGM (GMI) vs HbA1c")
     report.append("\nThis report compares multivariable models adjusting for GMI alongside models adjusting for HbA1c to predict cognitive impairment.\n")
     
+    report.append("## Understanding This Terminology")
+    report.append("- **Adj Mean**: Adjusted Mean. This is the estimated average MoCA score after mathematically leveling the playing field for age, BMI, education, and other medical conditions.")
+    report.append("- **OR (Odds Ratio)**: A measure of association. An OR > 1 means higher odds of having cognitive impairment compared to the healthy control group. For example, an OR of 1.63 means 63% higher odds.")
+    report.append("- **95% CI**: 95% Confidence Interval. We are 95% confident the true Odds Ratio falls within this range.")
+    report.append("- **Control**: Healthy Controls (No Diabetes)")
+    report.append("- **Pre-diab**: Pre-diabetes")
+    report.append("- **Med-Ctrl**: Medication-controlled Diabetes")
+    report.append("- **Insulin**: Insulin-dependent Diabetes\n")
+
     # Table 2: MoCA Total and Domain Scores
     report.append("## Table 2: Adjusted MoCA Total and Domain Scores (GMI vs HbA1c)\n")
     report.append("| Cognitive Domain | Unadjusted Mean | Adj Mean (GMI) | p-value (GMI) | Adj Mean (HbA1c) | p-value (HbA1c) |")
@@ -57,7 +73,7 @@ def generate_side_by_side_report():
             
         # Unadjusted
         means = df.groupby('group')[col].mean()
-        unadj_str = ", ".join([f"{g[:3]}: {means[g]:.1f}" for g in groups])
+        unadj_str = ", ".join([f"{abbr.get(g, g)}: {means[g]:.1f}" for g in groups])
         
         # GMI Model
         form_gmi = f"{col} ~ C(group, Treatment('1_Controls')) + age + C(education_level) + bmi + gmi + hypertension + high_cholesterol + kidney_disease + circulatory_problems + neurodegenerative"
@@ -66,11 +82,11 @@ def generate_side_by_side_report():
             anova_g = sm.stats.anova_lm(model_g, typ=2)
             p_adj_g = anova_g.loc["C(group, Treatment('1_Controls'))", "PR(>F)"]
             int_g = model_g.params.get('Intercept', np.nan)
-            adj_means_g = [f"Con: {int_g:.1f}"]
+            adj_means_g = [f"Control: {int_g:.1f}"]
             for g in groups[1:]:
                 key = [k for k in model_g.params.keys() if g in k]
                 if key:
-                    adj_means_g.append(f"{g[:3]}: {int_g + model_g.params[key[0]]:.1f}")
+                    adj_means_g.append(f"{abbr.get(g, g)}: {int_g + model_g.params[key[0]]:.1f}")
             adj_str_g = ", ".join(adj_means_g)
         except Exception as e:
             p_adj_g = np.nan
@@ -83,11 +99,11 @@ def generate_side_by_side_report():
             anova_h = sm.stats.anova_lm(model_h, typ=2)
             p_adj_h = anova_h.loc["C(group, Treatment('1_Controls'))", "PR(>F)"]
             int_h = model_h.params.get('Intercept', np.nan)
-            adj_means_h = [f"Con: {int_h:.1f}"]
+            adj_means_h = [f"Control: {int_h:.1f}"]
             for g in groups[1:]:
                 key = [k for k in model_h.params.keys() if g in k]
                 if key:
-                    adj_means_h.append(f"{g[:3]}: {int_h + model_h.params[key[0]]:.1f}")
+                    adj_means_h.append(f"{abbr.get(g, g)}: {int_h + model_h.params[key[0]]:.1f}")
             adj_str_h = ", ".join(adj_means_h)
         except Exception as e:
             p_adj_h = np.nan
