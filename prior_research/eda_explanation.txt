@@ -1,0 +1,49 @@
+# UCSF Project: Comprehensive EDA Documentation
+
+This document outlines the three phases of Exploratory Data Analysis (EDA) currently implemented in the project. The EDA scripts progressively move from broad data quality assessments down to targeted, statistical analyses of longitudinal cognitive decline and diabetes.
+
+---
+
+## 1. General Cohort & Data Quality EDA
+**Primary Script**: `compiler_eda_research.py`
+**Output Directory**: `eda_outputs/`
+
+This script serves as the baseline health-check for the compiled Omnibus dataset. Its primary goal is to assess missingness, establish daily/hourly baselines, and look for macroscopic trends.
+
+### Key Outputs:
+- **`00_missing_data_map.png`**: Visualizes the density and sparsity of the sensor data across the cohort to see where gaps exist.
+- **`01_cohort_temporal_trends.png`**: Plots the macro trends of heart rate, activity, and glucose over time.
+- **`03_clinical_group_boxplots.png`**: A high-level view comparing key physiological metrics across different clinical conditions.
+- **`MASTER_DAILY_AGGREGATE.csv` & `MASTER_HOURLY_INTRADAY.csv`**: Massive roll-ups that average out the 5-minute gaps into daily and hourly intraday features for machine learning pipelines.
+
+---
+
+## 2. Cognition & Diabetes Baseline EDA
+**Primary Script**: `compiler_eda_cognition_diabetes.py`
+**Output Directory**: `eda_cognition_outputs/`
+
+This phase shifts focus to the core research question: the intersection of diabetes management and cognitive decline (specifically targeting MOCA metrics).
+
+### Key Outputs:
+- **`master_eda_cognition_diabetes.csv`**: A flattened table matching patients to their cognitive and diabetic profiles.
+- **`01_diabetes_class_balance.png` / `02_diabetes_vs_glucose.png`**: Evaluates the distribution of the cohort across diabetic states (Type 1, Type 2, Healthy, Prediabetes) and validates their continuous glucose levels.
+- **`03_cognition_stratification.png` & `04_cognition_age_diabetes.png`**: Breaks down MOCA scores by diabetic class, stratified by age, to see if diabetes accelerates cognitive decline in older groups.
+- **`05_sleep_cognition_correlation.png` & `06_night_movement_vs_cognition.png`**: Investigates the hypothesis that sleep quality (measured by night movement and nighttime HR) mediates cognitive performance.
+
+---
+
+## 3. Advanced Statistical & Longitudinal MOCA EDA
+**Primary Scripts**: `compiler_eda_advanced.py` and `moca_analysis.py`
+**Output Directory**: `eda_advanced_outputs/`
+
+This is the most rigorous and specialized phase of the EDA. Rather than relying on static snapshot data, it reaches back into the raw OMOP `measurement.csv` database to extract true longitudinal sequences of MOCA scores and performs statistical significance testing.
+
+### Key Workflows:
+1. **`compiler_eda_advanced.py`**: Merges the physical activity profiles with the OMOP MOCA extraction. It isolates specific sub-scores (like `moca_abstraction` and `moca_orientation`) and prepares the longitudinal trajectories.
+2. **`moca_analysis.py`**: Runs the mathematical and visual analysis.
+
+### Key Outputs:
+- **`moca_longitudinal.csv` & `moca_spaghetti_plot.png`**: Tracks patients who have taken multiple MOCA tests over time, drawing trajectory lines to spot rapid cognitive decline.
+- **`moca_variance_distribution.png`**: Boxplots showing the variance (instability) of MOCA scores within patients, broken down by their diabetic status.
+- **`correlation_heatmap.png` & `moca_subcategories_correlation.png`**: Heatmaps that not only correlate total MOCA scores with sleep/activity, but specifically isolate which cognitive domains (abstraction vs orientation) are most strongly linked to physical markers.
+- **Bootstrapping Reports (`bootstrap_diff_*.csv/txt`)**: Non-parametric bootstrap resampling tests (2000 iterations) to prove whether the mean differences in MOCA scores between diabetic groups are statistically significant, complete with 95% Confidence Intervals.

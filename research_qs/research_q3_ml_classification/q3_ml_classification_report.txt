@@ -1,0 +1,12 @@
+Random Forest Classification Report
+===================================
+                                                                     precision    recall  f1-score   support
+
+                                                            healthy       0.55      0.68      0.61       136
+                                                  insulin_dependent       0.51      0.49      0.50        45
+oral_medication_and_or_non_insulin_injectable_medication_controlled       0.50      0.46      0.48       120
+                                  pre_diabetes_lifestyle_controlled       0.32      0.25      0.28       102
+
+                                                           accuracy                           0.48       403
+                                                          macro avg       0.47      0.47      0.47       403
+                                                       weighted avg       0.47      0.48      0.47       403

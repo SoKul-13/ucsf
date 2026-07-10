@@ -1,0 +1,2 @@
+V1 Linear Regression RMSE: 3.18
+V2 PyTorch DNN RMSE: 3.19

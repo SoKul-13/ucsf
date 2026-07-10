@@ -5,11 +5,11 @@ import os
 import numpy as np
 
 # --- CONFIGURATION ---
-BASE_PATH = os.path.abspath("./dataset") 
-OUTPUT_FOLDER = os.path.abspath("./output_omnibus_hourly")
+BASE_PATH = os.path.abspath(".") 
+OUTPUT_FOLDER = os.path.abspath("../output_omnibus_final")
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
-# --- 1. STATIC METADATA EXTRACTORS ---
+# --- STATIC METADATA EXTRACTORS ---
 
 def get_clinical_conditions(p_str):
     files = glob.glob(os.path.join(BASE_PATH, "clinical_data", "**", "condition_occurrence.csv"), recursive=True)
@@ -80,6 +80,7 @@ def get_cgm_metadata(p_str):
     return meta
 
 def load_participants_tsv():
+    """Loads parent demographic data directly from participants.tsv."""
     parts_path = os.path.join(BASE_PATH, "participants.tsv")
     meta_dict = {}
     if os.path.exists(parts_path):
@@ -93,13 +94,13 @@ def load_participants_tsv():
             print(f"Warning: Could not load participants.tsv -> {e}")
     return meta_dict
 
-# --- 2. MAIN COMPILER ENGINE ---
+# --- MAIN COMPILER ENGINE ---
 
 def compile_individual(p_id, global_meta):
     p_str = str(p_id)
     all_dfs = []
 
-    # A. JSON PARSER
+    # A. JSON PARSER (Wearables, Sleep, Stress, Activity, & Glucose)
     json_files = glob.glob(os.path.join(BASE_PATH, "wearable*", "**", f"*{p_str}*.json"), recursive=True)
     for f in json_files:
         try:
@@ -131,7 +132,7 @@ def compile_individual(p_id, global_meta):
                         all_dfs.append(df)
         except: continue
 
-    # B. CSV PARSER 
+    # B. CSV PARSER (Environment Anura data)
     env_files = glob.glob(os.path.join(BASE_PATH, "environment", "**", f"*{p_str}*ENV.csv"), recursive=True)
     for f in env_files:
         try:
@@ -150,14 +151,13 @@ def compile_individual(p_id, global_meta):
 
     if not all_dfs: return None
 
-    # C. MASTER MERGE
+    # C. MASTER MERGE & AGGREGATION
     combined = pd.concat(all_dfs, axis=0).sort_index()
 
     vitals = [c for c in combined.columns if 'value' in c.lower() and any(x in c.lower() for x in ['heart', 'oxygen', 'glucose', 'respiratory', 'stress'])]
     for v in vitals:
         combined[v] = combined[v].where(combined[v] > 0, np.nan)
 
-    # DYNAMIC AGGREGATION RULES FOR HOURLY GRID
     agg_rules = {}
     for col in combined.columns:
         if pd.api.types.is_numeric_dtype(combined[col]):
@@ -165,36 +165,13 @@ def compile_individual(p_id, global_meta):
             if any(x in c_low for x in ['calor', 'step']):
                 agg_rules[col] = 'sum'  
             elif any(x in c_low for x in ['stress', 'score']):
-                agg_rules[col] = 'max'  
+                agg_rules[col] = 'max'
             else:
                 agg_rules[col] = 'mean' 
         else:
             agg_rules[col] = 'first'    
 
-    # 1. CREATE THE STRICT HOURLY GRID ('1h')
-    resampled = combined.resample('1h').agg(agg_rules)
-
-    # --- THE IMPUTATION ENGINE (Hourly Scale) ---
-    
-    # 2. Zero-Fill Burst Metrics
-    burst_cols = [c for c in resampled.columns if any(x in c.lower() for x in ['step', 'calor'])]
-    if burst_cols:
-        resampled[burst_cols] = resampled[burst_cols].fillna(0)
-
-    # 3. Interpolate Continuous Vitals (Limit is 2 HOURS)
-    continuous_cols = [c for c in resampled.columns if pd.api.types.is_numeric_dtype(resampled[c]) and c not in burst_cols]
-    if continuous_cols:
-        resampled[continuous_cols] = resampled[continuous_cols].interpolate(method='linear', limit=2)
-
-    # 4. Forward-Fill Categorical Data
-    cat_cols = [c for c in resampled.columns if not pd.api.types.is_numeric_dtype(resampled[c])]
-    if cat_cols:
-        resampled[cat_cols] = resampled[cat_cols].ffill(limit=2)
-
-    # 5. Final Trim
-    sensor_cols = [c for c in resampled.columns if 'meta' not in c and 'clinical' not in c]
-    if sensor_cols:
-        resampled = resampled.dropna(how='all', subset=sensor_cols)
+    resampled = combined.resample('5min').agg(agg_rules).dropna(how='all')
 
     # D. BROADCAST STATIC METADATA
     conds = get_clinical_conditions(p_str)
@@ -213,25 +190,30 @@ def compile_individual(p_id, global_meta):
     for k, v in cgm_meta.items(): resampled[k] = v
         
     for k, v in global_meta.get(p_str, {}).items():
-        if k != 'person_id':  
+        if k != 'person_id':  # Prevent duplicating the ID column
             resampled[f"meta_{k}"] = v
 
     return resampled
 
-# --- 3. EXECUTION ---
-print("Initializing OMNIBUS Compiler (HOURLY Imputation Scale)...")
+# --- EXECUTION ---
+print("Initializing Final Omnibus Compiler...")
 global_metadata = load_participants_tsv()
 
 success_count = 0
-for i in range(1001, 7819): 
+target_ids = sorted([int(k) for k in global_metadata.keys() if str(k).isdigit()])
+for i in target_ids:
+    out_path = os.path.join(OUTPUT_FOLDER, f"AIREADI_P{i}_OMNIBUS_FINAL.csv")
+    if os.path.exists(out_path):
+        print(f"SKIP: P{i} already processed (file exists)")
+        continue
+
     try:
         result = compile_individual(i, global_metadata)
         if result is not None and not result.empty:
-            out_path = os.path.join(OUTPUT_FOLDER, f"AIREADI_P{i}_OMNIBUS_HOURLY.csv")
             result.to_csv(out_path)
-            print(f"SUCCESS: P{i} | {len(result)} HOURS | {len(result.columns)} columns")
+            print(f"SUCCESS: P{i} | {len(result)} intervals | {len(result.columns)} columns")
             success_count += 1
-        elif i < 1010:
+        else:
             print(f"SKIP: No valid time-series data found for P{i}")
     except Exception as e:
         print(f"ERROR on Participant {i}: {e}")

@@ -10,8 +10,8 @@ from scipy.stats import spearmanr
 warnings.filterwarnings('ignore')
 
 # --- CONFIGURATION ---
-INPUT_FOLDER = os.path.abspath("./output_omnibus_final")
-OUTPUT_FOLDER = os.path.abspath("./eda_cognition_outputs")
+INPUT_FOLDER = os.path.abspath("../output_omnibus_final")
+OUTPUT_FOLDER = os.path.abspath("../eda_cognition_outputs")
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
 sns.set_theme(style="whitegrid")

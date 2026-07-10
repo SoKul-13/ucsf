@@ -1,0 +1,163 @@
+COMPREHENSIVE BOOTSTRAP INSIGHTS & SIGNIFICANT FINDINGS
+=====================================================
+
+Note: 'Significant' implies the 95% Confidence Interval (CI) does not cross zero.
+
+--- VARIABLE: MIN_SPO2 ---
+Found 2 significant group comparisons. Top findings by effect size:
+  • Healthy + Insulin + Oral vs Pre-Diabetes:
+      -> Healthy + Insulin + Oral is 0.55 units lower than Pre-Diabetes.
+      -> 95% CI: [-1.05, -0.06]
+  • Healthy + Pre-Diabetes vs Insulin + Oral:
+      -> Healthy + Pre-Diabetes is 0.46 units higher than Insulin + Oral.
+      -> 95% CI: [0.01, 0.90]
+
+--- VARIABLE: META_AGE ---
+Found 7 significant group comparisons. Top findings by effect size:
+  • Oral vs Healthy:
+      -> Oral is 2.13 units higher than Healthy.
+      -> 95% CI: [0.97, 3.26]
+  • Insulin + Oral vs Healthy:
+      -> Insulin + Oral is 1.88 units higher than Healthy.
+      -> 95% CI: [0.82, 2.92]
+  • Healthy + Insulin + Pre-Diabetes vs Oral:
+      -> Healthy + Insulin + Pre-Diabetes is 1.79 units lower than Oral.
+      -> 95% CI: [-2.76, -0.78]
+  • Healthy + Pre-Diabetes vs Insulin + Oral:
+      -> Healthy + Pre-Diabetes is 1.71 units lower than Insulin + Oral.
+      -> 95% CI: [-2.62, -0.79]
+  • Oral + Pre-Diabetes vs Healthy:
+      -> Oral + Pre-Diabetes is 1.35 units higher than Healthy.
+      -> 95% CI: [0.40, 2.39]
+
+--- VARIABLE: MOCA_COMBINED_MIS_SCORE ---
+Found 8 significant group comparisons. Top findings by effect size:
+  • Insulin vs Healthy:
+      -> Insulin is 0.86 units lower than Healthy.
+      -> 95% CI: [-1.26, -0.48]
+  • Healthy + Oral + Pre-Diabetes vs Insulin:
+      -> Healthy + Oral + Pre-Diabetes is 0.70 units higher than Insulin.
+      -> 95% CI: [0.32, 1.08]
+  • Insulin + Oral vs Healthy:
+      -> Insulin + Oral is 0.51 units lower than Healthy.
+      -> 95% CI: [-0.77, -0.27]
+  • Healthy + Pre-Diabetes vs Insulin + Oral:
+      -> Healthy + Pre-Diabetes is 0.48 units higher than Insulin + Oral.
+      -> 95% CI: [0.25, 0.71]
+  • Oral vs Healthy:
+      -> Oral is 0.39 units lower than Healthy.
+      -> 95% CI: [-0.67, -0.12]
+
+--- VARIABLE: NIGHT_MOVEMENT ---
+Found 3 significant group comparisons. Top findings by effect size:
+  • Oral vs Healthy:
+      -> Oral is 1638.26 units lower than Healthy.
+      -> 95% CI: [-3105.04, -278.14]
+  • Insulin + Oral vs Healthy:
+      -> Insulin + Oral is 1512.37 units lower than Healthy.
+      -> 95% CI: [-2843.32, -204.37]
+  • Healthy + Pre-Diabetes vs Insulin + Oral:
+      -> Healthy + Pre-Diabetes is 1215.72 units higher than Insulin + Oral.
+      -> 95% CI: [20.68, 2368.82]
+
+--- VARIABLE: NIGHT_MEAN_HR ---
+Found 11 significant group comparisons. Top findings by effect size:
+  • Insulin vs Healthy:
+      -> Insulin is 4.98 units higher than Healthy.
+      -> 95% CI: [3.43, 6.55]
+  • Insulin + Oral vs Healthy:
+      -> Insulin + Oral is 3.86 units higher than Healthy.
+      -> 95% CI: [2.94, 4.81]
+  • Healthy + Oral + Pre-Diabetes vs Insulin:
+      -> Healthy + Oral + Pre-Diabetes is 3.71 units lower than Insulin.
+      -> 95% CI: [-5.12, -2.23]
+  • Healthy + Pre-Diabetes vs Insulin + Oral:
+      -> Healthy + Pre-Diabetes is 3.67 units lower than Insulin + Oral.
+      -> 95% CI: [-4.53, -2.83]
+  • Oral vs Healthy:
+      -> Oral is 3.44 units higher than Healthy.
+      -> 95% CI: [2.44, 4.51]
+
+--- VARIABLE: MOCA_ORIENTATION ---
+Found 2 significant group comparisons. Top findings by effect size:
+  • Healthy + Oral + Pre-Diabetes vs Insulin:
+      -> Healthy + Oral + Pre-Diabetes is 0.07 units higher than Insulin.
+      -> 95% CI: [0.02, 0.12]
+  • Insulin vs Healthy:
+      -> Insulin is 0.06 units lower than Healthy.
+      -> 95% CI: [-0.12, -0.01]
+
+--- VARIABLE: DAY_HR ---
+Found 11 significant group comparisons. Top findings by effect size:
+  • Insulin vs Healthy:
+      -> Insulin is 6.21 units higher than Healthy.
+      -> 95% CI: [4.76, 7.60]
+  • Insulin + Oral vs Healthy:
+      -> Insulin + Oral is 4.85 units higher than Healthy.
+      -> 95% CI: [3.98, 5.76]
+  • Healthy + Pre-Diabetes vs Insulin + Oral:
+      -> Healthy + Pre-Diabetes is 4.74 units lower than Insulin + Oral.
+      -> 95% CI: [-5.54, -3.93]
+  • Healthy + Oral + Pre-Diabetes vs Insulin:
+      -> Healthy + Oral + Pre-Diabetes is 4.66 units lower than Insulin.
+      -> 95% CI: [-6.01, -3.33]
+  • Oral vs Healthy:
+      -> Oral is 4.35 units higher than Healthy.
+      -> 95% CI: [3.34, 5.35]
+
+--- VARIABLE: MOCA_SCORE ---
+Found 11 significant group comparisons. Top findings by effect size:
+  • Insulin vs Healthy:
+      -> Insulin is 1.94 units lower than Healthy.
+      -> 95% CI: [-2.47, -1.41]
+  • Healthy + Oral + Pre-Diabetes vs Insulin:
+      -> Healthy + Oral + Pre-Diabetes is 1.60 units higher than Insulin.
+      -> 95% CI: [1.09, 2.11]
+  • Insulin + Oral vs Healthy:
+      -> Insulin + Oral is 1.09 units lower than Healthy.
+      -> 95% CI: [-1.38, -0.78]
+  • Healthy + Pre-Diabetes vs Insulin + Oral:
+      -> Healthy + Pre-Diabetes is 0.99 units higher than Insulin + Oral.
+      -> 95% CI: [0.72, 1.27]
+  • Insulin + Pre-Diabetes vs Healthy:
+      -> Insulin + Pre-Diabetes is 0.79 units lower than Healthy.
+      -> 95% CI: [-1.10, -0.49]
+
+--- VARIABLE: MOCA_ABSTRACTION ---
+Found 5 significant group comparisons. Top findings by effect size:
+  • Insulin vs Healthy:
+      -> Insulin is 0.14 units lower than Healthy.
+      -> 95% CI: [-0.21, -0.07]
+  • Healthy + Oral + Pre-Diabetes vs Insulin:
+      -> Healthy + Oral + Pre-Diabetes is 0.13 units higher than Insulin.
+      -> 95% CI: [0.07, 0.21]
+  • Healthy + Pre-Diabetes vs Insulin + Oral:
+      -> Healthy + Pre-Diabetes is 0.06 units higher than Insulin + Oral.
+      -> 95% CI: [0.03, 0.09]
+  • Insulin + Oral vs Healthy:
+      -> Insulin + Oral is 0.05 units lower than Healthy.
+      -> 95% CI: [-0.09, -0.02]
+  • Healthy + Insulin + Oral vs Pre-Diabetes:
+      -> Healthy + Insulin + Oral is 0.04 units lower than Pre-Diabetes.
+      -> 95% CI: [-0.07, -0.01]
+
+--- VARIABLE: TOTAL_MOVEMENT ---
+No statistically significant group differences found at the 95% confidence level.
+
+--- VARIABLE: MEAN_GLUCOSE ---
+Found 13 significant group comparisons. Top findings by effect size:
+  • Insulin vs Healthy:
+      -> Insulin is 61.88 units higher than Healthy.
+      -> 95% CI: [54.93, 69.13]
+  • Healthy + Oral + Pre-Diabetes vs Insulin:
+      -> Healthy + Oral + Pre-Diabetes is 49.21 units lower than Insulin.
+      -> 95% CI: [-56.54, -42.05]
+  • Insulin + Oral vs Healthy:
+      -> Insulin + Oral is 38.82 units higher than Healthy.
+      -> 95% CI: [35.55, 42.13]
+  • Healthy + Pre-Diabetes vs Insulin + Oral:
+      -> Healthy + Pre-Diabetes is 35.44 units lower than Insulin + Oral.
+      -> 95% CI: [-38.68, -32.19]
+  • Oral vs Healthy:
+      -> Oral is 30.34 units higher than Healthy.
+      -> 95% CI: [26.91, 33.65]

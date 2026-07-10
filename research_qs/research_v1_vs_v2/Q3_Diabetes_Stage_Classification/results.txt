@@ -1,0 +1,2 @@
+V1 Random Forest Accuracy: 0.46
+V2 PyTorch DNN Accuracy: 0.48
