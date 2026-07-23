@@ -26,7 +26,7 @@ When predicting **Total Cognitive Impairment** using our exact multivariable log
 
 When predicting the incidence of highly specific clinical disease trajectories (Alzheimer's, Parkinson's, Multiple Sclerosis), the precise metrics become far more revealing.
 
-*Please refer to `regression_results_specific_impairments.csv` for the exact numerical Beta Coefficients, standard errors, and 95% Confidence Intervals for these strata.*
+*Please refer to [`reports/regression_results_specific_impairments.csv`](../reports/regression_results_specific_impairments.csv) for the exact numerical Beta Coefficients, standard errors, and 95% Confidence Intervals for these strata.*
 
 ### Alzheimer's Disease & Dementia
 Dementia (and specifically Alzheimer's, often dubbed "Type 3 Diabetes") has a deep, well-documented link to insulin resistance in the brain. 

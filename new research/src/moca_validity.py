@@ -2,9 +2,13 @@ import pandas as pd
 import numpy as np
 import os
 
-BASE_DIR = os.path.abspath("../dataset")
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
+BASE_DIR = os.path.abspath(os.path.join(PROJECT_ROOT, "..", "dataset"))
 CLINICAL_DIR = os.path.join(BASE_DIR, "clinical_data")
-OUTPUT_DIR = os.path.abspath(".")
+DATA_DIR = os.path.join(PROJECT_ROOT, "data")
+REPORTS_DIR = os.path.join(PROJECT_ROOT, "reports", "1_baseline_replication")
+os.makedirs(REPORTS_DIR, exist_ok=True)
 
 def format_p(p_val):
     if pd.isna(p_val):
@@ -94,7 +98,7 @@ def run_analysis(df, condition_col, report, title_suffix):
 def main():
     print("Loading data...")
     df_cond = pd.read_csv(os.path.join(CLINICAL_DIR, "condition_occurrence.csv"), low_memory=False)
-    df = pd.read_csv("master_cgm_moca_dataset.csv")
+    df = pd.read_csv(os.path.join(DATA_DIR, "master_cgm_moca_dataset.csv"))
     
     # GROUP 1: The AI-READI Specific `mhoccur` Strings
     cog_codes = ['mhoccur_pd', 'mhoccur_ad', 'mhoccur_cogn', 'mhoccur_ms', 'mhoccur_cns']
@@ -145,10 +149,11 @@ def main():
     report.append("\n---\n")
     run_analysis(df, 'has_cog_disease_exhaustive', report, "Version B: Exhaustive OMOP Concept IDs")
 
-    with open("moca_validity_results.md", "w") as f:
+    out_file = os.path.join(REPORTS_DIR, "moca_validity_results.md")
+    with open(out_file, "w") as f:
         f.write("\n".join(report))
         
-    print("Report generated successfully as moca_validity_results.md")
+    print(f"Report generated successfully as {out_file}")
 
 if __name__ == "__main__":
     main()

@@ -1,11 +1,15 @@
+import os
 import pandas as pd
 import numpy as np
 import statsmodels.api as sm
 import statsmodels.formula.api as smf
 from scipy.stats import f_oneway, chi2_contingency
-import os
 
-OUTPUT_DIR = os.path.abspath(".")
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
+DATA_DIR = os.path.join(PROJECT_ROOT, "data")
+REPORTS_DIR = os.path.join(PROJECT_ROOT, "reports", "1_baseline_replication")
+os.makedirs(REPORTS_DIR, exist_ok=True)
 
 def format_p(p_val):
     if pd.isna(p_val):
@@ -18,7 +22,7 @@ def format_p(p_val):
         return f"{p_val:.3f}"
 
 def generate_side_by_side_report():
-    df = pd.read_csv("master_cgm_moca_dataset.csv")
+    df = pd.read_csv(os.path.join(DATA_DIR, "master_cgm_moca_dataset.csv"))
     
     # Map groups
     group_map = {
@@ -147,10 +151,11 @@ def generate_side_by_side_report():
             
         report.append(f"| {g} | {str_g} | {format_p(p_g)} | {str_h} | {format_p(p_h)} |")
         
-    with open("report_side_by_side.md", "w") as f:
+    out_file = os.path.join(REPORTS_DIR, "report_side_by_side.md")
+    with open(out_file, "w") as f:
         f.write("\n".join(report))
         
-    print("Report generated successfully as report_side_by_side.md")
+    print(f"Report generated successfully as {out_file}")
 
 if __name__ == "__main__":
     generate_side_by_side_report()

@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import numpy as np
 import statsmodels.api as sm
@@ -10,10 +11,15 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, roc_auc_score, make_scorer
 from scipy.stats import ttest_rel
-import os
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
+DATA_DIR = os.path.join(PROJECT_ROOT, "data")
+REPORTS_DIR = os.path.join(PROJECT_ROOT, "reports", "1_baseline_replication")
+os.makedirs(REPORTS_DIR, exist_ok=True)
 
 def run_ml_gridsearch():
-    df = pd.read_csv("master_cgm_moca_dataset.csv")
+    df = pd.read_csv(os.path.join(DATA_DIR, "master_cgm_moca_dataset.csv"))
     
     # Map study groups as in original gridsearch
     group_map = {
@@ -139,10 +145,11 @@ def run_ml_gridsearch():
     for i, m in enumerate(ranked_metrics):
         report.append(f"{i+1}. {m.upper()} (AUC: {metric_results[m]['RandomForest_auc']:.4f})")
         
-    with open("comparison_results.md", "w") as f:
+    out_file = os.path.join(REPORTS_DIR, "comparison_results.md")
+    with open(out_file, "w") as f:
         f.write("\n".join(report))
         
-    print("Results written to comparison_results.md")
+    print(f"Results written to {out_file}")
 
 if __name__ == "__main__":
     run_ml_gridsearch()

@@ -4,9 +4,13 @@ import statsmodels.api as sm
 import statsmodels.formula.api as smf
 import os
 
-BASE_DIR = os.path.abspath("../dataset")
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
+BASE_DIR = os.path.abspath(os.path.join(PROJECT_ROOT, "..", "dataset"))
 CLINICAL_DIR = os.path.join(BASE_DIR, "clinical_data")
-OUTPUT_DIR = os.path.abspath(".")
+DATA_DIR = os.path.join(PROJECT_ROOT, "data")
+REPORTS_DIR = os.path.join(PROJECT_ROOT, "reports", "1_baseline_replication")
+os.makedirs(REPORTS_DIR, exist_ok=True)
 
 def run_regression_and_extract(df, formula, family=None, model_name="", metric=""):
     try:
@@ -59,7 +63,7 @@ def run_regression_and_extract(df, formula, family=None, model_name="", metric="
 
 def main():
     print("Loading datasets...")
-    df = pd.read_csv("master_cgm_moca_dataset.csv")
+    df = pd.read_csv(os.path.join(DATA_DIR, "master_cgm_moca_dataset.csv"))
     df_cond = pd.read_csv(os.path.join(CLINICAL_DIR, "condition_occurrence.csv"), low_memory=False)
     
     # Map groups
@@ -125,10 +129,12 @@ def main():
     moca_df = final_df[final_df['model_name'] == 'Total Cognitive Impairment (MoCA < 26)']
     specific_df = final_df[final_df['model_name'] != 'Total Cognitive Impairment (MoCA < 26)']
     
-    moca_df.to_csv("regression_results_total_moca.csv", index=False)
-    specific_df.to_csv("regression_results_specific_impairments.csv", index=False)
+    moca_path = os.path.join(REPORTS_DIR, "regression_results_total_moca.csv")
+    specific_path = os.path.join(REPORTS_DIR, "regression_results_specific_impairments.csv")
+    moca_df.to_csv(moca_path, index=False)
+    specific_df.to_csv(specific_path, index=False)
     
-    print("Exported exact regression results to CSVs.")
+    print(f"Exported exact regression results to {moca_path} and {specific_path}.")
     
 if __name__ == "__main__":
     main()

@@ -1,12 +1,18 @@
+import os
 import pandas as pd
 import numpy as np
 import statsmodels.api as sm
 import statsmodels.formula.api as smf
 from scipy.stats import f_oneway, chi2_contingency
-import os
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
+DATA_DIR = os.path.join(PROJECT_ROOT, "data")
+REPORTS_DIR = os.path.join(PROJECT_ROOT, "reports", "1_baseline_replication")
+os.makedirs(REPORTS_DIR, exist_ok=True)
 
 def run_gridsearch():
-    df = pd.read_csv("master_cgm_moca_dataset.csv")
+    df = pd.read_csv(os.path.join(DATA_DIR, "master_cgm_moca_dataset.csv"))
     group_map = {
         'healthy': '1_Controls',
         'pre_diabetes_lifestyle_controlled': '2_Pre-diabetes',
@@ -67,9 +73,10 @@ def run_gridsearch():
                 results.append(f"| {g} | {m_str} | {m_p:.3f} |")
         results.append("\n")
         
-    with open("gridsearch_results.txt", "w") as f:
+    out_file = os.path.join(REPORTS_DIR, "gridsearch_results.txt")
+    with open(out_file, "w") as f:
         f.write("\n".join(results))
-    print("Done")
+    print(f"Done, written to {out_file}")
 
 if __name__ == "__main__":
     run_gridsearch()
