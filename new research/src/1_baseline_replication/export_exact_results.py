@@ -5,7 +5,7 @@ import statsmodels.formula.api as smf
 import os
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
+PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "..", ".."))
 BASE_DIR = os.path.abspath(os.path.join(PROJECT_ROOT, "..", "dataset"))
 CLINICAL_DIR = os.path.join(BASE_DIR, "clinical_data")
 DATA_DIR = os.path.join(PROJECT_ROOT, "data")

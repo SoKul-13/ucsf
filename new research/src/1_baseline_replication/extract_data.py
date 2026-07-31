@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
+PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "..", ".."))
 BASE_DIR = os.path.abspath(os.path.join(PROJECT_ROOT, "..", "dataset"))
 CLINICAL_DIR = os.path.join(BASE_DIR, "clinical_data")
 CGM_DIR = os.path.join(BASE_DIR, "wearable_blood_glucose", "continuous_glucose_monitoring", "dexcom_g6")

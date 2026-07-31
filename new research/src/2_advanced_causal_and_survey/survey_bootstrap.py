@@ -39,7 +39,7 @@ def format_p(p_val):
 import os
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
+PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "..", ".."))
 DATA_DIR = os.path.join(PROJECT_ROOT, "data")
 REPORTS_DIR = os.path.join(PROJECT_ROOT, "reports", "2_advanced_causal_and_survey")
 os.makedirs(REPORTS_DIR, exist_ok=True)
