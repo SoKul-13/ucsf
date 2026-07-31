@@ -24,23 +24,36 @@
 
 ---
 
-## 2. Multivariable Regression (Age & Diabetes Dummies + Controls)
+## 2. Multivariable Regression (3 Age Partition Dummies + Diabetes + Controls)
 
 - **Regression Sample Size (N)**: 2210
-- **Pseudo R-squared**: **0.054**
-- **Log-Likelihood**: **-1411.81**
+- **Reference Age Baseline Group**: Young Adults (< 50 years)
+- **Pseudo R-squared**: **0.057**
+- **Log-Likelihood**: **-1407.41**
 
 | Dummy / Control Predictor | Coef (β) | Std Error (SE) | Stat | p-value | Odds Ratio (OR) / Impact | 95% CI | Sig |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Constant (Intercept)** | +0.2646 | 0.3612 | +0.73 | 0.4638 | 1.303 | [0.642, 2.645] | NS |
-| **Age Dummy (>65 yrs)** | +0.5362 | 0.0940 | +5.70 | 0.0000 | 1.709 | [1.422, 2.055] | ⭐ |
-| **Diabetes Status Dummy** | +0.3169 | 0.1020 | +3.11 | 0.0019 | 1.373 | [1.124, 1.677] | ⭐ |
-| **BMI** | +0.0068 | 0.0063 | +1.07 | 0.2824 | 1.007 | [0.994, 1.019] | NS |
-| **Years of Education** | -0.1104 | 0.0140 | -7.90 | 0.0000 | 0.895 | [0.871, 0.920] | ⭐ |
-| **CGM Mean Glucose** | +0.0044 | 0.0013 | +3.38 | 0.0007 | 1.004 | [1.002, 1.007] | ⭐ |
+| **Constant (Intercept)** | -0.0542 | 0.3780 | -0.14 | 0.8861 | 0.947 | [0.452, 1.987] | NS |
+| **Age Dummy: 50-65 yrs (vs <50)** | +0.3785 | 0.1288 | +2.94 | 0.0033 | 1.460 | [1.134, 1.879] | ⭐ |
+| **Age Dummy: >65 yrs (vs <50)** | +0.8072 | 0.1329 | +6.07 | 0.0000 | 2.242 | [1.728, 2.908] | ⭐ |
+| **Diabetes Status Dummy** | +0.2972 | 0.1024 | +2.90 | 0.0037 | 1.346 | [1.101, 1.645] | ⭐ |
+| **BMI** | +0.0084 | 0.0063 | +1.33 | 0.1836 | 1.008 | [0.996, 1.021] | NS |
+| **Years of Education** | -0.1103 | 0.0140 | -7.88 | 0.0000 | 0.896 | [0.871, 0.920] | ⭐ |
+| **CGM Mean Glucose** | +0.0044 | 0.0013 | +3.42 | 0.0006 | 1.004 | [1.002, 1.007] | ⭐ |
 
 ---
 
-### 💡 Key Observations
-1. **Age > 65 Dummy**: Age remains the strongest single demographic predictor for cognitive impairment.
-2. **Control Variable Stability**: Body mass index (BMI) and glucose metrics show distinct risk profiles when controlling for age and diabetes status.
+## 3. Detailed Step-by-Step Results Explanation
+
+1. **3 Age Partitions Categorical Gradient**:
+   - Compared to the reference baseline group of **Young Adults ($< 50$ yrs)**:
+     - **Middle-Aged Adults ($50\text{--}65$ yrs)** exhibit a **$46.0\%$ increase in odds** of cognitive impairment ($\text{OR} = 1.460, z = +2.94, p = 0.0033$) ⭐.
+     - **Older Adults ($> 65$ yrs)** exhibit a **$124.2\%$ increase in odds** of cognitive impairment ($\text{OR} = 2.242, z = +6.07, p < 0.0001$) ⭐.
+   - **Clinical takeaway**: Cognitive risk escalates non-linearly across age partitions, doubling in odds after age 65.
+
+2. **Diabetes Status Indicator**:
+   - Controlling for the 3 age partitions, education, BMI, and glucose levels, having diabetes increases impairment odds by **$34.6\%$** ($\text{OR} = 1.346, z = +2.90, p = 0.0037$) ⭐.
+
+3. **Education Buffer & Glycemic Control**:
+   - Each additional year of formal education reduces cognitive impairment odds by **$10.4\%$** ($\text{OR} = 0.896, p < 0.0001$) ⭐.
+   - Higher mean glucose elevates impairment odds ($\text{OR} = 1.004 \text{ per mg/dL}, p = 0.0006$) ⭐.

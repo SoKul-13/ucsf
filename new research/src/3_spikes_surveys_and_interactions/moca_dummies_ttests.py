@@ -88,17 +88,20 @@ def run_moca_dummies_and_ttests():
         
     report_md += "\n---\n\n"
     
-    # 2. Multivariable Logistic Regression with Age & Diabetes Dummy Variables + Controls
-    report_md += "## 2. Multivariable Regression (Age & Diabetes Dummies + Controls)\n\n"
+    # 2. Multivariable Logistic Regression with 3 Age Partitions & Diabetes Indicator Dummies + Controls
+    report_md += "## 2. Multivariable Regression (3 Age Partition Dummies + Diabetes + Controls)\n\n"
     
-    reg_cols = ['cognitively_impaired', 'age_gt_65', 'is_diabetic', 'bmi', 'mean_glucose']
+    df_valid['age_50_65'] = ((df_valid['age'] >= 50) & (df_valid['age'] <= 65)).astype(int)
+    df_valid['age_over_65'] = (df_valid['age'] > 65).astype(int)
+    
+    reg_cols = ['cognitively_impaired', 'age_50_65', 'age_over_65', 'is_diabetic', 'bmi', 'mean_glucose']
     reg_df = df_valid.dropna(subset=reg_cols).copy()
     if 'years_of_education' in df_valid.columns and df_valid['years_of_education'].notna().sum() > 50:
         reg_cols.append('years_of_education')
         reg_df = df_valid.dropna(subset=reg_cols).copy()
-        formula_dummies = "cognitively_impaired ~ age_gt_65 + is_diabetic + bmi + years_of_education + mean_glucose"
+        formula_dummies = "cognitively_impaired ~ age_50_65 + age_over_65 + is_diabetic + bmi + years_of_education + mean_glucose"
     else:
-        formula_dummies = "cognitively_impaired ~ age_gt_65 + is_diabetic + bmi + mean_glucose"
+        formula_dummies = "cognitively_impaired ~ age_50_65 + age_over_65 + is_diabetic + bmi + mean_glucose"
         
     try:
         logit_dummies = smf.logit(formula_dummies, data=reg_df).fit(disp=False)
@@ -109,6 +112,7 @@ def run_moca_dummies_and_ttests():
         is_logit = False
         
     report_md += f"- **Regression Sample Size (N)**: {len(reg_df)}\n"
+    report_md += f"- **Reference Age Baseline Group**: Young Adults (< 50 years)\n"
     if is_logit:
         report_md += f"- **Pseudo R-squared**: **{logit_dummies.prsquared:.3f}**\n"
         report_md += f"- **Log-Likelihood**: **{logit_dummies.llf:.2f}**\n\n"
@@ -136,7 +140,7 @@ def run_moca_dummies_and_ttests():
             
         sig = "⭐" if p < 0.05 else ("†" if p < 0.10 else "NS")
         
-        p_name = param.replace('age_gt_65', 'Age Dummy (>65 yrs)').replace('is_diabetic', 'Diabetes Status Dummy').replace('bmi', 'BMI').replace('years_of_education', 'Years of Education').replace('mean_glucose', 'CGM Mean Glucose').replace('Intercept', 'Constant (Intercept)')
+        p_name = param.replace('age_50_65', 'Age Dummy: 50-65 yrs (vs <50)').replace('age_over_65', 'Age Dummy: >65 yrs (vs <50)').replace('is_diabetic', 'Diabetes Status Dummy').replace('bmi', 'BMI').replace('years_of_education', 'Years of Education').replace('mean_glucose', 'CGM Mean Glucose').replace('Intercept', 'Constant (Intercept)')
         report_md += f"| **{p_name}** | {coef:+.4f} | {se:.4f} | {stat_val:+.2f} | {p:.4f} | {or_val} | [{ci_l}, {ci_u}] | {sig} |\n"
         
     report_md += "\n---\n\n"

@@ -26,13 +26,16 @@ def run_moca_spike_models():
     
     stratifications = {
         'Global Cohort': model_df,
-        'Age <= 65': model_df[model_df['age'] <= 65],
-        'Age > 65': model_df[model_df['age'] > 65],
+        'Age < 50 (Young)': model_df[model_df['age'] < 50],
+        'Age 50-65 (Middle-Aged)': model_df[(model_df['age'] >= 50) & (model_df['age'] <= 65)],
+        'Age > 65 (Older)': model_df[model_df['age'] > 65],
         'Non-Diabetic': model_df[model_df['is_diabetic'] == 0],
         'Diabetic': model_df[model_df['is_diabetic'] == 1],
-        'Age <= 65 & Non-Diabetic': model_df[(model_df['age'] <= 65) & (model_df['is_diabetic'] == 0)],
+        'Age < 50 & Non-Diabetic': model_df[(model_df['age'] < 50) & (model_df['is_diabetic'] == 0)],
+        'Age 50-65 & Non-Diabetic': model_df[(model_df['age'] >= 50) & (model_df['age'] <= 65) & (model_df['is_diabetic'] == 0)],
         'Age > 65 & Non-Diabetic': model_df[(model_df['age'] > 65) & (model_df['is_diabetic'] == 0)],
-        'Age <= 65 & Diabetic': model_df[(model_df['age'] <= 65) & (model_df['is_diabetic'] == 1)],
+        'Age < 50 & Diabetic': model_df[(model_df['age'] < 50) & (model_df['is_diabetic'] == 1)],
+        'Age 50-65 & Diabetic': model_df[(model_df['age'] >= 50) & (model_df['age'] <= 65) & (model_df['is_diabetic'] == 1)],
         'Age > 65 & Diabetic': model_df[(model_df['age'] > 65) & (model_df['is_diabetic'] == 1)]
     }
     
