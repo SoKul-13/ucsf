@@ -1,55 +1,67 @@
-Project Name: Data Compilation and Analysis
-- Repository: ucsf-data-project
-- Author: Soham Kulkarni
-- Date: March 2026. 
+# UCSF / AI-READI Data Compilation & Cognitive Impairment Analysis
 
-Environment Setup (Venv)
-This project uses a Python Virtual Environment to manage dependencies. If you encounter "Fatal error in launcher," please recreate the environment.
+- **Repository**: `ucsf-data-project`
+- **Author**: Soham Kulkarni
+- **Primary Module**: [`new research/`](new%20research/README.md)
 
-Installation
-Create the environment:Bash
-python -m venv venv
+This repository contains data parsing, statistical replication, econometrics, and machine learning pipelines analyzing the relationship between **diabetes severity (CGM vs. HbA1c)**, **glycemic surge dynamics**, **SDOH survey factors**, and **cognitive function (MoCA scores)** across the AI-READI cohort ($N = 2,226$).
 
-Activate the environment:
-- Windows: .\venv\Scripts\activate
-- Mac/Linux: source venv/bin/activate
+---
 
-Install Dependencies:Bash
+## 1. Quick Start & Execution Guide
+
+### Environment Setup
+```bash
+# Clone repository and navigate to root directory
+cd "/Users/guardian/Documents/GitHub/bcc/ucsf"
+
+# Create virtual environment (if not already created)
+python3 -m venv "new research/.venv"
+
+# Activate environment & install dependencies
+source "new research/.venv/bin/activate"
 pip install -r requirements.txt
+```
 
-2. Data Compilation & Meaning
-This section describes how the raw data is gathered and what the variables represent.
+### Complete 3-Phase Execution Sequence
 
-Data Sources
-Source A: [e.g., Clinical Records]
-Source B: [e.g., Survey Results]
-Data Dictionary (Meaning)
-Variable NameData TypeDescriptionsubject_idIntegerUnique identifier for each participant.cog_scoreFloatStandardized score from cognitive assessment.timestampDateTimeDate and time of data entry.
+Run all research scripts in order from the repository root:
 
-3. Exploratory Data Analysis (EDA)The EDA phase focuses on understanding the distribution and quality of the data before modeling.
-Key Steps Taken:
-Outlier Detection: Used Z-scores to identify anomalies in cognitive scoring.
-Missing Value Analysis: Identified $N$ missing rows in the primary dataset and applied [mean/median/drop] imputation.
-Correlation: Analyzed the relationship between independent variables using a Pearson correlation matrix.
+```bash
+source "new research/.venv/bin/activate"
 
-4. Cognition & Modeling
-This section outlines the logic used to analyze cognitive data or predict outcomes.
-Metric: 
-We utilize the following formula for normalized cognitive variance:$$\sigma_{cog} = \sqrt{\frac{\sum(x - \mu)^2}{N}}$$
-Model: A Scikit-Learn RandomForestRegressor (or your chosen model) is used to identify predictors of cognitive decline.
-Feature Engineering: Details on how raw scores were transformed into cognitive "features."5. 
+# ─── PHASE 1: BASELINE REPLICATION & VALIDATION ────────────────────────────
+python3 "new research/src/1_baseline_replication/extract_data.py"
+python3 "new research/src/1_baseline_replication/analyze_side_by_side.py"
+python3 "new research/src/1_baseline_replication/moca_validity.py"
+python3 "new research/src/1_baseline_replication/gridsearch_ml.py"
+python3 "new research/src/1_baseline_replication/export_exact_results.py"
 
-File Structure & Git
-To keep the repository clean, we use a .gitignore to exclude bulky or environment-specific files.Folder HierarchyPlaintext├── data/               # Raw and processed CSVs (ignored by git)
-├── notebooks/          # Jupyter notebooks for EDA
-├── src/                # Source code for data compilation
-├── venv/               # Virtual environment (ignored)
-├── requirements.txt    # Project dependencies
-└── README.md           # You are here
+# ─── PHASE 2: ADVANCED ECONOMETRICS & SURVEY ANALYSIS ────────────────────
+python3 "new research/src/2_advanced_causal_and_survey/extract_extended_data.py"
+python3 "new research/src/2_advanced_causal_and_survey/survey_bootstrap.py"
+python3 "new research/src/2_advanced_causal_and_survey/causal_inference.py"
+python3 "new research/src/2_advanced_causal_and_survey/correlation_analysis.py"
 
-Important Note on GitIgnore
-Ensure your .gitignore includes:
-Code snippetvenv/
-__pycache__/
-*.csv
-.DS_Store
+# ─── PHASE 3: SPIKES, STRATIFICATIONS & INTERACTIONS ────────────────────
+python3 "new research/src/3_spikes_surveys_and_interactions/cgm_spike_extraction.py"
+python3 "new research/src/3_spikes_surveys_and_interactions/model_moca_spikes.py"
+python3 "new research/src/3_spikes_surveys_and_interactions/aireadi_survey_stratified.py"
+python3 "new research/src/3_spikes_surveys_and_interactions/moca_dummies_ttests.py"
+python3 "new research/src/3_spikes_surveys_and_interactions/paid_moca_analysis.py"
+python3 "new research/src/3_spikes_surveys_and_interactions/interaction_stratified_models.py"
+```
+
+---
+
+## 2. Research Architecture & 3-Phase Framework
+
+The project is structured into three unified research phases:
+
+| Phase | Purpose & Methodology | Source Scripts Directory | Output Reports Directory |
+| :--- | :--- | :--- | :--- |
+| **Phase 1: Baseline Replication** | Compares CGM (GMI/TIR) vs lab HbA1c to predict MoCA cognitive impairment ($\text{MoCA} < 26$). Validates construct validity and baseline ML models. | [`src/1_baseline_replication/`](new%20research/src/1_baseline_replication) | [`reports/1_baseline_replication/`](new%20research/reports/1_baseline_replication) |
+| **Phase 2: Econometrics & Causal Inference** | Controls for confounding variables and lifestyle factors. Applies FWL partialling out, Fixed Effects, PSM, IV-2SLS, and 10,000-iter survey permutation tests. | [`src/2_advanced_causal_and_survey/`](new%20research/src/2_advanced_causal_and_survey) | [`reports/2_advanced_causal_and_survey/`](new%20research/reports/2_advanced_causal_and_survey) |
+| **Phase 3: Spikes & Stratifications** | Models continuous glucose surge dynamics ($>180\text{ mg/dL}$), $3 \times 4$ Age x Diabetes grid stratifications, item-level PAID-5 distress, Welch's t-tests (SE), and non-linear interactions ($\text{Age}_{>65} \times \text{Diabetic}$). | [`src/3_spikes_surveys_and_interactions/`](new%20research/src/3_spikes_surveys_and_interactions) | [`reports/3_spikes_surveys_and_interactions/`](new%20research/reports/3_spikes_surveys_and_interactions) |
+
+For complete documentation, variable dictionaries, and report indexes, refer to **[`new research/README.md`](new%20research/README.md)**.

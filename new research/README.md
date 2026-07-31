@@ -1,135 +1,167 @@
-# AI-READI Cognitive Impairment Analysis: Replication & Validation
+# AI-READI Cognitive Impairment Analysis: Replication, Econometrics, & Glycemic Dynamics
 
-This repository contains scripts and documentation for replicating and validating findings related to diabetes severity (CGM vs. HbA1c) and cognitive function (MoCA scores).
+This repository contains a modular Python research pipeline and comprehensive documentation for analyzing the relationship between **diabetes severity**, **continuous glucose monitoring (CGM) dynamics**, **social determinants of health (SDOH)**, and **cognitive function (MoCA scores)** across the AI-READI cohort ($N = 2,226$).
 
-## Project Structure
+---
+
+## 1. Executive Summary & Research Framework
+
+The analytical pipeline is structured into **3 distinct sequential phases**, each addressing specific methodological questions:
+
+```
+                          [ AI-READI Raw EHR & Dexcom G6 Data ]
+                                           │
+                                           ▼
+            ┌──────────────────────────────┴──────────────────────────────┐
+            ▼                                                             ▼
+┌───────────────────────────────────────┐     ┌───────────────────────────────────────┐
+│   Phase 1: Baseline Replication       │     │   Phase 2: Advanced Econometrics      │
+│   ├── GMI vs. HbA1c side-by-side      │ ──► │   ├── 10,000-iter survey bootstrap    │
+│   ├── MoCA construct validity         │     │   ├── FWL partialling out & PSM       │
+│   └── ML predictive benchmarks        │     │   └── Instrumental Variables (2SLS)   │
+└───────────────────────────────────────┘     └───────────────────────────────────────┘
+                                                           │
+                                                           ▼
+                                              ┌───────────────────────────────────────┐
+                                              │   Phase 3: Spikes & Stratifications   │
+                                              │   ├── Continuous CGM glucose surges   │
+                                              │   ├── 3x4 Age x Diabetes Grid         │
+                                              │   ├── Item-level PAID-5 distress      │
+                                              │   └── Age x Diabetic Interaction OLS  │
+                                              └───────────────────────────────────────┘
+```
+
+### Purpose of Each Phase:
+
+* **Phase 1: Baseline Statistical Replication & Validation (`1_baseline_replication`)**
+  * **Objective**: Evaluate whether continuous glucose monitoring metrics—specifically Glucose Management Indicator (GMI) and Time in Range (TIR)—provide equivalent or superior predictive power over traditional lab HbA1c in detecting MoCA cognitive impairment ($\text{MoCA} < 26$).
+  * **Key Outputs**: Baseline multivariable regressions, cohort definition validation, and machine learning gridsearches.
+
+* **Phase 2: Advanced Econometric, Survey, & Causal Inference (`2_advanced_causal_and_survey`)**
+  * **Objective**: Control for confounding variables, selection bias, and lifestyle factors. Applies Frisch-Waugh-Lovell (FWL) partialling out, Propensity Score Matching (PSM), Instrumental Variables (2SLS), and 10,000-iteration permutation bootstrap tests on SDOH survey responses (depression, diet, smoking, vision care).
+  * **Key Outputs**: Causal effect bounds, non-parametric permutation p-values, and Spearman/Pearson correlation matrices.
+
+* **Phase 3: High-Frequency Spikes, Stratifications, & Interaction Econometrics (`3_spikes_surveys_and_interactions`)**
+  * **Objective**: Move beyond static population averages to model high-frequency glucose surge dynamics ($>180 \text{ mg/dL}$ spikes), $3 \times 4$ demographic/questionnaire grid stratifications, item-level PAID-5 diabetes distress, Welch's t-tests with exact Standard Errors ($\text{SE}$), and non-linear interaction terms ($\text{Age}_{>65} \times \text{Diabetic}$).
+  * **Key Outputs**: Dynamic surge predictive models, stratified subgroup matrices, and 4-quadrant linear models.
+
+---
+
+## 2. Repository Structure
 
 ```
 new research/
 ├── README.md                              # Root project index & execution guide
-├── docs/                                  # Analytical synthesis & methodology documentation
-│   ├── comprehensive_replication_guide.md
-│   ├── stratification_details.md
-│   ├── cgm_vs_hba1c_holistic_comparison.md
-│  ├── src/                                   # Python scripts organized by output phase
-│   ├── 1_baseline_replication/            # Phase 1: Baseline statistical replication scripts
-│   │   ├── extract_data.py
-│   │   ├── analyze_data.py
-│   │   ├── analyze_side_by_side.py
-│   │   ├── moca_validity.py
-│   │   ├── export_exact_results.py
-│   │   ├── gridsearch.py
-│   │   └── gridsearch_ml.py
-│   ├── 2_advanced_causal_and_survey/      # Phase 2: Advanced econometrics & survey scripts
-│   │   ├── extract_extended_data.py
-│   │   ├── survey_bootstrap.py
-│   │   ├── causal_inference.py
-│   │   └── correlation_analysis.py
-│   └── 3_spikes_surveys_and_interactions/ # Phase 3: High-frequency spikes & stratification scripts
-│       ├── cgm_spike_extraction.py
-│       ├── model_moca_spikes.py
-│       ├── aireadi_survey_stratified.py
-│       ├── moca_dummies_ttests.py
-│       ├── paid_moca_analysis.py
-│       └── interaction_stratified_models.py
+├── docs/                                  # Analytical synthesis & methodology guides
+│   ├── comprehensive_replication_guide.md # End-to-end cleaning & statistical guide
+│   ├── stratification_details.md          # Cohort grouping & covariate adjustment logic
+│   ├── cgm_vs_hba1c_holistic_comparison.md# Deep dive: CGM metrics vs. lab HbA1c
+│   └── analysis_implications_summary.md   # Scientific summary of findings
+├── src/                                   # Python scripts organized by phase
+│   ├── 1_baseline_replication/            # Phase 1: Baseline replication scripts
+│   │   ├── extract_data.py                # Raw clinical & Dexcom JSON parser
+│   │   ├── analyze_data.py                # Baseline GMI regression model
+│   │   ├── analyze_side_by_side.py        # GMI vs HbA1c side-by-side comparison
+│   │   ├── moca_validity.py               # MoCA permutation bootstrap test
+│   │   ├── export_exact_results.py        # Unrounded regression outputs & CIs
+│   │   ├── gridsearch.py                  # Statistical model gridsearch
+│   │   └── gridsearch_ml.py               # Machine Learning predictive benchmark
+│   ├── 2_advanced_causal_and_survey/      # Phase 2: Advanced econometrics scripts
+│   │   ├── extract_extended_data.py       # Extended survey feature extractor
+│   │   ├── survey_bootstrap.py            # 10,000-iteration permutation bootstrap
+│   │   ├── causal_inference.py            # FWL, PSM, IV-2SLS & Fixed Effects
+│   │   └── correlation_analysis.py        # Pearson & Spearman correlation matrices
+│   └── 3_spikes_surveys_and_interactions/ # Phase 3: Spikes & stratifications scripts
+│       ├── cgm_spike_extraction.py        # Continuous 5-min glucose surge parser
+│       ├── model_moca_spikes.py           # Spike duration & frequency logit models
+│       ├── aireadi_survey_stratified.py   # 3x4 Age x Diabetes stratification grid
+│       ├── moca_dummies_ttests.py         # Welch's t-tests (SE) & dummy regressions
+│       ├── paid_moca_analysis.py          # Item-level PAID-5 distress vs MoCA
+│       └── interaction_stratified_models.py# Non-linear interaction & 4-quadrant OLS
 ├── data/                                  # Master CSV datasets
-│   ├── master_cgm_moca_dataset.csv
-│   ├── master_extended_dataset.csv
-│   └── master_cgm_spikes_dataset.csv
-└── reports/                               # Stratified report outputs by flow & generation phase
-    ├── 1_baseline_replication/            # Phase 1: Baseline statistical replication & validation
-    │   ├── report.md
-    │   ├── report_side_by_side.md
-    │   ├── moca_validity_results.md
-    │   ├── comparison_results.md
-    │   ├── gridsearch_results.txt
-    │   ├── regression_results_total_moca.csv
-    │   └── regression_results_specific_impairments.csv
-    ├── 2_advanced_causal_and_survey/      # Phase 2: Advanced econometrics, survey & correlation
-    │   ├── survey_bootstrap_results.md
-    │   ├── causal_inference_results.md
-    │   ├── correlation_results.md
-    │   ├── analysis_implications_summary.md
-    │   └── statistical_tests_and_logic_guide.md
-    └── 3_spikes_surveys_and_interactions/ # Phase 3: High-frequency spikes, survey stratifications, & interactions
-        ├── moca_spike_prediction_results.md
-        ├── aireadi_surveys_age_diabetes_stratification.md
-        ├── moca_dummies_ttests_results.md
-        ├── paid_moca_item_analysis.md
-        └── interaction_and_stratified_models.md
+│   ├── master_cgm_moca_dataset.csv        # Phase 1 baseline dataset
+│   ├── master_extended_dataset.csv        # Phase 2 extended survey dataset
+│   └── master_cgm_spikes_dataset.csv      # Phase 3 high-frequency spike dataset
+└── reports/                               # Output markdown reports organized by phase
+    ├── 1_baseline_replication/            # Phase 1 markdown reports & CSV exports
+    ├── 2_advanced_causal_and_survey/      # Phase 2 econometric & survey reports
+    └── 3_spikes_surveys_and_interactions/ # Phase 3 surge dynamic & interaction reports
 ```
 
 ---
 
-## Order of Execution
+## 3. Order of Execution
 
-To fully replicate the setup and run the validation scripts, run the scripts in `src/` in this order:
+To fully replicate the setup and run the validation scripts, execute the scripts sequentially by phase:
 
-### Phase 1: Baseline Statistical Replication
+### Environment Setup
+```bash
+# Navigate to the workspace root
+cd "/Users/guardian/Documents/GitHub/bcc/ucsf"
 
-1. **[`src/1_baseline_replication/extract_data.py`](src/1_baseline_replication/extract_data.py)**
-   - **What it does**: Parses raw AI-READI clinical data (`participants.tsv`, `measurement.csv`, `condition_occurrence.csv`, `observation.csv`) and Dexcom G6 CGM JSON files.
-   - **Expected Output**: [`data/master_cgm_moca_dataset.csv`](data/master_cgm_moca_dataset.csv).
+# Activate the Python Virtual Environment
+source "new research/.venv/bin/activate"
+```
 
-2. **[`src/1_baseline_replication/analyze_side_by_side.py`](src/1_baseline_replication/analyze_side_by_side.py)**
-   - **What it does**: Direct side-by-side multivariable comparison of GMI vs HbA1c.
-   - **Expected Output**: [`reports/1_baseline_replication/report_side_by_side.md`](reports/1_baseline_replication/report_side_by_side.md).
+### Phase 1: Baseline Replication & Validation
+```bash
+# 1. Parse raw clinical data & Dexcom G6 CGM streams into master dataset
+python3 "new research/src/1_baseline_replication/extract_data.py"
 
-3. **[`src/1_baseline_replication/moca_validity.py`](src/1_baseline_replication/moca_validity.py)**
-   - **What it does**: Evaluates MoCA construct validity using permutation bootstrap tests.
-   - **Expected Output**: [`reports/1_baseline_replication/moca_validity_results.md`](reports/1_baseline_replication/moca_validity_results.md).
+# 2. Run side-by-side multivariable comparison of GMI vs HbA1c
+python3 "new research/src/1_baseline_replication/analyze_side_by_side.py"
 
-4. **[`src/1_baseline_replication/export_exact_results.py`](src/1_baseline_replication/export_exact_results.py)**
-   - **What it does**: Exports unrounded regression coefficients, standard errors, Odds Ratios, and p-values to CSV.
-   - **Expected Outputs (CSVs)**: 
-     - [`reports/1_baseline_replication/regression_results_total_moca.csv`](reports/1_baseline_replication/regression_results_total_moca.csv)
-     - [`reports/1_baseline_replication/regression_results_specific_impairments.csv`](reports/1_baseline_replication/regression_results_specific_impairments.csv)
+# 3. Evaluate MoCA construct validity using permutation bootstrap tests
+python3 "new research/src/1_baseline_replication/moca_validity.py"
 
-### Phase 2: Advanced Econometric, Survey, & Correlation Analysis
+# 4. Execute Machine Learning GridSearch comparing model predictive power
+python3 "new research/src/1_baseline_replication/gridsearch_ml.py"
 
-5. **[`src/2_advanced_causal_and_survey/extract_extended_data.py`](src/2_advanced_causal_and_survey/extract_extended_data.py)**
-   - **What it does**: Extracts survey data (depression, diet, smoking, alcohol, vape, vision care) into master extended dataset.
-   - **Expected Output**: [`data/master_extended_dataset.csv`](data/master_extended_dataset.csv).
+# 5. Export exact unrounded regression coefficients, standard errors, and 95% CIs
+python3 "new research/src/1_baseline_replication/export_exact_results.py"
+```
 
-6. **[`src/2_advanced_causal_and_survey/survey_bootstrap.py`](src/2_advanced_causal_and_survey/survey_bootstrap.py)**
-   - **What it does**: 10,000-iteration permutation test evaluating lifestyle factors against MoCA scores.
-   - **Expected Output**: [`reports/2_advanced_causal_and_survey/survey_bootstrap_results.md`](reports/2_advanced_causal_and_survey/survey_bootstrap_results.md).
+### Phase 2: Advanced Econometrics, Causal Inference, & Survey Analysis
+```bash
+# 6. Extract lifestyle, SDOH, and survey data into master extended dataset
+python3 "new research/src/2_advanced_causal_and_survey/extract_extended_data.py"
 
-7. **[`src/2_advanced_causal_and_survey/causal_inference.py`](src/2_advanced_causal_and_survey/causal_inference.py)**
-   - **What it does**: FWL partialling out, Fixed Effects, Propensity Score Matching (PSM), and Instrumental Variables (2SLS).
-   - **Expected Output**: [`reports/2_advanced_causal_and_survey/causal_inference_results.md`](reports/2_advanced_causal_and_survey/causal_inference_results.md).
+# 7. Execute 10,000-iteration permutation bootstrap test on survey covariates
+python3 "new research/src/2_advanced_causal_and_survey/survey_bootstrap.py"
 
-8. **[`src/2_advanced_causal_and_survey/correlation_analysis.py`](src/2_advanced_causal_and_survey/correlation_analysis.py)**
-   - **What it does**: Computes Pearson ($r$) and Spearman ($\rho$) correlations for MoCA vs HbA1c and Mean Glucose.
-   - **Expected Output**: [`reports/2_advanced_causal_and_survey/correlation_results.md`](reports/2_advanced_causal_and_survey/correlation_results.md).
+# 8. Run econometric causal models (FWL, Fixed Effects, PSM, IV-2SLS)
+python3 "new research/src/2_advanced_causal_and_survey/causal_inference.py"
 
-### Phase 3: High-Frequency Spikes, Survey Stratification, & Interaction Econometrics
+# 9. Compute Pearson (r) and Spearman (ρ) correlation matrices
+python3 "new research/src/2_advanced_causal_and_survey/correlation_analysis.py"
+```
 
-9. **[`src/3_spikes_surveys_and_interactions/cgm_spike_extraction.py`](src/3_spikes_surveys_and_interactions/cgm_spike_extraction.py)** & **[`src/3_spikes_surveys_and_interactions/model_moca_spikes.py`](src/3_spikes_surveys_and_interactions/model_moca_spikes.py)**
-   - **What it does**: Parses continuous Dexcom G6 5-minute CGM streams to extract spike metrics and fits logistic regressions against MoCA impairment.
-   - **Expected Output**: [`reports/3_spikes_surveys_and_interactions/moca_spike_prediction_results.md`](reports/3_spikes_surveys_and_interactions/moca_spike_prediction_results.md).
+### Phase 3: High-Frequency Spikes, Stratifications, & Interaction Econometrics
+```bash
+# 10. Extract continuous 5-minute Dexcom G6 glucose surge events (>180 mg/dL)
+python3 "new research/src/3_spikes_surveys_and_interactions/cgm_spike_extraction.py"
 
-10. **[`src/3_spikes_surveys_and_interactions/aireadi_survey_stratified.py`](src/3_spikes_surveys_and_interactions/aireadi_survey_stratified.py)**
-    - **What it does**: Cross-tabulates 4 AI-READI questionnaires across a 3x4 grid (3 Age Partitions $\times$ 4 Diabetes Types).
-    - **Expected Output**: [`reports/3_spikes_surveys_and_interactions/aireadi_surveys_age_diabetes_stratification.md`](reports/3_spikes_surveys_and_interactions/aireadi_surveys_age_diabetes_stratification.md).
+# 11. Model glucose spike duration, frequency, and magnitude against MoCA scores
+python3 "new research/src/3_spikes_surveys_and_interactions/model_moca_spikes.py"
 
-11. **[`src/3_spikes_surveys_and_interactions/moca_dummies_ttests.py`](src/3_spikes_surveys_and_interactions/moca_dummies_ttests.py)**
-    - **What it does**: Two-sample Welch's t-tests with Standard Errors ($\text{SE}$) and multivariable dummy regressions.
-    - **Expected Output**: [`reports/3_spikes_surveys_and_interactions/moca_dummies_ttests_results.md`](reports/3_spikes_surveys_and_interactions/moca_dummies_ttests_results.md).
+# 12. Generate 3x4 grid stratification matrix (3 Age Partitions x 4 Diabetes Types)
+python3 "new research/src/3_spikes_surveys_and_interactions/aireadi_survey_stratified.py"
 
-12. **[`src/3_spikes_surveys_and_interactions/paid_moca_analysis.py`](src/3_spikes_surveys_and_interactions/paid_moca_analysis.py)**
-    - **What it does**: Evaluates item-level PAID-5 diabetes distress questions against MoCA cognitive sub-scores.
-    - **Expected Output**: [`reports/3_spikes_surveys_and_interactions/paid_moca_item_analysis.md`](reports/3_spikes_surveys_and_interactions/paid_moca_item_analysis.md).
+# 13. Perform feature-level Welch's t-tests with SEs and multivariable dummy regressions
+python3 "new research/src/3_spikes_surveys_and_interactions/moca_dummies_ttests.py"
 
-13. **[`src/3_spikes_surveys_and_interactions/interaction_stratified_models.py`](src/3_spikes_surveys_and_interactions/interaction_stratified_models.py)**
-    - **What it does**: Tests main effect and non-linear interaction terms ($\text{Age}_{>65} \times \text{Diabetic}$) and 4-quadrant stratified linear models.
-    - **Expected Output**: [`reports/3_spikes_surveys_and_interactions/interaction_and_stratified_models.md`](reports/3_spikes_surveys_and_interactions/interaction_and_stratified_models.md).
+# 14. Analyze item-level PAID-5 diabetes distress questions vs. MoCA sub-scores
+python3 "new research/src/3_spikes_surveys_and_interactions/paid_moca_analysis.py"
+
+# 15. Fit non-linear interaction terms (Age > 65 x Diabetic) and 4-quadrant OLS models
+python3 "new research/src/3_spikes_surveys_and_interactions/interaction_stratified_models.py"
+```
 
 ---
 
-## Generated Reports Summary
+## 4. Generated Reports Summary Table
 
-| Phase | Report File | Generated By | Primary Purpose |
+| Phase | Report Markdown File | Python Generator Script | Primary Purpose |
 | :--- | :--- | :--- | :--- |
 | **Phase 1** | **[`reports/1_baseline_replication/report.md`](reports/1_baseline_replication/report.md)** | `src/1_baseline_replication/analyze_data.py` | Baseline statistical replication using GMI instead of HbA1c. |
 | **Phase 1** | **[`reports/1_baseline_replication/report_side_by_side.md`](reports/1_baseline_replication/report_side_by_side.md)** | `src/1_baseline_replication/analyze_side_by_side.py` | Direct multivariable comparison of GMI vs HbA1c side-by-side. |
@@ -145,16 +177,15 @@ To fully replicate the setup and run the validation scripts, run the scripts in 
 | **Phase 3** | **[`reports/3_spikes_surveys_and_interactions/aireadi_surveys_age_diabetes_stratification.md`](reports/3_spikes_surveys_and_interactions/aireadi_surveys_age_diabetes_stratification.md)** | `src/3_spikes_surveys_and_interactions/aireadi_survey_stratified.py` | 3x4 grid stratification across age partitions and diabetes types. |
 | **Phase 3** | **[`reports/3_spikes_surveys_and_interactions/moca_dummies_ttests_results.md`](reports/3_spikes_surveys_and_interactions/moca_dummies_ttests_results.md)** | `src/3_spikes_surveys_and_interactions/moca_dummies_ttests.py` | Welch's t-tests with Standard Errors and multivariable dummy regressions. |
 | **Phase 3** | **[`reports/3_spikes_surveys_and_interactions/paid_moca_item_analysis.md`](reports/3_spikes_surveys_and_interactions/paid_moca_item_analysis.md)** | `src/3_spikes_surveys_and_interactions/paid_moca_analysis.py` | Item-level PAID-5 diabetes distress questions vs MoCA sub-scores. |
-| **Phase 3** | **[`reports/3_spikes_surveys_and_interactions/interaction_and_stratified_models.md`](reports/3_spikes_surveys_and_interactions/interaction_and_stratified_models.md)** | `src/3_spikes_surveys_and_interactions/interaction_stratified_models.py` | Non-linear interaction terms (Age x Diabetic) and 4-quadrant OLS models. |em-level PAID-5 diabetes distress questions vs MoCA sub-scores. |
-| **Phase 3** | **[`reports/3_spikes_surveys_and_interactions/interaction_and_stratified_models.md`](reports/3_spikes_surveys_and_interactions/interaction_and_stratified_models.md)** | `src/interaction_stratified_models.py` | Non-linear interaction terms (Age x Diabetic) and 4-quadrant OLS models. |
+| **Phase 3** | **[`reports/3_spikes_surveys_and_interactions/interaction_and_stratified_models.md`](reports/3_spikes_surveys_and_interactions/interaction_stratified_models.md)** | `src/3_spikes_surveys_and_interactions/interaction_stratified_models.py` | Non-linear interaction terms (Age x Diabetic) and 4-quadrant OLS models. |
 
 ---
 
-## Documentation & Methodology
+## 5. Methodology & Technical Documentation
 
-Refer to the following analytical reports located in `docs/`:
+For complete mathematical derivations and study designs, refer to the documents in `docs/`:
 
-- **[`docs/comprehensive_replication_guide.md`](docs/comprehensive_replication_guide.md)**: End-to-end guide detailing data acquisition, cleaning pipelines, and step-by-step statistical replication.
-- **[`docs/stratification_details.md`](docs/stratification_details.md)**: Details precisely how cohorts were grouped, how outcome variables were separated, and how covariates were adjusted.
-- **[`docs/cgm_vs_hba1c_holistic_comparison.md`](docs/cgm_vs_hba1c_holistic_comparison.md)**: A comprehensive, ground-up comparison of how CGM (GMI/TIR) compares to HbA1c in predicting cognitive impairment.
-- **[`docs/analysis_implications_summary.md`](docs/analysis_implications_summary.md)**: A plain-english summary of analytical outputs from advanced econometric, correlation, and survey permutation tests.
+* **[`docs/comprehensive_replication_guide.md`](docs/comprehensive_replication_guide.md)**: End-to-end guide detailing raw AI-READI data parsing, cleaning pipelines, and step-by-step statistical replication.
+* **[`docs/stratification_details.md`](docs/stratification_details.md)**: Details precisely how cohorts were grouped, how outcome variables were separated, and how covariates were adjusted.
+* **[`docs/cgm_vs_hba1c_holistic_comparison.md`](docs/cgm_vs_hba1c_holistic_comparison.md)**: A ground-up comparison of how CGM (GMI/TIR) compares to HbA1c in predicting cognitive impairment.
+* **[`docs/analysis_implications_summary.md`](docs/analysis_implications_summary.md)**: Scientific synthesis of econometric, correlation, and survey permutation test outputs.
