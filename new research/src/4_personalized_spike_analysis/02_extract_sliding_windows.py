@@ -5,13 +5,19 @@ import pandas as pd
 import numpy as np
 from multiprocessing import Pool, cpu_count
 
-# Set paths
+# Set paths relative to new research structure
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-BASE_DIR = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
-CGM_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "dataset", "wearable_blood_glucose", "continuous_glucose_monitoring", "dexcom_g6"))
-CLINICAL_EXT_PATH = os.path.abspath(os.path.join(BASE_DIR, "..", "new research", "data", "master_extended_dataset.csv"))
-DATA_OUT_DIR = os.path.join(BASE_DIR, "data")
+PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "..", ".."))
+WORKSPACE_ROOT = os.path.abspath(os.path.join(PROJECT_ROOT, ".."))
+CGM_DIR = os.path.join(WORKSPACE_ROOT, "dataset", "wearable_blood_glucose", "continuous_glucose_monitoring", "dexcom_g6")
+CLINICAL_EXT_PATH = os.path.join(PROJECT_ROOT, "data", "master_extended_dataset.csv")
+
+REPORTS_DIR = os.path.join(PROJECT_ROOT, "reports", "4_personalized_spike_analysis")
+DATA_OUT_DIR = os.path.join(REPORTS_DIR, "data")
+MASTER_DATA_DIR = os.path.join(PROJECT_ROOT, "data")
+
 os.makedirs(DATA_OUT_DIR, exist_ok=True)
+os.makedirs(MASTER_DATA_DIR, exist_ok=True)
 
 def parse_glucose_val(raw_val):
     if raw_val is None:

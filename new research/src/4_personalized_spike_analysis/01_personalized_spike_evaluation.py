@@ -9,14 +9,19 @@ import statsmodels.formula.api as smf
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Set paths
+# Set paths relative to new research structure
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-BASE_DIR = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
-CGM_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "dataset", "wearable_blood_glucose", "continuous_glucose_monitoring", "dexcom_g6"))
-CLINICAL_EXT_PATH = os.path.abspath(os.path.join(BASE_DIR, "..", "new research", "data", "master_extended_dataset.csv"))
-DATA_OUT_DIR = os.path.join(BASE_DIR, "data")
-FIG_OUT_DIR = os.path.join(BASE_DIR, "figures")
+PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "..", ".."))
+WORKSPACE_ROOT = os.path.abspath(os.path.join(PROJECT_ROOT, ".."))
+CGM_DIR = os.path.join(WORKSPACE_ROOT, "dataset", "wearable_blood_glucose", "continuous_glucose_monitoring", "dexcom_g6")
+CLINICAL_EXT_PATH = os.path.join(PROJECT_ROOT, "data", "master_extended_dataset.csv")
+MASTER_DATA_DIR = os.path.join(PROJECT_ROOT, "data")
 
+REPORTS_DIR = os.path.join(PROJECT_ROOT, "reports", "4_personalized_spike_analysis")
+DATA_OUT_DIR = os.path.join(REPORTS_DIR, "data")
+FIG_OUT_DIR = os.path.join(REPORTS_DIR, "figures")
+
+os.makedirs(MASTER_DATA_DIR, exist_ok=True)
 os.makedirs(DATA_OUT_DIR, exist_ok=True)
 os.makedirs(FIG_OUT_DIR, exist_ok=True)
 
@@ -173,6 +178,7 @@ def analyze_coverage_and_correlations():
     
     # Save master dataset with personalized spikes
     df_merged.to_csv(os.path.join(DATA_OUT_DIR, "personalized_spike_metrics.csv"), index=False)
+    df_merged.to_csv(os.path.join(MASTER_DATA_DIR, "personalized_spike_metrics.csv"), index=False)
     print(f"Saved merged dataset ({len(df_merged)} rows) to personalized_spike_metrics.csv")
     
     # ─── 1. COVERAGE ANALYSIS ───────────────────────────────────────────
@@ -220,7 +226,6 @@ def analyze_coverage_and_correlations():
     plt.figure(figsize=(10, 6))
     sns.set_theme(style="whitegrid")
     
-    # Sort groups for consistent display
     group_order = ['healthy', 'pre_diabetes_lifestyle_controlled', 'oral_medication_and_or_non_insulin_injectable_medication_controlled', 'insulin_dependent']
     group_labels = ['Healthy', 'Pre-Diabetes', 'T2D (Oral/Inj)', 'Insulin Dependent']
     
@@ -250,7 +255,7 @@ def analyze_coverage_and_correlations():
     plt.tight_layout()
     plt.savefig(os.path.join(FIG_OUT_DIR, "fig1_spike_definition_coverage.png"), dpi=300)
     plt.close()
-    print(f"Saved figure: fig1_spike_definition_coverage.png")
+    print("Saved figure: fig1_spike_definition_coverage.png")
 
     # ─── 2. CLINICAL & PSYCHOLOGICAL CORRELATIONS ───────────────────────
     print("\n" + "="*70)

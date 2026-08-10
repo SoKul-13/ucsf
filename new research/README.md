@@ -6,7 +6,7 @@ This repository contains a modular Python research pipeline and comprehensive do
 
 ## 1. Executive Summary & Research Framework
 
-The analytical pipeline is structured into **3 distinct sequential phases**, each addressing specific methodological questions:
+The analytical pipeline is structured into **4 distinct sequential phases**, each addressing specific methodological questions:
 
 ```
                           [ AI-READI Raw EHR & Dexcom G6 Data ]
@@ -22,13 +22,12 @@ The analytical pipeline is structured into **3 distinct sequential phases**, eac
 └───────────────────────────────────────┘     └───────────────────────────────────────┘
                                                            │
                                                            ▼
-                                              ┌───────────────────────────────────────┐
-                                              │   Phase 3: Spikes & Stratifications   │
-                                              │   ├── Continuous CGM glucose surges   │
-                                              │   ├── 3x4 Age x Diabetes Grid         │
-                                              │   ├── Item-level PAID-5 distress      │
-                                              │   └── Age x Diabetic Interaction OLS  │
-                                              └───────────────────────────────────────┘
+┌───────────────────────────────────────┐     ┌───────────────────────────────────────┐
+│   Phase 4: Personalized Spike ML      │     │   Phase 3: Spikes & Stratifications   │
+│   ├── Patient Z-score standardization ├───◄─│   ├── Continuous CGM glucose surges   │
+│   ├── 15m, 30m, 60m ML forecasting    │     │   ├── 3x4 Age x Diabetes Grid         │
+│   └── Diurnal & 168-hr weekly grid    │     │   ├── Item-level PAID-5 distress      │
+└───────────────────────────────────────┘     └───────────────────────────────────────┘
 ```
 
 ### Purpose of Each Phase:
@@ -44,6 +43,10 @@ The analytical pipeline is structured into **3 distinct sequential phases**, eac
 * **Phase 3: High-Frequency Spikes, Stratifications, & Interaction Econometrics (`3_spikes_surveys_and_interactions`)**
   * **Objective**: Move beyond static population averages to model high-frequency glucose surge dynamics ($>180 \text{ mg/dL}$ spikes), $3 \times 4$ demographic/questionnaire grid stratifications, item-level PAID-5 diabetes distress, Welch's t-tests with exact Standard Errors ($\text{SE}$), and non-linear interaction terms ($\text{Age}_{>65} \times \text{Diabetic}$).
   * **Key Outputs**: Dynamic surge predictive models, stratified subgroup matrices, and 4-quadrant linear models.
+
+* **Phase 4: Personalized Spike Modeling, Machine Learning Forecasting, & Weekly Management (`4_personalized_spike_analysis`)**
+  * **Objective**: Standardize individual patient baselines via Z-score transformation ($Z_{i,t} \ge 2.0$, $>2\text{ SD}$ surges) to address coverage equity across disease severity, build GroupKFold machine learning models forecasting spikes across 15, 30, and 60-minute horizons, evaluate cognitive/psychological correlations (MoCA and CESD-10 depression), and infer diurnal meal patterns and weekday vs. weekend management variability across a 168-hour grid.
+  * **Key Outputs**: Patient baseline standardization pipeline, 15m/30m/60m ML forecasting models, paired weekday vs. weekend statistical tests, and 168-hour weekly glycemic heatmaps.
 
 ---
 
@@ -71,21 +74,32 @@ new research/
 │   │   ├── survey_bootstrap.py            # 10,000-iteration permutation bootstrap
 │   │   ├── causal_inference.py            # FWL, PSM, IV-2SLS & Fixed Effects
 │   │   └── correlation_analysis.py        # Pearson & Spearman correlation matrices
-│   └── 3_spikes_surveys_and_interactions/ # Phase 3: Spikes & stratifications scripts
-│       ├── cgm_spike_extraction.py        # Continuous 5-min glucose surge parser
-│       ├── model_moca_spikes.py           # Spike duration & frequency logit models
-│       ├── aireadi_survey_stratified.py   # 3x4 Age x Diabetes stratification grid
-│       ├── moca_dummies_ttests.py         # Welch's t-tests (SE) & dummy regressions
-│       ├── paid_moca_analysis.py          # Item-level PAID-5 distress vs MoCA
-│       └── interaction_stratified_models.py# Non-linear interaction & 4-quadrant OLS
-├── data/                                  # Master CSV datasets
+│   ├── 3_spikes_surveys_and_interactions/ # Phase 3: Spikes & stratifications scripts
+│   │   ├── cgm_spike_extraction.py        # Continuous 5-min glucose surge parser
+│   │   ├── model_moca_spikes.py           # Spike duration & frequency logit models
+│   │   ├── aireadi_survey_stratified.py   # 3x4 Age x Diabetes stratification grid
+│   │   ├── moca_dummies_ttests.py         # Welch's t-tests (SE) & dummy regressions
+│   │   ├── paid_moca_analysis.py          # Item-level PAID-5 distress vs MoCA
+│   │   └── interaction_stratified_models.py# Non-linear interaction & 4-quadrant OLS
+│   └── 4_personalized_spike_analysis/    # Phase 4: Personalized spike ML & weekly dynamics
+│       ├── 01_personalized_spike_evaluation.py # Patient z-score standardization & clinical correlations
+│       ├── 02_extract_sliding_windows.py  # 805k parallel time-series sliding window extractor
+│       ├── 03_predictive_spike_models.py  # GroupKFold ML forecasting (15m, 30m, 60m horizons)
+│       └── 04_diurnal_weekly_management.py# Meal pattern inference, weekday/weekend tests & 168h grid
+├── data/                                  # Master CSV & Parquet datasets
 │   ├── master_cgm_moca_dataset.csv        # Phase 1 baseline dataset
 │   ├── master_extended_dataset.csv        # Phase 2 extended survey dataset
-│   └── master_cgm_spikes_dataset.csv      # Phase 3 high-frequency spike dataset
+│   ├── master_cgm_spikes_dataset.csv      # Phase 3 high-frequency spike dataset
+│   └── personalized_spike_metrics.csv     # Phase 4 master personalized spike dataset
 └── reports/                               # Output markdown reports organized by phase
     ├── 1_baseline_replication/            # Phase 1 markdown reports & CSV exports
     ├── 2_advanced_causal_and_survey/      # Phase 2 econometric & survey reports
-    └── 3_spikes_surveys_and_interactions/ # Phase 3 surge dynamic & interaction reports
+    ├── 3_spikes_surveys_and_interactions/ # Phase 3 surge dynamic & interaction reports
+    └── 4_personalized_spike_analysis/    # Phase 4 personalized spike reports, figures & data
+        ├── INDEPTH_EXPLANATION_AND_RESULTS.md # In-depth research report & executive synthesis
+        ├── personalized_spike_analysis.md # Comprehensive Phase 4 analytical report
+        ├── data/                          # Phase 4 output summary CSVs & window parquet
+        └── figures/                       # High-resolution PNG visualizations (Fig 1 - Fig 6)
 ```
 
 ---
@@ -97,7 +111,7 @@ To fully replicate the setup and run the validation scripts, execute the scripts
 ### Environment Setup
 ```bash
 # Navigate to the workspace root
-cd "/Users/guardian/Documents/GitHub/bcc/ucsf"
+cd ucsf
 
 # Activate the Python Virtual Environment
 source "new research/.venv/bin/activate"
@@ -157,6 +171,21 @@ python3 "new research/src/3_spikes_surveys_and_interactions/paid_moca_analysis.p
 python3 "new research/src/3_spikes_surveys_and_interactions/interaction_stratified_models.py"
 ```
 
+### Phase 4: Personalized Spike Modeling, Machine Learning Forecasting, & Weekly Dynamics
+```bash
+# 16. Standardize patient CGM baselines, evaluate >2 SD coverage equity & MoCA/CESD-10 correlations
+python3 "new research/src/4_personalized_spike_analysis/01_personalized_spike_evaluation.py"
+
+# 17. Parallel extract 805,789 sliding time-series window features across all participants
+python3 "new research/src/4_personalized_spike_analysis/02_extract_sliding_windows.py"
+
+# 18. Train 5-Fold GroupKFold ML models forecasting spikes 15, 30, and 60 minutes in advance
+python3 "new research/src/4_personalized_spike_analysis/03_predictive_spike_models.py"
+
+# 19. Analyze diurnal meal patterns vs diet score, weekday vs weekend volatility & 168-hour grid
+python3 "new research/src/4_personalized_spike_analysis/04_diurnal_weekly_management.py"
+```
+
 ---
 
 ## 4. Generated Reports Summary Table
@@ -174,10 +203,15 @@ python3 "new research/src/3_spikes_surveys_and_interactions/interaction_stratifi
 | **Phase 2** | **[`reports/2_advanced_causal_and_survey/analysis_implications_summary.md`](reports/2_advanced_causal_and_survey/analysis_implications_summary.md)** | Manual synthesis | Scientific summary of Phase 2 findings and implications. |
 | **Phase 2** | **[`reports/2_advanced_causal_and_survey/statistical_tests_and_logic_guide.md`](reports/2_advanced_causal_and_survey/statistical_tests_and_logic_guide.md)** | Manual guide | Comprehensive variable definitions, symbol guide, and test logic walkthrough. |
 | **Phase 3** | **[`reports/3_spikes_surveys_and_interactions/moca_spike_prediction_results.md`](reports/3_spikes_surveys_and_interactions/moca_spike_prediction_results.md)** | `src/3_spikes_surveys_and_interactions/model_moca_spikes.py` | Continuous glucose surge dynamics & logistic regression against MoCA. |
-| **Phase 3** | **[`reports/3_spikes_surveys_and_interactions/aireadi_surveys_age_diabetes_stratification.md`](reports/3_spikes_surveys_and_interactions/aireadi_surveys_age_diabetes_stratification.md)** | `src/3_spikes_surveys_and_interactions/aireadi_survey_stratified.py` | 3x4 grid stratification across age partitions and diabetes types. |
+| **Phase 3** | **[`reports/3_spikes_surveys_and_interactions/aireadi_surveys_age_diabetes_stratification.md`](reports/3_spikes_surveys_and_interactions/aireadi_survey_stratified.py)** | `src/3_spikes_surveys_and_interactions/aireadi_survey_stratified.py` | 3x4 grid stratification across age partitions and diabetes types. |
 | **Phase 3** | **[`reports/3_spikes_surveys_and_interactions/moca_dummies_ttests_results.md`](reports/3_spikes_surveys_and_interactions/moca_dummies_ttests_results.md)** | `src/3_spikes_surveys_and_interactions/moca_dummies_ttests.py` | Welch's t-tests with Standard Errors and multivariable dummy regressions. |
-| **Phase 3** | **[`reports/3_spikes_surveys_and_interactions/paid_moca_item_analysis.md`](reports/3_spikes_surveys_and_interactions/paid_moca_item_analysis.md)** | `src/3_spikes_surveys_and_interactions/paid_moca_analysis.py` | Item-level PAID-5 diabetes distress questions vs MoCA sub-scores. |
+| **Phase 3** | **[`reports/3_spikes_surveys_and_interactions/paid_moca_item_analysis.md`](reports/3_spikes_surveys_and_interactions/paid_moca_analysis.md)** | `src/3_spikes_surveys_and_interactions/paid_moca_analysis.py` | Item-level PAID-5 diabetes distress questions vs MoCA sub-scores. |
 | **Phase 3** | **[`reports/3_spikes_surveys_and_interactions/interaction_and_stratified_models.md`](reports/3_spikes_surveys_and_interactions/interaction_stratified_models.md)** | `src/3_spikes_surveys_and_interactions/interaction_stratified_models.py` | Non-linear interaction terms (Age x Diabetic) and 4-quadrant OLS models. |
+| **Phase 4** | **[`reports/4_personalized_spike_analysis/01_personalized_spike_and_equity_report.md`](reports/4_personalized_spike_analysis/01_personalized_spike_and_equity_report.md)** | `src/4_personalized_spike_analysis/01_personalized_spike_evaluation.py` | Deliverable 1: Z-score baseline standardization, >2 SD population coverage equity, MoCA & CESD-10 regressions. |
+| **Phase 4** | **[`reports/4_personalized_spike_analysis/02_predictive_spike_forecasting_report.md`](reports/4_personalized_spike_analysis/02_predictive_spike_forecasting_report.md)** | `src/4_personalized_spike_analysis/03_predictive_spike_models.py` | Deliverable 2: Machine Learning forecasting metrics (ROC-AUC, PR-AUC, F1, Brier) across 15m/30m/60m horizons. |
+| **Phase 4** | **[`reports/4_personalized_spike_analysis/03_diurnal_meal_and_snacking_taxonomy_report.md`](reports/4_personalized_spike_analysis/03_diurnal_meal_and_snacking_taxonomy_report.md)** | `src/4_personalized_spike_analysis/04_diurnal_weekly_management.py` | Deliverable 3: Algorithmic peak detection, 3-Meal vs Grazer taxonomy ($K_i$), postprandial clearance ($k$), diet validation. |
+| **Phase 4** | **[`reports/4_personalized_spike_analysis/04_weekday_vs_weekend_and_sdoh_report.md`](reports/4_personalized_spike_analysis/04_weekday_vs_weekend_and_sdoh_report.md)** | `src/4_personalized_spike_analysis/04_diurnal_weekly_management.py` | Deliverable 4: 15-metric battery, paired weekday vs weekend tests ($p = 5.56\times 10^{-25}$), work status, multi-survey SDOH. |
+| **Phase 4** | **[`reports/4_personalized_spike_analysis/05_phase_4_comprehensive_synthesis.md`](reports/4_personalized_spike_analysis/05_phase_4_comprehensive_synthesis.md)** | Manual synthesis | Master Phase 4 research synthesis pulling together all deliverables. |
 
 ---
 

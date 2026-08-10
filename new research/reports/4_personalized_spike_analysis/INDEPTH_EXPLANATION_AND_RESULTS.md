@@ -1,7 +1,7 @@
 # In-Depth Research Report: Personalized Glycemic Spike Modeling, Machine Learning Forecasting, & Diurnal/Weekly Behavioral Dynamics
 
 **Cohort**: UCSF / AI-READI Project ($N = 2,245$ CGM Traces, $N = 1,743$ Paired Clinical & Survey Profiles)  
-**Partitioned Output Directory**: [`ucsf/personalized_spike_analysis/`](file:///Users/guardian/Documents/GitHub/bcc/ucsf/personalized_spike_analysis)  
+**Partitioned Output Directory**: [`ucsf/new research/reports/4_personalized_spike_analysis/`](./)  
 
 ---
 
@@ -189,28 +189,30 @@ The 168-hour grid illustrates:
 All generated code, datasets, and visualizations are organized in the partitioned directory:
 
 ```
-ucsf/personalized_spike_analysis/
-├── src/
+ucsf/new research/
+├── src/4_personalized_spike_analysis/
 │   ├── 01_personalized_spike_evaluation.py   # Patient-level z-scores, coverage & correlation analysis
 │   ├── 02_extract_sliding_windows.py          # Parallel 805k time-series window feature extractor
 │   ├── 03_predictive_spike_models.py          # GroupKFold ML forecasting (15, 30, 60 min horizons)
 │   └── 04_diurnal_weekly_management.py        # Meal time inference, weekend vs weekday, 2D heatmaps
-├── data/
-│   ├── personalized_spike_metrics.csv         # 1,743 patient personalized spike summary table
-│   ├── coverage_comparison_summary.csv        # Cohort coverage comparison breakdown
-│   ├── clinical_correlations_summary.csv      # Bivariate & OLS correlation results
-│   ├── cgm_sliding_window_features.parquet    # 805,789 time-series feature samples
-│   ├── model_evaluation_results.csv           # Predictive model performance metrics across 18 configs
-│   ├── diurnal_hourly_grid.csv                # 291,426 168-hour weekly grid samples
-│   └── weekday_vs_weekend_patient_summary.csv # Patient-level weekday vs weekend management summary
-├── figures/
-│   ├── fig1_spike_definition_coverage.png     # Coverage & spike rate bar plots
-│   ├── fig2_clinical_correlation_comparison.png# Correlation matrix heatmap
-│   ├── fig3_predictive_model_performance.png  # ROC-AUC bar plot & 30-min ROC curves
-│   ├── fig4_inferred_meal_times_and_diet.png  # Diurnal profile & diet score boxplot
-│   ├── fig5_weekday_vs_weekend_variability.png# Weekday vs weekend CV boxplot
-│   └── fig6_heatmap_day_hour_glycemia.png     # 168-hour weekly grid heatmap
-└── INDEPTH_EXPLANATION_AND_RESULTS.md          # Comprehensive research explanation & results report
+└── reports/4_personalized_spike_analysis/
+    ├── INDEPTH_EXPLANATION_AND_RESULTS.md     # In-depth research report & executive synthesis
+    ├── personalized_spike_analysis.md         # Comprehensive Phase 4 analytical report
+    ├── data/
+    │   ├── personalized_spike_metrics.csv     # 1,743 patient personalized spike summary table
+    │   ├── coverage_comparison_summary.csv    # Cohort coverage comparison breakdown
+    │   ├── clinical_correlations_summary.csv  # Bivariate & OLS correlation results
+    │   ├── cgm_sliding_window_features.parquet# 805,789 time-series feature samples
+    │   ├── model_evaluation_results.csv       # Predictive model performance metrics across 18 configs
+    │   ├── diurnal_hourly_grid.csv            # 291,426 168-hour weekly grid samples
+    │   └── weekday_vs_weekend_patient_summary.csv # Patient-level weekday vs weekend management summary
+    └── figures/
+        ├── fig1_spike_definition_coverage.png # Coverage & spike rate bar plots
+        ├── fig2_clinical_correlation_comparison.png# Correlation matrix heatmap
+        ├── fig3_predictive_model_performance.png# ROC-AUC bar plot & 30-min ROC curves
+        ├── fig4_inferred_meal_times_and_diet.png# Diurnal profile & diet score boxplot
+        ├── fig5_weekday_vs_weekend_variability.png# Weekday vs weekend CV boxplot
+        └── fig6_heatmap_day_hour_glycemia.png # 168-hour weekly grid heatmap
 ```
 
 ---

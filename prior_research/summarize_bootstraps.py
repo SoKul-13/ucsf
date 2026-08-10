@@ -2,7 +2,7 @@ import pandas as pd
 import glob
 import os
 
-files = glob.glob('/Users/guardian/Documents/ucsf/eda_advanced_outputs/bootstraps/factorial_bootstrap_*.csv')
+files = glob.glob('eda_advanced_outputs/bootstraps/factorial_bootstrap_*.csv')
 
 output_lines = []
 output_lines.append("COMPREHENSIVE BOOTSTRAP INSIGHTS & SIGNIFICANT FINDINGS")
@@ -46,7 +46,7 @@ for f in files:
         
     output_lines.append("")
 
-with open('/Users/guardian/Documents/ucsf/eda_advanced_outputs/bootstraps/bootstrap_comprehensive_insights.txt', 'w') as out:
+with open('eda_advanced_outputs/bootstraps/bootstrap_comprehensive_insights.txt', 'w') as out:
     out.write('\n'.join(output_lines))
     
 print("Summary generated.")

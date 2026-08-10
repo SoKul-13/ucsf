@@ -155,3 +155,22 @@ For completeness, here are the full summary tables for our baseline replication:
 | Memory | C: 12.7, P: 12.7, M: 12.4, I: 11.9 | 0.008 | C: 18.0, P: 18.1, M: 18.2, I: 18.0 | 0.925 |
 | Orientation | C: 5.9, P: 5.9, M: 5.9, I: 5.8 | 0.133 | C: 6.1, P: 6.1, M: 6.1, I: 6.1 | 0.507 |
 | Abstraction | C: 1.9, P: 1.9, M: 1.9, I: 1.8 | 0.001 | C: 1.8, P: 1.8, M: 1.8, I: 1.7 | 0.061 |
+
+---
+
+## 6. Phase 4: Personalized Spike Modeling & Diurnal/Weekly Glycemic Management
+
+In Phase 4 (`src/4_personalized_spike_analysis/`), we extended the analytical pipeline to address population baseline heterogeneity and dynamic time-series forecasting:
+
+1. **Individual Standardization ($Z_{i,t}$)**:
+   $$\mu_i = \frac{1}{N_i} \sum_{t=1}^{N_i} G_{i,t}, \quad \sigma_i = \sqrt{\frac{1}{N_i - 1} \sum_{t=1}^{N_i} (G_{i,t} - \mu_i)^2}, \quad Z_{i,t} = \frac{G_{i,t} - \mu_i}{\sigma_i}$$
+   Personalized spikes were defined as $Z_{i,t} \ge 2.0$ ($>2\text{ SD}$ above patient baseline). This standardizes coverage to an equitable **~4.3% surge duration** across all clinical cohorts (healthy controls through insulin-dependent diabetics), eliminating the baseline elevation bias inherent in static $>140\text{ mg/dL}$ thresholds.
+
+2. **GroupKFold Machine Learning Spike Forecasting ($15, 30, 60$ Minutes)**:
+   Using 805,789 sliding window samples ($30\text{-min}$ stride) partitioned by `person_id`, we trained HistGradientBoosting, Random Forest, and Logistic Regression models. Features included historical lags ($t-5$ to $t-60$), velocity derivatives, rolling volatility ($\text{roll\_std}_{30}$), harmonic time embeddings, and clinical demographics. Models achieved high discrimination (**ROC-AUC up to 0.9863** at 15m and **0.9654** at 30m).
+
+3. **Diurnal & Weekly Management Dynamics**:
+   - **Inferred Meal Times**: Identified postprandial surges at 7-9 AM, 12-2 PM, and 6-8 PM. Inferred meal prominence correlated significantly with self-reported questionnaire diet quality ($\rho = -0.108, p < 0.0001$).
+   - **Weekday vs. Weekend Volatility**: Paired $t$-tests revealed **significantly lower glycemic volatility on weekends** ($0.1812$ vs. $0.1897$, $p = 5.56 \times 10^{-25}$), driven by workplace stress and rigid meal schedules on weekdays.
+   - **168-Hour Weekly Grid**: Evaluated mean glucose across all $7\text{ days} \times 24\text{ hours}$ to map weekly management profiles.
+

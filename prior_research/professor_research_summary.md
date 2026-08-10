@@ -5,7 +5,7 @@ Following the exploratory data analysis and hypothesis testing, three robust ana
 ## Research Area 1: Cardiac Autonomic Neuropathy (CAN)
 
 **The Core Question:** Can nocturnal glucose spikes and sleep fragmentation predict early onset of QTc prolongation and resting heart rate elevation?
-**Location:** `/Users/guardian/Documents/ucsf/research_q1_can/`
+**Location:** `research_q1_can/`
 
 ### The Professor's Evaluation: Highly Valid and Clinically Significant
 > "This is an excellent, grant-worthy question. When we ran your linear regression model against QTc (N=2,079 patients), we found that `std_glucose` (glucose spikes) is an incredibly powerful independent predictor of QTc prolongation ($p < 0.001$, coefficient = 0.2944). For every unit increase in glucose variability, the QTc interval lengthens by 0.29ms, even when adjusting for age.
@@ -17,7 +17,7 @@ Following the exploratory data analysis and hypothesis testing, three robust ana
 ## Research Area 2: Cognitive Decline vs. Glucose Modalities
 
 **The Core Question:** Do fragmented sleep architecture and high glycemic variability (spikes) have a compounding effect on MoCA score degradation?
-**Location:** `/Users/guardian/Documents/ucsf/research_q2_cognition/`
+**Location:** `research_q2_cognition/`
 
 ### The Professor's Evaluation: Theoretically Sound, but the Data Suggests a Different Reality
 > "You were smart to formulate an interaction term (`sleep_deprivation_x_glucose_spike`) to see if poor sleep multiplied the damage of glucose spikes on the brain. We built a robust OLS regression against the original MoCA scores. The data showed that the interaction term was a 'swing and a miss' ($p=0.585$).
@@ -31,7 +31,7 @@ Following the exploratory data analysis and hypothesis testing, three robust ana
 ## Research Area 3: Machine Learning for Diabetes Stage Classification
 
 **The Core Question:** Can an ML algorithm (Random Forest) accurately classify a patient's diabetes progression stage utilizing *only* ambient wearable data (Sleep, HRV, CGM)?
-**Location:** `/Users/guardian/Documents/ucsf/research_q3_ml_classification/`
+**Location:** `research_q3_ml_classification/`
 
 ### The Professor's Evaluation: A Methodologically Challenging but Impactful Pursuit
 > "You asked if we could diagnose a patient's disease progression without a blood draw, using just their smartwatch and a continuous glucose monitor (CGM). We trained a Random Forest and achieved a **48% accuracy** across four complex clinical classes. While 48% sounds low, remember that random guessing is 25%, making your model nearly twice as good as random chance!

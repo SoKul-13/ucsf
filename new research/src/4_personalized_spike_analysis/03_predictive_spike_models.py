@@ -10,11 +10,13 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier, HistGradientBoostingClassifier
 from sklearn.metrics import roc_auc_score, average_precision_score, accuracy_score, recall_score, f1_score, brier_score_loss, roc_curve
 
-# Set paths
+# Set paths relative to new research structure
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-BASE_DIR = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
-DATA_DIR = os.path.join(BASE_DIR, "data")
-FIG_DIR = os.path.join(BASE_DIR, "figures")
+PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "..", ".."))
+
+REPORTS_DIR = os.path.join(PROJECT_ROOT, "reports", "4_personalized_spike_analysis")
+DATA_DIR = os.path.join(REPORTS_DIR, "data")
+FIG_DIR = os.path.join(REPORTS_DIR, "figures")
 
 os.makedirs(DATA_DIR, exist_ok=True)
 os.makedirs(FIG_DIR, exist_ok=True)

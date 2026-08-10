@@ -4,7 +4,7 @@ from scipy.stats import kruskal, spearmanr
 
 print("--- SLEEP & GLUCOSE ---")
 try:
-    df_sleep = pd.read_csv('/Users/guardian/Documents/ucsf/eda_sleep_ecg_age_outputs/data/master_sleep_ecg_features.csv')
+    df_sleep = pd.read_csv('eda_sleep_ecg_age_outputs/data/master_sleep_ecg_features.csv')
     print("Columns:", df_sleep.columns.tolist())
     
     print("\nMean Glucose by Study Group:")
@@ -36,7 +36,7 @@ except Exception as e:
 
 print("\n--- IN-DEPTH ECG ---")
 try:
-    df_ecg = pd.read_csv('/Users/guardian/Documents/ucsf/eda_ecg_indepth_outputs/data/master_indepth_ecg_features.csv')
+    df_ecg = pd.read_csv('eda_ecg_indepth_outputs/data/master_indepth_ecg_features.csv')
     print("Columns:", df_ecg.columns.tolist())
     
     metrics = ['Rate', 'QTc', 'raw_SDNN_ms', 'raw_RMSSD_ms']

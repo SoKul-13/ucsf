@@ -13,7 +13,7 @@ This repository contains data parsing, statistical replication, econometrics, an
 ### Environment Setup
 ```bash
 # Clone repository and navigate to root directory
-cd "/Users/guardian/Documents/GitHub/bcc/ucsf"
+cd ucsf
 
 # Create virtual environment (if not already created)
 python3 -m venv "new research/.venv"
