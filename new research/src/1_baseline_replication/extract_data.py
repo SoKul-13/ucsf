@@ -40,19 +40,36 @@ def extract_cgm_metrics():
             if len(glucose_values) < 864:
                 continue
                 
-            mean_glucose = np.mean(glucose_values)
+            mean_glucose = float(np.mean(glucose_values))
+            glucose_sd = float(np.std(glucose_values))
+            mean_to_sd_ratio = mean_glucose / glucose_sd if glucose_sd > 0 else np.nan
             gmi = 3.31 + 0.02392 * mean_glucose
             
-            # Time in range (70 - 180 mg/dL)
-            in_range = [v for v in glucose_values if 70 <= v <= 180]
-            tir = len(in_range) / len(glucose_values) * 100
+            # Cutoffs:
+            # Severe hypo: < 54 strict
+            # Mod hypo: 54 - 69 inclusive
+            # Normal / TIR: 70 - 180 inclusive
+            # Mod hyper: 181 - 250 inclusive
+            # Severe hyper: > 250 strict
+            n_total = len(glucose_values)
+            tir = sum(1 for v in glucose_values if 70.0 <= v <= 180.0) / n_total * 100.0
+            pct_severe_hypo = sum(1 for v in glucose_values if v < 54.0) / n_total * 100.0
+            pct_mod_hypo = sum(1 for v in glucose_values if 54.0 <= v <= 69.0) / n_total * 100.0
+            pct_mod_hyper = sum(1 for v in glucose_values if 181.0 <= v <= 250.0) / n_total * 100.0
+            pct_severe_hyper = sum(1 for v in glucose_values if v > 250.0) / n_total * 100.0
             
             cgm_data.append({
                 'person_id': int(person_id.replace('AIREADI-', '') if 'AIREADI-' in person_id else person_id),
                 'mean_glucose': mean_glucose,
+                'glucose_sd': glucose_sd,
+                'mean_to_sd_ratio': mean_to_sd_ratio,
                 'gmi': gmi,
                 'tir': tir,
-                'cgm_readings_count': len(glucose_values)
+                'pct_severe_hypo': pct_severe_hypo,
+                'pct_mod_hypo': pct_mod_hypo,
+                'pct_mod_hyper': pct_mod_hyper,
+                'pct_severe_hyper': pct_severe_hyper,
+                'cgm_readings_count': n_total
             })
         except Exception as e:
             print(f"Error parsing {json_file}: {e}")

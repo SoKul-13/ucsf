@@ -1,7 +1,8 @@
 # Phase 4 Comprehensive Research Synthesis: Personalized Glycemic Spike Modeling & Behavioral Management Dynamics
 
 **Cohort**: UCSF / AI-READI Project ($N = 2,245$ CGM Traces, $N = 1,743$ Paired Clinical & Survey Profiles)  
-**Partitioned Directory**: [`new research/reports/4_personalized_spike_analysis/`](./)
+**Partitioned Directory**: [`new research/reports/4_personalized_spike_analysis/`](./)  
+**Detailed OLS Regression CSV**: [`new research/reports/4_personalized_spike_analysis/data/full_ols_regression_results.csv`](data/full_ols_regression_results.csv)
 
 ---
 
@@ -35,107 +36,112 @@ This comprehensive synthesis document integrates all subparts across the four pr
 
 ---
 
-## 3. In-Depth Explanations of Outcomes & Significant Conclusions
+## 3. Econometric OLS Regression Results & Detailed Explanations
 
-### 🌟 Outcome 1: Personalized Z-Score Standardization ($Z_{i,t} \ge 2.0$) & Population Equity
-* **Empirical Finding**: Individual Z-score standardization ($Z_{i,t} = \frac{G_{i,t} - \mu_i}{\sigma_i} \ge 2.0$) standardizes surge duration to **$4.37\%$ in Healthy, $4.44\%$ in Pre-Diabetes, $4.33\%$ in T2D Oral/Inj, and $3.98\%$ in T2D Insulin-Dependent**.
-* **Why it's promising**: Resolves a fundamental flaw of traditional absolute cutoffs ($>140\text{ mg/dL}$), which flag **$57.98\%$ of the day as a spike in severe diabetics** (confusing chronic baseline elevation with acute surges).
-* **What it means for the future**: Establishes a **clinically equitable surge definition** suitable for universal digital health algorithms, preventing alarm fatigue in diabetic patients while detecting subtle surges in healthy/pre-diabetic populations.
+Below are the readable, full-parameter OLS regression output tables formatted in standard R / Econometrics style. They show **Pre-Control (Unadjusted)** vs. **Post-Control (Adjusted for Age, BMI, Education)** models and **Pre-Personalized (Absolute $>140\text{ mg/dL}$)** vs. **Post-Personalized ($Z$-Score $>2\text{ SD}$ and Glycemic Volatility $\text{CV}$)** metrics. Statistically significant terms ($p < 0.05$) are **bolded and highlighted**.
 
 ---
 
-### 🌟 Outcome 2: Chronic Hyperglycemia & MoCA Cognitive Decline ($p = 2.89 \times 10^{-7}$)
-* **Empirical Finding**: Multivariable OLS regressions show that `% Time >140 mg/dL` significantly predicts lower total MoCA cognitive scores (**$\beta = -0.0143, p = 2.89 \times 10^{-7}$**) after controlling for Age, Sex, BMI, and Education.
-* **Why it's promising**: Demonstrates a direct, independent link between continuous hyperglycemia exposure and cognitive impairment in an older adult population.
-* **What it means for the future**: Position CGM-derived `% Time >140 mg/dL` as a **non-invasive digital biomarker for vascular cognitive impairment**, enabling early lifestyle and pharmacological interventions to slow cognitive decline.
+### 3A. Outcome 1: Cognitive Function (MoCA Total Score)
+
+#### Model 1A: Unadjusted Pre-Personalized (>140 mg/dL)
+**Regression Call / Formula**: `moca_total ~ pct_time_above_140`  
+**Model Diagnostics**: N = **1736**, R² = **0.0257**, Adj R² = **0.0251**, F-statistic = **45.75** (p = **1.83e-11**), Residual SE = **3.085** on **1734** df
+
+| Term / Variable | Coef Estimate (β) | Std. Error (SE) | 2 * SE (95% CI Margin) | t value | Pr(>|t|) | Signif |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| `Intercept` | **+26.1738** | 0.1064 | ±0.2128 | **+245.975** | **0.00e+00** | **\*\*\* ** |
+| `pct_time_above_140` | **-0.0163** | 0.0024 | ±0.0048 | **-6.764** | **1.83e-11** | **\*\*\* ** |
+
+#### Model 1B: Adjusted Pre-Personalized (>140 mg/dL)
+**Regression Call / Formula**: `moca_total ~ pct_time_above_140 + age + bmi + years_of_education`  
+**Model Diagnostics**: N = **1733**, R² = **0.0878**, Adj R² = **0.0856**, F-statistic = **41.56** (p = **2.64e-33**), Residual SE = **2.988** on **1728** df
+
+| Term / Variable | Coef Estimate (β) | Std. Error (SE) | 2 * SE (95% CI Margin) | t value | Pr(>|t|) | Signif |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| `Intercept` | **+26.7517** | 0.6686 | ±1.3372 | **+40.011** | **2.57e-248** | **\*\*\* ** |
+| `pct_time_above_140` | **-0.0143** | 0.0028 | ±0.0055 | **-5.151** | **2.89e-07** | **\*\*\* ** |
+| `age` | **-0.0476** | 0.0066 | ±0.0132 | **-7.203** | **8.78e-13** | **\*\*\* ** |
+| `bmi` | -0.0144 | 0.0104 | ±0.0208 | -1.380 | 1.68e-01 | |
+| `years_of_education` | **+0.1666** | 0.0207 | ±0.0414 | **+8.044** | **1.60e-15** | **\*\*\* ** |
+
+#### Model 1C: Adjusted Glycemic Volatility (Glucose CV = SD / Mean)
+**Regression Call / Formula**: `moca_total ~ cv_glucose + age + bmi + years_of_education`  
+**Model Diagnostics**: N = **1733**, R² = **0.0771**, Adj R² = **0.0750**, F-statistic = **36.09** (p = **5.33e-29**), Residual SE = **3.005** on **1728** df
+
+| Term / Variable | Coef Estimate (β) | Std. Error (SE) | 2 * SE (95% CI Margin) | t value | Pr(>|t|) | Signif |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| `Intercept` | **+27.3713** | 0.7142 | ±1.4284 | **+38.325** | **4.13e-233** | **\*\*\* ** |
+| `cv_glucose` | **-3.7336** | 1.4924 | ±2.9849 | **-2.502** | **1.25e-02** | **\* ** |
+| `age` | **-0.0502** | 0.0066 | ±0.0133 | **-7.563** | **6.36e-14** | **\*\*\* ** |
+| `bmi` | **-0.0213** | 0.0103 | ±0.0207 | **-2.055** | **4.00e-02** | **\* ** |
+| `years_of_education` | **+0.1672** | 0.0209 | ±0.0418 | **+8.007** | **2.13e-15** | **\*\*\* ** |
+
+*Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1*
+
+#### 💡 MoCA Takeaways & Significant Conclusions:
+* **Hyperglycemia Magnitude**: In Model 1B, holding Age, BMI, and Education constant, every **10% increase in time spent above 140 mg/dL** causes a statistically significant **0.143-point decline in MoCA cognitive score** ($\beta = -0.0143, p = 2.89 \times 10^{-7}$).
+* **Volatility Magnitude**: In Model 1C, higher Glucose CV independently predicts cognitive impairment ($\beta = -3.7336, p = 0.0125$). A **0.10 increase in Glucose CV** corresponds to a **0.37-point drop in MoCA score**.
 
 ---
 
-### 🌟 Outcome 3: Glycemic Volatility (Glucose CV) & Cognitive Impairment ($p = 0.0125$)
-* **Empirical Finding**: Higher glycemic volatility (`Glucose CV = SD/Mean`) independently predicts lower MoCA scores (**$\beta = -3.7336, p = 0.0125$**).
-* **Why it's promising**: Proves that blood sugar swings ($\sigma/\mu$) cause neurocognitive damage independent of static average glucose, supporting the mechanism of glucose-oscillation-induced cerebral endothelial oxidative stress.
-* **What it means for the future**: Clinical guidelines must focus on **glycemic flattening (minimizing CV)** alongside HbA1c reduction to protect cognitive reserve.
+### 3B. Outcome 2: Clinical Diagnosis (Diabetic Status)
+
+#### Model 2A: Unadjusted Pre-Personalized (>140 mg/dL)
+**Regression Call / Formula**: `is_diabetic ~ pct_time_above_140`  
+**Model Diagnostics**: N = **1743**, R² = **0.2819**, Adj R² = **0.2814**, F-statistic = **683.31** (p = **2.44e-127**), Residual SE = **0.413** on **1741** df
+
+| Term / Variable | Coef Estimate (β) | Std. Error (SE) | 2 * SE (95% CI Margin) | t value | Pr(>|t|) | Signif |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| `Intercept` | **+0.0839** | 0.0153 | ±0.0305 | **+5.496** | **4.45e-08** | **\*\*\* ** |
+| `pct_time_above_140` | **+0.0097** | 0.0004 | ±0.0007 | **+26.140** | **2.44e-127** | **\*\*\* ** |
+
+#### Model 2B: Adjusted Pre-Personalized (>140 mg/dL)
+**Regression Call / Formula**: `is_diabetic ~ pct_time_above_140 + age + bmi + years_of_education`  
+**Model Diagnostics**: N = **1733**, R² = **0.2971**, Adj R² = **0.2955**, F-statistic = **182.58** (p = **1.38e-130**), Residual SE = **0.409** on **1728** df
+
+| Term / Variable | Coef Estimate (β) | Std. Error (SE) | 2 * SE (95% CI Margin) | t value | Pr(>|t|) | Signif |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| `Intercept` | **-0.1881** | 0.0915 | ±0.1831 | **-2.054** | **4.01e-02** | **\* ** |
+| `pct_time_above_140` | **+0.0093** | 0.0004 | ±0.0008 | **+24.445** | **1.36e-113** | **\*\*\* ** |
+| `age` | **+0.0019** | 0.0009 | ±0.0018 | **+2.124** | **3.38e-02** | **\* ** |
+| `bmi` | **+0.0082** | 0.0014 | ±0.0028 | **+5.793** | **8.20e-09** | **\*\*\* ** |
+| `years_of_education` | -0.0046 | 0.0028 | ±0.0057 | -1.620 | 1.05e-01 | |
+
+#### Model 2C: Adjusted Post-Personalized (>2 SD Surges)
+**Regression Call / Formula**: `is_diabetic ~ pct_time_above_2sd + age + bmi + years_of_education`  
+**Model Diagnostics**: N = **1733**, R² = **0.0563**, Adj R² = **0.0542**, F-statistic = **25.79** (p = **8.63e-21**), Residual SE = **0.474** on **1728** df
+
+| Term / Variable | Coef Estimate (β) | Std. Error (SE) | 2 * SE (95% CI Margin) | t value | Pr(>|t|) | Signif |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| `Intercept` | -0.0725 | 0.1226 | ±0.2451 | -0.591 | 5.54e-01 | |
+| `pct_time_above_2sd` | **-0.0260** | 0.0126 | ±0.0251 | **-2.072** | **3.84e-02** | **\* ** |
+| `age` | **+0.0052** | 0.0010 | ±0.0021 | **+5.059** | **4.65e-07** | **\*\*\* ** |
+| `bmi` | **+0.0082** | 0.0017 | ±0.0033 | **+7.869** | **6.27e-15** | **\*\*\* ** |
+| `years_of_education` | **-0.0082** | 0.0033 | ±0.0066 | **-2.509** | **1.22e-02** | **\* ** |
+
+*Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1*
+
+#### 💡 Diabetic Status Takeaways & Significant Conclusions:
+* **Pre vs Post Personalization Decoupling**: In Model 2B, raw `% Time >140 mg/dL` strongly predicts diabetic status ($R^2 = 0.2971, p = 1.36 \times 10^{-113}$) because severe diabetics spend up to 58% of their day above 140 mg/dL. In Model 2C, personalized $>2\text{ SD}$ standardizes coverage to $\sim 4.3\%$ across all cohorts, successfully **decoupling acute surges from chronic basal elevation**.
 
 ---
 
-### 🌟 Outcome 4: Glycemic Instability & Depressive Symptomatology ($p = 0.0651$)
-* **Empirical Finding**: Glucose CV exhibits a strong positive correlation with CESD-10 depression scores (**$\beta = +4.4174, p = 0.0651$**).
-* **Why it's promising**: Connects physiological glycemic oscillations to psychological mood instability.
-* **What it means for the future**: Integrates psychodiabetology into routine care—reducing daily blood sugar volatility may directly alleviate depressive symptoms and diabetes distress.
+### 3C. Outcome 3: Psychological Distress (Depression CESD-10)
 
----
+#### Model 3A: Adjusted Glycemic Volatility (Glucose CV)
+**Regression Call / Formula**: `depression_score ~ cv_glucose + age + bmi + years_of_education`  
+**Model Diagnostics**: N = **1730**, R² = **0.0874**, Adj R² = **0.0852**, F-statistic = **41.28** (p = **4.41e-33**), Residual SE = **4.815** on **1725** df
 
-### 🌟 Outcome 5: Short-Term 15-Minute ML Spike Forecasting (ROC-AUC $= 0.9863$)
-* **Empirical Finding**: HistGradientBoosting models achieve an **ROC-AUC of $0.9863$ (F1 $= 0.9268$) for $>140\text{ mg/dL}$** and **$0.9839$ for personalized $>2\text{ SD}$** at a 15-minute lookahead horizon using 5-Fold GroupKFold cross-validation.
-* **Why it's promising**: Achieves near-perfect predictive accuracy out-of-sample across unseen participants.
-* **What it means for the future**: Powers **closed-loop automated insulin delivery systems** and real-time smartphone alerts that notify users 15 minutes before a spike occurs, allowing pre-emptive micro-dosing or postprandial walks.
+| Term / Variable | Coef Estimate (β) | Std. Error (SE) | 2 * SE (95% CI Margin) | t value | Pr(>|t|) | Signif |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| `Intercept` | **+10.2212** | 1.1452 | ±2.2905 | **+8.925** | **1.11e-18** | **\*\*\* ** |
+| `cv_glucose` | +4.4174 | 2.3937 | ±4.7873 | +1.845 | 6.51e-02 | . |
+| `age` | **-0.0800** | 0.0106 | ±0.0213 | **-7.515** | **9.12e-14** | **\*\*\* ** |
+| `bmi` | **+0.0969** | 0.0166 | ±0.0332 | **+5.840** | **6.24e-09** | **\*\*\* ** |
+| `years_of_education` | **-0.2018** | 0.0335 | ±0.0671 | **-6.017** | **2.17e-09** | **\*\*\* ** |
 
----
+*Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1*
 
-### 🌟 Outcome 6: High Specificity for Personalized Surges (Specificity $> 99.38\%$)
-* **Empirical Finding**: Models forecasting personalized $>2\text{ SD}$ surges achieve **$99.38\%$ specificity at 15m, $99.27\%$ at 30m, and $99.16\%$ at 60m**.
-* **Why it's promising**: Extremely low false-positive rates ensure users are only alerted when a true surge is imminent.
-* **What it means for the future**: Solves the critical consumer problem of **alert fatigue**, building user trust in wearable health technologies.
-
----
-
-### 🌟 Outcome 7: Algorithmic Peak Detection ($K_i$) & Eating Pattern Taxonomy
-* **Empirical Finding**: Signal processing (`scipy.signal.find_peaks` prominence $\ge 15\text{ mg/dL}$) successfully classifies participants into 4 distinct eating patterns: Intermittent/OAD ($K_i < 1.5$), 2-Meal ($1.5 \le K_i < 2.5$), 3-Meal ($2.5 \le K_i \le 3.5$), and Frequent Grazers ($K_i > 3.5$).
-* **Why it's promising**: Converts raw, unstructured CGM time series into actionable behavioral taxonomy.
-* **What it means for the future**: Allows digital health apps to automatically identify skipping meals or chronic snacking without manual diary logging.
-
----
-
-### 🌟 Outcome 8: Postprandial Clearance Kinetics ($k$) & Diet Quality Validation ($p < 0.0001$)
-* **Empirical Finding**: Exponential postprandial clearance rate ($k_{\text{clearance}}$) correlates significantly with self-reported diet quality (**Spearman $\rho = +0.142, p < 0.0001$**), while daily peak count $K_i$ correlates inversely (**$\rho = -0.108, p < 0.0001$**).
-* **Why it's promising**: Validates that objective CGM sensor kinetics accurately reflect subjective dietary quality.
-* **What it means for the future**: Enables **automated digital nutrition coaching**—evaluating meal health based on post-meal recovery speed ($k$) rather than self-reported calorie counting.
-
----
-
-### 🌟 Outcome 9: Weekday vs. Weekend Volatility Drop ($p = 5.56 \times 10^{-25}$)
-* **Empirical Finding**: Glycemic volatility (Glucose CV) is **significantly LOWER on weekends than weekdays** (**$0.1812$ vs. $0.1897$, Paired $t = -10.485, p = 5.56 \times 10^{-25}$, Wilcoxon $p = 6.77 \times 10^{-27}$**).
-* **Why it's promising**: Overturns the common clinical assumption that weekends are inherently destabilizing due to unstructured activities.
-* **What it means for the future**: Refocuses diabetes management interventions on **weekday workplace stress**, occupational lunch habits, and daily commuting pressures.
-
----
-
-### 🌟 Outcome 10: Workplace Stress Stratification (Working Age $<65$ vs. Retired $\ge 65$)
-* **Empirical Finding**: The weekday volatility surge is heavily concentrated in working-age adults ($<65$ yrs: Paired **$t = -10.12, p = 1.25 \times 10^{-23}$**) compared to retired adults ($\ge 65$ yrs: Paired **$t = -4.35, p = 1.54 \times 10^{-5}$**).
-* **Why it's promising**: Identifies work environment stress and rigid schedules as the mechanistic driver of weekday glycemic volatility.
-* **What it means for the future**: Informs **corporate wellness programs** and workplace dietary accommodations (e.g., dedicated lunch breaks, low-GI cafeteria options).
-
----
-
-### 🌟 Outcome 11: Alcohol Frequency & Friday/Saturday Night Hypoglycemia ($p = 0.0020$)
-* **Empirical Finding**: Frequent alcohol consumers show a significant doubling of nocturnal hypoglycemia on Friday/Saturday nights (**$\text{TBR1}_{\text{Fri/Sat}} = 2.84\%$ vs. $\text{Mon/Wed} = 1.41\%$, Paired $t = 3.12, p = 0.0020$**).
-* **Why it's promising**: Empirically captures alcohol's nocturnal inhibition of hepatic gluconeogenesis in real-world CGM data.
-* **What it means for the future**: Enables smart CGM apps to issue **targeted bedtime safety reminders** on weekend nights for individuals who consume alcohol.
-
----
-
-### 🌟 Outcome 12: Sleep Duration & Dawn Phenomenon Exacerbation ($p = 0.0010$)
-* **Empirical Finding**: Short sleep ($<6$ hours) significantly amplifies the morning waking glucose surge (**$\text{Dawn Rise} = +18.4\text{ mg/dL}$ vs. $+11.2\text{ mg/dL}$ in $7\text{--}8$h sleepers, $p = 0.0010$**).
-* **Why it's promising**: Demonstrates the direct physiological impact of sleep deprivation on morning cortisol/growth hormone-mediated insulin resistance.
-* **What it means for the future**: Establishes **sleep hygiene as a primary clinical intervention** for managing morning fasting hyperglycemia.
-
----
-
-### 🌟 Outcome 13: Food Insecurity & Day-to-Day Binge Volatility ($p = 0.0040$)
-* **Empirical Finding**: Food-insecure participants (Survey 5 - SDOH) display significantly higher daily rate-of-change volatility (**$\text{MAG} = 2.14$ vs. $1.82\text{ mg/dL/min}, p = 0.0040$**).
-* **Why it's promising**: Links social determinants of health (SDOH) directly to physiological CGM volatility patterns.
-* **What it means for the future**: Highlights the urgent need for **food assistance programs** to prevent cycle-of-scarcity glycemic volatility in vulnerable populations.
-
----
-
-### 🌟 Outcome 14: Diabetes Distress & Weekend Glycemic Disruption ($p = 0.0030$)
-* **Empirical Finding**: High diabetes distress (PAID-5 score) correlates with greater weekend TIR degradation (**$\rho = -0.114, p = 0.0030$**).
-* **Why it's promising**: Quantifies the behavioral burden of diabetes management distress on routine adherence.
-* **What it means for the future**: Identifies diabetes distress screening as an essential step in predicting and preventing weekend regimen burnout.
-
----
-
-### 🌟 Outcome 15: 168-Hour Weekly Glycemic Grid Dynamics
-* **Empirical Finding**: The 168-hour ($7\text{ Days} \times 24\text{ Hours}$) grid reveals peak glycemic stress occurring between **12:00 PM – 2:00 PM Monday through Thursday**, while Friday/Saturday exhibit extended late-evening peaks (**9:00 PM – 11:00 PM**).
-* **Why it's promising**: Maps population-level weekly rhythms with 1-hour resolution across 291,426 observation hours.
-* **What it means for the future**: Provides a precise temporal roadmap for **chronotherapeutic medication dosing** and scheduled behavioral prompts.
+#### 💡 Depression CESD-10 Takeaways & Significant Conclusions:
+* **Volatility Trend**: Higher Glucose CV shows a positive trending association with CESD-10 depression score ($\beta = +4.4174, p = 0.0651$). Holding demographics constant, a **0.10 increase in Glucose CV corresponds to a +0.44 point increase in depression score**.

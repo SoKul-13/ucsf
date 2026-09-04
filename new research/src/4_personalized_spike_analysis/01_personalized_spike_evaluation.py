@@ -257,15 +257,15 @@ def analyze_coverage_and_correlations():
     plt.close()
     print("Saved figure: fig1_spike_definition_coverage.png")
 
-    # ─── 2. CLINICAL & PSYCHOLOGICAL CORRELATIONS ───────────────────────
+    # ─── 2. CLINICAL & PSYCHOLOGICAL CORRELATIONS & DETAILED OLS REGRESSIONS ────
     print("\n" + "="*70)
-    print("CORRELATION ANALYSIS: SPIKE METRICS vs DIABETES, MOCA & DEPRESSION")
+    print("CORRELATION ANALYSIS & DETAILED OLS REGRESSION MODELS")
     print("="*70)
     
     targets = {
-        'Diabetic Status (is_diabetic)': 'is_diabetic',
-        'MoCA Total Score (moca_total)': 'moca_total',
-        'Depression CESD-10 (depression_score)': 'depression_score'
+        'Diabetic Status': 'is_diabetic',
+        'MoCA Total Score': 'moca_total',
+        'Depression CESD-10': 'depression_score'
     }
     
     predictors = [
@@ -277,24 +277,83 @@ def analyze_coverage_and_correlations():
     ]
     
     corr_results = []
+    ols_table_rows = []
     
     for t_name, t_col in targets.items():
         sub_df = df_merged.dropna(subset=[t_col])
         for p_name, p_col in predictors:
             sub_clean = sub_df.dropna(subset=[p_col])
             
-            # Pearson
+            # Pearson & Spearman
             r_p, p_val_p = stats.pearsonr(sub_clean[p_col], sub_clean[t_col])
-            # Spearman
             r_s, p_val_s = stats.spearmanr(sub_clean[p_col], sub_clean[t_col])
             
-            # OLS Regression controlling for Age, Sex, BMI, Education
-            formula = f"{t_col} ~ {p_col} + age + bmi + years_of_education"
+            # 1. Unadjusted Model
+            formula_unadj = f"{t_col} ~ {p_col}"
             try:
-                model = smf.ols(formula, data=sub_clean).fit()
-                beta = model.params[p_col]
-                beta_p = model.pvalues[p_col]
-                r2 = model.rsquared
+                mod_unadj = smf.ols(formula_unadj, data=sub_clean).fit()
+                for var in mod_unadj.params.index:
+                    coef = mod_unadj.params[var]
+                    se = mod_unadj.bse[var]
+                    pval = mod_unadj.pvalues[var]
+                    sig = '***' if pval < 0.001 else ('**' if pval < 0.01 else ('*' if pval < 0.05 else ('.' if pval < 0.1 else '')))
+                    ols_table_rows.append({
+                        'Outcome': t_name,
+                        'Model_Type': 'Unadjusted (Simple Regression)',
+                        'Predictor_Label': p_name,
+                        'Predictor_Col': p_col,
+                        'Term': var,
+                        'Coefficient': coef,
+                        'Std_Error': se,
+                        'Margin_2SE': 2.0 * se,
+                        't_value': mod_unadj.tvalues[var],
+                        'p_value': pval,
+                        'Significance': sig,
+                        'N_obs': mod_unadj.nobs,
+                        'R_squared': mod_unadj.rsquared,
+                        'Adj_R_squared': mod_unadj.rsquared_adj,
+                        'F_stat': mod_unadj.fvalue,
+                        'F_pvalue': mod_unadj.f_pvalue,
+                        'RSE': np.sqrt(mod_unadj.mse_resid),
+                        'df_resid': mod_unadj.df_resid
+                    })
+            except Exception as e:
+                pass
+                
+            # 2. Adjusted Model (controlling for Age, BMI, Education)
+            formula_adj = f"{t_col} ~ {p_col} + age + bmi + years_of_education"
+            sub_adj = sub_clean.dropna(subset=['age', 'bmi', 'years_of_education'])
+            try:
+                mod_adj = smf.ols(formula_adj, data=sub_adj).fit()
+                beta = mod_adj.params[p_col]
+                beta_p = mod_adj.pvalues[p_col]
+                r2 = mod_adj.rsquared
+                
+                for var in mod_adj.params.index:
+                    coef = mod_adj.params[var]
+                    se = mod_adj.bse[var]
+                    pval = mod_adj.pvalues[var]
+                    sig = '***' if pval < 0.001 else ('**' if pval < 0.01 else ('*' if pval < 0.05 else ('.' if pval < 0.1 else '')))
+                    ols_table_rows.append({
+                        'Outcome': t_name,
+                        'Model_Type': 'Adjusted (+ Age, BMI, Education)',
+                        'Predictor_Label': p_name,
+                        'Predictor_Col': p_col,
+                        'Term': var,
+                        'Coefficient': coef,
+                        'Std_Error': se,
+                        'Margin_2SE': 2.0 * se,
+                        't_value': mod_adj.tvalues[var],
+                        'p_value': pval,
+                        'Significance': sig,
+                        'N_obs': mod_adj.nobs,
+                        'R_squared': mod_adj.rsquared,
+                        'Adj_R_squared': mod_adj.rsquared_adj,
+                        'F_stat': mod_adj.fvalue,
+                        'F_pvalue': mod_adj.f_pvalue,
+                        'RSE': np.sqrt(mod_adj.mse_resid),
+                        'df_resid': mod_adj.df_resid
+                    })
             except Exception as e:
                 beta, beta_p, r2 = np.nan, np.nan, np.nan
                 
@@ -311,8 +370,12 @@ def analyze_coverage_and_correlations():
             })
             
     df_corr = pd.DataFrame(corr_results)
-    print(df_corr.to_string(index=False))
+    df_ols = pd.DataFrame(ols_table_rows)
+    
+    print("Exporting full OLS regression results CSV...")
     df_corr.to_csv(os.path.join(DATA_OUT_DIR, "clinical_correlations_summary.csv"), index=False)
+    df_ols.to_csv(os.path.join(DATA_OUT_DIR, "full_ols_regression_results.csv"), index=False)
+    print(f"Exported {len(df_ols)} detailed OLS regression term rows to full_ols_regression_results.csv.")
     
     # Heatmap of Pearson Correlations
     plt.figure(figsize=(10, 6))
