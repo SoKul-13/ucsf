@@ -227,6 +227,22 @@ python3 "new research/src/5_multimodal_cgm_analysis/run_multimodal_cgm_models.py
 # 22. Render the markdown table reports (full regression tables, sensitivity/exploratory tables, data dictionary)
 python3 "new research/src/5_multimodal_cgm_analysis/generate_reports.py"
 
+# 23. Phase 5b follow-ups: parsimonious CGM pair, HbA1c-CGM discordance, depression replication, splines, split-half
+python3 "new research/src/5_multimodal_cgm_analysis/run_phase5_followups.py"
+```
+
+### Phase 6: Subgroup Single-Predictor Analysis & Glucose Bands
+```bash
+# 24. Every glycaemic measure alone, in total / healthy / non-healthy; raw + FDR p (FDR only when n >= 1,000); band feasibility
+python3 "new research/src/6_subgroup_single_predictor_analysis/run_phase6_analysis.py"
+
+# 25. Render Phase 6 markdown tables (full single-predictor tables, glucose-band analyses, methods log)
+python3 "new research/src/6_subgroup_single_predictor_analysis/generate_phase6_reports.py"
+
+# 26. Phase 6b: repeat the grid inside actual-value glucose cohorts (within 54-250, any < 54, any > 250, near-normal >= 99% TIR)
+python3 "new research/src/6_subgroup_single_predictor_analysis/run_phase6b_glucose_cohorts.py"
+python3 "new research/src/6_subgroup_single_predictor_analysis/generate_phase6b_reports.py"
+
 # 23. Follow-up analyses: parsimonious CGM pair, HbA1c-CGM discordance (HGI), split-sample depression replication, splines, split-half stability
 python3 "new research/src/5_multimodal_cgm_analysis/run_phase5_followups.py"
 ```
@@ -261,6 +277,10 @@ python3 "new research/src/5_multimodal_cgm_analysis/run_phase5_followups.py"
 | **Phase 5** | **[`reports/5_multimodal_cgm_analysis/research_report_03_sensitivity_and_exploratory_tables.md`](reports/5_multimodal_cgm_analysis/research_report_03_sensitivity_and_exploratory_tables.md)** | `src/5_multimodal_cgm_analysis/generate_reports.py` | ≥ 7-day CGM, insulin-excluded, diabetes-only and non-diabetes samples; exploratory outcomes; 11-metric CGM sweep with FDR. |
 | **Phase 5** | **[`reports/5_multimodal_cgm_analysis/research_report_04_data_dictionary_and_methods_log.md`](reports/5_multimodal_cgm_analysis/research_report_04_data_dictionary_and_methods_log.md)** | `src/5_multimodal_cgm_analysis/generate_reports.py` | Variable dictionary, extraction rules, glucose cut-offs, statistical procedures, execution commands. |
 | **Phase 5** | **[`reports/5_multimodal_cgm_analysis/research_report_05_followups_parsimony_discordance_replication.md`](reports/5_multimodal_cgm_analysis/research_report_05_followups_parsimony_discordance_replication.md)** | `src/5_multimodal_cgm_analysis/run_phase5_followups.py` | Follow-ups: two-metric CGM pair vs four-metric block; HbA1c-CGM discordance (HGI) with red-cell adjustment; discovery/hold-out replication of the depression signal with sleep-regularity mediation; 4-group interactions and spline dose-response; split-half reliability. |
+| **Phase 5b** | **[`reports/5_multimodal_cgm_analysis/research_report_05_followups_parsimony_discordance_replication.md`](reports/5_multimodal_cgm_analysis/research_report_05_followups_parsimony_discordance_replication.md)** | `src/5_multimodal_cgm_analysis/run_phase5_followups.py` | Parsimonious CGM pair, HbA1c-CGM discordance (HGI), split-sample depression replication, dose-response splines, split-half stability. |
+| **Phase 6** | **[`reports/6_subgroup_single_predictor_analysis/research_report_01_subgroup_single_predictor_findings.md`](reports/6_subgroup_single_predictor_analysis/research_report_01_subgroup_single_predictor_findings.md)** | Manual synthesis from `run_phase6_analysis.py` outputs | Narrative: total vs healthy vs non-healthy, one predictor at a time, raw and FDR p, glucose-band feasibility and findings, inference. |
+| **Phase 6b** | [`research_report_05_glucose_cohort_tables.md`](reports/6_subgroup_single_predictor_analysis/research_report_05_glucose_cohort_tables.md), [`research_report_06_glucose_cohort_findings.md`](reports/6_subgroup_single_predictor_analysis/research_report_06_glucose_cohort_findings.md) | `src/6_subgroup_single_predictor_analysis/run_phase6b_glucose_cohorts.py`, `generate_phase6b_reports.py` | Single-predictor grid inside cohorts defined by each participant's own readings (within 54-250, any < 54, any > 250, near-normal); feasibility of the strict 70-180-only cohort; narrative. |
+| **Phase 6** | [`research_report_02_full_single_predictor_tables.md`](reports/6_subgroup_single_predictor_analysis/research_report_02_full_single_predictor_tables.md), [`research_report_03_glucose_band_analyses.md`](reports/6_subgroup_single_predictor_analysis/research_report_03_glucose_band_analyses.md), [`research_report_04_methods_and_sample_log.md`](reports/6_subgroup_single_predictor_analysis/research_report_04_methods_and_sample_log.md) | `src/6_subgroup_single_predictor_analysis/generate_phase6_reports.py` | All 1,302 single-predictor tests with raw p and two BH families; band-by-band tables; methods and sample rules. |
 | **Phase 5** | [`reports/5_multimodal_cgm_analysis/01_executive_summary_multimodal_cgm_comorbidity_analysis.md`](reports/5_multimodal_cgm_analysis/01_executive_summary_multimodal_cgm_comorbidity_analysis.md), [`02_cgm_vs_hba1c_head_to_head_comparative_analysis.md`](reports/5_multimodal_cgm_analysis/02_cgm_vs_hba1c_head_to_head_comparative_analysis.md), [`03_full_econometric_regression_prediction_tables.md`](reports/5_multimodal_cgm_analysis/03_full_econometric_regression_prediction_tables.md), [`04_execution_and_methodology_detailed_log.md`](reports/5_multimodal_cgm_analysis/04_execution_and_methodology_detailed_log.md) | `generate_head_to_head_report.py`, `generate_phase4_style_report.py` | Companion summaries produced by the earlier Phase 5 pass (three-model comparison in the Phase 4 table style). |
 
 ---

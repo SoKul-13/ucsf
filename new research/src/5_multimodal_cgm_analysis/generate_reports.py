@@ -377,6 +377,9 @@ def write_dictionary(R):
          "- Robustness: rank-based partial Spearman correlations, quadratic terms, diabetes-stratified slopes with interaction tests, >= 7-day CGM, insulin exclusion, diabetes-only and non-diabetes-only samples.",
          "- Follow-ups (report 05): nested tests for the two-metric pair; HGI models with and without red-cell indices; discovery/hold-out replication with one-sided hold-out tests in the pre-specified direction; bootstrap (500) mediation; 4-group interaction tests and natural cubic splines (`cr(x, df=4)`); split-half ICC(2,1).",
          "- Software: Python 3.14, pandas 3.0, statsmodels 0.14.6, scikit-learn 1.9, SciPy."]
+    sc = os.path.join(D, "sample_construction_section.md")
+    if os.path.exists(sc):
+        L.append(open(sc).read())
     with open(os.path.join(REPORT_DIR, "research_report_04_data_dictionary_and_methods_log.md"), "w") as f:
         f.write("\n".join(L))
 

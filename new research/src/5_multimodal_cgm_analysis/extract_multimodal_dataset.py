@@ -140,6 +140,11 @@ def parse_cgm(args):
         rec["mean_to_sd_ratio"] = rec["mean_glucose"] / rec["glucose_sd"] if rec["glucose_sd"] > 0 else np.nan
         rec["tbr_below_70"] = rec["pct_severe_hypo"] + rec["pct_mod_hypo"]
         rec["tar_above_180"] = rec["pct_mod_hyper"] + rec["pct_severe_hyper"]
+        rec["pct_54_250"] = 100.0 - rec["pct_severe_hypo"] - rec["pct_severe_hyper"]   # wide band 54-250 inclusive
+        rec["any_below_54"] = int((g < SEV_HYPO).any())
+        rec["any_above_250"] = int((g > SEV_HYPER).any())
+        rec["n_readings_below_54"] = int((g < SEV_HYPO).sum())
+        rec["n_readings_above_250"] = int((g > SEV_HYPER).sum())
         # mean absolute glucose change per hour (MAG)
         dt_h = df["t"].diff().dt.total_seconds().to_numpy()[1:] / 3600.0
         dg = np.abs(np.diff(g))
@@ -154,7 +159,11 @@ def parse_cgm(args):
             tir=lambda s: ((s >= TIR_LOW) & (s <= TIR_HIGH)).mean() * 100,
             tar=lambda s: (s > TIR_HIGH).mean() * 100,
             tbr=lambda s: (s < TIR_LOW).mean() * 100,
+            sev_hypo=lambda s: (s < SEV_HYPO).mean() * 100,
+            mod_hypo=lambda s: ((s >= SEV_HYPO) & (s < TIR_LOW)).mean() * 100,
+            mod_hyper=lambda s: ((s > TIR_HIGH) & (s <= SEV_HYPER)).mean() * 100,
             sev_hyper=lambda s: (s > SEV_HYPER).mean() * 100,
+            wide_54_250=lambda s: ((s >= SEV_HYPO) & (s <= SEV_HYPER)).mean() * 100,
             rng=lambda s: s.max() - s.min(),
         )
         valid = daily[daily["n"] >= DAY_COMPLETENESS * READINGS_PER_DAY]
@@ -168,6 +177,11 @@ def parse_cgm(args):
             rec["avg_daily_tar"] = float(valid["tar"].mean())
             rec["avg_daily_tbr"] = float(valid["tbr"].mean())
             rec["avg_daily_range"] = float(valid["rng"].mean())
+            rec["avg_daily_pct_below_54"] = float(valid["sev_hypo"].mean())
+            rec["avg_daily_pct_54_69"] = float(valid["mod_hypo"].mean())
+            rec["avg_daily_pct_181_250"] = float(valid["mod_hyper"].mean())
+            rec["avg_daily_pct_above_250"] = float(valid["sev_hyper"].mean())
+            rec["avg_daily_pct_54_250"] = float(valid["wide_54_250"].mean())
             rec["sd_of_daily_means"] = float(valid["mean"].std(ddof=1)) if len(valid) > 1 else np.nan
             rec["avg_daily_mean_to_sd"] = float((valid["mean"] / valid["sd"]).replace([np.inf, -np.inf], np.nan).mean())
         # nocturnal (00:00-05:59) and daytime means

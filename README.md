@@ -23,7 +23,7 @@ source "new research/.venv/bin/activate"
 pip install -r requirements.txt
 ```
 
-### Complete 5-Phase Execution Sequence
+### Complete 6-Phase Execution Sequence
 
 Run all research scripts in order from the repository root:
 
@@ -61,6 +61,13 @@ python3 "new research/src/4_personalized_spike_analysis/04_diurnal_weekly_manage
 python3 "new research/src/5_multimodal_cgm_analysis/extract_multimodal_dataset.py"   # CGM (54/70/180/250 cut-offs), OMOP, home sensor, Garmin
 python3 "new research/src/5_multimodal_cgm_analysis/run_multimodal_cgm_models.py"     # nested HbA1c / CGM / combined models, CV, FDR, figures
 python3 "new research/src/5_multimodal_cgm_analysis/generate_reports.py"              # markdown tables (research_report_02..04)
+python3 "new research/src/5_multimodal_cgm_analysis/run_phase5_followups.py"          # Phase 5b follow-ups (research_report_05)
+
+# ─── PHASE 6: SUBGROUP SINGLE-PREDICTOR ANALYSIS & GLUCOSE BANDS ─────────
+python3 "new research/src/6_subgroup_single_predictor_analysis/run_phase6_analysis.py"      # total / healthy / non-healthy, one predictor at a time, FDR rule
+python3 "new research/src/6_subgroup_single_predictor_analysis/generate_phase6_reports.py"  # markdown tables
+python3 "new research/src/6_subgroup_single_predictor_analysis/run_phase6b_glucose_cohorts.py" # actual-value glucose cohorts (within 54-250, <54, >250, near-normal)
+python3 "new research/src/6_subgroup_single_predictor_analysis/generate_phase6b_reports.py"    # cohort tables (research_report_05)
 python3 "new research/src/5_multimodal_cgm_analysis/run_phase5_followups.py"          # follow-ups: CGM pair, HGI discordance, replication, splines (research_report_05)
 ```
 
@@ -77,5 +84,6 @@ The project is structured into five unified research phases:
 | **Phase 3: Spikes & Stratifications** | Models continuous glucose surge dynamics ($>180\text{ mg/dL}$), $3 \times 4$ Age x Diabetes grid stratifications, item-level PAID-5 distress, Welch's t-tests (SE), and non-linear interactions ($\text{Age}_{>65} \times \text{Diabetic}$). | [`src/3_spikes_surveys_and_interactions/`](new%20research/src/3_spikes_surveys_and_interactions) | [`reports/3_spikes_surveys_and_interactions/`](new%20research/reports/3_spikes_surveys_and_interactions) |
 | **Phase 4: Personalized Spike ML** | Standardizes patient baselines ($Z_{i,t} \ge 2.0$), trains 15m/30m/60m GroupKFold forecasting models, and evaluates 168-hr weekly glycemic management. | [`src/4_personalized_spike_analysis/`](new%20research/src/4_personalized_spike_analysis) | [`reports/4_personalized_spike_analysis/`](new%20research/reports/4_personalized_spike_analysis) |
 | **Phase 5: CGM vs HbA1c for Comorbidity Prediction** | Tests whether four pre-specified CGM metrics (mean glucose, mean/SD, average daily TIR 70-180, average daily SD) predict cognition (MoCA), depression (CES-D-10), the home environment (LeeLab Anura) and wearable physiology (Garmin) better than HbA1c. Identical-sample nested models (covariates / HbA1c / CGM / combined), HC3 t and Wald z slope tests, nested F/LR tests, repeated 10-fold CV, DeLong, bootstrap, BH-FDR, diabetes-stratified and non-linearity checks. Main narrative: [`research_report_01_cgm_vs_hba1c_comorbidity_prediction.md`](new%20research/reports/5_multimodal_cgm_analysis/research_report_01_cgm_vs_hba1c_comorbidity_prediction.md); follow-ups (two-metric CGM pair, HbA1c-CGM discordance, split-sample replication, dose-response splines, split-half stability): [`research_report_05_followups_parsimony_discordance_replication.md`](new%20research/reports/5_multimodal_cgm_analysis/research_report_05_followups_parsimony_discordance_replication.md). | [`src/5_multimodal_cgm_analysis/`](new%20research/src/5_multimodal_cgm_analysis) | [`reports/5_multimodal_cgm_analysis/`](new%20research/reports/5_multimodal_cgm_analysis) |
+| **Phase 6: Subgroup Single-Predictor Analysis** | Every glycaemic measure (HbA1c and 30 CGM metrics incl. the < 54 / 54-69 / < 70 / 70-180 / 181-250 / > 180 / > 250 / 54-250 bands) entered alone against the 14 Phase 5 outcomes in the total cohort, the healthy group (no diabetes + pre-diabetes) and the non-healthy group (T2D oral + insulin); raw and BH-FDR p-values with FDR applied only where n >= 1,000; band feasibility check. Main narrative: [`research_report_01_subgroup_single_predictor_findings.md`](new%20research/reports/6_subgroup_single_predictor_analysis/research_report_01_subgroup_single_predictor_findings.md). | [`src/6_subgroup_single_predictor_analysis/`](new%20research/src/6_subgroup_single_predictor_analysis) | [`reports/6_subgroup_single_predictor_analysis/`](new%20research/reports/6_subgroup_single_predictor_analysis) |
 
 For complete documentation, variable dictionaries, and report indexes, refer to **[`new research/README.md`](new%20research/README.md)**.
