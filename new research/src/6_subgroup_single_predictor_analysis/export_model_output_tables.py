@@ -133,12 +133,17 @@ def write_md(path, header_lines, blocks):
 
 
 # ======================================================================================
+DOMAINS = ["Cognition", "Depression", "Home environment", "Wearable activity"]
+INDEX = []   # (phase, cohort, population, domain, relative path)
+
+
 def single_predictor_tables(base, phase_tag, out_dir, csv_name, cohort_key="all", cohort_label="All (analysis base)", md_prefix="phase6"):
     all_rows = []
     for gkey, (glabel, gsel) in P6.GROUPS.items():
         dg = gsel(base)
-        blocks = []
+        blocks_by_domain = {d: [] for d in DOMAINS}
         for dom, y, kind, lab, ef, ec in OUTCOMES:
+            blocks = blocks_by_domain[dom]
             covf = COV_FORMULA + ef
             d_out = dg.dropna(subset=[y] + BASE_COVS + ec).copy()
             if kind == "logit":
@@ -172,13 +177,23 @@ def single_predictor_tables(base, phase_tag, out_dir, csv_name, cohort_key="all"
                         "Predictor": pr, "Formula": f}
                 rows = model_rows(rb, ml, d, y, kind, meta); all_rows += rows
                 blocks.append(md_model_block(rows, kind, f"Predictor entered alone: {plab}  (N = {len(d):,})"))
-        name = f"{md_prefix}_{gkey}.md" if cohort_key == "all" else f"{md_prefix}_{cohort_key}_{gkey}.md"
-        write_md(os.path.join(out_dir, name),
-                 [f"# {phase_tag} model output tables - {cohort_label} - {glabel}", "",
-                  "Each glycaemic measure is entered alone with the Phase 5 covariates; all terms shown in the standard OLS-output format "
-                  "(HC3-robust SEs for OLS; z values and odds ratios for logistic models). The covariates-only reference model precedes each outcome's predictor models."],
-                 blocks)
-        print(f"  {phase_tag} {cohort_key} {gkey}: {len(blocks)} blocks")
+        sub_dir = os.path.join(out_dir, md_prefix if cohort_key == "all" else os.path.join(md_prefix, cohort_key), gkey)
+        os.makedirs(sub_dir, exist_ok=True)
+        for dom in DOMAINS:
+            blocks = blocks_by_domain[dom]
+            if not blocks:
+                continue
+            fname = dom.lower().replace(" ", "_") + ".md"
+            write_md(os.path.join(sub_dir, fname),
+                     [f"# {phase_tag} model output tables - {cohort_label} - {glabel} - {dom}", "",
+                      "Each glycaemic measure is entered alone with the Phase 5 covariates; all terms shown in the standard OLS-output format "
+                      "(HC3-robust SEs for OLS; z values and odds ratios for logistic models). The covariates-only reference model precedes each outcome's predictor models. "
+                      "[Index of all model-output files](../../README.md)" if cohort_key == "all" else
+                      "Each glycaemic measure is entered alone with the Phase 5 covariates; all terms shown in the standard OLS-output format "
+                      "(HC3-robust SEs for OLS; z values and odds ratios for logistic models). [Index of all model-output files](../../../README.md)"],
+                     blocks)
+            INDEX.append((phase_tag, cohort_label, glabel, dom, os.path.relpath(os.path.join(sub_dir, fname), out_dir)))
+        print(f"  {phase_tag} {cohort_key} {gkey}: written")
     return all_rows
 
 
@@ -198,6 +213,19 @@ def main():
                 print(f"  cohort {ck}: n = {len(d)} -> not possible"); continue
             rows += single_predictor_tables(d, "Phase 6b", R6, None, cohort_key=ck, cohort_label=clabel, md_prefix="phase6b")
         pd.DataFrame(rows).to_csv(os.path.join(R6, "phase6b_model_outputs.csv"), index=False)
+    # index
+    L = ["# Model output tables (Phases 6 and 6b)", "",
+         "Every fitted model with all terms (intercept, covariates, glycaemic predictor) in the standard OLS-output format: formula; N, R², adj R², F-test, residual SE, AIC, BIC "
+         "(logistic: N, events, McFadden R², LLR test, AUC); Coef, Std. Error, ±2 SE, t or z, p, significance codes (odds ratios for logistic models). "
+         "Files are split by population and outcome domain so that each renders in GitHub / VS Code. Machine-readable: `phase6_model_outputs.csv`, `phase6b_model_outputs.csv`.", ""]
+    cur = None
+    for phase_tag, clabel, glabel, dom, rel in INDEX:
+        head = f"## {phase_tag} - {clabel}"
+        if head != cur:
+            L += ["", head, ""]; cur = head
+        L.append(f"- [{glabel} - {dom}]({rel})")
+    with open(os.path.join(R6, "README.md"), "w") as f:
+        f.write("\n".join(L))
     print("done")
 
 

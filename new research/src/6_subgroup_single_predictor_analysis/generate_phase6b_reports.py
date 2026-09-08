@@ -40,15 +40,15 @@ def main():
     r["Predictor"] = r["predictor"].map(lambda p: SHORT.get(p, PREDICTORS.get(p, (p,))[0]))
     r["_po"] = r["predictor"].map({p: i for i, p in enumerate(PREDICTORS)}).fillna(999)
     cols_a = ["Predictor", "n", "coef", "se", "ci", "t / z", "p (raw)", "sig"]
-    hdr_a = ["Predictor (alone)", "N", "Coef (β)", "Std. Err.", "95% CI", "t / z", "Pr(>|t|)", "Signif"]
+    hdr_a = ["Predictor (alone)", "N", "Coef (β)", "Std. Err.", "95% CI", "t / z", "Pr(>\\|t\\|)", "Signif"]
     cols_b = ["Predictor", "Effect per 1 SD (95% CI)", "q rule", "q info", "fit", "dAIC covs", "dAIC HbA1c", "CV"]
-    hdr_b = ["Predictor (alone)", "β per 1 SD (95% CI)", f"q (rule: n >= {FDR_MIN_N})", "q (informational)", "Adj R² / AUC", "ΔAIC vs covs", "ΔAIC vs HbA1c", "CV R²/AUC (pred | covs)"]
+    hdr_b = ["Predictor (alone)", "β per 1 SD (95% CI)", f"q (rule: n >= {FDR_MIN_N})", "q (informational)", "Adj R² / AUC", "ΔAIC vs covs", "ΔAIC vs HbA1c", "CV R²/AUC (predictor vs covariates-only)"]
 
     L = ["# Phase 6b - Single-predictor tables inside the actual-value glucose cohorts", "",
          "Cohorts are defined by each participant's own CGM readings over the wear period; inside every cohort the full Phase 6 predictor set "
          "(HbA1c, CGM level and variability, time in range 70-180, and the glucose bands) is entered one measure at a time with the Phase 5 covariates, "
          "in the total, healthy (no diabetes + pre-diabetes) and non-healthy (T2D oral + insulin) populations.", "",
-         "**Table layout.** Per outcome: (A) model output on the raw scale, one row per single-predictor model (coefficient, HC3 SE, 95% CI, t/z, p, stars); (B) effect per 1 SD, BH q (rule and informational), adjusted R²/AUC, AIC differences, CV. Complete term-by-term output for every model is in `model_output_tables/phase6b_<cohort>_<population>.md` and `phase6b_model_outputs.csv`.", "",
+         "**Table layout.** Per outcome: (A) model output on the raw scale, one row per single-predictor model (coefficient, HC3 SE, 95% CI, t/z, p, stars); (B) effect per 1 SD, BH q (rule and informational), adjusted R²/AUC, AIC differences, CV. Complete term-by-term output for every model is in `model_output_tables/phase6b/<cohort>/<population>/<domain>.md` (index: `model_output_tables/README.md`) and `phase6b_model_outputs.csv`.", "",
          "## Cohort sizes and feasibility", ""]
     L.append(md_table(cs, ["cohort", "cohort_label", "n_total", "n_healthy", "n_non_healthy", "n_moca", "moca_lt26_events", "cesd_ge10_events", "n_env", "n_steps", "n_resting_hr", "n_sleep", "feasible"],
                       ["Cohort", "Definition", "N", "Healthy", "Non-healthy", "MoCA", "MoCA<26 events", "CES-D>=10 events", "Environment", "Steps", "Resting HR", "Sleep", "Feasible?"]))
@@ -57,15 +57,21 @@ def main():
           "## Significance counts", ""]
     c = counts.copy(); c["cohort"] = c["cohort"].map(lambda k: COHORTS[k][0]); c["group"] = c["group"].map(lambda g: GROUPS[g][0])
     L.append(md_table(c, ["cohort", "group", "tests", "n_min", "n_max", "sig_raw", "sig_q_informational"], ["Cohort", "Population", "Tests", "n min", "n max", "Raw p < 0.05", "Informational q < 0.05"]))
+    index = L + ["", "## Per-cohort table files (one file per cohort so that each renders in GitHub / VS Code)", ""]
     for ck in COHORTS:
         sub_c = r[r.cohort == ck]
-        L += ["", "---", "", f"## Cohort: {COHORTS[ck][0]}", ""]
+        fname = f"research_report_05_cohort_{ck}.md"
+        n = int(cs.loc[cs.cohort == ck, "n_total"].iloc[0])
         if len(sub_c) == 0:
-            n = int(cs.loc[cs.cohort == ck, "n_total"].iloc[0])
-            L.append(f"_Not analysed: only {n} participants (fewer than {MIN_COHORT_N}). See the near-normal substitute cohort._"); continue
+            index.append(f"- {COHORTS[ck][0]}: **not analysed** (only {n} participants, fewer than {MIN_COHORT_N})"); continue
+        index.append(f"- [{COHORTS[ck][0]}]({fname}) (N = {n:,})")
+        C = [f"# Phase 6b cohort tables - {COHORTS[ck][0]} (N = {n:,})", "",
+             "Back to the [cohort index](research_report_05_glucose_cohort_tables.md). Per outcome: (A) model output on the raw scale, one row per single-predictor model; "
+             "(B) effect per 1 SD, BH q (rule and informational), adjusted R²/AUC, AIC differences, CV. Full term-by-term output: `model_output_tables/phase6b/`.", ""]
         for g, (glabel, _) in GROUPS.items():
-            L.append(f"### Population: {glabel}\n")
+            C.append(f"## Population: {glabel}\n")
             for dom in ["Cognition", "Depression", "Home environment", "Wearable activity"]:
+                C.append(f"### Domain: {dom}\n")
                 for d, y, kind, lab, _, _ in OUTCOMES:
                     if d != dom:
                         continue
@@ -73,16 +79,18 @@ def main():
                     okk = sub[sub["skipped_reason"].fillna("") == ""]
                     if len(okk) == 0:
                         why = sub["skipped_reason"].dropna().unique()
-                        L.append(f"#### {lab}\n_no models_ ({'; '.join(why[:2]) if len(why) else 'no data'})\n"); continue
-                    n = int(okk["n"].max()); ev = okk["events"].dropna()
-                    L.append(f"#### {lab}\n*n = {n:,}" + (f"; events = {int(ev.iloc[0])}" if len(ev) else "") + f"; {'OLS (HC3)' if kind == 'ols' else 'logistic (Wald)'}*\n")
-                    L.append("**(A) Model output, raw scale**\n\n" + md_table(okk, cols_a, hdr_a) + "\n\n**(B) Standardised effect, multiplicity and fit**\n\n" + md_table(okk, cols_b, hdr_b))
+                        C.append(f"#### {lab}\n_no models_ ({'; '.join(why[:2]) if len(why) else 'no data'})\n"); continue
+                    nn = int(okk["n"].max()); ev = okk["events"].dropna()
+                    C.append(f"#### {lab}\n*n = {nn:,}" + (f"; events = {int(ev.iloc[0])}" if len(ev) else "") + f"; {'OLS (HC3)' if kind == 'ols' else 'logistic (Wald)'}*\n")
+                    C.append("**(A) Model output, raw scale**\n\n" + md_table(okk, cols_a, hdr_a) + "\n\n**(B) Standardised effect, multiplicity and fit**\n\n" + md_table(okk, cols_b, hdr_b))
                     sk = sub[sub["skipped_reason"].fillna("") != ""]
                     if len(sk):
-                        L.append("\nSkipped: " + "; ".join(f"{PREDICTORS.get(p, (p,))[0]} ({why})" for p, why in zip(sk["predictor"], sk["skipped_reason"])))
-                    L.append("")
+                        C.append("\nSkipped: " + "; ".join(f"{PREDICTORS.get(p, (p,))[0]} ({why})" for p, why in zip(sk["predictor"], sk["skipped_reason"])))
+                    C.append("")
+        with open(os.path.join(REPORT_DIR, fname), "w") as f:
+            f.write("\n".join(C))
     with open(os.path.join(REPORT_DIR, "research_report_05_glucose_cohort_tables.md"), "w") as f:
-        f.write("\n".join(L))
+        f.write("\n".join(index))
     print("written")
 
 
