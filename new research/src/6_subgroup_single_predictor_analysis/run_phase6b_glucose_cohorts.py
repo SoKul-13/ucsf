@@ -11,8 +11,8 @@ inside cohorts defined by each participant's OWN CGM readings:
   hyper_above_250 at least one reading > 250 (hyperglycaemia exposure)(n = 795)
 
 Inside every cohort the standard 70-180 time-in-range metrics remain part of the predictor set.
-FDR rule from Phase 6 (BH only when n >= 1,000) is applied; no cohort reaches it, so an
-informational BH q is also stored (`q_bh_informational_group_all`) and labelled as such.
+The Phase 6 FDR rule (BH only when the test's sample has n >= FDR_MIN_N) is applied per test;
+an informational BH q over all tests is also stored (`q_bh_informational_group_all`).
 """
 
 import os
@@ -85,7 +85,8 @@ def figures(allres, cs):
                 ax.text(j, i, f"{p:.2g}{mark}", ha="center", va="center", fontsize=5.4, color="white" if abs(piv.values[i, j]) > 3.5 else "#0b0b0b")
         ax.set_xticks(range(len(labs))); ax.set_xticklabels([l.split(" (")[0] for l in labs], rotation=60, ha="right", fontsize=7.5)
         n = int(cs.loc[cs.cohort == ck, "n_total"].iloc[0])
-        ax.set_title(f"{COHORTS[ck][0]}\n(total population, n = {n:,}; FDR rule not met, ** = informational BH q < 0.05)", fontsize=8, loc="left")
+        rule = "FDR rule met (n >= %d)" % P.FDR_MIN_N if sub["fdr_applied"].any() else "FDR rule not met (n < %d)" % P.FDR_MIN_N
+        ax.set_title(f"{COHORTS[ck][0]}\n(total population, n = {n:,}; {rule}; ** = BH q < 0.05 over all tests)", fontsize=8, loc="left")
     axes[0].set_yticks(range(len(preds))); axes[0].set_yticklabels([P.PREDICTORS[p][0] for p in preds], fontsize=7.5)
     fig.colorbar(im, ax=axes, fraction=0.012, pad=0.01).set_label("signed -log10 p", fontsize=8)
     fig.suptitle("Fig. 4  Single-predictor tests inside the actual-value glucose cohorts (total population). Cell = raw p; * p < 0.05", fontsize=9.5, x=0.01, ha="left")
@@ -120,6 +121,7 @@ def main():
     allres.to_csv(os.path.join(P.OUT_DATA, "cohort_all_results.csv"), index=False)
     ok = allres[allres["skipped_reason"].fillna("") == ""]
     counts = ok.groupby(["cohort", "group"]).agg(tests=("p", "size"), sig_raw=("sig_raw_05", "sum"), n_min=("n", "min"), n_max=("n", "max"),
+                                                 fdr_applied=("fdr_applied", "sum"), sig_fdr_all=("sig_fdr_05_group_all", "sum"),
                                                  sig_q_informational=("q_bh_informational_group_all", lambda s: int((s < 0.05).sum()))).reset_index()
     counts.to_csv(os.path.join(P.OUT_DATA, "cohort_significance_counts.csv"), index=False)
     print(counts.to_string())
@@ -127,5 +129,28 @@ def main():
     print("done")
 
 
+def fdr_only():
+    cs = pd.read_csv(os.path.join(P.OUT_DATA, "cohort_sizes.csv"))
+    results = []
+    for ck in COHORTS:
+        f = os.path.join(P.OUT_DATA, f"cohort_{ck}_results.csv")
+        if not os.path.exists(f):
+            continue
+        res = P.recompute_fdr(pd.read_csv(f)); res.to_csv(f, index=False); results.append(res)
+    allres = pd.concat(results, ignore_index=True)
+    allres.to_csv(os.path.join(P.OUT_DATA, "cohort_all_results.csv"), index=False)
+    ok = allres[allres["skipped_reason"].fillna("") == ""]
+    counts = ok.groupby(["cohort", "group"]).agg(tests=("p", "size"), sig_raw=("sig_raw_05", "sum"), n_min=("n", "min"), n_max=("n", "max"),
+                                                 fdr_applied=("fdr_applied", "sum"), sig_fdr_all=("sig_fdr_05_group_all", "sum"),
+                                                 sig_q_informational=("q_bh_informational_group_all", lambda s: int((s < 0.05).sum()))).reset_index()
+    counts.to_csv(os.path.join(P.OUT_DATA, "cohort_significance_counts.csv"), index=False)
+    print(counts.to_string())
+    figures(allres, cs)
+
+
 if __name__ == "__main__":
-    main()
+    import sys
+    if "--fdr-only" in sys.argv:
+        fdr_only()
+    else:
+        main()

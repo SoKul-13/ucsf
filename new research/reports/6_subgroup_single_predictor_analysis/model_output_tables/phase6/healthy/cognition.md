@@ -2029,3 +2029,25 @@ Each glycaemic measure is entered alone with the Phase 5 covariates; all terms s
 | **Avg. daily time > 250 (%)** | **-0.0377** | 0.0129 | ±0.0257 | **-2.928** | **0.0034** | ** |
 
 *Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1*
+
+
+## Interpretation - Healthy group (no diabetes + pre-diabetes / lifestyle) - Cognition
+
+Computed from the same models as the tables above (summary statistics in `data/`); bold rows in the tables above mark terms with p < 0.05.
+
+**Scope.** 93 single-predictor tests; 33 with raw p < 0.05 (about 5 expected by chance); FDR rule applied to 93 tests (samples with n >= 500), of which **6** are significant at BH q < 0.05 in the all-tests family and 24 in the within-outcome family.
+
+**By outcome (best out-of-sample predictor, then the associations that survive FDR):**
+
+- **MoCA total score (0-30)** (n = 1,271): best single predictor out of sample is **Mean glucose** (CV R² 0.094 vs 0.079 for covariates alone, gain +0.016; -0.412 per SD, p = 8.4e-05, q = 0.007). FDR-robust associations (3): GMI (lower outcome, -0.412 per SD, q = 0.007); Mean glucose (lower outcome, -0.412 per SD, q = 0.007); Nocturnal mean (lower outcome, -0.358 per SD, q = 0.025).
+- **Cognitive impairment (MoCA < 26)** (n = 1,271): best single predictor out of sample is **GMI** (CV AUC 0.647 vs 0.644 for covariates alone, gain +0.003; OR 1.14 per SD, p = 0.038, q = 0.238). No association survives FDR; nominal only: Mean glucose (p = 0.038), GMI (p = 0.038), Any <54 (0/1) (p = 0.046).
+- **MoCA memory index score (0-15)** (n = 1,271): best single predictor out of sample is **Nocturnal mean** (CV R² 0.056 vs 0.048 for covariates alone, gain +0.008; -0.274 per SD, p = 1.5e-04, q = 0.010). FDR-robust associations (3): Nocturnal mean (lower outcome, -0.274 per SD, q = 0.010); GMI (lower outcome, -0.26 per SD, q = 0.019); Mean glucose (lower outcome, -0.26 per SD, q = 0.019).
+
+**Most predictable outcomes (largest out-of-sample gain over covariates):** MoCA total score (0-30) (+0.016, via Mean glucose); MoCA memory index score (0-15) (+0.008, via Nocturnal mean); Cognitive impairment (MoCA < 26) (+0.003, via GMI). Gains below about 0.01 are negligible for individual-level prediction even when statistically significant.
+
+**Predictor families carrying the signal:** CGM level (6 FDR-significant / 8 raw-significant of 9); Band > 180 (0 FDR-significant / 6 raw-significant of 9); Range 70-180 (0 FDR-significant / 4 raw-significant of 6).
+Level metrics: 6 FDR-significant (8 raw); variability metrics: 0 FDR-significant (3 raw); HbA1c alone: 0 FDR-significant (1 raw) across the outcomes in this file.
+
+**Where a CGM metric beats HbA1c by more than 2 AIC on the same rows:** MoCA total score (Mean glucose, ΔAIC -12.7); Cognitive impairment (Mean glucose, ΔAIC -2.7); MoCA memory index score (Nocturnal mean, ΔAIC -11.5).
+
+_Interpretation note: all models are cross-sectional and covariate-adjusted (age, BMI, education, site, hypertension, high cholesterol, kidney disease, circulatory disease; season for environmental outcomes). Effects are per 1 SD of the predictor in this sample. Bold cells in the tables mark raw p < 0.05; q-values follow the FDR rule (BH applied when n >= 500)._

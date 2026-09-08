@@ -3089,3 +3089,26 @@ Each glycaemic measure is entered alone with the Phase 5 covariates; all terms s
 | Avg. daily time > 250 (%) | -0.0761 | 0.0442 | ±0.0884 | -1.724 | 0.0848 | . |
 
 *Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1*
+
+
+## Interpretation - Non-healthy group (T2D non-insulin + T2D insulin) - Home environment
+
+Computed from the same models as the tables above (summary statistics in `data/`); bold rows in the tables above mark terms with p < 0.05.
+
+**Scope.** 124 single-predictor tests; 10 with raw p < 0.05 (about 6 expected by chance); FDR rule applied to 124 tests (samples with n >= 500), of which **3** are significant at BH q < 0.05 in the all-tests family and 7 in the within-outcome family.
+
+**By outcome (best out-of-sample predictor, then the associations that survive FDR):**
+
+- **Indoor PM2.5, log(1 + mean ug/m3)** (n = 849): best single predictor out of sample is **%<70 (daily avg)** (CV R² 0.144 vs 0.131 for covariates alone, gain +0.013; +0.14 per SD, p = 0.004, q = 0.047). FDR-robust associations (3): SD of daily means (higher outcome, +0.113 per SD, q = 0.035); %<70 (pooled) (higher outcome, +0.137 per SD, q = 0.040); %<70 (daily avg) (higher outcome, +0.14 per SD, q = 0.047).
+- **Indoor temperature, mean (deg C)** (n = 849): best single predictor out of sample is **%54-69 (daily avg)** (CV R² 0.226 vs 0.226 for covariates alone, gain -0.000; +0.0803 per SD, p = 0.280, q = 0.501). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Indoor relative humidity, mean (%)** (n = 849): best single predictor out of sample is **Any >250 (0/1)** (CV R² 0.186 vs 0.186 for covariates alone, gain +0.000; -0.372 per SD, p = 0.095, q = 0.259). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Indoor VOC index, mean** (n = 849): best single predictor out of sample is **Mean/SD (daily avg)** (CV R² 0.032 vs 0.028 for covariates alone, gain +0.004; -1.38 per SD, p = 0.011, q = 0.088). No association survives FDR; nominal only: Mean/SD (daily avg) (p = 0.011).
+
+**Most predictable outcomes (largest out-of-sample gain over covariates):** Indoor PM2.5, log(1 + mean ug/m3) (+0.013, via %<70 (daily avg)); Indoor VOC index, mean (+0.004, via Mean/SD (daily avg)); Indoor relative humidity, mean (%) (+0.000, via Any >250 (0/1)); Indoor temperature, mean (deg C) (-0.000, via %54-69 (daily avg)). Gains below about 0.01 are negligible for individual-level prediction even when statistically significant.
+
+**Predictor families carrying the signal:** Band < 70 (2 FDR-significant / 2 raw-significant of 8); CGM variability (1 FDR-significant / 2 raw-significant of 32); Range 70-180 (0 FDR-significant / 2 raw-significant of 8).
+Level metrics: 0 FDR-significant (0 raw); variability metrics: 1 FDR-significant (2 raw); HbA1c alone: 0 FDR-significant (1 raw) across the outcomes in this file.
+
+**Where a CGM metric beats HbA1c by more than 2 AIC on the same rows:** Indoor PM2.5, log(1 + mean ug/m3) (%<70 (daily avg), ΔAIC -8.4); Indoor relative humidity, mean (Any >250 (0/1), ΔAIC -2.8); Indoor VOC index, mean (Mean/SD (daily avg), ΔAIC -2.9).
+
+_Interpretation note: all models are cross-sectional and covariate-adjusted (age, BMI, education, site, hypertension, high cholesterol, kidney disease, circulatory disease; season for environmental outcomes). Effects are per 1 SD of the predictor in this sample. Bold cells in the tables mark raw p < 0.05; q-values follow the FDR rule (BH applied when n >= 500)._

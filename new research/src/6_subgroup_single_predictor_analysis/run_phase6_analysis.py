@@ -46,7 +46,7 @@ OUT_FIG = os.path.join(REPORT_DIR, "figures")
 for d in (OUT_DATA, OUT_FIG):
     os.makedirs(d, exist_ok=True)
 
-FDR_MIN_N = 1000          # BH-FDR applied only when the test's sample has at least this many participants
+FDR_MIN_N = 500           # BH-FDR applied only when the test's sample has at least this many participants
 CV_SPLITS, CV_REPEATS = 10, 3
 
 GROUPS = {
@@ -135,6 +135,34 @@ def band_feasibility(base):
     return fe
 
 
+def recompute_fdr(res):
+    """(Re)compute every BH q column and significance flag from the stored raw p-values using the current FDR_MIN_N rule."""
+    res = res.copy()
+    ok = res["skipped_reason"].fillna("") == ""
+    res["fdr_applied"] = ok & (res["n"] >= FDR_MIN_N)
+    for fam_name, keys in (("q_bh_group_all_tests", ["group"]),
+                           ("q_bh_group_outcome", ["group", "outcome"]),
+                           ("q_bh_group_predictor", ["group", "predictor"]),
+                           ("q_bh_group_band", ["group", "band"])):
+        res[fam_name] = np.nan
+        sub = res[res["fdr_applied"]]
+        for _, idx in sub.groupby(keys).groups.items():
+            idx = list(idx)
+            if len(idx) >= 2:
+                res.loc[idx, fam_name] = multipletests(res.loc[idx, "p"], method="fdr_bh")[1]
+            elif len(idx) == 1:
+                res.loc[idx, fam_name] = res.loc[idx, "p"]
+    res["q_bh_informational_group_all"] = np.nan
+    for _, idx in res[ok].groupby("group").groups.items():
+        idx = list(idx)
+        if len(idx) >= 2:
+            res.loc[idx, "q_bh_informational_group_all"] = multipletests(res.loc[idx, "p"], method="fdr_bh")[1]
+    res["sig_raw_05"] = ok & (res["p"] < 0.05)
+    res["sig_fdr_05_group_all"] = res["q_bh_group_all_tests"] < 0.05
+    res["sig_fdr_05_group_outcome"] = res["q_bh_group_outcome"] < 0.05
+    return res
+
+
 def run_models(base, out_name="single_predictor_results_all_groups.csv", cohort="all", cohort_label="All (analysis base)",
                cv_splits=None, cv_repeats=None, verbose=True):
     global CV_SPLITS, CV_REPEATS
@@ -214,29 +242,7 @@ def run_models(base, out_name="single_predictor_results_all_groups.csv", cohort=
                           "skipped_reason": ""})
                 rows.append(r)
     res = pd.DataFrame(rows)
-    ok = res["skipped_reason"].fillna("") == ""
-    res["fdr_applied"] = ok & (res["n"] >= FDR_MIN_N)
-    for fam_name, keys in (("q_bh_group_all_tests", ["group"]),
-                           ("q_bh_group_outcome", ["group", "outcome"]),
-                           ("q_bh_group_predictor", ["group", "predictor"]),
-                           ("q_bh_group_band", ["group", "band"])):
-        res[fam_name] = np.nan
-        sub = res[res["fdr_applied"]]
-        for _, idx in sub.groupby(keys).groups.items():
-            idx = list(idx)
-            if len(idx) >= 2:
-                res.loc[idx, fam_name] = multipletests(res.loc[idx, "p"], method="fdr_bh")[1]
-            elif len(idx) == 1:
-                res.loc[idx, fam_name] = res.loc[idx, "p"]
-    # informational BH q over all valid tests in each population, computed regardless of the n >= FDR_MIN_N rule
-    res["q_bh_informational_group_all"] = np.nan
-    for _, idx in res[ok].groupby("group").groups.items():
-        idx = list(idx)
-        if len(idx) >= 2:
-            res.loc[idx, "q_bh_informational_group_all"] = multipletests(res.loc[idx, "p"], method="fdr_bh")[1]
-    res["sig_raw_05"] = ok & (res["p"] < 0.05)
-    res["sig_fdr_05_group_all"] = res["q_bh_group_all_tests"] < 0.05
-    res["sig_fdr_05_group_outcome"] = res["q_bh_group_outcome"] < 0.05
+    res = recompute_fdr(res)
     res.to_csv(os.path.join(OUT_DATA, out_name), index=False)
     return res
 
@@ -350,5 +356,23 @@ def main():
     print("done")
 
 
+def fdr_only():
+    """recompute q-values / flags / counts / figures from the saved results without refitting"""
+    res = pd.read_csv(os.path.join(OUT_DATA, "single_predictor_results_all_groups.csv"))
+    res = recompute_fdr(res)
+    res.to_csv(os.path.join(OUT_DATA, "single_predictor_results_all_groups.csv"), index=False)
+    counts, ok = summarise(res)
+    print(counts.to_string())
+    fe = pd.read_csv(os.path.join(OUT_DATA, "band_feasibility.csv"))
+    make_figures(ok, fe)
+    cfg_path = os.path.join(OUT_DATA, "config.json")
+    if os.path.exists(cfg_path):
+        cfg = json.load(open(cfg_path)); cfg["FDR_MIN_N"] = FDR_MIN_N
+        json.dump(cfg, open(cfg_path, "w"), indent=1)
+
+
 if __name__ == "__main__":
-    main()
+    if "--fdr-only" in sys.argv:
+        fdr_only()
+    else:
+        main()

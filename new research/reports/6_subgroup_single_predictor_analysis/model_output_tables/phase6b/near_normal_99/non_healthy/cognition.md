@@ -1337,3 +1337,24 @@ _could not be fitted (LinAlgError)_
 | Avg. daily time > 180 (%) | -0.9474 | 2.1766 | ±4.3533 | -0.435 | 0.6634 |  |
 
 *Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1*
+
+
+## Interpretation - Non-healthy group (T2D non-insulin + T2D insulin) - Cognition
+
+Computed from the same models as the tables above (summary statistics in `data/`); bold rows in the tables above mark terms with p < 0.05.
+
+**Scope.** 48 single-predictor tests; 0 with raw p < 0.05 (about 2 expected by chance); FDR rule applied to 0 tests (samples with n >= 500), of which **0** are significant at BH q < 0.05 in the all-tests family; no test met the FDR rule, so only raw p-values are available.
+
+**By outcome (best out-of-sample predictor, then the associations that survive FDR):**
+
+- **MoCA total score (0-30)** (n = 61): best single predictor out of sample is **HbA1c** (CV R² -0.525 vs -0.589 for covariates alone, gain +0.064; +0.428 per SD, p = 0.310). No glycaemic measure is associated with this outcome (all p > 0.05).
+- **MoCA memory index score (0-15)** (n = 61): best single predictor out of sample is **SD of daily means** (CV R² -0.589 vs -0.611 for covariates alone, gain +0.022; -0.507 per SD, p = 0.205). No glycaemic measure is associated with this outcome (all p > 0.05).
+
+**Most predictable outcomes (largest out-of-sample gain over covariates):** MoCA total score (0-30) (+0.064, via HbA1c); MoCA memory index score (0-15) (+0.022, via SD of daily means). Gains below about 0.01 are negligible for individual-level prediction even when statistically significant.
+
+**Predictor families carrying the signal:** HbA1c (0 FDR-significant / 0 raw-significant of 2); CGM level (0 FDR-significant / 0 raw-significant of 6); CGM variability (0 FDR-significant / 0 raw-significant of 16).
+Level metrics: 0 FDR-significant (0 raw); variability metrics: 0 FDR-significant (0 raw); HbA1c alone: 0 FDR-significant (0 raw) across the outcomes in this file.
+
+**Where a CGM metric beats HbA1c by more than 2 AIC on the same rows:** MoCA memory index score (%<70 (daily avg), ΔAIC -2.5).
+
+_Interpretation note: all models are cross-sectional and covariate-adjusted (age, BMI, education, site, hypertension, high cholesterol, kidney disease, circulatory disease; season for environmental outcomes). Effects are per 1 SD of the predictor in this sample. Bold cells in the tables mark raw p < 0.05; q-values follow the FDR rule (BH applied when n >= 500)._

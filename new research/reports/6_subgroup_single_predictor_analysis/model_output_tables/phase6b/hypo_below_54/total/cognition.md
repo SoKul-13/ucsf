@@ -1966,3 +1966,23 @@ Each glycaemic measure is entered alone with the Phase 5 covariates; all terms s
 | Avg. daily time > 250 (%) | -0.0500 | 0.0284 | ±0.0567 | -1.764 | 0.0778 | . |
 
 *Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1*
+
+
+## Interpretation - Total analysis base - Cognition
+
+Computed from the same models as the tables above (summary statistics in `data/`); bold rows in the tables above mark terms with p < 0.05.
+
+**Scope.** 90 single-predictor tests; 53 with raw p < 0.05 (about 4 expected by chance); FDR rule applied to 90 tests (samples with n >= 500), of which **24** are significant at BH q < 0.05 in the all-tests family and 46 in the within-outcome family.
+
+**By outcome (best out-of-sample predictor, then the associations that survive FDR):**
+
+- **MoCA total score (0-30)** (n = 638): best single predictor out of sample is **HbA1c** (CV R² 0.091 vs 0.067 for covariates alone, gain +0.024; -0.523 per SD, p = 1.7e-05, q = 0.002). FDR-robust associations (19): HbA1c (lower outcome, -0.523 per SD, q = 0.002); TIR 70-180 (pooled) (higher outcome, +0.475 per SD, q = 0.010); TIR 70-180 (daily avg) (higher outcome, +0.466 per SD, q = 0.013); Mean glucose (lower outcome, -0.435 per SD, q = 0.017); GMI (lower outcome, -0.435 per SD, q = 0.017); SD (pooled) (lower outcome, -0.442 per SD, q = 0.017); ....
+- **Cognitive impairment (MoCA < 26)** (n = 638): best single predictor out of sample is **HbA1c** (CV AUC 0.663 vs 0.641 for covariates alone, gain +0.021; OR 1.43 per SD, p = 2.7e-04, q = 0.008). FDR-robust associations (4): HbA1c (higher outcome, OR 1.43 per SD, q = 0.008); TIR 70-180 (pooled) (lower outcome, OR 0.75 per SD, q = 0.026); TIR 70-180 (daily avg) (lower outcome, OR 0.76 per SD, q = 0.028); SD (pooled) (higher outcome, OR 1.30 per SD, q = 0.037).
+- **MoCA memory index score (0-15)** (n = 638): best single predictor out of sample is **HbA1c** (CV R² 0.053 vs 0.043 for covariates alone, gain +0.010; -0.288 per SD, p = 0.005, q = 0.038). FDR-robust associations (1): HbA1c (lower outcome, -0.288 per SD, q = 0.038).
+
+**Most predictable outcomes (largest out-of-sample gain over covariates):** MoCA total score (0-30) (+0.024, via HbA1c); Cognitive impairment (MoCA < 26) (+0.021, via HbA1c); MoCA memory index score (0-15) (+0.010, via HbA1c). Gains below about 0.01 are negligible for individual-level prediction even when statistically significant.
+
+**Predictor families carrying the signal:** CGM variability (5 FDR-significant / 15 raw-significant of 24); Range 70-180 (4 FDR-significant / 6 raw-significant of 6); Band > 180 (3 FDR-significant / 7 raw-significant of 9).
+Level metrics: 3 FDR-significant (5 raw); variability metrics: 5 FDR-significant (15 raw); HbA1c alone: 3 FDR-significant (3 raw) across the outcomes in this file.
+
+_Interpretation note: all models are cross-sectional and covariate-adjusted (age, BMI, education, site, hypertension, high cholesterol, kidney disease, circulatory disease; season for environmental outcomes). Effects are per 1 SD of the predictor in this sample. Bold cells in the tables mark raw p < 0.05; q-values follow the FDR rule (BH applied when n >= 500)._

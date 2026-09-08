@@ -27,7 +27,7 @@ python3 "new research/src/6_subgroup_single_predictor_analysis/export_model_outp
 - Effects per 1 SD of the predictor (SD in that population and outcome sample); raw slope per unit also reported.
 - AIC of the predictor model minus AIC of (a) the covariates-only model and (b) the HbA1c-only model on the same rows.
 - Out-of-sample R2 / AUC from repeated 3 x 10-fold cross-validation for the predictor model and the covariates-only model.
-- FDR (rule #3): Benjamini-Hochberg applied only to tests whose sample has n >= 1000; families = (i) all tests in the population, (ii) all predictors within one outcome, (iii) all outcomes within one predictor, (iv) all tests within one band. Raw p-values are always reported alongside.
+- FDR (rule #3): Benjamini-Hochberg applied only to tests whose sample has n >= 500 (this includes the non-healthy group, n = 747-867); families = (i) all tests in the population, (ii) all predictors within one outcome, (iii) all outcomes within one predictor, (iv) all tests within one band. Raw p-values are always reported alongside; an informational q is also stored for tests below the threshold.
 
 ## How 'pooled' and 'day-averaged' metrics are calculated
 
@@ -135,3 +135,10 @@ Per-outcome samples (base minus participants missing that outcome; season of vis
 | % time high stress (> 50) | 1,879 | 259 |
 
 Covariate losses at step 4: BMI 4, education 11. Wearable losses: 248 with no Garmin record plus 18 with < 3 wear-days. Environment losses: 38 without >= 1 h of sensor data (84 participants with sensor data but < 3 sensor days were retained for the environmental outcomes, as in Phase 5). Populations: healthy = no diabetes + pre-diabetes/lifestyle; non-healthy = T2D oral/non-insulin + insulin.
+
+## How to read the result files
+
+- Tables (A) give the model output on the raw scale (coefficient per unit of the predictor, HC3 SE, 95% CI, t or z, p); bold = raw p < 0.05.
+- Tables (B) give the effect per 1 SD, the BH q-values (bold = q < 0.05 under the rule), adjusted R² or AUC, the AIC difference against the covariates-only and HbA1c-only models on the same rows, and the cross-validated R²/AUC of the predictor model next to the covariates-only model. A predictor matters for *prediction* only if the CV gain is positive; a gain below ~0.01 is negligible.
+- Each results file ends with an auto-generated interpretation: the best out-of-sample predictor per outcome, the associations that survive FDR, the outcomes that are not predictable from glycaemia, the predictor families carrying the signal, and where a CGM metric beats HbA1c by more than 2 AIC.
+- Full term-by-term model output (intercept and covariates) is in `model_output_tables/`.

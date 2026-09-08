@@ -555,3 +555,21 @@ Each glycaemic measure is entered alone with the Phase 5 covariates; all terms s
 | Circulatory disease | -1.5827 | 1.4856 | ±2.9712 | -1.065 | 0.2867 | 0.2054 |  |
 
 *Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1*
+
+
+## Interpretation - Non-healthy group (T2D non-insulin + T2D insulin) - Depression
+
+Computed from the same models as the tables above (summary statistics in `data/`); bold rows in the tables above mark terms with p < 0.05.
+
+**Scope.** 24 single-predictor tests; 0 with raw p < 0.05 (about 1 expected by chance); FDR rule applied to 0 tests (samples with n >= 500), of which **0** are significant at BH q < 0.05 in the all-tests family; no test met the FDR rule, so only raw p-values are available.
+
+**By outcome (best out-of-sample predictor, then the associations that survive FDR):**
+
+- **CES-D-10 depressive symptoms (0-30)** (n = 61): best single predictor out of sample is **%54-250 (pooled)** (CV R² -0.454 vs -0.488 for covariates alone, gain +0.033; +0.807 per SD, p = 0.129). No glycaemic measure is associated with this outcome (all p > 0.05).
+
+**Most predictable outcomes (largest out-of-sample gain over covariates):** CES-D-10 depressive symptoms (0-30) (+0.033, via %54-250 (pooled)). Gains below about 0.01 are negligible for individual-level prediction even when statistically significant.
+
+**Predictor families carrying the signal:** HbA1c (0 FDR-significant / 0 raw-significant of 1); CGM level (0 FDR-significant / 0 raw-significant of 3); CGM variability (0 FDR-significant / 0 raw-significant of 8).
+Level metrics: 0 FDR-significant (0 raw); variability metrics: 0 FDR-significant (0 raw); HbA1c alone: 0 FDR-significant (0 raw) across the outcomes in this file.
+
+_Interpretation note: all models are cross-sectional and covariate-adjusted (age, BMI, education, site, hypertension, high cholesterol, kidney disease, circulatory disease; season for environmental outcomes). Effects are per 1 SD of the predictor in this sample. Bold cells in the tables mark raw p < 0.05; q-values follow the FDR rule (BH applied when n >= 500)._

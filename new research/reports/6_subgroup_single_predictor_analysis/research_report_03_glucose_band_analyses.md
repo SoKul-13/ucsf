@@ -46,16 +46,16 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 
 | Predictor (alone) | N | N with time in band | Coef (β) | Std. Err. | 95% CI | t / z | Pr(>\|t\|) | Signif |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| MoCA total score ~ TIR 70-180 (pooled) | 2138 | 2135 | +0.01767 | 0.003736 | [0.01034, 0.02499] | 4.73 | 2.3e-06*** | *** |
-| MoCA total score ~ TIR 70-180 (daily avg) | 2138 | 2134 | +0.0173 | 0.003733 | [0.009983, 0.02461] | 4.63 | 3.6e-06*** | *** |
-| Cognitive impairment ~ TIR 70-180 (pooled) | 2138 | 2135 | -0.009435 | 0.002361 | [-0.01406, -0.004808] | -4.00 | 6.4e-05*** | *** |
-| Cognitive impairment ~ TIR 70-180 (daily avg) | 2138 | 2134 | -0.009318 | 0.00235 | [-0.01392, -0.004711] | -3.96 | 7.4e-05*** | *** |
-| MoCA memory index score ~ TIR 70-180 (pooled) | 2138 | 2135 | +0.008283 | 0.002884 | [0.002631, 0.01393] | 2.87 | 0.004** | ** |
-| MoCA memory index score ~ TIR 70-180 (daily avg) | 2138 | 2134 | +0.008252 | 0.002878 | [0.002611, 0.01389] | 2.87 | 0.004** | ** |
+| MoCA total score ~ TIR 70-180 (pooled) | 2138 | 2135 | **+0.01767** | 0.003736 | [0.01034, 0.02499] | **4.73** | **2.3e-06***** | *** |
+| MoCA total score ~ TIR 70-180 (daily avg) | 2138 | 2134 | **+0.0173** | 0.003733 | [0.009983, 0.02461] | **4.63** | **3.6e-06***** | *** |
+| Cognitive impairment ~ TIR 70-180 (pooled) | 2138 | 2135 | **-0.009435** | 0.002361 | [-0.01406, -0.004808] | **-4.00** | **6.4e-05***** | *** |
+| Cognitive impairment ~ TIR 70-180 (daily avg) | 2138 | 2134 | **-0.009318** | 0.00235 | [-0.01392, -0.004711] | **-3.96** | **7.4e-05***** | *** |
+| MoCA memory index score ~ TIR 70-180 (pooled) | 2138 | 2135 | **+0.008283** | 0.002884 | [0.002631, 0.01393] | **2.87** | **0.004**** | ** |
+| MoCA memory index score ~ TIR 70-180 (daily avg) | 2138 | 2134 | **+0.008252** | 0.002878 | [0.002611, 0.01389] | **2.87** | **0.004**** | ** |
 | CES-D-10 depressive symptoms ~ TIR 70-180 (pooled) | 2135 | 2132 | -0.007131 | 0.005948 | [-0.01879, 0.004526] | -1.20 | 0.231 |  |
 | CES-D-10 depressive symptoms ~ TIR 70-180 (daily avg) | 2135 | 2131 | -0.006853 | 0.005928 | [-0.01847, 0.004765] | -1.16 | 0.248 |  |
-| Clinically relevant depressive symptoms ~ TIR 70-180 (pooled) | 2135 | 2132 | -0.00548 | 0.002646 | [-0.01067, -0.0002939] | -2.07 | 0.038* | * |
-| Clinically relevant depressive symptoms ~ TIR 70-180 (daily avg) | 2135 | 2131 | -0.005251 | 0.00264 | [-0.01043, -7.569e-05] | -1.99 | 0.047* | * |
+| Clinically relevant depressive symptoms ~ TIR 70-180 (pooled) | 2135 | 2132 | **-0.00548** | 0.002646 | [-0.01067, -0.0002939] | **-2.07** | **0.038*** | * |
+| Clinically relevant depressive symptoms ~ TIR 70-180 (daily avg) | 2135 | 2131 | **-0.005251** | 0.00264 | [-0.01043, -7.569e-05] | **-1.99** | **0.047*** | * |
 | Indoor PM2.5, log(1 + mean ug/m3) ~ TIR 70-180 (pooled) | 2100 | 2097 | -0.002213 | 0.001156 | [-0.004479, 5.276e-05] | -1.91 | 0.056 |  |
 | Indoor PM2.5, log(1 + mean ug/m3) ~ TIR 70-180 (daily avg) | 2100 | 2096 | -0.002196 | 0.001152 | [-0.004453, 6.099e-05] | -1.91 | 0.057 |  |
 | Indoor temperature, mean ~ TIR 70-180 (pooled) | 2100 | 2097 | -0.001304 | 0.002407 | [-0.006021, 0.003414] | -0.54 | 0.588 |  |
@@ -68,23 +68,23 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 | Steps per wear-day ~ TIR 70-180 (daily avg) | 1872 | 1869 | -6.219 | 6.545 | [-19.05, 6.61] | -0.95 | 0.342 |  |
 | Brisk-cadence minutes per day ~ TIR 70-180 (pooled) | 1872 | 1869 | -0.02011 | 0.01861 | [-0.05658, 0.01636] | -1.08 | 0.280 |  |
 | Brisk-cadence minutes per day ~ TIR 70-180 (daily avg) | 1872 | 1869 | -0.01992 | 0.01855 | [-0.05627, 0.01644] | -1.07 | 0.283 |  |
-| Resting heart-rate proxy ~ TIR 70-180 (pooled) | 1877 | 1874 | -0.08406 | 0.01088 | [-0.1054, -0.06273] | -7.73 | 1.1e-14*** | *** |
-| Resting heart-rate proxy ~ TIR 70-180 (daily avg) | 1877 | 1874 | -0.08302 | 0.01082 | [-0.1042, -0.06181] | -7.67 | 1.7e-14*** | *** |
+| Resting heart-rate proxy ~ TIR 70-180 (pooled) | 1877 | 1874 | **-0.08406** | 0.01088 | [-0.1054, -0.06273] | **-7.73** | **1.1e-14***** | *** |
+| Resting heart-rate proxy ~ TIR 70-180 (daily avg) | 1877 | 1874 | **-0.08302** | 0.01082 | [-0.1042, -0.06181] | **-7.67** | **1.7e-14***** | *** |
 | Total sleep time per night ~ TIR 70-180 (pooled) | 1893 | 1891 | +0.09728 | 0.0818 | [-0.06305, 0.2576] | 1.19 | 0.234 |  |
 | Total sleep time per night ~ TIR 70-180 (daily avg) | 1893 | 1891 | +0.0946 | 0.08171 | [-0.06555, 0.2548] | 1.16 | 0.247 |  |
-| Garmin stress score, mean ~ TIR 70-180 (pooled) | 1879 | 1876 | -0.1501 | 0.0224 | [-0.194, -0.1061] | -6.70 | 2.1e-11*** | *** |
-| Garmin stress score, mean ~ TIR 70-180 (daily avg) | 1879 | 1876 | -0.1475 | 0.02228 | [-0.1911, -0.1038] | -6.62 | 3.6e-11*** | *** |
+| Garmin stress score, mean ~ TIR 70-180 (pooled) | 1879 | 1876 | **-0.1501** | 0.0224 | [-0.194, -0.1061] | **-6.70** | **2.1e-11***** | *** |
+| Garmin stress score, mean ~ TIR 70-180 (daily avg) | 1879 | 1876 | **-0.1475** | 0.02228 | [-0.1911, -0.1038] | **-6.62** | **3.6e-11***** | *** |
 
 **(B) Standardised effect, multiplicity and fit**
 
 | Predictor (alone) | β per 1 SD (95% CI) | q, all tests in population | q, this outcome | Adj R² / AUC | ΔAIC vs covs | ΔAIC vs HbA1c | CV R²/AUC (predictor vs covariates-only) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| MoCA total score ~ TIR 70-180 (pooled) | +0.356 [+0.208, +0.503] | 2.3e-05 (FDR<0.05) | 9.3e-06 (FDR<0.05) | 0.1117 | -26.4 | -1.7 | 0.1022 \| 0.0915 |
-| MoCA total score ~ TIR 70-180 (daily avg) | +0.350 [+0.202, +0.498] | 3.4e-05 (FDR<0.05) | 1.1e-05 (FDR<0.05) | 0.1113 | -25.4 | -0.8 | 0.1018 \| 0.0915 |
-| Cognitive impairment ~ TIR 70-180 (pooled) | OR 0.827 [0.753, 0.908] | 4.2e-04 (FDR<0.05) | 3.3e-04 (FDR<0.05) | 0.6738 | -14.2 | -0.6 | 0.6657 \| 0.6603 |
-| Cognitive impairment ~ TIR 70-180 (daily avg) | OR 0.828 [0.754, 0.909] | 4.7e-04 (FDR<0.05) | 3.3e-04 (FDR<0.05) | 0.6737 | -14.0 | -0.3 | 0.6655 \| 0.6603 |
-| MoCA memory index score ~ TIR 70-180 (pooled) | +0.167 [+0.053, +0.281] | 0.017 (FDR<0.05) | 0.016 (FDR<0.05) | 0.0749 | -6.0 | -0.6 | 0.0657 \| 0.0630 |
-| MoCA memory index score ~ TIR 70-180 (daily avg) | +0.167 [+0.053, +0.281] | 0.017 (FDR<0.05) | 0.016 (FDR<0.05) | 0.0749 | -6.0 | -0.6 | 0.0656 \| 0.0630 |
+| MoCA total score ~ TIR 70-180 (pooled) | **+0.356 [+0.208, +0.503]** | **2.3e-05 (FDR<0.05)** | **9.3e-06 (FDR<0.05)** | 0.1117 | -26.4 | -1.7 | 0.1022 \| 0.0915 |
+| MoCA total score ~ TIR 70-180 (daily avg) | **+0.350 [+0.202, +0.498]** | **3.4e-05 (FDR<0.05)** | **1.1e-05 (FDR<0.05)** | 0.1113 | -25.4 | -0.8 | 0.1018 \| 0.0915 |
+| Cognitive impairment ~ TIR 70-180 (pooled) | **OR 0.827 [0.753, 0.908]** | **4.2e-04 (FDR<0.05)** | **3.3e-04 (FDR<0.05)** | 0.6738 | -14.2 | -0.6 | 0.6657 \| 0.6603 |
+| Cognitive impairment ~ TIR 70-180 (daily avg) | **OR 0.828 [0.754, 0.909]** | **4.7e-04 (FDR<0.05)** | **3.3e-04 (FDR<0.05)** | 0.6737 | -14.0 | -0.3 | 0.6655 \| 0.6603 |
+| MoCA memory index score ~ TIR 70-180 (pooled) | **+0.167 [+0.053, +0.281]** | **0.017 (FDR<0.05)** | **0.016 (FDR<0.05)** | 0.0749 | -6.0 | -0.6 | 0.0657 \| 0.0630 |
+| MoCA memory index score ~ TIR 70-180 (daily avg) | **+0.167 [+0.053, +0.281]** | **0.017 (FDR<0.05)** | **0.016 (FDR<0.05)** | 0.0749 | -6.0 | -0.6 | 0.0656 \| 0.0630 |
 | CES-D-10 depressive symptoms ~ TIR 70-180 (pooled) | -0.144 [-0.379, +0.091] | 0.400 | 0.620 | 0.1035 | +0.2 | +0.4 | 0.0917 \| 0.0916 |
 | CES-D-10 depressive symptoms ~ TIR 70-180 (daily avg) | -0.139 [-0.374, +0.096] | 0.415 | 0.620 | 0.1035 | +0.3 | +0.5 | 0.0917 \| 0.0916 |
 | Clinically relevant depressive symptoms ~ TIR 70-180 (pooled) | OR 0.895 [0.807, 0.994] | 0.111 | 0.158 | 0.6827 | -2.2 | +0.5 | 0.6693 \| 0.6681 |
@@ -101,12 +101,12 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 | Steps per wear-day ~ TIR 70-180 (daily avg) | -124.676 [-381.867, +132.515] | 0.502 | 0.424 | 0.1355 | +0.5 | +8.5 | 0.1216 \| 0.1222 |
 | Brisk-cadence minutes per day ~ TIR 70-180 (pooled) | -0.401 [-1.129, +0.326] | 0.447 | 0.351 | 0.1564 | +0.3 | +8.5 | 0.1444 \| 0.1447 |
 | Brisk-cadence minutes per day ~ TIR 70-180 (daily avg) | -0.399 [-1.128, +0.330] | 0.450 | 0.351 | 0.1564 | +0.3 | +8.5 | 0.1444 \| 0.1447 |
-| Resting heart-rate proxy ~ TIR 70-180 (pooled) | -1.679 [-2.105, -1.253] | 6.3e-13 (FDR<0.05) | 5.2e-14 (FDR<0.05) | 0.1929 | -73.5 | -2.3 | 0.1805 \| 0.1482 |
-| Resting heart-rate proxy ~ TIR 70-180 (daily avg) | -1.667 [-2.092, -1.241] | 7.4e-13 (FDR<0.05) | 5.9e-14 (FDR<0.05) | 0.1923 | -72.3 | -1.1 | 0.1800 \| 0.1482 |
+| Resting heart-rate proxy ~ TIR 70-180 (pooled) | **-1.679 [-2.105, -1.253]** | **6.3e-13 (FDR<0.05)** | **5.2e-14 (FDR<0.05)** | 0.1929 | -73.5 | -2.3 | 0.1805 \| 0.1482 |
+| Resting heart-rate proxy ~ TIR 70-180 (daily avg) | **-1.667 [-2.092, -1.241]** | **7.4e-13 (FDR<0.05)** | **5.9e-14 (FDR<0.05)** | 0.1923 | -72.3 | -1.1 | 0.1800 \| 0.1482 |
 | Total sleep time per night ~ TIR 70-180 (pooled) | +1.916 [-1.242, +5.074] | 0.400 | 0.403 | 0.0340 | +0.6 | +9.5 | 0.0202 \| 0.0209 |
 | Total sleep time per night ~ TIR 70-180 (daily avg) | +1.872 [-1.297, +5.042] | 0.415 | 0.403 | 0.0340 | +0.6 | +9.5 | 0.0202 \| 0.0209 |
-| Garmin stress score, mean ~ TIR 70-180 (pooled) | -2.996 [-3.872, -2.119] | 4.6e-10 (FDR<0.05) | 9.0e-11 (FDR<0.05) | 0.1297 | -50.4 | +10.0 | 0.1143 \| 0.0902 |
-| Garmin stress score, mean ~ TIR 70-180 (daily avg) | -2.959 [-3.835, -2.083] | 7.1e-10 (FDR<0.05) | 1.2e-10 (FDR<0.05) | 0.1290 | -49.1 | +11.3 | 0.1137 \| 0.0902 |
+| Garmin stress score, mean ~ TIR 70-180 (pooled) | **-2.996 [-3.872, -2.119]** | **4.6e-10 (FDR<0.05)** | **9.0e-11 (FDR<0.05)** | 0.1297 | -50.4 | +10.0 | 0.1143 \| 0.0902 |
+| Garmin stress score, mean ~ TIR 70-180 (daily avg) | **-2.959 [-3.835, -2.083]** | **7.1e-10 (FDR<0.05)** | **1.2e-10 (FDR<0.05)** | 0.1290 | -49.1 | +11.3 | 0.1137 \| 0.0902 |
 
 ### Healthy group (no diabetes + pre-diabetes / lifestyle)
 
@@ -114,12 +114,12 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 
 | Predictor (alone) | N | N with time in band | Coef (β) | Std. Err. | 95% CI | t / z | Pr(>\|t\|) | Signif |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| MoCA total score ~ TIR 70-180 (pooled) | 1271 | 1271 | +0.03694 | 0.0124 | [0.01264, 0.06124] | 2.98 | 0.003** | ** |
-| MoCA total score ~ TIR 70-180 (daily avg) | 1271 | 1270 | +0.03636 | 0.01235 | [0.01215, 0.06057] | 2.94 | 0.003** | ** |
+| MoCA total score ~ TIR 70-180 (pooled) | 1271 | 1271 | **+0.03694** | 0.0124 | [0.01264, 0.06124] | **2.98** | **0.003**** | ** |
+| MoCA total score ~ TIR 70-180 (daily avg) | 1271 | 1270 | **+0.03636** | 0.01235 | [0.01215, 0.06057] | **2.94** | **0.003**** | ** |
 | Cognitive impairment ~ TIR 70-180 (pooled) | 1271 | 1271 | -0.009342 | 0.006898 | [-0.02286, 0.004178] | -1.35 | 0.176 |  |
 | Cognitive impairment ~ TIR 70-180 (daily avg) | 1271 | 1270 | -0.009166 | 0.006863 | [-0.02262, 0.004286] | -1.34 | 0.182 |  |
-| MoCA memory index score ~ TIR 70-180 (pooled) | 1271 | 1271 | +0.01922 | 0.007682 | [0.004165, 0.03428] | 2.50 | 0.012* | * |
-| MoCA memory index score ~ TIR 70-180 (daily avg) | 1271 | 1270 | +0.01978 | 0.007584 | [0.004917, 0.03465] | 2.61 | 0.009** | ** |
+| MoCA memory index score ~ TIR 70-180 (pooled) | 1271 | 1271 | **+0.01922** | 0.007682 | [0.004165, 0.03428] | **2.50** | **0.012*** | * |
+| MoCA memory index score ~ TIR 70-180 (daily avg) | 1271 | 1270 | **+0.01978** | 0.007584 | [0.004917, 0.03465] | **2.61** | **0.009**** | ** |
 | CES-D-10 depressive symptoms ~ TIR 70-180 (pooled) | 1270 | 1270 | -0.008615 | 0.02078 | [-0.04934, 0.03211] | -0.41 | 0.678 |  |
 | CES-D-10 depressive symptoms ~ TIR 70-180 (daily avg) | 1270 | 1269 | -0.009281 | 0.02065 | [-0.04976, 0.0312] | -0.45 | 0.653 |  |
 | Clinically relevant depressive symptoms ~ TIR 70-180 (pooled) | 1270 | 1270 | -0.01123 | 0.007324 | [-0.02559, 0.003122] | -1.53 | 0.125 |  |
@@ -136,8 +136,8 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 | Steps per wear-day ~ TIR 70-180 (daily avg) | 1125 | 1125 | +5.676 | 14.12 | [-21.99, 33.34] | 0.40 | 0.688 |  |
 | Brisk-cadence minutes per day ~ TIR 70-180 (pooled) | 1125 | 1125 | -0.02319 | 0.0452 | [-0.1118, 0.0654] | -0.51 | 0.608 |  |
 | Brisk-cadence minutes per day ~ TIR 70-180 (daily avg) | 1125 | 1125 | -0.02069 | 0.04515 | [-0.1092, 0.0678] | -0.46 | 0.647 |  |
-| Resting heart-rate proxy ~ TIR 70-180 (pooled) | 1128 | 1128 | -0.08501 | 0.03465 | [-0.1529, -0.01709] | -2.45 | 0.014* | * |
-| Resting heart-rate proxy ~ TIR 70-180 (daily avg) | 1128 | 1128 | -0.08287 | 0.03457 | [-0.1506, -0.01511] | -2.40 | 0.017* | * |
+| Resting heart-rate proxy ~ TIR 70-180 (pooled) | 1128 | 1128 | **-0.08501** | 0.03465 | [-0.1529, -0.01709] | **-2.45** | **0.014*** | * |
+| Resting heart-rate proxy ~ TIR 70-180 (daily avg) | 1128 | 1128 | **-0.08287** | 0.03457 | [-0.1506, -0.01511] | **-2.40** | **0.017*** | * |
 | Total sleep time per night ~ TIR 70-180 (pooled) | 1137 | 1137 | -0.1438 | 0.2544 | [-0.6424, 0.3548] | -0.57 | 0.572 |  |
 | Total sleep time per night ~ TIR 70-180 (daily avg) | 1137 | 1137 | -0.1516 | 0.2538 | [-0.649, 0.3457] | -0.60 | 0.550 |  |
 | Garmin stress score, mean ~ TIR 70-180 (pooled) | 1130 | 1130 | -0.09275 | 0.08238 | [-0.2542, 0.06871] | -1.13 | 0.260 |  |
@@ -147,12 +147,12 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 
 | Predictor (alone) | β per 1 SD (95% CI) | q, all tests in population | q, this outcome | Adj R² / AUC | ΔAIC vs covs | ΔAIC vs HbA1c | CV R²/AUC (predictor vs covariates-only) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| MoCA total score ~ TIR 70-180 (pooled) | +0.328 [+0.112, +0.543] | 0.052 | 0.011 (FDR<0.05) | 0.1100 | -16.2 | -2.5 | 0.0874 \| 0.0789 |
-| MoCA total score ~ TIR 70-180 (daily avg) | +0.324 [+0.108, +0.540] | 0.052 | 0.011 (FDR<0.05) | 0.1098 | -15.8 | -2.1 | 0.0871 \| 0.0789 |
+| MoCA total score ~ TIR 70-180 (pooled) | +0.328 [+0.112, +0.543] | 0.052 | **0.011 (FDR<0.05)** | 0.1100 | -16.2 | -2.5 | 0.0874 \| 0.0789 |
+| MoCA total score ~ TIR 70-180 (daily avg) | +0.324 [+0.108, +0.540] | 0.052 | **0.011 (FDR<0.05)** | 0.1098 | -15.8 | -2.1 | 0.0871 \| 0.0789 |
 | Cognitive impairment ~ TIR 70-180 (pooled) | OR 0.920 [0.816, 1.038] | 0.532 | 0.480 | 0.6608 | +0.2 | -0.1 | 0.6448 \| 0.6443 |
 | Cognitive impairment ~ TIR 70-180 (daily avg) | OR 0.922 [0.818, 1.039] | 0.533 | 0.480 | 0.6607 | +0.2 | -0.0 | 0.6445 \| 0.6443 |
-| MoCA memory index score ~ TIR 70-180 (pooled) | +0.171 [+0.037, +0.304] | 0.131 | 0.035 (FDR<0.05) | 0.0751 | -3.6 | -3.0 | 0.0496 \| 0.0477 |
-| MoCA memory index score ~ TIR 70-180 (daily avg) | +0.176 [+0.044, +0.309] | 0.104 | 0.028 (FDR<0.05) | 0.0754 | -4.0 | -3.3 | 0.0498 \| 0.0477 |
+| MoCA memory index score ~ TIR 70-180 (pooled) | +0.171 [+0.037, +0.304] | 0.131 | **0.035 (FDR<0.05)** | 0.0751 | -3.6 | -3.0 | 0.0496 \| 0.0477 |
+| MoCA memory index score ~ TIR 70-180 (daily avg) | +0.176 [+0.044, +0.309] | 0.104 | **0.028 (FDR<0.05)** | 0.0754 | -4.0 | -3.3 | 0.0498 \| 0.0477 |
 | CES-D-10 depressive symptoms ~ TIR 70-180 (pooled) | -0.076 [-0.434, +0.282] | 0.932 | 0.953 | 0.0910 | +1.7 | -0.3 | 0.0631 \| 0.0675 |
 | CES-D-10 depressive symptoms ~ TIR 70-180 (daily avg) | -0.082 [-0.439, +0.276] | 0.932 | 0.953 | 0.0910 | +1.6 | -0.4 | 0.0632 \| 0.0675 |
 | Clinically relevant depressive symptoms ~ TIR 70-180 (pooled) | OR 0.906 [0.798, 1.028] | 0.472 | 0.565 | 0.6956 | -0.2 | -1.4 | 0.6759 \| 0.6758 |
@@ -169,8 +169,8 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 | Steps per wear-day ~ TIR 70-180 (daily avg) | +48.810 [-189.118, +286.738] | 0.932 | 0.958 | 0.1246 | +1.8 | +5.1 | 0.1064 \| 0.1080 |
 | Brisk-cadence minutes per day ~ TIR 70-180 (pooled) | -0.199 [-0.958, +0.560] | 0.932 | 0.931 | 0.1389 | +1.7 | +5.1 | 0.1232 \| 0.1245 |
 | Brisk-cadence minutes per day ~ TIR 70-180 (daily avg) | -0.178 [-0.939, +0.583] | 0.932 | 0.931 | 0.1388 | +1.7 | +5.2 | 0.1231 \| 0.1245 |
-| Resting heart-rate proxy ~ TIR 70-180 (pooled) | -0.728 [-1.309, -0.146] | 0.137 | 0.034 (FDR<0.05) | 0.1378 | -8.8 | +2.4 | 0.1081 \| 0.1044 |
-| Resting heart-rate proxy ~ TIR 70-180 (daily avg) | -0.712 [-1.294, -0.130] | 0.137 | 0.034 (FDR<0.05) | 0.1375 | -8.4 | +2.9 | 0.1076 \| 0.1044 |
+| Resting heart-rate proxy ~ TIR 70-180 (pooled) | -0.728 [-1.309, -0.146] | 0.137 | **0.034 (FDR<0.05)** | 0.1378 | -8.8 | +2.4 | 0.1081 \| 0.1044 |
+| Resting heart-rate proxy ~ TIR 70-180 (daily avg) | -0.712 [-1.294, -0.130] | 0.137 | **0.034 (FDR<0.05)** | 0.1375 | -8.4 | +2.9 | 0.1076 \| 0.1044 |
 | Total sleep time per night ~ TIR 70-180 (pooled) | -1.155 [-5.159, +2.849] | 0.932 | 0.936 | 0.0208 | +1.7 | +3.7 | -0.0068 \| -0.0051 |
 | Total sleep time per night ~ TIR 70-180 (daily avg) | -1.222 [-5.231, +2.787] | 0.932 | 0.936 | 0.0209 | +1.6 | +3.6 | -0.0068 \| -0.0051 |
 | Garmin stress score, mean ~ TIR 70-180 (pooled) | -0.793 [-2.174, +0.588] | 0.638 | 0.471 | 0.0746 | -0.5 | +7.2 | 0.0489 \| 0.0510 |
@@ -182,18 +182,18 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 
 | Predictor (alone) | N | N with time in band | Coef (β) | Std. Err. | 95% CI | t / z | Pr(>\|t\|) | Signif |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| MoCA total score ~ TIR 70-180 (pooled) | 867 | 864 | +0.009848 | 0.004539 | [0.0009518, 0.01874] | 2.17 | 0.030* | * |
-| MoCA total score ~ TIR 70-180 (daily avg) | 867 | 864 | +0.009508 | 0.004533 | [0.0006235, 0.01839] | 2.10 | 0.036* | * |
-| Cognitive impairment ~ TIR 70-180 (pooled) | 867 | 864 | -0.006108 | 0.002832 | [-0.01166, -0.0005577] | -2.16 | 0.031* | * |
-| Cognitive impairment ~ TIR 70-180 (daily avg) | 867 | 864 | -0.006034 | 0.002818 | [-0.01156, -0.0005115] | -2.14 | 0.032* | * |
+| MoCA total score ~ TIR 70-180 (pooled) | 867 | 864 | **+0.009848** | 0.004539 | [0.0009518, 0.01874] | **2.17** | **0.030*** | * |
+| MoCA total score ~ TIR 70-180 (daily avg) | 867 | 864 | **+0.009508** | 0.004533 | [0.0006235, 0.01839] | **2.10** | **0.036*** | * |
+| Cognitive impairment ~ TIR 70-180 (pooled) | 867 | 864 | **-0.006108** | 0.002832 | [-0.01166, -0.0005577] | **-2.16** | **0.031*** | * |
+| Cognitive impairment ~ TIR 70-180 (daily avg) | 867 | 864 | **-0.006034** | 0.002818 | [-0.01156, -0.0005115] | **-2.14** | **0.032*** | * |
 | MoCA memory index score ~ TIR 70-180 (pooled) | 867 | 864 | +0.006725 | 0.003499 | [-0.0001342, 0.01358] | 1.92 | 0.055 |  |
 | MoCA memory index score ~ TIR 70-180 (daily avg) | 867 | 864 | +0.006605 | 0.003497 | [-0.0002502, 0.01346] | 1.89 | 0.059 |  |
 | CES-D-10 depressive symptoms ~ TIR 70-180 (pooled) | 865 | 862 | -0.008358 | 0.007131 | [-0.02233, 0.005617] | -1.17 | 0.241 |  |
 | CES-D-10 depressive symptoms ~ TIR 70-180 (daily avg) | 865 | 862 | -0.007867 | 0.00711 | [-0.0218, 0.006068] | -1.11 | 0.269 |  |
 | Clinically relevant depressive symptoms ~ TIR 70-180 (pooled) | 865 | 862 | -0.005522 | 0.003178 | [-0.01175, 0.0007069] | -1.74 | 0.082 |  |
 | Clinically relevant depressive symptoms ~ TIR 70-180 (daily avg) | 865 | 862 | -0.005232 | 0.003169 | [-0.01144, 0.0009778] | -1.65 | 0.099 |  |
-| Indoor PM2.5, log(1 + mean ug/m3) ~ TIR 70-180 (pooled) | 849 | 846 | -0.00291 | 0.001438 | [-0.005729, -9.191e-05] | -2.02 | 0.043* | * |
-| Indoor PM2.5, log(1 + mean ug/m3) ~ TIR 70-180 (daily avg) | 849 | 846 | -0.00289 | 0.001428 | [-0.00569, -9.049e-05] | -2.02 | 0.043* | * |
+| Indoor PM2.5, log(1 + mean ug/m3) ~ TIR 70-180 (pooled) | 849 | 846 | **-0.00291** | 0.001438 | [-0.005729, -9.191e-05] | **-2.02** | **0.043*** | * |
+| Indoor PM2.5, log(1 + mean ug/m3) ~ TIR 70-180 (daily avg) | 849 | 846 | **-0.00289** | 0.001428 | [-0.00569, -9.049e-05] | **-2.02** | **0.043*** | * |
 | Indoor temperature, mean ~ TIR 70-180 (pooled) | 849 | 846 | +0.0023 | 0.00312 | [-0.003816, 0.008416] | 0.74 | 0.461 |  |
 | Indoor temperature, mean ~ TIR 70-180 (daily avg) | 849 | 846 | +0.00247 | 0.003114 | [-0.003633, 0.008572] | 0.79 | 0.428 |  |
 | Indoor relative humidity, mean ~ TIR 70-180 (pooled) | 849 | 846 | +0.005621 | 0.008945 | [-0.01191, 0.02315] | 0.63 | 0.530 |  |
@@ -204,45 +204,45 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 | Steps per wear-day ~ TIR 70-180 (daily avg) | 747 | 744 | -4.636 | 8.172 | [-20.65, 11.38] | -0.57 | 0.571 |  |
 | Brisk-cadence minutes per day ~ TIR 70-180 (pooled) | 747 | 744 | -0.005967 | 0.02293 | [-0.05092, 0.03898] | -0.26 | 0.795 |  |
 | Brisk-cadence minutes per day ~ TIR 70-180 (daily avg) | 747 | 744 | -0.006509 | 0.02283 | [-0.05125, 0.03823] | -0.29 | 0.776 |  |
-| Resting heart-rate proxy ~ TIR 70-180 (pooled) | 749 | 746 | -0.04169 | 0.0128 | [-0.06678, -0.0166] | -3.26 | 0.001** | ** |
-| Resting heart-rate proxy ~ TIR 70-180 (daily avg) | 749 | 746 | -0.04111 | 0.01269 | [-0.06598, -0.01623] | -3.24 | 0.001** | ** |
+| Resting heart-rate proxy ~ TIR 70-180 (pooled) | 749 | 746 | **-0.04169** | 0.0128 | [-0.06678, -0.0166] | **-3.26** | **0.001**** | ** |
+| Resting heart-rate proxy ~ TIR 70-180 (daily avg) | 749 | 746 | **-0.04111** | 0.01269 | [-0.06598, -0.01623] | **-3.24** | **0.001**** | ** |
 | Total sleep time per night ~ TIR 70-180 (pooled) | 756 | 754 | +0.1016 | 0.1006 | [-0.09563, 0.2988] | 1.01 | 0.313 |  |
 | Total sleep time per night ~ TIR 70-180 (daily avg) | 756 | 754 | +0.1009 | 0.1004 | [-0.09601, 0.2977] | 1.00 | 0.315 |  |
-| Garmin stress score, mean ~ TIR 70-180 (pooled) | 749 | 746 | -0.1016 | 0.02628 | [-0.1531, -0.05006] | -3.86 | 1.1e-04*** | *** |
-| Garmin stress score, mean ~ TIR 70-180 (daily avg) | 749 | 746 | -0.1001 | 0.02611 | [-0.1512, -0.0489] | -3.83 | 1.3e-04*** | *** |
+| Garmin stress score, mean ~ TIR 70-180 (pooled) | 749 | 746 | **-0.1016** | 0.02628 | [-0.1531, -0.05006] | **-3.86** | **1.1e-04***** | *** |
+| Garmin stress score, mean ~ TIR 70-180 (daily avg) | 749 | 746 | **-0.1001** | 0.02611 | [-0.1512, -0.0489] | **-3.83** | **1.3e-04***** | *** |
 
 **(B) Standardised effect, multiplicity and fit**
 
 | Predictor (alone) | β per 1 SD (95% CI) | q, all tests in population | q, this outcome | Adj R² / AUC | ΔAIC vs covs | ΔAIC vs HbA1c | CV R²/AUC (predictor vs covariates-only) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| MoCA total score ~ TIR 70-180 (pooled) | +0.253 [+0.024, +0.481] | not applied (n < 1000) | not applied (n < 1000) | 0.0861 | -3.0 | -1.5 | 0.0581 \| 0.0541 |
-| MoCA total score ~ TIR 70-180 (daily avg) | +0.246 [+0.016, +0.475] | not applied (n < 1000) | not applied (n < 1000) | 0.0858 | -2.7 | -1.2 | 0.0578 \| 0.0541 |
-| Cognitive impairment ~ TIR 70-180 (pooled) | OR 0.855 [0.741, 0.986] | not applied (n < 1000) | not applied (n < 1000) | 0.6640 | -2.7 | -1.0 | 0.6438 \| 0.6425 |
-| Cognitive impairment ~ TIR 70-180 (daily avg) | OR 0.856 [0.742, 0.987] | not applied (n < 1000) | not applied (n < 1000) | 0.6639 | -2.6 | -0.9 | 0.6440 \| 0.6425 |
-| MoCA memory index score ~ TIR 70-180 (pooled) | +0.173 [-0.003, +0.349] | not applied (n < 1000) | not applied (n < 1000) | 0.0633 | -1.4 | +0.4 | 0.0314 \| 0.0286 |
-| MoCA memory index score ~ TIR 70-180 (daily avg) | +0.171 [-0.006, +0.348] | not applied (n < 1000) | not applied (n < 1000) | 0.0632 | -1.3 | +0.5 | 0.0313 \| 0.0286 |
-| CES-D-10 depressive symptoms ~ TIR 70-180 (pooled) | -0.215 [-0.574, +0.144] | not applied (n < 1000) | not applied (n < 1000) | 0.1127 | +0.4 | +1.7 | 0.0781 \| 0.0796 |
-| CES-D-10 depressive symptoms ~ TIR 70-180 (daily avg) | -0.203 [-0.564, +0.157] | not applied (n < 1000) | not applied (n < 1000) | 0.1125 | +0.6 | +1.8 | 0.0781 \| 0.0796 |
-| Clinically relevant depressive symptoms ~ TIR 70-180 (pooled) | OR 0.868 [0.739, 1.018] | not applied (n < 1000) | not applied (n < 1000) | 0.6654 | -1.0 | +2.0 | 0.6358 \| 0.6337 |
-| Clinically relevant depressive symptoms ~ TIR 70-180 (daily avg) | OR 0.874 [0.744, 1.026] | not applied (n < 1000) | not applied (n < 1000) | 0.6651 | -0.7 | +2.3 | 0.6359 \| 0.6337 |
-| Indoor PM2.5, log(1 + mean ug/m3) ~ TIR 70-180 (pooled) | -0.075 [-0.147, -0.002] | not applied (n < 1000) | not applied (n < 1000) | 0.1593 | -3.4 | +6.0 | 0.1329 \| 0.1310 |
-| Indoor PM2.5, log(1 + mean ug/m3) ~ TIR 70-180 (daily avg) | -0.075 [-0.147, -0.002] | not applied (n < 1000) | not applied (n < 1000) | 0.1592 | -3.4 | +6.0 | 0.1329 \| 0.1310 |
-| Indoor temperature, mean ~ TIR 70-180 (pooled) | +0.059 [-0.098, +0.217] | not applied (n < 1000) | not applied (n < 1000) | 0.2507 | +1.4 | -0.3 | 0.2229 \| 0.2264 |
-| Indoor temperature, mean ~ TIR 70-180 (daily avg) | +0.064 [-0.094, +0.222] | not applied (n < 1000) | not applied (n < 1000) | 0.2508 | +1.3 | -0.4 | 0.2230 \| 0.2264 |
-| Indoor relative humidity, mean ~ TIR 70-180 (pooled) | +0.145 [-0.306, +0.596] | not applied (n < 1000) | not applied (n < 1000) | 0.2133 | +1.6 | -0.3 | 0.1843 \| 0.1857 |
-| Indoor relative humidity, mean ~ TIR 70-180 (daily avg) | +0.140 [-0.312, +0.592] | not applied (n < 1000) | not applied (n < 1000) | 0.2133 | +1.6 | -0.3 | 0.1842 \| 0.1857 |
-| Indoor VOC index, mean ~ TIR 70-180 (pooled) | +0.451 [-0.867, +1.769] | not applied (n < 1000) | not applied (n < 1000) | 0.0562 | +1.4 | +1.8 | 0.0264 \| 0.0276 |
-| Indoor VOC index, mean ~ TIR 70-180 (daily avg) | +0.505 [-0.820, +1.831] | not applied (n < 1000) | not applied (n < 1000) | 0.0564 | +1.3 | +1.6 | 0.0266 \| 0.0276 |
-| Steps per wear-day ~ TIR 70-180 (pooled) | -115.817 [-530.170, +298.536] | not applied (n < 1000) | not applied (n < 1000) | 0.1575 | +1.6 | +1.7 | 0.1370 \| 0.1390 |
-| Steps per wear-day ~ TIR 70-180 (daily avg) | -119.774 [-533.581, +294.032] | not applied (n < 1000) | not applied (n < 1000) | 0.1575 | +1.6 | +1.7 | 0.1370 \| 0.1390 |
-| Brisk-cadence minutes per day ~ TIR 70-180 (pooled) | -0.153 [-1.307, +1.001] | not applied (n < 1000) | not applied (n < 1000) | 0.1790 | +1.9 | +2.0 | 0.1526 \| 0.1546 |
-| Brisk-cadence minutes per day ~ TIR 70-180 (daily avg) | -0.168 [-1.324, +0.988] | not applied (n < 1000) | not applied (n < 1000) | 0.1790 | +1.9 | +1.9 | 0.1525 \| 0.1546 |
-| Resting heart-rate proxy ~ TIR 70-180 (pooled) | -1.072 [-1.717, -0.427] | not applied (n < 1000) | not applied (n < 1000) | 0.1656 | -9.9 | -3.8 | 0.1365 \| 0.1253 |
-| Resting heart-rate proxy ~ TIR 70-180 (daily avg) | -1.063 [-1.707, -0.420] | not applied (n < 1000) | not applied (n < 1000) | 0.1654 | -9.7 | -3.6 | 0.1362 \| 0.1253 |
-| Total sleep time per night ~ TIR 70-180 (pooled) | +2.583 [-2.433, +7.599] | not applied (n < 1000) | not applied (n < 1000) | 0.0376 | +1.0 | +3.9 | 0.0053 \| 0.0066 |
-| Total sleep time per night ~ TIR 70-180 (daily avg) | +2.581 [-2.457, +7.620] | not applied (n < 1000) | not applied (n < 1000) | 0.0376 | +1.0 | +3.9 | 0.0051 \| 0.0066 |
-| Garmin stress score, mean ~ TIR 70-180 (pooled) | -2.611 [-3.935, -1.287] | not applied (n < 1000) | not applied (n < 1000) | 0.1406 | -14.2 | -1.1 | 0.1120 \| 0.0947 |
-| Garmin stress score, mean ~ TIR 70-180 (daily avg) | -2.588 [-3.912, -1.265] | not applied (n < 1000) | not applied (n < 1000) | 0.1403 | -13.9 | -0.8 | 0.1116 \| 0.0947 |
+| MoCA total score ~ TIR 70-180 (pooled) | +0.253 [+0.024, +0.481] | 0.159 | 0.071 | 0.0861 | -3.0 | -1.5 | 0.0581 \| 0.0541 |
+| MoCA total score ~ TIR 70-180 (daily avg) | +0.246 [+0.016, +0.475] | 0.168 | 0.074 | 0.0858 | -2.7 | -1.2 | 0.0578 \| 0.0541 |
+| Cognitive impairment ~ TIR 70-180 (pooled) | OR 0.855 [0.741, 0.986] | 0.160 | 0.107 | 0.6640 | -2.7 | -1.0 | 0.6438 \| 0.6425 |
+| Cognitive impairment ~ TIR 70-180 (daily avg) | OR 0.856 [0.742, 0.987] | 0.161 | 0.107 | 0.6639 | -2.6 | -0.9 | 0.6440 \| 0.6425 |
+| MoCA memory index score ~ TIR 70-180 (pooled) | +0.173 [-0.003, +0.349] | 0.204 | 0.122 | 0.0633 | -1.4 | +0.4 | 0.0314 \| 0.0286 |
+| MoCA memory index score ~ TIR 70-180 (daily avg) | +0.171 [-0.006, +0.348] | 0.212 | 0.122 | 0.0632 | -1.3 | +0.5 | 0.0313 \| 0.0286 |
+| CES-D-10 depressive symptoms ~ TIR 70-180 (pooled) | -0.215 [-0.574, +0.144] | 0.455 | 0.578 | 0.1127 | +0.4 | +1.7 | 0.0781 \| 0.0796 |
+| CES-D-10 depressive symptoms ~ TIR 70-180 (daily avg) | -0.203 [-0.564, +0.157] | 0.484 | 0.578 | 0.1125 | +0.6 | +1.8 | 0.0781 \| 0.0796 |
+| Clinically relevant depressive symptoms ~ TIR 70-180 (pooled) | OR 0.868 [0.739, 1.018] | 0.243 | 0.215 | 0.6654 | -1.0 | +2.0 | 0.6358 \| 0.6337 |
+| Clinically relevant depressive symptoms ~ TIR 70-180 (daily avg) | OR 0.874 [0.744, 1.026] | 0.264 | 0.215 | 0.6651 | -0.7 | +2.3 | 0.6359 \| 0.6337 |
+| Indoor PM2.5, log(1 + mean ug/m3) ~ TIR 70-180 (pooled) | -0.075 [-0.147, -0.002] | 0.182 | 0.148 | 0.1593 | -3.4 | +6.0 | 0.1329 \| 0.1310 |
+| Indoor PM2.5, log(1 + mean ug/m3) ~ TIR 70-180 (daily avg) | -0.075 [-0.147, -0.002] | 0.182 | 0.148 | 0.1592 | -3.4 | +6.0 | 0.1329 \| 0.1310 |
+| Indoor temperature, mean ~ TIR 70-180 (pooled) | +0.059 [-0.098, +0.217] | 0.656 | 0.794 | 0.2507 | +1.4 | -0.3 | 0.2229 \| 0.2264 |
+| Indoor temperature, mean ~ TIR 70-180 (daily avg) | +0.064 [-0.094, +0.222] | 0.640 | 0.794 | 0.2508 | +1.3 | -0.4 | 0.2230 \| 0.2264 |
+| Indoor relative humidity, mean ~ TIR 70-180 (pooled) | +0.145 [-0.306, +0.596] | 0.717 | 0.938 | 0.2133 | +1.6 | -0.3 | 0.1843 \| 0.1857 |
+| Indoor relative humidity, mean ~ TIR 70-180 (daily avg) | +0.140 [-0.312, +0.592] | 0.727 | 0.938 | 0.2133 | +1.6 | -0.3 | 0.1842 \| 0.1857 |
+| Indoor VOC index, mean ~ TIR 70-180 (pooled) | +0.451 [-0.867, +1.769] | 0.692 | 0.599 | 0.0562 | +1.4 | +1.8 | 0.0264 \| 0.0276 |
+| Indoor VOC index, mean ~ TIR 70-180 (daily avg) | +0.505 [-0.820, +1.831] | 0.656 | 0.585 | 0.0564 | +1.3 | +1.6 | 0.0266 \| 0.0276 |
+| Steps per wear-day ~ TIR 70-180 (pooled) | -115.817 [-530.170, +298.536] | 0.763 | 0.751 | 0.1575 | +1.6 | +1.7 | 0.1370 \| 0.1390 |
+| Steps per wear-day ~ TIR 70-180 (daily avg) | -119.774 [-533.581, +294.032] | 0.750 | 0.751 | 0.1575 | +1.6 | +1.7 | 0.1370 \| 0.1390 |
+| Brisk-cadence minutes per day ~ TIR 70-180 (pooled) | -0.153 [-1.307, +1.001] | 0.873 | 0.821 | 0.1790 | +1.9 | +2.0 | 0.1526 \| 0.1546 |
+| Brisk-cadence minutes per day ~ TIR 70-180 (daily avg) | -0.168 [-1.324, +0.988] | 0.865 | 0.821 | 0.1790 | +1.9 | +1.9 | 0.1525 \| 0.1546 |
+| Resting heart-rate proxy ~ TIR 70-180 (pooled) | **-1.072 [-1.717, -0.427]** | **0.024 (FDR<0.05)** | **0.005 (FDR<0.05)** | 0.1656 | -9.9 | -3.8 | 0.1365 \| 0.1253 |
+| Resting heart-rate proxy ~ TIR 70-180 (daily avg) | **-1.063 [-1.707, -0.420]** | **0.024 (FDR<0.05)** | **0.005 (FDR<0.05)** | 0.1654 | -9.7 | -3.6 | 0.1362 \| 0.1253 |
+| Total sleep time per night ~ TIR 70-180 (pooled) | +2.583 [-2.433, +7.599] | 0.534 | 0.444 | 0.0376 | +1.0 | +3.9 | 0.0053 \| 0.0066 |
+| Total sleep time per night ~ TIR 70-180 (daily avg) | +2.581 [-2.457, +7.620] | 0.537 | 0.444 | 0.0376 | +1.0 | +3.9 | 0.0051 \| 0.0066 |
+| Garmin stress score, mean ~ TIR 70-180 (pooled) | **-2.611 [-3.935, -1.287]** | **0.007 (FDR<0.05)** | **5.6e-04 (FDR<0.05)** | 0.1406 | -14.2 | -1.1 | 0.1120 \| 0.0947 |
+| Garmin stress score, mean ~ TIR 70-180 (daily avg) | **-2.588 [-3.912, -1.265]** | **0.007 (FDR<0.05)** | **5.6e-04 (FDR<0.05)** | 0.1403 | -13.9 | -0.8 | 0.1116 \| 0.0947 |
 
 
 ---
@@ -273,8 +273,8 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 | Indoor relative humidity, mean ~ %54-69 (daily avg) | 2100 | 1027 | -0.107 | 0.09079 | [-0.285, 0.07091] | -1.18 | 0.238 |  |
 | Indoor VOC index, mean ~ %54-69 (pooled) | 2100 | 1226 | +0.09074 | 0.2487 | [-0.3967, 0.5782] | 0.36 | 0.715 |  |
 | Indoor VOC index, mean ~ %54-69 (daily avg) | 2100 | 1027 | +0.0625 | 0.2448 | [-0.4173, 0.5423] | 0.26 | 0.798 |  |
-| Steps per wear-day ~ %54-69 (pooled) | 1872 | 1116 | -146.6 | 62.73 | [-269.5, -23.62] | -2.34 | 0.019* | * |
-| Steps per wear-day ~ %54-69 (daily avg) | 1872 | 935 | -146.6 | 61.85 | [-267.8, -25.39] | -2.37 | 0.018* | * |
+| Steps per wear-day ~ %54-69 (pooled) | 1872 | 1116 | **-146.6** | 62.73 | [-269.5, -23.62] | **-2.34** | **0.019*** | * |
+| Steps per wear-day ~ %54-69 (daily avg) | 1872 | 935 | **-146.6** | 61.85 | [-267.8, -25.39] | **-2.37** | **0.018*** | * |
 | Brisk-cadence minutes per day ~ %54-69 (pooled) | 1872 | 1116 | -0.2966 | 0.1833 | [-0.6558, 0.06259] | -1.62 | 0.106 |  |
 | Brisk-cadence minutes per day ~ %54-69 (daily avg) | 1872 | 935 | -0.3147 | 0.1826 | [-0.6725, 0.04312] | -1.72 | 0.085 |  |
 | Resting heart-rate proxy ~ %54-69 (pooled) | 1877 | 1121 | -0.1179 | 0.1164 | [-0.346, 0.1102] | -1.01 | 0.311 |  |
@@ -401,18 +401,18 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 | CES-D-10 depressive symptoms ~ %54-69 (daily avg) | 865 | 355 | +0.1086 | 0.1067 | [-0.1005, 0.3176] | 1.02 | 0.309 |  |
 | Clinically relevant depressive symptoms ~ %54-69 (pooled) | 865 | 422 | +0.01534 | 0.05543 | [-0.09329, 0.124] | 0.28 | 0.782 |  |
 | Clinically relevant depressive symptoms ~ %54-69 (daily avg) | 865 | 355 | +0.0223 | 0.05374 | [-0.08302, 0.1276] | 0.42 | 0.678 |  |
-| Indoor PM2.5, log(1 + mean ug/m3) ~ %54-69 (pooled) | 849 | 412 | +0.08979 | 0.03251 | [0.02607, 0.1535] | 2.76 | 0.006** | ** |
-| Indoor PM2.5, log(1 + mean ug/m3) ~ %54-69 (daily avg) | 849 | 345 | +0.08842 | 0.03256 | [0.02459, 0.1522] | 2.72 | 0.007** | ** |
+| Indoor PM2.5, log(1 + mean ug/m3) ~ %54-69 (pooled) | 849 | 412 | **+0.08979** | 0.03251 | [0.02607, 0.1535] | **2.76** | **0.006**** | ** |
+| Indoor PM2.5, log(1 + mean ug/m3) ~ %54-69 (daily avg) | 849 | 345 | **+0.08842** | 0.03256 | [0.02459, 0.1522] | **2.72** | **0.007**** | ** |
 | Indoor temperature, mean ~ %54-69 (pooled) | 849 | 412 | +0.04232 | 0.05123 | [-0.05807, 0.1427] | 0.83 | 0.409 |  |
 | Indoor temperature, mean ~ %54-69 (daily avg) | 849 | 345 | +0.05241 | 0.04855 | [-0.04274, 0.1476] | 1.08 | 0.280 |  |
 | Indoor relative humidity, mean ~ %54-69 (pooled) | 849 | 412 | -0.04255 | 0.1797 | [-0.3947, 0.3096] | -0.24 | 0.813 |  |
 | Indoor relative humidity, mean ~ %54-69 (daily avg) | 849 | 345 | -0.07306 | 0.1709 | [-0.408, 0.2619] | -0.43 | 0.669 |  |
 | Indoor VOC index, mean ~ %54-69 (pooled) | 849 | 412 | +0.3679 | 0.3629 | [-0.3433, 1.079] | 1.01 | 0.311 |  |
 | Indoor VOC index, mean ~ %54-69 (daily avg) | 849 | 345 | +0.3206 | 0.3446 | [-0.3549, 0.996] | 0.93 | 0.352 |  |
-| Steps per wear-day ~ %54-69 (pooled) | 747 | 369 | -252.3 | 92.6 | [-433.8, -70.83] | -2.72 | 0.006** | ** |
-| Steps per wear-day ~ %54-69 (daily avg) | 747 | 309 | -253.7 | 87 | [-424.2, -83.2] | -2.92 | 0.004** | ** |
+| Steps per wear-day ~ %54-69 (pooled) | 747 | 369 | **-252.3** | 92.6 | [-433.8, -70.83] | **-2.72** | **0.006**** | ** |
+| Steps per wear-day ~ %54-69 (daily avg) | 747 | 309 | **-253.7** | 87 | [-424.2, -83.2] | **-2.92** | **0.004**** | ** |
 | Brisk-cadence minutes per day ~ %54-69 (pooled) | 747 | 369 | -0.4851 | 0.2593 | [-0.9932, 0.02311] | -1.87 | 0.061 |  |
-| Brisk-cadence minutes per day ~ %54-69 (daily avg) | 747 | 309 | -0.5097 | 0.2561 | [-1.012, -0.007801] | -1.99 | 0.047* | * |
+| Brisk-cadence minutes per day ~ %54-69 (daily avg) | 747 | 309 | **-0.5097** | 0.2561 | [-1.012, -0.007801] | **-1.99** | **0.047*** | * |
 | Resting heart-rate proxy ~ %54-69 (pooled) | 749 | 372 | -0.1276 | 0.1874 | [-0.4949, 0.2396] | -0.68 | 0.496 |  |
 | Resting heart-rate proxy ~ %54-69 (daily avg) | 749 | 312 | -0.1802 | 0.1932 | [-0.5588, 0.1985] | -0.93 | 0.351 |  |
 | Total sleep time per night ~ %54-69 (pooled) | 756 | 379 | +1.474 | 1.856 | [-2.164, 5.111] | 0.79 | 0.427 |  |
@@ -424,34 +424,34 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 
 | Predictor (alone) | β per 1 SD (95% CI) | q, all tests in population | q, this outcome | Adj R² / AUC | ΔAIC vs covs | ΔAIC vs HbA1c | CV R²/AUC (predictor vs covariates-only) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| MoCA total score ~ %54-69 (pooled) | -0.008 [-0.246, +0.230] | not applied (n < 1000) | not applied (n < 1000) | 0.0808 | +2.0 | +3.5 | 0.0519 \| 0.0541 |
-| MoCA total score ~ %54-69 (daily avg) | -0.009 [-0.256, +0.237] | not applied (n < 1000) | not applied (n < 1000) | 0.0808 | +2.0 | +3.5 | 0.0519 \| 0.0541 |
-| Cognitive impairment ~ %54-69 (pooled) | OR 1.037 [0.902, 1.192] | not applied (n < 1000) | not applied (n < 1000) | 0.6603 | +1.7 | +3.4 | 0.6399 \| 0.6425 |
-| Cognitive impairment ~ %54-69 (daily avg) | OR 1.046 [0.909, 1.204] | not applied (n < 1000) | not applied (n < 1000) | 0.6605 | +1.6 | +3.3 | 0.6403 \| 0.6425 |
-| MoCA memory index score ~ %54-69 (pooled) | -0.131 [-0.305, +0.042] | not applied (n < 1000) | not applied (n < 1000) | 0.0618 | -0.0 | +1.8 | 0.0298 \| 0.0286 |
-| MoCA memory index score ~ %54-69 (daily avg) | -0.160 [-0.335, +0.015] | not applied (n < 1000) | not applied (n < 1000) | 0.0629 | -1.0 | +0.8 | 0.0308 \| 0.0286 |
-| CES-D-10 depressive symptoms ~ %54-69 (pooled) | +0.146 [-0.173, +0.464] | not applied (n < 1000) | not applied (n < 1000) | 0.1118 | +1.2 | +2.5 | 0.0787 \| 0.0796 |
-| CES-D-10 depressive symptoms ~ %54-69 (daily avg) | +0.165 [-0.153, +0.482] | not applied (n < 1000) | not applied (n < 1000) | 0.1121 | +1.0 | +2.3 | 0.0789 \| 0.0796 |
-| Clinically relevant depressive symptoms ~ %54-69 (pooled) | OR 1.023 [0.871, 1.201] | not applied (n < 1000) | not applied (n < 1000) | 0.6604 | +1.9 | +4.9 | 0.6309 \| 0.6337 |
-| Clinically relevant depressive symptoms ~ %54-69 (daily avg) | OR 1.034 [0.882, 1.214] | not applied (n < 1000) | not applied (n < 1000) | 0.6608 | +1.8 | +4.8 | 0.6316 \| 0.6337 |
-| Indoor PM2.5, log(1 + mean ug/m3) ~ %54-69 (pooled) | +0.134 [+0.039, +0.228] | not applied (n < 1000) | not applied (n < 1000) | 0.1716 | -15.9 | -6.5 | 0.1424 \| 0.1310 |
-| Indoor PM2.5, log(1 + mean ug/m3) ~ %54-69 (daily avg) | +0.135 [+0.038, +0.233] | not applied (n < 1000) | not applied (n < 1000) | 0.1721 | -16.4 | -7.0 | 0.1428 \| 0.1310 |
-| Indoor temperature, mean ~ %54-69 (pooled) | +0.063 [-0.086, +0.212] | not applied (n < 1000) | not applied (n < 1000) | 0.2508 | +1.2 | -0.4 | 0.2255 \| 0.2264 |
-| Indoor temperature, mean ~ %54-69 (daily avg) | +0.080 [-0.065, +0.226] | not applied (n < 1000) | not applied (n < 1000) | 0.2512 | +0.8 | -0.9 | 0.2259 \| 0.2264 |
-| Indoor relative humidity, mean ~ %54-69 (pooled) | -0.063 [-0.587, +0.461] | not applied (n < 1000) | not applied (n < 1000) | 0.2130 | +1.9 | +0.0 | 0.1837 \| 0.1857 |
-| Indoor relative humidity, mean ~ %54-69 (daily avg) | -0.112 [-0.625, +0.401] | not applied (n < 1000) | not applied (n < 1000) | 0.2132 | +1.7 | -0.1 | 0.1842 \| 0.1857 |
-| Indoor VOC index, mean ~ %54-69 (pooled) | +0.548 [-0.511, +1.606] | not applied (n < 1000) | not applied (n < 1000) | 0.0566 | +1.1 | +1.5 | 0.0271 \| 0.0276 |
-| Indoor VOC index, mean ~ %54-69 (daily avg) | +0.491 [-0.544, +1.526] | not applied (n < 1000) | not applied (n < 1000) | 0.0564 | +1.3 | +1.7 | 0.0269 \| 0.0276 |
-| Steps per wear-day ~ %54-69 (pooled) | -383.181 [-658.791, -107.570] | not applied (n < 1000) | not applied (n < 1000) | 0.1623 | -2.7 | -2.6 | 0.1425 \| 0.1390 |
-| Steps per wear-day ~ %54-69 (daily avg) | -401.236 [-670.891, -131.581] | not applied (n < 1000) | not applied (n < 1000) | 0.1628 | -3.2 | -3.1 | 0.1432 \| 0.1390 |
-| Brisk-cadence minutes per day ~ %54-69 (pooled) | -0.737 [-1.508, +0.035] | not applied (n < 1000) | not applied (n < 1000) | 0.1812 | -0.1 | -0.1 | 0.1552 \| 0.1546 |
-| Brisk-cadence minutes per day ~ %54-69 (daily avg) | -0.806 [-1.600, -0.012] | not applied (n < 1000) | not applied (n < 1000) | 0.1816 | -0.5 | -0.5 | 0.1556 \| 0.1546 |
-| Resting heart-rate proxy ~ %54-69 (pooled) | -0.194 [-0.751, +0.363] | not applied (n < 1000) | not applied (n < 1000) | 0.1527 | +1.6 | +7.7 | 0.1243 \| 0.1253 |
-| Resting heart-rate proxy ~ %54-69 (daily avg) | -0.285 [-0.883, +0.313] | not applied (n < 1000) | not applied (n < 1000) | 0.1532 | +1.1 | +7.2 | 0.1249 \| 0.1253 |
-| Total sleep time per night ~ %54-69 (pooled) | +2.227 [-3.270, +7.725] | not applied (n < 1000) | not applied (n < 1000) | 0.0373 | +1.2 | +4.1 | 0.0046 \| 0.0066 |
-| Total sleep time per night ~ %54-69 (daily avg) | +1.720 [-3.563, +7.003] | not applied (n < 1000) | not applied (n < 1000) | 0.0369 | +1.5 | +4.4 | 0.0043 \| 0.0066 |
-| Garmin stress score, mean ~ %54-69 (pooled) | -0.683 [-2.072, +0.707] | not applied (n < 1000) | not applied (n < 1000) | 0.1231 | +0.9 | +13.9 | 0.0926 \| 0.0947 |
-| Garmin stress score, mean ~ %54-69 (daily avg) | -0.773 [-2.204, +0.657] | not applied (n < 1000) | not applied (n < 1000) | 0.1235 | +0.5 | +13.6 | 0.0932 \| 0.0947 |
+| MoCA total score ~ %54-69 (pooled) | -0.008 [-0.246, +0.230] | 0.966 | 0.997 | 0.0808 | +2.0 | +3.5 | 0.0519 \| 0.0541 |
+| MoCA total score ~ %54-69 (daily avg) | -0.009 [-0.256, +0.237] | 0.964 | 0.997 | 0.0808 | +2.0 | +3.5 | 0.0519 \| 0.0541 |
+| Cognitive impairment ~ %54-69 (pooled) | OR 1.037 [0.902, 1.192] | 0.783 | 0.677 | 0.6603 | +1.7 | +3.4 | 0.6399 \| 0.6425 |
+| Cognitive impairment ~ %54-69 (daily avg) | OR 1.046 [0.909, 1.204] | 0.717 | 0.622 | 0.6605 | +1.6 | +3.3 | 0.6403 \| 0.6425 |
+| MoCA memory index score ~ %54-69 (pooled) | -0.131 [-0.305, +0.042] | 0.319 | 0.181 | 0.0618 | -0.0 | +1.8 | 0.0298 \| 0.0286 |
+| MoCA memory index score ~ %54-69 (daily avg) | -0.160 [-0.335, +0.015] | 0.232 | 0.122 | 0.0629 | -1.0 | +0.8 | 0.0308 \| 0.0286 |
+| CES-D-10 depressive symptoms ~ %54-69 (pooled) | +0.146 [-0.173, +0.464] | 0.594 | 0.578 | 0.1118 | +1.2 | +2.5 | 0.0787 \| 0.0796 |
+| CES-D-10 depressive symptoms ~ %54-69 (daily avg) | +0.165 [-0.153, +0.482] | 0.533 | 0.578 | 0.1121 | +1.0 | +2.3 | 0.0789 \| 0.0796 |
+| Clinically relevant depressive symptoms ~ %54-69 (pooled) | OR 1.023 [0.871, 1.201] | 0.868 | 0.871 | 0.6604 | +1.9 | +4.9 | 0.6309 \| 0.6337 |
+| Clinically relevant depressive symptoms ~ %54-69 (daily avg) | OR 1.034 [0.882, 1.214] | 0.815 | 0.840 | 0.6608 | +1.8 | +4.8 | 0.6316 \| 0.6337 |
+| Indoor PM2.5, log(1 + mean ug/m3) ~ %54-69 (pooled) | +0.134 [+0.039, +0.228] | 0.055 | **0.034 (FDR<0.05)** | 0.1716 | -15.9 | -6.5 | 0.1424 \| 0.1310 |
+| Indoor PM2.5, log(1 + mean ug/m3) ~ %54-69 (daily avg) | +0.135 [+0.038, +0.233] | 0.061 | **0.034 (FDR<0.05)** | 0.1721 | -16.4 | -7.0 | 0.1428 \| 0.1310 |
+| Indoor temperature, mean ~ %54-69 (pooled) | +0.063 [-0.086, +0.212] | 0.630 | 0.794 | 0.2508 | +1.2 | -0.4 | 0.2255 \| 0.2264 |
+| Indoor temperature, mean ~ %54-69 (daily avg) | +0.080 [-0.065, +0.226] | 0.501 | 0.794 | 0.2512 | +0.8 | -0.9 | 0.2259 \| 0.2264 |
+| Indoor relative humidity, mean ~ %54-69 (pooled) | -0.063 [-0.587, +0.461] | 0.884 | 0.938 | 0.2130 | +1.9 | +0.0 | 0.1837 \| 0.1857 |
+| Indoor relative humidity, mean ~ %54-69 (daily avg) | -0.112 [-0.625, +0.401] | 0.813 | 0.938 | 0.2132 | +1.7 | -0.1 | 0.1842 \| 0.1857 |
+| Indoor VOC index, mean ~ %54-69 (pooled) | +0.548 [-0.511, +1.606] | 0.533 | 0.585 | 0.0566 | +1.1 | +1.5 | 0.0271 \| 0.0276 |
+| Indoor VOC index, mean ~ %54-69 (daily avg) | +0.491 [-0.544, +1.526] | 0.570 | 0.585 | 0.0564 | +1.3 | +1.7 | 0.0269 \| 0.0276 |
+| Steps per wear-day ~ %54-69 (pooled) | -383.181 [-658.791, -107.570] | 0.061 | **0.040 (FDR<0.05)** | 0.1623 | -2.7 | -2.6 | 0.1425 \| 0.1390 |
+| Steps per wear-day ~ %54-69 (daily avg) | **-401.236 [-670.891, -131.581]** | **0.043 (FDR<0.05)** | **0.039 (FDR<0.05)** | 0.1628 | -3.2 | -3.1 | 0.1432 \| 0.1390 |
+| Brisk-cadence minutes per day ~ %54-69 (pooled) | -0.737 [-1.508, +0.035] | 0.217 | 0.380 | 0.1812 | -0.1 | -0.1 | 0.1552 \| 0.1546 |
+| Brisk-cadence minutes per day ~ %54-69 (daily avg) | -0.806 [-1.600, -0.012] | 0.189 | 0.380 | 0.1816 | -0.5 | -0.5 | 0.1556 \| 0.1546 |
+| Resting heart-rate proxy ~ %54-69 (pooled) | -0.194 [-0.751, +0.363] | 0.689 | 0.618 | 0.1527 | +1.6 | +7.7 | 0.1243 \| 0.1253 |
+| Resting heart-rate proxy ~ %54-69 (daily avg) | -0.285 [-0.883, +0.313] | 0.570 | 0.495 | 0.1532 | +1.1 | +7.2 | 0.1249 \| 0.1253 |
+| Total sleep time per night ~ %54-69 (pooled) | +2.227 [-3.270, +7.725] | 0.640 | 0.552 | 0.0373 | +1.2 | +4.1 | 0.0046 \| 0.0066 |
+| Total sleep time per night ~ %54-69 (daily avg) | +1.720 [-3.563, +7.003] | 0.714 | 0.624 | 0.0369 | +1.5 | +4.4 | 0.0043 \| 0.0066 |
+| Garmin stress score, mean ~ %54-69 (pooled) | -0.683 [-2.072, +0.707] | 0.566 | 0.443 | 0.1231 | +0.9 | +13.9 | 0.0926 \| 0.0947 |
+| Garmin stress score, mean ~ %54-69 (daily avg) | -0.773 [-2.204, +0.657] | 0.512 | 0.407 | 0.1235 | +0.5 | +13.6 | 0.0932 \| 0.0947 |
 
 
 ---
@@ -482,8 +482,8 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 | Indoor relative humidity, mean ~ %<70 (daily avg) | 2100 | 1034 | -0.1111 | 0.07552 | [-0.2591, 0.03694] | -1.47 | 0.141 |  |
 | Indoor VOC index, mean ~ %<70 (pooled) | 2100 | 1234 | +0.06307 | 0.1945 | [-0.3181, 0.4442] | 0.32 | 0.746 |  |
 | Indoor VOC index, mean ~ %<70 (daily avg) | 2100 | 1034 | +0.06469 | 0.1957 | [-0.3188, 0.4482] | 0.33 | 0.741 |  |
-| Steps per wear-day ~ %<70 (pooled) | 1872 | 1124 | -124.7 | 47.86 | [-218.5, -30.86] | -2.60 | 0.009** | ** |
-| Steps per wear-day ~ %<70 (daily avg) | 1872 | 942 | -126.2 | 48.97 | [-222.2, -30.24] | -2.58 | 0.010** | ** |
+| Steps per wear-day ~ %<70 (pooled) | 1872 | 1124 | **-124.7** | 47.86 | [-218.5, -30.86] | **-2.60** | **0.009**** | ** |
+| Steps per wear-day ~ %<70 (daily avg) | 1872 | 942 | **-126.2** | 48.97 | [-222.2, -30.24] | **-2.58** | **0.010**** | ** |
 | Brisk-cadence minutes per day ~ %<70 (pooled) | 1872 | 1124 | -0.2532 | 0.1421 | [-0.5317, 0.02533] | -1.78 | 0.075 |  |
 | Brisk-cadence minutes per day ~ %<70 (daily avg) | 1872 | 942 | -0.2762 | 0.1481 | [-0.5665, 0.01414] | -1.86 | 0.062 |  |
 | Resting heart-rate proxy ~ %<70 (pooled) | 1877 | 1129 | -0.063 | 0.09092 | [-0.2412, 0.1152] | -0.69 | 0.488 |  |
@@ -515,8 +515,8 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 | Indoor relative humidity, mean ~ %<70 (daily avg) | -0.194 [-0.454, +0.065] | 0.283 | 0.898 | 0.2418 | -0.2 | -2.1 | 0.2305 \| 0.2307 |
 | Indoor VOC index, mean ~ %<70 (pooled) | +0.113 [-0.568, +0.793] | 0.844 | 0.868 | 0.0426 | +1.9 | +1.9 | 0.0262 \| 0.0271 |
 | Indoor VOC index, mean ~ %<70 (daily avg) | +0.113 [-0.558, +0.785] | 0.844 | 0.868 | 0.0426 | +1.9 | +1.9 | 0.0263 \| 0.0271 |
-| Steps per wear-day ~ %<70 (pooled) | -230.881 [-404.614, -57.147] | 0.033 (FDR<0.05) | 0.077 | 0.1373 | -3.5 | +4.5 | 0.1236 \| 0.1222 |
-| Steps per wear-day ~ %<70 (daily avg) | -230.175 [-405.202, -55.148] | 0.035 (FDR<0.05) | 0.077 | 0.1373 | -3.5 | +4.5 | 0.1235 \| 0.1222 |
+| Steps per wear-day ~ %<70 (pooled) | **-230.881 [-404.614, -57.147]** | **0.033 (FDR<0.05)** | 0.077 | 0.1373 | -3.5 | +4.5 | 0.1236 \| 0.1222 |
+| Steps per wear-day ~ %<70 (daily avg) | **-230.175 [-405.202, -55.148]** | **0.035 (FDR<0.05)** | 0.077 | 0.1373 | -3.5 | +4.5 | 0.1235 \| 0.1222 |
 | Brisk-cadence minutes per day ~ %<70 (pooled) | -0.469 [-0.985, +0.047] | 0.184 | 0.192 | 0.1568 | -0.5 | +7.7 | 0.1445 \| 0.1447 |
 | Brisk-cadence minutes per day ~ %<70 (daily avg) | -0.504 [-1.033, +0.026] | 0.158 | 0.192 | 0.1570 | -0.9 | +7.3 | 0.1446 \| 0.1447 |
 | Resting heart-rate proxy ~ %<70 (pooled) | -0.117 [-0.446, +0.213] | 0.656 | 0.541 | 0.1599 | +1.6 | +72.8 | 0.1479 \| 0.1482 |
@@ -536,7 +536,7 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 | MoCA total score ~ %<70 (daily avg) | 1271 | 700 | +0.01265 | 0.03745 | [-0.06075, 0.08604] | 0.34 | 0.736 |  |
 | Cognitive impairment ~ %<70 (pooled) | 1271 | 831 | +0.03715 | 0.0344 | [-0.03027, 0.1046] | 1.08 | 0.280 |  |
 | Cognitive impairment ~ %<70 (daily avg) | 1271 | 700 | +0.04366 | 0.03574 | [-0.02638, 0.1137] | 1.22 | 0.222 |  |
-| MoCA memory index score ~ %<70 (pooled) | 1271 | 831 | +0.06387 | 0.02889 | [0.007243, 0.1205] | 2.21 | 0.027* | * |
+| MoCA memory index score ~ %<70 (pooled) | 1271 | 831 | **+0.06387** | 0.02889 | [0.007243, 0.1205] | **2.21** | **0.027*** | * |
 | MoCA memory index score ~ %<70 (daily avg) | 1271 | 700 | +0.04754 | 0.0299 | [-0.01107, 0.1062] | 1.59 | 0.112 |  |
 | CES-D-10 depressive symptoms ~ %<70 (pooled) | 1270 | 831 | +0.005361 | 0.07801 | [-0.1475, 0.1583] | 0.07 | 0.945 |  |
 | CES-D-10 depressive symptoms ~ %<70 (daily avg) | 1270 | 700 | +0.02887 | 0.08122 | [-0.1303, 0.1881] | 0.36 | 0.722 |  |
@@ -610,18 +610,18 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 | CES-D-10 depressive symptoms ~ %<70 (daily avg) | 865 | 357 | +0.07316 | 0.09783 | [-0.1186, 0.2649] | 0.75 | 0.455 |  |
 | Clinically relevant depressive symptoms ~ %<70 (pooled) | 865 | 427 | +0.005217 | 0.04608 | [-0.0851, 0.09553] | 0.11 | 0.910 |  |
 | Clinically relevant depressive symptoms ~ %<70 (daily avg) | 865 | 357 | +0.01661 | 0.04381 | [-0.06927, 0.1025] | 0.38 | 0.705 |  |
-| Indoor PM2.5, log(1 + mean ug/m3) ~ %<70 (pooled) | 849 | 417 | +0.07601 | 0.02553 | [0.02597, 0.126] | 2.98 | 0.003** | ** |
-| Indoor PM2.5, log(1 + mean ug/m3) ~ %<70 (daily avg) | 849 | 347 | +0.07572 | 0.02647 | [0.02384, 0.1276] | 2.86 | 0.004** | ** |
+| Indoor PM2.5, log(1 + mean ug/m3) ~ %<70 (pooled) | 849 | 417 | **+0.07601** | 0.02553 | [0.02597, 0.126] | **2.98** | **0.003**** | ** |
+| Indoor PM2.5, log(1 + mean ug/m3) ~ %<70 (daily avg) | 849 | 347 | **+0.07572** | 0.02647 | [0.02384, 0.1276] | **2.86** | **0.004**** | ** |
 | Indoor temperature, mean ~ %<70 (pooled) | 849 | 417 | +0.03131 | 0.04185 | [-0.0507, 0.1133] | 0.75 | 0.454 |  |
 | Indoor temperature, mean ~ %<70 (daily avg) | 849 | 347 | +0.03916 | 0.04095 | [-0.04109, 0.1194] | 0.96 | 0.339 |  |
 | Indoor relative humidity, mean ~ %<70 (pooled) | 849 | 417 | -0.04425 | 0.1477 | [-0.3337, 0.2452] | -0.30 | 0.764 |  |
 | Indoor relative humidity, mean ~ %<70 (daily avg) | 849 | 347 | -0.07117 | 0.138 | [-0.3416, 0.1993] | -0.52 | 0.606 |  |
 | Indoor VOC index, mean ~ %<70 (pooled) | 849 | 417 | +0.2955 | 0.2819 | [-0.2571, 0.8481] | 1.05 | 0.295 |  |
 | Indoor VOC index, mean ~ %<70 (daily avg) | 849 | 347 | +0.2914 | 0.2624 | [-0.2229, 0.8058] | 1.11 | 0.267 |  |
-| Steps per wear-day ~ %<70 (pooled) | 747 | 374 | -221.8 | 78.56 | [-375.8, -67.85] | -2.82 | 0.005** | ** |
-| Steps per wear-day ~ %<70 (daily avg) | 747 | 311 | -219.9 | 67.95 | [-353, -86.7] | -3.24 | 0.001** | ** |
+| Steps per wear-day ~ %<70 (pooled) | 747 | 374 | **-221.8** | 78.56 | [-375.8, -67.85] | **-2.82** | **0.005**** | ** |
+| Steps per wear-day ~ %<70 (daily avg) | 747 | 311 | **-219.9** | 67.95 | [-353, -86.7] | **-3.24** | **0.001**** | ** |
 | Brisk-cadence minutes per day ~ %<70 (pooled) | 747 | 374 | -0.4415 | 0.2269 | [-0.8862, 0.003253] | -1.95 | 0.052 |  |
-| Brisk-cadence minutes per day ~ %<70 (daily avg) | 747 | 311 | -0.4571 | 0.2149 | [-0.8782, -0.03593] | -2.13 | 0.033* | * |
+| Brisk-cadence minutes per day ~ %<70 (daily avg) | 747 | 311 | **-0.4571** | 0.2149 | [-0.8782, -0.03593] | **-2.13** | **0.033*** | * |
 | Resting heart-rate proxy ~ %<70 (pooled) | 749 | 377 | -0.0611 | 0.1621 | [-0.3788, 0.2566] | -0.38 | 0.706 |  |
 | Resting heart-rate proxy ~ %<70 (daily avg) | 749 | 314 | -0.125 | 0.1745 | [-0.4671, 0.2171] | -0.72 | 0.474 |  |
 | Total sleep time per night ~ %<70 (pooled) | 756 | 383 | +1.532 | 1.401 | [-1.213, 4.277] | 1.09 | 0.274 |  |
@@ -633,34 +633,34 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 
 | Predictor (alone) | β per 1 SD (95% CI) | q, all tests in population | q, this outcome | Adj R² / AUC | ΔAIC vs covs | ΔAIC vs HbA1c | CV R²/AUC (predictor vs covariates-only) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| MoCA total score ~ %<70 (pooled) | -0.001 [-0.239, +0.237] | not applied (n < 1000) | not applied (n < 1000) | 0.0808 | +2.0 | +3.5 | 0.0517 \| 0.0541 |
-| MoCA total score ~ %<70 (daily avg) | -0.008 [-0.246, +0.231] | not applied (n < 1000) | not applied (n < 1000) | 0.0808 | +2.0 | +3.5 | 0.0519 \| 0.0541 |
-| Cognitive impairment ~ %<70 (pooled) | OR 1.032 [0.898, 1.187] | not applied (n < 1000) | not applied (n < 1000) | 0.6603 | +1.8 | +3.5 | 0.6396 \| 0.6425 |
-| Cognitive impairment ~ %<70 (daily avg) | OR 1.045 [0.908, 1.202] | not applied (n < 1000) | not applied (n < 1000) | 0.6606 | +1.6 | +3.3 | 0.6406 \| 0.6425 |
-| MoCA memory index score ~ %<70 (pooled) | -0.123 [-0.286, +0.041] | not applied (n < 1000) | not applied (n < 1000) | 0.0615 | +0.3 | +2.0 | 0.0297 \| 0.0286 |
-| MoCA memory index score ~ %<70 (daily avg) | -0.157 [-0.324, +0.011] | not applied (n < 1000) | not applied (n < 1000) | 0.0628 | -0.9 | +0.9 | 0.0308 \| 0.0286 |
-| CES-D-10 depressive symptoms ~ %<70 (pooled) | +0.109 [-0.238, +0.457] | not applied (n < 1000) | not applied (n < 1000) | 0.1115 | +1.6 | +2.9 | 0.0783 \| 0.0796 |
-| CES-D-10 depressive symptoms ~ %<70 (daily avg) | +0.134 [-0.218, +0.487] | not applied (n < 1000) | not applied (n < 1000) | 0.1117 | +1.3 | +2.6 | 0.0784 \| 0.0796 |
-| Clinically relevant depressive symptoms ~ %<70 (pooled) | OR 1.009 [0.859, 1.186] | not applied (n < 1000) | not applied (n < 1000) | 0.6605 | +2.0 | +5.0 | 0.6313 \| 0.6337 |
-| Clinically relevant depressive symptoms ~ %<70 (daily avg) | OR 1.031 [0.880, 1.207] | not applied (n < 1000) | not applied (n < 1000) | 0.6606 | +1.9 | +4.9 | 0.6315 \| 0.6337 |
-| Indoor PM2.5, log(1 + mean ug/m3) ~ %<70 (pooled) | +0.137 [+0.047, +0.227] | not applied (n < 1000) | not applied (n < 1000) | 0.1724 | -16.8 | -7.4 | 0.1435 \| 0.1310 |
-| Indoor PM2.5, log(1 + mean ug/m3) ~ %<70 (daily avg) | +0.140 [+0.044, +0.237] | not applied (n < 1000) | not applied (n < 1000) | 0.1734 | -17.8 | -8.4 | 0.1439 \| 0.1310 |
-| Indoor temperature, mean ~ %<70 (pooled) | +0.056 [-0.091, +0.204] | not applied (n < 1000) | not applied (n < 1000) | 0.2507 | +1.4 | -0.3 | 0.2253 \| 0.2264 |
-| Indoor temperature, mean ~ %<70 (daily avg) | +0.073 [-0.076, +0.221] | not applied (n < 1000) | not applied (n < 1000) | 0.2510 | +1.0 | -0.7 | 0.2254 \| 0.2264 |
-| Indoor relative humidity, mean ~ %<70 (pooled) | -0.080 [-0.601, +0.442] | not applied (n < 1000) | not applied (n < 1000) | 0.2131 | +1.9 | -0.0 | 0.1839 \| 0.1857 |
-| Indoor relative humidity, mean ~ %<70 (daily avg) | -0.132 [-0.634, +0.370] | not applied (n < 1000) | not applied (n < 1000) | 0.2133 | +1.6 | -0.3 | 0.1844 \| 0.1857 |
-| Indoor VOC index, mean ~ %<70 (pooled) | +0.533 [-0.463, +1.529] | not applied (n < 1000) | not applied (n < 1000) | 0.0565 | +1.2 | +1.5 | 0.0273 \| 0.0276 |
-| Indoor VOC index, mean ~ %<70 (daily avg) | +0.541 [-0.413, +1.494] | not applied (n < 1000) | not applied (n < 1000) | 0.0565 | +1.2 | +1.5 | 0.0274 \| 0.0276 |
-| Steps per wear-day ~ %<70 (pooled) | -411.853 [-697.727, -125.980] | not applied (n < 1000) | not applied (n < 1000) | 0.1631 | -3.4 | -3.3 | 0.1428 \| 0.1390 |
-| Steps per wear-day ~ %<70 (daily avg) | -423.808 [-680.504, -167.112] | not applied (n < 1000) | not applied (n < 1000) | 0.1635 | -3.7 | -3.6 | 0.1438 \| 0.1390 |
-| Brisk-cadence minutes per day ~ %<70 (pooled) | -0.820 [-1.645, +0.006] | not applied (n < 1000) | not applied (n < 1000) | 0.1817 | -0.6 | -0.6 | 0.1552 \| 0.1546 |
-| Brisk-cadence minutes per day ~ %<70 (daily avg) | -0.881 [-1.693, -0.069] | not applied (n < 1000) | not applied (n < 1000) | 0.1822 | -1.0 | -1.0 | 0.1559 \| 0.1546 |
-| Resting heart-rate proxy ~ %<70 (pooled) | -0.113 [-0.702, +0.476] | not applied (n < 1000) | not applied (n < 1000) | 0.1524 | +1.9 | +7.9 | 0.1239 \| 0.1253 |
-| Resting heart-rate proxy ~ %<70 (daily avg) | -0.241 [-0.899, +0.418] | not applied (n < 1000) | not applied (n < 1000) | 0.1530 | +1.4 | +7.5 | 0.1244 \| 0.1253 |
-| Total sleep time per night ~ %<70 (pooled) | +2.832 [-2.243, +7.907] | not applied (n < 1000) | not applied (n < 1000) | 0.0380 | +0.7 | +3.6 | 0.0057 \| 0.0066 |
-| Total sleep time per night ~ %<70 (daily avg) | +2.140 [-2.722, +7.002] | not applied (n < 1000) | not applied (n < 1000) | 0.0373 | +1.3 | +4.2 | 0.0050 \| 0.0066 |
-| Garmin stress score, mean ~ %<70 (pooled) | -0.474 [-1.927, +0.980] | not applied (n < 1000) | not applied (n < 1000) | 0.1224 | +1.5 | +14.5 | 0.0919 \| 0.0947 |
-| Garmin stress score, mean ~ %<70 (daily avg) | -0.626 [-2.116, +0.863] | not applied (n < 1000) | not applied (n < 1000) | 0.1229 | +1.0 | +14.1 | 0.0925 \| 0.0947 |
+| MoCA total score ~ %<70 (pooled) | -0.001 [-0.239, +0.237] | 0.993 | 0.997 | 0.0808 | +2.0 | +3.5 | 0.0517 \| 0.0541 |
+| MoCA total score ~ %<70 (daily avg) | -0.008 [-0.246, +0.231] | 0.966 | 0.997 | 0.0808 | +2.0 | +3.5 | 0.0519 \| 0.0541 |
+| Cognitive impairment ~ %<70 (pooled) | OR 1.032 [0.898, 1.187] | 0.812 | 0.702 | 0.6603 | +1.8 | +3.5 | 0.6396 \| 0.6425 |
+| Cognitive impairment ~ %<70 (daily avg) | OR 1.045 [0.908, 1.202] | 0.725 | 0.622 | 0.6606 | +1.6 | +3.3 | 0.6406 \| 0.6425 |
+| MoCA memory index score ~ %<70 (pooled) | -0.123 [-0.286, +0.041] | 0.321 | 0.181 | 0.0615 | +0.3 | +2.0 | 0.0297 \| 0.0286 |
+| MoCA memory index score ~ %<70 (daily avg) | -0.157 [-0.324, +0.011] | 0.222 | 0.122 | 0.0628 | -0.9 | +0.9 | 0.0308 \| 0.0286 |
+| CES-D-10 depressive symptoms ~ %<70 (pooled) | +0.109 [-0.238, +0.457] | 0.722 | 0.667 | 0.1115 | +1.6 | +2.9 | 0.0783 \| 0.0796 |
+| CES-D-10 depressive symptoms ~ %<70 (daily avg) | +0.134 [-0.218, +0.487] | 0.656 | 0.593 | 0.1117 | +1.3 | +2.6 | 0.0784 \| 0.0796 |
+| Clinically relevant depressive symptoms ~ %<70 (pooled) | OR 1.009 [0.859, 1.186] | 0.943 | 0.910 | 0.6605 | +2.0 | +5.0 | 0.6313 \| 0.6337 |
+| Clinically relevant depressive symptoms ~ %<70 (daily avg) | OR 1.031 [0.880, 1.207] | 0.829 | 0.840 | 0.6606 | +1.9 | +4.9 | 0.6315 \| 0.6337 |
+| Indoor PM2.5, log(1 + mean ug/m3) ~ %<70 (pooled) | **+0.137 [+0.047, +0.227]** | **0.040 (FDR<0.05)** | **0.034 (FDR<0.05)** | 0.1724 | -16.8 | -7.4 | 0.1435 \| 0.1310 |
+| Indoor PM2.5, log(1 + mean ug/m3) ~ %<70 (daily avg) | **+0.140 [+0.044, +0.237]** | **0.047 (FDR<0.05)** | **0.034 (FDR<0.05)** | 0.1734 | -17.8 | -8.4 | 0.1439 \| 0.1310 |
+| Indoor temperature, mean ~ %<70 (pooled) | +0.056 [-0.091, +0.204] | 0.656 | 0.794 | 0.2507 | +1.4 | -0.3 | 0.2253 \| 0.2264 |
+| Indoor temperature, mean ~ %<70 (daily avg) | +0.073 [-0.076, +0.221] | 0.566 | 0.794 | 0.2510 | +1.0 | -0.7 | 0.2254 \| 0.2264 |
+| Indoor relative humidity, mean ~ %<70 (pooled) | -0.080 [-0.601, +0.442] | 0.860 | 0.938 | 0.2131 | +1.9 | -0.0 | 0.1839 \| 0.1857 |
+| Indoor relative humidity, mean ~ %<70 (daily avg) | -0.132 [-0.634, +0.370] | 0.780 | 0.938 | 0.2133 | +1.6 | -0.3 | 0.1844 \| 0.1857 |
+| Indoor VOC index, mean ~ %<70 (pooled) | +0.533 [-0.463, +1.529] | 0.515 | 0.585 | 0.0565 | +1.2 | +1.5 | 0.0273 \| 0.0276 |
+| Indoor VOC index, mean ~ %<70 (daily avg) | +0.541 [-0.413, +1.494] | 0.483 | 0.585 | 0.0565 | +1.2 | +1.5 | 0.0274 \| 0.0276 |
+| Steps per wear-day ~ %<70 (pooled) | -411.853 [-697.727, -125.980] | 0.050 | **0.039 (FDR<0.05)** | 0.1631 | -3.4 | -3.3 | 0.1428 \| 0.1390 |
+| Steps per wear-day ~ %<70 (daily avg) | **-423.808 [-680.504, -167.112]** | **0.024 (FDR<0.05)** | **0.038 (FDR<0.05)** | 0.1635 | -3.7 | -3.6 | 0.1438 \| 0.1390 |
+| Brisk-cadence minutes per day ~ %<70 (pooled) | -0.820 [-1.645, +0.006] | 0.198 | 0.380 | 0.1817 | -0.6 | -0.6 | 0.1552 \| 0.1546 |
+| Brisk-cadence minutes per day ~ %<70 (daily avg) | -0.881 [-1.693, -0.069] | 0.165 | 0.380 | 0.1822 | -1.0 | -1.0 | 0.1559 \| 0.1546 |
+| Resting heart-rate proxy ~ %<70 (pooled) | -0.113 [-0.702, +0.476] | 0.829 | 0.811 | 0.1524 | +1.9 | +7.9 | 0.1239 \| 0.1253 |
+| Resting heart-rate proxy ~ %<70 (daily avg) | -0.241 [-0.899, +0.418] | 0.664 | 0.618 | 0.1530 | +1.4 | +7.5 | 0.1244 \| 0.1253 |
+| Total sleep time per night ~ %<70 (pooled) | +2.832 [-2.243, +7.907] | 0.491 | 0.444 | 0.0380 | +0.7 | +3.6 | 0.0057 \| 0.0066 |
+| Total sleep time per night ~ %<70 (daily avg) | +2.140 [-2.722, +7.002] | 0.611 | 0.523 | 0.0373 | +1.3 | +4.2 | 0.0050 \| 0.0066 |
+| Garmin stress score, mean ~ %<70 (pooled) | -0.474 [-1.927, +0.980] | 0.714 | 0.612 | 0.1224 | +1.5 | +14.5 | 0.0919 \| 0.0947 |
+| Garmin stress score, mean ~ %<70 (daily avg) | -0.626 [-2.116, +0.863] | 0.630 | 0.508 | 0.1229 | +1.0 | +14.1 | 0.0925 \| 0.0947 |
 
 
 ---
@@ -673,12 +673,12 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 
 | Predictor (alone) | N | N with time in band | Coef (β) | Std. Err. | 95% CI | t / z | Pr(>\|t\|) | Signif |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| MoCA total score ~ %54-250 (pooled) | 2138 | 2138 | +0.02436 | 0.007284 | [0.01008, 0.03864] | 3.34 | 8.2e-04*** | *** |
-| MoCA total score ~ %54-250 (daily avg) | 2138 | 2138 | +0.02431 | 0.0075 | [0.009609, 0.03901] | 3.24 | 0.001** | ** |
-| Cognitive impairment ~ %54-250 (pooled) | 2138 | 2138 | -0.01276 | 0.004415 | [-0.02142, -0.004111] | -2.89 | 0.004** | ** |
-| Cognitive impairment ~ %54-250 (daily avg) | 2138 | 2138 | -0.01258 | 0.004469 | [-0.02134, -0.003818] | -2.81 | 0.005** | ** |
-| MoCA memory index score ~ %54-250 (pooled) | 2138 | 2138 | +0.01116 | 0.005085 | [0.001197, 0.02113] | 2.20 | 0.028* | * |
-| MoCA memory index score ~ %54-250 (daily avg) | 2138 | 2138 | +0.01103 | 0.00513 | [0.000978, 0.02109] | 2.15 | 0.032* | * |
+| MoCA total score ~ %54-250 (pooled) | 2138 | 2138 | **+0.02436** | 0.007284 | [0.01008, 0.03864] | **3.34** | **8.2e-04***** | *** |
+| MoCA total score ~ %54-250 (daily avg) | 2138 | 2138 | **+0.02431** | 0.0075 | [0.009609, 0.03901] | **3.24** | **0.001**** | ** |
+| Cognitive impairment ~ %54-250 (pooled) | 2138 | 2138 | **-0.01276** | 0.004415 | [-0.02142, -0.004111] | **-2.89** | **0.004**** | ** |
+| Cognitive impairment ~ %54-250 (daily avg) | 2138 | 2138 | **-0.01258** | 0.004469 | [-0.02134, -0.003818] | **-2.81** | **0.005**** | ** |
+| MoCA memory index score ~ %54-250 (pooled) | 2138 | 2138 | **+0.01116** | 0.005085 | [0.001197, 0.02113] | **2.20** | **0.028*** | * |
+| MoCA memory index score ~ %54-250 (daily avg) | 2138 | 2138 | **+0.01103** | 0.00513 | [0.000978, 0.02109] | **2.15** | **0.032*** | * |
 | CES-D-10 depressive symptoms ~ %54-250 (pooled) | 2135 | 2135 | -0.01304 | 0.01203 | [-0.03661, 0.01053] | -1.08 | 0.278 |  |
 | CES-D-10 depressive symptoms ~ %54-250 (daily avg) | 2135 | 2135 | -0.01201 | 0.01226 | [-0.03603, 0.01202] | -0.98 | 0.327 |  |
 | Clinically relevant depressive symptoms ~ %54-250 (pooled) | 2135 | 2135 | -0.006643 | 0.004439 | [-0.01534, 0.002057] | -1.50 | 0.135 |  |
@@ -695,21 +695,21 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 | Steps per wear-day ~ %54-250 (daily avg) | 1872 | 1872 | -1.07 | 12.04 | [-24.67, 22.53] | -0.09 | 0.929 |  |
 | Brisk-cadence minutes per day ~ %54-250 (pooled) | 1872 | 1872 | -0.007468 | 0.03432 | [-0.07473, 0.0598] | -0.22 | 0.828 |  |
 | Brisk-cadence minutes per day ~ %54-250 (daily avg) | 1872 | 1872 | -0.008357 | 0.03388 | [-0.07476, 0.05804] | -0.25 | 0.805 |  |
-| Resting heart-rate proxy ~ %54-250 (pooled) | 1877 | 1877 | -0.09173 | 0.02075 | [-0.1324, -0.05107] | -4.42 | 9.8e-06*** | *** |
-| Resting heart-rate proxy ~ %54-250 (daily avg) | 1877 | 1877 | -0.09281 | 0.02143 | [-0.1348, -0.05081] | -4.33 | 1.5e-05*** | *** |
+| Resting heart-rate proxy ~ %54-250 (pooled) | 1877 | 1877 | **-0.09173** | 0.02075 | [-0.1324, -0.05107] | **-4.42** | **9.8e-06***** | *** |
+| Resting heart-rate proxy ~ %54-250 (daily avg) | 1877 | 1877 | **-0.09281** | 0.02143 | [-0.1348, -0.05081] | **-4.33** | **1.5e-05***** | *** |
 | Total sleep time per night ~ %54-250 (pooled) | 1893 | 1893 | +0.09849 | 0.1422 | [-0.1801, 0.3771] | 0.69 | 0.488 |  |
 | Total sleep time per night ~ %54-250 (daily avg) | 1893 | 1893 | +0.09236 | 0.1456 | [-0.1929, 0.3777] | 0.63 | 0.526 |  |
-| Garmin stress score, mean ~ %54-250 (pooled) | 1879 | 1879 | -0.1761 | 0.04553 | [-0.2653, -0.08686] | -3.87 | 1.1e-04*** | *** |
-| Garmin stress score, mean ~ %54-250 (daily avg) | 1879 | 1879 | -0.1782 | 0.04685 | [-0.2701, -0.08638] | -3.80 | 1.4e-04*** | *** |
+| Garmin stress score, mean ~ %54-250 (pooled) | 1879 | 1879 | **-0.1761** | 0.04553 | [-0.2653, -0.08686] | **-3.87** | **1.1e-04***** | *** |
+| Garmin stress score, mean ~ %54-250 (daily avg) | 1879 | 1879 | **-0.1782** | 0.04685 | [-0.2701, -0.08638] | **-3.80** | **1.4e-04***** | *** |
 
 **(B) Standardised effect, multiplicity and fit**
 
 | Predictor (alone) | β per 1 SD (95% CI) | q, all tests in population | q, this outcome | Adj R² / AUC | ΔAIC vs covs | ΔAIC vs HbA1c | CV R²/AUC (predictor vs covariates-only) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| MoCA total score ~ %54-250 (pooled) | +0.268 [+0.111, +0.426] | 0.004 (FDR<0.05) | 0.001 (FDR<0.05) | 0.1068 | -14.6 | +10.0 | 0.0973 \| 0.0915 |
-| MoCA total score ~ %54-250 (daily avg) | +0.265 [+0.105, +0.425] | 0.006 (FDR<0.05) | 0.002 (FDR<0.05) | 0.1066 | -14.2 | +10.5 | 0.0970 \| 0.0915 |
-| Cognitive impairment ~ %54-250 (pooled) | OR 0.869 [0.790, 0.956] | 0.017 (FDR<0.05) | 0.007 (FDR<0.05) | 0.6705 | -6.9 | +6.7 | 0.6630 \| 0.6603 |
-| Cognitive impairment ~ %54-250 (daily avg) | OR 0.872 [0.793, 0.959] | 0.020 (FDR<0.05) | 0.008 (FDR<0.05) | 0.6704 | -6.4 | +7.2 | 0.6628 \| 0.6603 |
+| MoCA total score ~ %54-250 (pooled) | **+0.268 [+0.111, +0.426]** | **0.004 (FDR<0.05)** | **0.001 (FDR<0.05)** | 0.1068 | -14.6 | +10.0 | 0.0973 \| 0.0915 |
+| MoCA total score ~ %54-250 (daily avg) | **+0.265 [+0.105, +0.425]** | **0.006 (FDR<0.05)** | **0.002 (FDR<0.05)** | 0.1066 | -14.2 | +10.5 | 0.0970 \| 0.0915 |
+| Cognitive impairment ~ %54-250 (pooled) | **OR 0.869 [0.790, 0.956]** | **0.017 (FDR<0.05)** | **0.007 (FDR<0.05)** | 0.6705 | -6.9 | +6.7 | 0.6630 \| 0.6603 |
+| Cognitive impairment ~ %54-250 (daily avg) | **OR 0.872 [0.793, 0.959]** | **0.020 (FDR<0.05)** | **0.008 (FDR<0.05)** | 0.6704 | -6.4 | +7.2 | 0.6628 \| 0.6603 |
 | MoCA memory index score ~ %54-250 (pooled) | +0.123 [+0.013, +0.233] | 0.087 | 0.051 | 0.0734 | -2.5 | +2.9 | 0.0643 \| 0.0630 |
 | MoCA memory index score ~ %54-250 (daily avg) | +0.120 [+0.011, +0.229] | 0.093 | 0.051 | 0.0733 | -2.3 | +3.1 | 0.0642 \| 0.0630 |
 | CES-D-10 depressive symptoms ~ %54-250 (pooled) | -0.144 [-0.404, +0.116] | 0.445 | 0.620 | 0.1035 | +0.1 | +0.4 | 0.0915 \| 0.0916 |
@@ -728,12 +728,12 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 | Steps per wear-day ~ %54-250 (daily avg) | -11.532 [-265.942, +242.879] | 0.958 | 0.953 | 0.1348 | +2.0 | +10.0 | 0.1205 \| 0.1222 |
 | Brisk-cadence minutes per day ~ %54-250 (pooled) | -0.082 [-0.819, +0.655] | 0.892 | 0.828 | 0.1557 | +1.9 | +10.1 | 0.1433 \| 0.1447 |
 | Brisk-cadence minutes per day ~ %54-250 (daily avg) | -0.090 [-0.806, +0.626] | 0.876 | 0.828 | 0.1557 | +1.9 | +10.1 | 0.1433 \| 0.1447 |
-| Resting heart-rate proxy ~ %54-250 (pooled) | -1.006 [-1.452, -0.560] | 8.0e-05 (FDR<0.05) | 1.4e-05 (FDR<0.05) | 0.1721 | -25.7 | +45.5 | 0.1596 \| 0.1482 |
-| Resting heart-rate proxy ~ %54-250 (daily avg) | -1.001 [-1.455, -0.548] | 1.1e-04 (FDR<0.05) | 1.9e-05 (FDR<0.05) | 0.1719 | -25.5 | +45.7 | 0.1594 \| 0.1482 |
+| Resting heart-rate proxy ~ %54-250 (pooled) | **-1.006 [-1.452, -0.560]** | **8.0e-05 (FDR<0.05)** | **1.4e-05 (FDR<0.05)** | 0.1721 | -25.7 | +45.5 | 0.1596 \| 0.1482 |
+| Resting heart-rate proxy ~ %54-250 (daily avg) | **-1.001 [-1.455, -0.548]** | **1.1e-04 (FDR<0.05)** | **1.9e-05 (FDR<0.05)** | 0.1719 | -25.5 | +45.7 | 0.1594 \| 0.1482 |
 | Total sleep time per night ~ %54-250 (pooled) | +1.040 [-1.902, +3.981] | 0.656 | 0.582 | 0.0335 | +1.6 | +10.5 | 0.0205 \| 0.0209 |
 | Total sleep time per night ~ %54-250 (daily avg) | +0.959 [-2.004, +3.922] | 0.693 | 0.582 | 0.0334 | +1.6 | +10.5 | 0.0204 \| 0.0209 |
-| Garmin stress score, mean ~ %54-250 (pooled) | -1.930 [-2.908, -0.952] | 6.5e-04 (FDR<0.05) | 1.6e-04 (FDR<0.05) | 0.1156 | -20.4 | +40.0 | 0.0998 \| 0.0902 |
-| Garmin stress score, mean ~ %54-250 (daily avg) | -1.922 [-2.912, -0.932] | 8.0e-04 (FDR<0.05) | 1.9e-04 (FDR<0.05) | 0.1155 | -20.2 | +40.2 | 0.0996 \| 0.0902 |
+| Garmin stress score, mean ~ %54-250 (pooled) | **-1.930 [-2.908, -0.952]** | **6.5e-04 (FDR<0.05)** | **1.6e-04 (FDR<0.05)** | 0.1156 | -20.4 | +40.0 | 0.0998 \| 0.0902 |
+| Garmin stress score, mean ~ %54-250 (daily avg) | **-1.922 [-2.912, -0.932]** | **8.0e-04 (FDR<0.05)** | **1.9e-04 (FDR<0.05)** | 0.1155 | -20.2 | +40.2 | 0.0996 \| 0.0902 |
 
 ### Healthy group (no diabetes + pre-diabetes / lifestyle)
 
@@ -745,8 +745,8 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 | MoCA total score ~ %54-250 (daily avg) | 1271 | 1271 | +0.05714 | 0.03361 | [-0.008734, 0.123] | 1.70 | 0.089 |  |
 | Cognitive impairment ~ %54-250 (pooled) | 1271 | 1271 | -0.00545 | 0.01245 | [-0.02984, 0.01894] | -0.44 | 0.661 |  |
 | Cognitive impairment ~ %54-250 (daily avg) | 1271 | 1271 | -0.004834 | 0.01268 | [-0.02969, 0.02002] | -0.38 | 0.703 |  |
-| MoCA memory index score ~ %54-250 (pooled) | 1271 | 1271 | +0.03412 | 0.01271 | [0.009217, 0.05902] | 2.69 | 0.007** | ** |
-| MoCA memory index score ~ %54-250 (daily avg) | 1271 | 1271 | +0.03621 | 0.01282 | [0.01109, 0.06134] | 2.82 | 0.005** | ** |
+| MoCA memory index score ~ %54-250 (pooled) | 1271 | 1271 | **+0.03412** | 0.01271 | [0.009217, 0.05902] | **2.69** | **0.007**** | ** |
+| MoCA memory index score ~ %54-250 (daily avg) | 1271 | 1271 | **+0.03621** | 0.01282 | [0.01109, 0.06134] | **2.82** | **0.005**** | ** |
 | CES-D-10 depressive symptoms ~ %54-250 (pooled) | 1270 | 1270 | +0.02713 | 0.03045 | [-0.03256, 0.08682] | 0.89 | 0.373 |  |
 | CES-D-10 depressive symptoms ~ %54-250 (daily avg) | 1270 | 1270 | +0.02672 | 0.03189 | [-0.03579, 0.08923] | 0.84 | 0.402 |  |
 | Clinically relevant depressive symptoms ~ %54-250 (pooled) | 1270 | 1270 | -0.003937 | 0.01333 | [-0.03005, 0.02218] | -0.30 | 0.768 |  |
@@ -778,8 +778,8 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 | MoCA total score ~ %54-250 (daily avg) | +0.273 [-0.042, +0.588] | 0.406 | 0.138 | 0.1062 | -10.7 | +3.0 | 0.0798 \| 0.0789 |
 | Cognitive impairment ~ %54-250 (pooled) | OR 0.974 [0.865, 1.097] | 0.932 | 0.834 | 0.6595 | +1.8 | +1.6 | 0.6434 \| 0.6443 |
 | Cognitive impairment ~ %54-250 (daily avg) | OR 0.977 [0.868, 1.100] | 0.932 | 0.834 | 0.6595 | +1.9 | +1.6 | 0.6434 \| 0.6443 |
-| MoCA memory index score ~ %54-250 (pooled) | +0.166 [+0.045, +0.288] | 0.090 | 0.025 (FDR<0.05) | 0.0749 | -3.4 | -2.7 | 0.0504 \| 0.0477 |
-| MoCA memory index score ~ %54-250 (daily avg) | +0.173 [+0.053, +0.293] | 0.068 | 0.020 (FDR<0.05) | 0.0752 | -3.8 | -3.2 | 0.0506 \| 0.0477 |
+| MoCA memory index score ~ %54-250 (pooled) | +0.166 [+0.045, +0.288] | 0.090 | **0.025 (FDR<0.05)** | 0.0749 | -3.4 | -2.7 | 0.0504 \| 0.0477 |
+| MoCA memory index score ~ %54-250 (daily avg) | +0.173 [+0.053, +0.293] | 0.068 | **0.020 (FDR<0.05)** | 0.0752 | -3.8 | -3.2 | 0.0506 \| 0.0477 |
 | CES-D-10 depressive symptoms ~ %54-250 (pooled) | +0.132 [-0.159, +0.423] | 0.771 | 0.953 | 0.0915 | +1.0 | -1.0 | 0.0665 \| 0.0675 |
 | CES-D-10 depressive symptoms ~ %54-250 (daily avg) | +0.127 [-0.171, +0.425] | 0.804 | 0.953 | 0.0914 | +1.0 | -1.0 | 0.0664 \| 0.0675 |
 | Clinically relevant depressive symptoms ~ %54-250 (pooled) | OR 0.981 [0.864, 1.114] | 0.932 | 0.958 | 0.6934 | +1.9 | +0.8 | 0.6714 \| 0.6758 |
@@ -831,45 +831,45 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 | Steps per wear-day ~ %54-250 (daily avg) | 747 | 747 | +5.368 | 13.36 | [-20.83, 31.56] | 0.40 | 0.688 |  |
 | Brisk-cadence minutes per day ~ %54-250 (pooled) | 747 | 747 | +0.01956 | 0.03759 | [-0.05412, 0.09323] | 0.52 | 0.603 |  |
 | Brisk-cadence minutes per day ~ %54-250 (daily avg) | 747 | 747 | +0.01776 | 0.03671 | [-0.05419, 0.0897] | 0.48 | 0.629 |  |
-| Resting heart-rate proxy ~ %54-250 (pooled) | 749 | 749 | -0.04271 | 0.02146 | [-0.08477, -0.0006513] | -1.99 | 0.047* | * |
-| Resting heart-rate proxy ~ %54-250 (daily avg) | 749 | 749 | -0.04394 | 0.02181 | [-0.08669, -0.001191] | -2.01 | 0.044* | * |
+| Resting heart-rate proxy ~ %54-250 (pooled) | 749 | 749 | **-0.04271** | 0.02146 | [-0.08477, -0.0006513] | **-1.99** | **0.047*** | * |
+| Resting heart-rate proxy ~ %54-250 (daily avg) | 749 | 749 | **-0.04394** | 0.02181 | [-0.08669, -0.001191] | **-2.01** | **0.044*** | * |
 | Total sleep time per night ~ %54-250 (pooled) | 756 | 756 | +0.03181 | 0.1598 | [-0.2814, 0.3451] | 0.20 | 0.842 |  |
 | Total sleep time per night ~ %54-250 (daily avg) | 756 | 756 | +0.02802 | 0.1628 | [-0.2911, 0.3471] | 0.17 | 0.863 |  |
-| Garmin stress score, mean ~ %54-250 (pooled) | 749 | 749 | -0.1129 | 0.04833 | [-0.2076, -0.01813] | -2.33 | 0.020* | * |
-| Garmin stress score, mean ~ %54-250 (daily avg) | 749 | 749 | -0.1156 | 0.04935 | [-0.2124, -0.01892] | -2.34 | 0.019* | * |
+| Garmin stress score, mean ~ %54-250 (pooled) | 749 | 749 | **-0.1129** | 0.04833 | [-0.2076, -0.01813] | **-2.33** | **0.020*** | * |
+| Garmin stress score, mean ~ %54-250 (daily avg) | 749 | 749 | **-0.1156** | 0.04935 | [-0.2124, -0.01892] | **-2.34** | **0.019*** | * |
 
 **(B) Standardised effect, multiplicity and fit**
 
 | Predictor (alone) | β per 1 SD (95% CI) | q, all tests in population | q, this outcome | Adj R² / AUC | ΔAIC vs covs | ΔAIC vs HbA1c | CV R²/AUC (predictor vs covariates-only) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| MoCA total score ~ %54-250 (pooled) | +0.210 [-0.018, +0.438] | not applied (n < 1000) | not applied (n < 1000) | 0.0845 | -1.5 | +0.1 | 0.0565 \| 0.0541 |
-| MoCA total score ~ %54-250 (daily avg) | +0.206 [-0.024, +0.436] | not applied (n < 1000) | not applied (n < 1000) | 0.0844 | -1.3 | +0.2 | 0.0564 \| 0.0541 |
-| Cognitive impairment ~ %54-250 (pooled) | OR 0.866 [0.748, 1.003] | not applied (n < 1000) | not applied (n < 1000) | 0.6640 | -1.8 | -0.2 | 0.6447 \| 0.6425 |
-| Cognitive impairment ~ %54-250 (daily avg) | OR 0.869 [0.751, 1.006] | not applied (n < 1000) | not applied (n < 1000) | 0.6638 | -1.7 | +0.0 | 0.6448 \| 0.6425 |
-| MoCA memory index score ~ %54-250 (pooled) | +0.124 [-0.043, +0.291] | not applied (n < 1000) | not applied (n < 1000) | 0.0615 | +0.3 | +2.0 | 0.0299 \| 0.0286 |
-| MoCA memory index score ~ %54-250 (daily avg) | +0.117 [-0.049, +0.282] | not applied (n < 1000) | not applied (n < 1000) | 0.0613 | +0.5 | +2.2 | 0.0297 \| 0.0286 |
-| CES-D-10 depressive symptoms ~ %54-250 (pooled) | -0.299 [-0.709, +0.111] | not applied (n < 1000) | not applied (n < 1000) | 0.1143 | -1.1 | +0.1 | 0.0788 \| 0.0796 |
-| CES-D-10 depressive symptoms ~ %54-250 (daily avg) | -0.274 [-0.687, +0.140] | not applied (n < 1000) | not applied (n < 1000) | 0.1138 | -0.6 | +0.7 | 0.0784 \| 0.0796 |
-| Clinically relevant depressive symptoms ~ %54-250 (pooled) | OR 0.886 [0.764, 1.028] | not applied (n < 1000) | not applied (n < 1000) | 0.6656 | -0.5 | +2.5 | 0.6365 \| 0.6337 |
-| Clinically relevant depressive symptoms ~ %54-250 (daily avg) | OR 0.900 [0.775, 1.045] | not applied (n < 1000) | not applied (n < 1000) | 0.6650 | +0.2 | +3.2 | 0.6351 \| 0.6337 |
-| Indoor PM2.5, log(1 + mean ug/m3) ~ %54-250 (pooled) | -0.068 [-0.152, +0.016] | not applied (n < 1000) | not applied (n < 1000) | 0.1583 | -2.5 | +7.0 | 0.1314 \| 0.1310 |
-| Indoor PM2.5, log(1 + mean ug/m3) ~ %54-250 (daily avg) | -0.069 [-0.152, +0.015] | not applied (n < 1000) | not applied (n < 1000) | 0.1584 | -2.5 | +6.9 | 0.1315 \| 0.1310 |
-| Indoor temperature, mean ~ %54-250 (pooled) | +0.026 [-0.135, +0.186] | not applied (n < 1000) | not applied (n < 1000) | 0.2503 | +1.9 | +0.2 | 0.2227 \| 0.2264 |
-| Indoor temperature, mean ~ %54-250 (daily avg) | +0.028 [-0.133, +0.189] | not applied (n < 1000) | not applied (n < 1000) | 0.2503 | +1.9 | +0.2 | 0.2227 \| 0.2264 |
-| Indoor relative humidity, mean ~ %54-250 (pooled) | +0.087 [-0.358, +0.532] | not applied (n < 1000) | not applied (n < 1000) | 0.2131 | +1.8 | -0.0 | 0.1840 \| 0.1857 |
-| Indoor relative humidity, mean ~ %54-250 (daily avg) | +0.087 [-0.365, +0.539] | not applied (n < 1000) | not applied (n < 1000) | 0.2131 | +1.8 | -0.0 | 0.1839 \| 0.1857 |
-| Indoor VOC index, mean ~ %54-250 (pooled) | +1.109 [-0.203, +2.420] | not applied (n < 1000) | not applied (n < 1000) | 0.0594 | -1.4 | -1.1 | 0.0290 \| 0.0276 |
-| Indoor VOC index, mean ~ %54-250 (daily avg) | +1.161 [-0.176, +2.497] | not applied (n < 1000) | not applied (n < 1000) | 0.0598 | -1.7 | -1.4 | 0.0293 \| 0.0276 |
-| Steps per wear-day ~ %54-250 (pooled) | +94.194 [-327.618, +516.007] | not applied (n < 1000) | not applied (n < 1000) | 0.1573 | +1.7 | +1.8 | 0.1374 \| 0.1390 |
-| Steps per wear-day ~ %54-250 (daily avg) | +83.275 [-323.087, +489.637] | not applied (n < 1000) | not applied (n < 1000) | 0.1573 | +1.8 | +1.9 | 0.1375 \| 0.1390 |
-| Brisk-cadence minutes per day ~ %54-250 (pooled) | +0.308 [-0.851, +1.466] | not applied (n < 1000) | not applied (n < 1000) | 0.1793 | +1.6 | +1.7 | 0.1533 \| 0.1546 |
-| Brisk-cadence minutes per day ~ %54-250 (daily avg) | +0.275 [-0.841, +1.392] | not applied (n < 1000) | not applied (n < 1000) | 0.1792 | +1.7 | +1.8 | 0.1533 \| 0.1546 |
-| Resting heart-rate proxy ~ %54-250 (pooled) | -0.672 [-1.334, -0.010] | not applied (n < 1000) | not applied (n < 1000) | 0.1576 | -2.7 | +3.4 | 0.1282 \| 0.1253 |
-| Resting heart-rate proxy ~ %54-250 (daily avg) | -0.682 [-1.346, -0.018] | not applied (n < 1000) | not applied (n < 1000) | 0.1577 | -2.8 | +3.2 | 0.1281 \| 0.1253 |
-| Total sleep time per night ~ %54-250 (pooled) | +0.486 [-4.296, +5.268] | not applied (n < 1000) | not applied (n < 1000) | 0.0364 | +2.0 | +4.9 | 0.0044 \| 0.0066 |
-| Total sleep time per night ~ %54-250 (daily avg) | +0.422 [-4.384, +5.228] | not applied (n < 1000) | not applied (n < 1000) | 0.0364 | +2.0 | +4.9 | 0.0043 \| 0.0066 |
-| Garmin stress score, mean ~ %54-250 (pooled) | -1.776 [-3.266, -0.285] | not applied (n < 1000) | not applied (n < 1000) | 0.1306 | -5.5 | +7.6 | 0.1011 \| 0.0947 |
-| Garmin stress score, mean ~ %54-250 (daily avg) | -1.795 [-3.297, -0.294] | not applied (n < 1000) | not applied (n < 1000) | 0.1308 | -5.7 | +7.4 | 0.1012 \| 0.0947 |
+| MoCA total score ~ %54-250 (pooled) | +0.210 [-0.018, +0.438] | 0.229 | 0.109 | 0.0845 | -1.5 | +0.1 | 0.0565 \| 0.0541 |
+| MoCA total score ~ %54-250 (daily avg) | +0.206 [-0.024, +0.436] | 0.242 | 0.112 | 0.0844 | -1.3 | +0.2 | 0.0564 \| 0.0541 |
+| Cognitive impairment ~ %54-250 (pooled) | OR 0.866 [0.748, 1.003] | 0.204 | 0.114 | 0.6640 | -1.8 | -0.2 | 0.6447 \| 0.6425 |
+| Cognitive impairment ~ %54-250 (daily avg) | OR 0.869 [0.751, 1.006] | 0.216 | 0.114 | 0.6638 | -1.7 | +0.0 | 0.6448 \| 0.6425 |
+| MoCA memory index score ~ %54-250 (pooled) | +0.124 [-0.043, +0.291] | 0.329 | 0.181 | 0.0615 | +0.3 | +2.0 | 0.0299 \| 0.0286 |
+| MoCA memory index score ~ %54-250 (daily avg) | +0.117 [-0.049, +0.282] | 0.360 | 0.192 | 0.0613 | +0.5 | +2.2 | 0.0297 \| 0.0286 |
+| CES-D-10 depressive symptoms ~ %54-250 (pooled) | -0.299 [-0.709, +0.111] | 0.334 | 0.578 | 0.1143 | -1.1 | +0.1 | 0.0788 \| 0.0796 |
+| CES-D-10 depressive symptoms ~ %54-250 (daily avg) | -0.274 [-0.687, +0.140] | 0.390 | 0.578 | 0.1138 | -0.6 | +0.7 | 0.0784 \| 0.0796 |
+| Clinically relevant depressive symptoms ~ %54-250 (pooled) | OR 0.886 [0.764, 1.028] | 0.270 | 0.215 | 0.6656 | -0.5 | +2.5 | 0.6365 \| 0.6337 |
+| Clinically relevant depressive symptoms ~ %54-250 (daily avg) | OR 0.900 [0.775, 1.045] | 0.360 | 0.291 | 0.6650 | +0.2 | +3.2 | 0.6351 \| 0.6337 |
+| Indoor PM2.5, log(1 + mean ug/m3) ~ %54-250 (pooled) | -0.068 [-0.152, +0.016] | 0.270 | 0.173 | 0.1583 | -2.5 | +7.0 | 0.1314 \| 0.1310 |
+| Indoor PM2.5, log(1 + mean ug/m3) ~ %54-250 (daily avg) | -0.069 [-0.152, +0.015] | 0.270 | 0.173 | 0.1584 | -2.5 | +6.9 | 0.1315 \| 0.1310 |
+| Indoor temperature, mean ~ %54-250 (pooled) | +0.026 [-0.135, +0.186] | 0.852 | 0.907 | 0.2503 | +1.9 | +0.2 | 0.2227 \| 0.2264 |
+| Indoor temperature, mean ~ %54-250 (daily avg) | +0.028 [-0.133, +0.189] | 0.842 | 0.907 | 0.2503 | +1.9 | +0.2 | 0.2227 \| 0.2264 |
+| Indoor relative humidity, mean ~ %54-250 (pooled) | +0.087 [-0.358, +0.532] | 0.829 | 0.938 | 0.2131 | +1.8 | -0.0 | 0.1840 \| 0.1857 |
+| Indoor relative humidity, mean ~ %54-250 (daily avg) | +0.087 [-0.365, +0.539] | 0.829 | 0.938 | 0.2131 | +1.8 | -0.0 | 0.1839 \| 0.1857 |
+| Indoor VOC index, mean ~ %54-250 (pooled) | +1.109 [-0.203, +2.420] | 0.263 | 0.504 | 0.0594 | -1.4 | -1.1 | 0.0290 \| 0.0276 |
+| Indoor VOC index, mean ~ %54-250 (daily avg) | +1.161 [-0.176, +2.497] | 0.247 | 0.504 | 0.0598 | -1.7 | -1.4 | 0.0293 \| 0.0276 |
+| Steps per wear-day ~ %54-250 (pooled) | +94.194 [-327.618, +516.007] | 0.812 | 0.751 | 0.1573 | +1.7 | +1.8 | 0.1374 \| 0.1390 |
+| Steps per wear-day ~ %54-250 (daily avg) | +83.275 [-323.087, +489.637] | 0.825 | 0.751 | 0.1573 | +1.8 | +1.9 | 0.1375 \| 0.1390 |
+| Brisk-cadence minutes per day ~ %54-250 (pooled) | +0.308 [-0.851, +1.466] | 0.780 | 0.821 | 0.1793 | +1.6 | +1.7 | 0.1533 \| 0.1546 |
+| Brisk-cadence minutes per day ~ %54-250 (daily avg) | +0.275 [-0.841, +1.392] | 0.795 | 0.821 | 0.1792 | +1.7 | +1.8 | 0.1533 \| 0.1546 |
+| Resting heart-rate proxy ~ %54-250 (pooled) | -0.672 [-1.334, -0.010] | 0.189 | 0.087 | 0.1576 | -2.7 | +3.4 | 0.1282 \| 0.1253 |
+| Resting heart-rate proxy ~ %54-250 (daily avg) | -0.682 [-1.346, -0.018] | 0.182 | 0.087 | 0.1577 | -2.8 | +3.2 | 0.1281 \| 0.1253 |
+| Total sleep time per night ~ %54-250 (pooled) | +0.486 [-4.296, +5.268] | 0.896 | 0.863 | 0.0364 | +2.0 | +4.9 | 0.0044 \| 0.0066 |
+| Total sleep time per night ~ %54-250 (daily avg) | +0.422 [-4.384, +5.228] | 0.912 | 0.863 | 0.0364 | +2.0 | +4.9 | 0.0043 \| 0.0066 |
+| Garmin stress score, mean ~ %54-250 (pooled) | -1.776 [-3.266, -0.285] | 0.116 | **0.034 (FDR<0.05)** | 0.1306 | -5.5 | +7.6 | 0.1011 \| 0.0947 |
+| Garmin stress score, mean ~ %54-250 (daily avg) | -1.795 [-3.297, -0.294] | 0.116 | **0.034 (FDR<0.05)** | 0.1308 | -5.7 | +7.4 | 0.1012 \| 0.0947 |
 
 
 ---
@@ -882,24 +882,24 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 
 | Predictor (alone) | N | N with time in band | Coef (β) | Std. Err. | 95% CI | t / z | Pr(>\|t\|) | Signif |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| MoCA total score ~ %>180 (pooled) | 2138 | 1927 | -0.01748 | 0.003708 | [-0.02475, -0.01021] | -4.71 | 2.4e-06*** | *** |
-| MoCA total score ~ %>180 (daily avg) | 2138 | 1876 | -0.01713 | 0.003713 | [-0.0244, -0.009849] | -4.61 | 4.0e-06*** | *** |
-| MoCA total score ~ %>180 nocturnal | 2138 | 1109 | -0.01568 | 0.003777 | [-0.02308, -0.008274] | -4.15 | 3.3e-05*** | *** |
-| Cognitive impairment ~ %>180 (pooled) | 2138 | 1927 | +0.009094 | 0.002337 | [0.004514, 0.01367] | 3.89 | 9.9e-05*** | *** |
-| Cognitive impairment ~ %>180 (daily avg) | 2138 | 1876 | +0.008958 | 0.002331 | [0.00439, 0.01353] | 3.84 | 1.2e-04*** | *** |
-| Cognitive impairment ~ %>180 nocturnal | 2138 | 1109 | +0.007721 | 0.002332 | [0.003151, 0.01229] | 3.31 | 9.3e-04*** | *** |
-| MoCA memory index score ~ %>180 (pooled) | 2138 | 1927 | -0.008234 | 0.002859 | [-0.01384, -0.002631] | -2.88 | 0.004** | ** |
-| MoCA memory index score ~ %>180 (daily avg) | 2138 | 1876 | -0.008052 | 0.002858 | [-0.01365, -0.002449] | -2.82 | 0.005** | ** |
-| MoCA memory index score ~ %>180 nocturnal | 2138 | 1109 | -0.007592 | 0.002857 | [-0.01319, -0.001992] | -2.66 | 0.008** | ** |
+| MoCA total score ~ %>180 (pooled) | 2138 | 1927 | **-0.01748** | 0.003708 | [-0.02475, -0.01021] | **-4.71** | **2.4e-06***** | *** |
+| MoCA total score ~ %>180 (daily avg) | 2138 | 1876 | **-0.01713** | 0.003713 | [-0.0244, -0.009849] | **-4.61** | **4.0e-06***** | *** |
+| MoCA total score ~ %>180 nocturnal | 2138 | 1109 | **-0.01568** | 0.003777 | [-0.02308, -0.008274] | **-4.15** | **3.3e-05***** | *** |
+| Cognitive impairment ~ %>180 (pooled) | 2138 | 1927 | **+0.009094** | 0.002337 | [0.004514, 0.01367] | **3.89** | **9.9e-05***** | *** |
+| Cognitive impairment ~ %>180 (daily avg) | 2138 | 1876 | **+0.008958** | 0.002331 | [0.00439, 0.01353] | **3.84** | **1.2e-04***** | *** |
+| Cognitive impairment ~ %>180 nocturnal | 2138 | 1109 | **+0.007721** | 0.002332 | [0.003151, 0.01229] | **3.31** | **9.3e-04***** | *** |
+| MoCA memory index score ~ %>180 (pooled) | 2138 | 1927 | **-0.008234** | 0.002859 | [-0.01384, -0.002631] | **-2.88** | **0.004**** | ** |
+| MoCA memory index score ~ %>180 (daily avg) | 2138 | 1876 | **-0.008052** | 0.002858 | [-0.01365, -0.002449] | **-2.82** | **0.005**** | ** |
+| MoCA memory index score ~ %>180 nocturnal | 2138 | 1109 | **-0.007592** | 0.002857 | [-0.01319, -0.001992] | **-2.66** | **0.008**** | ** |
 | CES-D-10 depressive symptoms ~ %>180 (pooled) | 2135 | 1924 | +0.006793 | 0.005898 | [-0.004767, 0.01835] | 1.15 | 0.249 |  |
 | CES-D-10 depressive symptoms ~ %>180 (daily avg) | 2135 | 1873 | +0.006398 | 0.005887 | [-0.00514, 0.01794] | 1.09 | 0.277 |  |
 | CES-D-10 depressive symptoms ~ %>180 nocturnal | 2135 | 1106 | +0.01097 | 0.006023 | [-0.0008351, 0.02277] | 1.82 | 0.069 |  |
-| Clinically relevant depressive symptoms ~ %>180 (pooled) | 2135 | 1924 | +0.005303 | 0.002623 | [0.0001619, 0.01044] | 2.02 | 0.043* | * |
+| Clinically relevant depressive symptoms ~ %>180 (pooled) | 2135 | 1924 | **+0.005303** | 0.002623 | [0.0001619, 0.01044] | **2.02** | **0.043*** | * |
 | Clinically relevant depressive symptoms ~ %>180 (daily avg) | 2135 | 1873 | +0.005081 | 0.002623 | [-5.933e-05, 0.01022] | 1.94 | 0.053 |  |
-| Clinically relevant depressive symptoms ~ %>180 nocturnal | 2135 | 1106 | +0.007555 | 0.002526 | [0.002605, 0.0125] | 2.99 | 0.003** | ** |
+| Clinically relevant depressive symptoms ~ %>180 nocturnal | 2135 | 1106 | **+0.007555** | 0.002526 | [0.002605, 0.0125] | **2.99** | **0.003**** | ** |
 | Indoor PM2.5, log(1 + mean ug/m3) ~ %>180 (pooled) | 2100 | 1896 | +0.001952 | 0.001151 | [-0.0003031, 0.004207] | 1.70 | 0.090 |  |
 | Indoor PM2.5, log(1 + mean ug/m3) ~ %>180 (daily avg) | 2100 | 1846 | +0.001921 | 0.001148 | [-0.0003302, 0.004172] | 1.67 | 0.094 |  |
-| Indoor PM2.5, log(1 + mean ug/m3) ~ %>180 nocturnal | 2100 | 1095 | +0.002313 | 0.001169 | [2.242e-05, 0.004603] | 1.98 | 0.048* | * |
+| Indoor PM2.5, log(1 + mean ug/m3) ~ %>180 nocturnal | 2100 | 1095 | **+0.002313** | 0.001169 | [2.242e-05, 0.004603] | **1.98** | **0.048*** | * |
 | Indoor temperature, mean ~ %>180 (pooled) | 2100 | 1896 | +0.0009689 | 0.002384 | [-0.003704, 0.005642] | 0.41 | 0.684 |  |
 | Indoor temperature, mean ~ %>180 (daily avg) | 2100 | 1846 | +0.0007993 | 0.002382 | [-0.003869, 0.005468] | 0.34 | 0.737 |  |
 | Indoor temperature, mean ~ %>180 nocturnal | 2100 | 1095 | +0.0006301 | 0.002428 | [-0.004128, 0.005388] | 0.26 | 0.795 |  |
@@ -915,35 +915,35 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 | Brisk-cadence minutes per day ~ %>180 (pooled) | 1872 | 1677 | +0.02202 | 0.01844 | [-0.01413, 0.05817] | 1.19 | 0.232 |  |
 | Brisk-cadence minutes per day ~ %>180 (daily avg) | 1872 | 1628 | +0.02204 | 0.01842 | [-0.01407, 0.05815] | 1.20 | 0.232 |  |
 | Brisk-cadence minutes per day ~ %>180 nocturnal | 1872 | 959 | +0.01997 | 0.01906 | [-0.01739, 0.05734] | 1.05 | 0.295 |  |
-| Resting heart-rate proxy ~ %>180 (pooled) | 1877 | 1680 | +0.08311 | 0.01077 | [0.06201, 0.1042] | 7.72 | 1.2e-14*** | *** |
-| Resting heart-rate proxy ~ %>180 (daily avg) | 1877 | 1631 | +0.08253 | 0.01072 | [0.06151, 0.1035] | 7.70 | 1.4e-14*** | *** |
-| Resting heart-rate proxy ~ %>180 nocturnal | 1877 | 960 | +0.06833 | 0.01087 | [0.04701, 0.08964] | 6.28 | 3.3e-10*** | *** |
+| Resting heart-rate proxy ~ %>180 (pooled) | 1877 | 1680 | **+0.08311** | 0.01077 | [0.06201, 0.1042] | **7.72** | **1.2e-14***** | *** |
+| Resting heart-rate proxy ~ %>180 (daily avg) | 1877 | 1631 | **+0.08253** | 0.01072 | [0.06151, 0.1035] | **7.70** | **1.4e-14***** | *** |
+| Resting heart-rate proxy ~ %>180 nocturnal | 1877 | 960 | **+0.06833** | 0.01087 | [0.04701, 0.08964] | **6.28** | **3.3e-10***** | *** |
 | Total sleep time per night ~ %>180 (pooled) | 1893 | 1699 | -0.1017 | 0.08123 | [-0.2609, 0.05753] | -1.25 | 0.211 |  |
 | Total sleep time per night ~ %>180 (daily avg) | 1893 | 1652 | -0.09821 | 0.08135 | [-0.2577, 0.06123] | -1.21 | 0.227 |  |
 | Total sleep time per night ~ %>180 nocturnal | 1893 | 969 | -0.03407 | 0.08043 | [-0.1917, 0.1236] | -0.42 | 0.672 |  |
-| Garmin stress score, mean ~ %>180 (pooled) | 1879 | 1681 | +0.1494 | 0.02218 | [0.1059, 0.1929] | 6.73 | 1.7e-11*** | *** |
-| Garmin stress score, mean ~ %>180 (daily avg) | 1879 | 1632 | +0.1477 | 0.0221 | [0.1044, 0.191] | 6.68 | 2.3e-11*** | *** |
-| Garmin stress score, mean ~ %>180 nocturnal | 1879 | 962 | +0.1206 | 0.02216 | [0.07714, 0.164] | 5.44 | 5.3e-08*** | *** |
+| Garmin stress score, mean ~ %>180 (pooled) | 1879 | 1681 | **+0.1494** | 0.02218 | [0.1059, 0.1929] | **6.73** | **1.7e-11***** | *** |
+| Garmin stress score, mean ~ %>180 (daily avg) | 1879 | 1632 | **+0.1477** | 0.0221 | [0.1044, 0.191] | **6.68** | **2.3e-11***** | *** |
+| Garmin stress score, mean ~ %>180 nocturnal | 1879 | 962 | **+0.1206** | 0.02216 | [0.07714, 0.164] | **5.44** | **5.3e-08***** | *** |
 
 **(B) Standardised effect, multiplicity and fit**
 
 | Predictor (alone) | β per 1 SD (95% CI) | q, all tests in population | q, this outcome | Adj R² / AUC | ΔAIC vs covs | ΔAIC vs HbA1c | CV R²/AUC (predictor vs covariates-only) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| MoCA total score ~ %>180 (pooled) | -0.355 [-0.503, -0.207] | 2.4e-05 (FDR<0.05) | 9.3e-06 (FDR<0.05) | 0.1116 | -26.3 | -1.6 | 0.1021 \| 0.0915 |
-| MoCA total score ~ %>180 (daily avg) | -0.349 [-0.497, -0.201] | 3.7e-05 (FDR<0.05) | 1.1e-05 (FDR<0.05) | 0.1112 | -25.3 | -0.6 | 0.1017 \| 0.0915 |
-| MoCA total score ~ %>180 nocturnal | -0.317 [-0.467, -0.167] | 2.3e-04 (FDR<0.05) | 6.9e-05 (FDR<0.05) | 0.1093 | -20.7 | +3.9 | 0.1001 \| 0.0915 |
-| Cognitive impairment ~ %>180 (pooled) | OR 1.203 [1.096, 1.320] | 6.1e-04 (FDR<0.05) | 3.4e-04 (FDR<0.05) | 0.6732 | -13.4 | +0.2 | 0.6653 \| 0.6603 |
-| Cognitive impairment ~ %>180 (daily avg) | OR 1.200 [1.094, 1.317] | 7.0e-04 (FDR<0.05) | 3.4e-04 (FDR<0.05) | 0.6731 | -13.0 | +0.6 | 0.6650 \| 0.6603 |
-| Cognitive impairment ~ %>180 nocturnal | OR 1.169 [1.066, 1.282] | 0.005 (FDR<0.05) | 0.002 (FDR<0.05) | 0.6718 | -9.1 | +4.5 | 0.6634 \| 0.6603 |
-| MoCA memory index score ~ %>180 (pooled) | -0.167 [-0.281, -0.053] | 0.017 (FDR<0.05) | 0.016 (FDR<0.05) | 0.0750 | -6.1 | -0.7 | 0.0657 \| 0.0630 |
-| MoCA memory index score ~ %>180 (daily avg) | -0.164 [-0.278, -0.050] | 0.020 (FDR<0.05) | 0.017 (FDR<0.05) | 0.0748 | -5.7 | -0.4 | 0.0655 \| 0.0630 |
-| MoCA memory index score ~ %>180 nocturnal | -0.154 [-0.267, -0.040] | 0.029 (FDR<0.05) | 0.021 (FDR<0.05) | 0.0744 | -4.8 | +0.5 | 0.0652 \| 0.0630 |
+| MoCA total score ~ %>180 (pooled) | **-0.355 [-0.503, -0.207]** | **2.4e-05 (FDR<0.05)** | **9.3e-06 (FDR<0.05)** | 0.1116 | -26.3 | -1.6 | 0.1021 \| 0.0915 |
+| MoCA total score ~ %>180 (daily avg) | **-0.349 [-0.497, -0.201]** | **3.7e-05 (FDR<0.05)** | **1.1e-05 (FDR<0.05)** | 0.1112 | -25.3 | -0.6 | 0.1017 \| 0.0915 |
+| MoCA total score ~ %>180 nocturnal | **-0.317 [-0.467, -0.167]** | **2.3e-04 (FDR<0.05)** | **6.9e-05 (FDR<0.05)** | 0.1093 | -20.7 | +3.9 | 0.1001 \| 0.0915 |
+| Cognitive impairment ~ %>180 (pooled) | **OR 1.203 [1.096, 1.320]** | **6.1e-04 (FDR<0.05)** | **3.4e-04 (FDR<0.05)** | 0.6732 | -13.4 | +0.2 | 0.6653 \| 0.6603 |
+| Cognitive impairment ~ %>180 (daily avg) | **OR 1.200 [1.094, 1.317]** | **7.0e-04 (FDR<0.05)** | **3.4e-04 (FDR<0.05)** | 0.6731 | -13.0 | +0.6 | 0.6650 \| 0.6603 |
+| Cognitive impairment ~ %>180 nocturnal | **OR 1.169 [1.066, 1.282]** | **0.005 (FDR<0.05)** | **0.002 (FDR<0.05)** | 0.6718 | -9.1 | +4.5 | 0.6634 \| 0.6603 |
+| MoCA memory index score ~ %>180 (pooled) | **-0.167 [-0.281, -0.053]** | **0.017 (FDR<0.05)** | **0.016 (FDR<0.05)** | 0.0750 | -6.1 | -0.7 | 0.0657 \| 0.0630 |
+| MoCA memory index score ~ %>180 (daily avg) | **-0.164 [-0.278, -0.050]** | **0.020 (FDR<0.05)** | **0.017 (FDR<0.05)** | 0.0748 | -5.7 | -0.4 | 0.0655 \| 0.0630 |
+| MoCA memory index score ~ %>180 nocturnal | **-0.154 [-0.267, -0.040]** | **0.029 (FDR<0.05)** | **0.021 (FDR<0.05)** | 0.0744 | -4.8 | +0.5 | 0.0652 \| 0.0630 |
 | CES-D-10 depressive symptoms ~ %>180 (pooled) | +0.138 [-0.097, +0.373] | 0.416 | 0.620 | 0.1035 | +0.3 | +0.6 | 0.0917 \| 0.0916 |
 | CES-D-10 depressive symptoms ~ %>180 (daily avg) | +0.130 [-0.105, +0.365] | 0.445 | 0.620 | 0.1034 | +0.5 | +0.7 | 0.0916 \| 0.0916 |
 | CES-D-10 depressive symptoms ~ %>180 nocturnal | +0.222 [-0.017, +0.461] | 0.172 | 0.620 | 0.1046 | -2.4 | -2.2 | 0.0930 \| 0.0916 |
 | Clinically relevant depressive symptoms ~ %>180 (pooled) | OR 1.114 [1.003, 1.236] | 0.124 | 0.158 | 0.6824 | -2.0 | +0.7 | 0.6692 \| 0.6681 |
 | Clinically relevant depressive symptoms ~ %>180 (daily avg) | OR 1.109 [0.999, 1.231] | 0.141 | 0.158 | 0.6824 | -1.6 | +1.1 | 0.6691 \| 0.6681 |
-| Clinically relevant depressive symptoms ~ %>180 nocturnal | OR 1.165 [1.054, 1.288] | 0.012 (FDR<0.05) | 0.043 (FDR<0.05) | 0.6860 | -6.6 | -3.9 | 0.6737 \| 0.6681 |
+| Clinically relevant depressive symptoms ~ %>180 nocturnal | **OR 1.165 [1.054, 1.288]** | **0.012 (FDR<0.05)** | **0.043 (FDR<0.05)** | 0.6860 | -6.6 | -3.9 | 0.6737 \| 0.6681 |
 | Indoor PM2.5, log(1 + mean ug/m3) ~ %>180 (pooled) | +0.040 [-0.006, +0.086] | 0.202 | 0.173 | 0.1524 | -1.9 | +9.0 | 0.1391 \| 0.1387 |
 | Indoor PM2.5, log(1 + mean ug/m3) ~ %>180 (daily avg) | +0.039 [-0.007, +0.085] | 0.208 | 0.173 | 0.1523 | -1.8 | +9.1 | 0.1391 \| 0.1387 |
 | Indoor PM2.5, log(1 + mean ug/m3) ~ %>180 nocturnal | +0.047 [+0.000, +0.093] | 0.132 | 0.173 | 0.1530 | -3.5 | +7.5 | 0.1394 \| 0.1387 |
@@ -962,15 +962,15 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 | Brisk-cadence minutes per day ~ %>180 (pooled) | +0.443 [-0.284, +1.170] | 0.400 | 0.313 | 0.1566 | -0.1 | +8.1 | 0.1446 \| 0.1447 |
 | Brisk-cadence minutes per day ~ %>180 (daily avg) | +0.445 [-0.284, +1.173] | 0.400 | 0.313 | 0.1566 | -0.1 | +8.1 | 0.1445 \| 0.1447 |
 | Brisk-cadence minutes per day ~ %>180 nocturnal | +0.400 [-0.348, +1.149] | 0.467 | 0.351 | 0.1564 | +0.3 | +8.4 | 0.1443 \| 0.1447 |
-| Resting heart-rate proxy ~ %>180 (pooled) | +1.673 [+1.249, +2.098] | 6.3e-13 (FDR<0.05) | 5.2e-14 (FDR<0.05) | 0.1927 | -73.2 | -1.9 | 0.1804 \| 0.1482 |
-| Resting heart-rate proxy ~ %>180 (daily avg) | +1.667 [+1.242, +2.091] | 6.8e-13 (FDR<0.05) | 5.4e-14 (FDR<0.05) | 0.1924 | -72.5 | -1.3 | 0.1801 \| 0.1482 |
-| Resting heart-rate proxy ~ %>180 nocturnal | +1.369 [+0.942, +1.796] | 5.5e-09 (FDR<0.05) | 6.4e-10 (FDR<0.05) | 0.1820 | -48.3 | +22.9 | 0.1697 \| 0.1482 |
+| Resting heart-rate proxy ~ %>180 (pooled) | **+1.673 [+1.249, +2.098]** | **6.3e-13 (FDR<0.05)** | **5.2e-14 (FDR<0.05)** | 0.1927 | -73.2 | -1.9 | 0.1804 \| 0.1482 |
+| Resting heart-rate proxy ~ %>180 (daily avg) | **+1.667 [+1.242, +2.091]** | **6.8e-13 (FDR<0.05)** | **5.4e-14 (FDR<0.05)** | 0.1924 | -72.5 | -1.3 | 0.1801 \| 0.1482 |
+| Resting heart-rate proxy ~ %>180 nocturnal | **+1.369 [+0.942, +1.796]** | **5.5e-09 (FDR<0.05)** | **6.4e-10 (FDR<0.05)** | 0.1820 | -48.3 | +22.9 | 0.1697 \| 0.1482 |
 | Total sleep time per night ~ %>180 (pooled) | -2.019 [-5.179, +1.142] | 0.376 | 0.403 | 0.0341 | +0.4 | +9.3 | 0.0204 \| 0.0209 |
 | Total sleep time per night ~ %>180 (daily avg) | -1.956 [-5.130, +1.219] | 0.398 | 0.403 | 0.0340 | +0.5 | +9.4 | 0.0203 \| 0.0209 |
 | Total sleep time per night ~ %>180 nocturnal | -0.672 [-3.781, +2.437] | 0.805 | 0.718 | 0.0333 | +1.8 | +10.7 | 0.0200 \| 0.0209 |
-| Garmin stress score, mean ~ %>180 (pooled) | +3.006 [+2.131, +3.881] | 3.8e-10 (FDR<0.05) | 8.5e-11 (FDR<0.05) | 0.1299 | -50.9 | +9.5 | 0.1145 \| 0.0902 |
-| Garmin stress score, mean ~ %>180 (daily avg) | +2.982 [+2.108, +3.856] | 4.8e-10 (FDR<0.05) | 9.0e-11 (FDR<0.05) | 0.1295 | -50.0 | +10.4 | 0.1141 \| 0.0902 |
-| Garmin stress score, mean ~ %>180 nocturnal | +2.415 [+1.545, +3.285] | 6.4e-07 (FDR<0.05) | 1.0e-07 (FDR<0.05) | 0.1212 | -32.2 | +28.2 | 0.1058 \| 0.0902 |
+| Garmin stress score, mean ~ %>180 (pooled) | **+3.006 [+2.131, +3.881]** | **3.8e-10 (FDR<0.05)** | **8.5e-11 (FDR<0.05)** | 0.1299 | -50.9 | +9.5 | 0.1145 \| 0.0902 |
+| Garmin stress score, mean ~ %>180 (daily avg) | **+2.982 [+2.108, +3.856]** | **4.8e-10 (FDR<0.05)** | **9.0e-11 (FDR<0.05)** | 0.1295 | -50.0 | +10.4 | 0.1141 \| 0.0902 |
+| Garmin stress score, mean ~ %>180 nocturnal | **+2.415 [+1.545, +3.285]** | **6.4e-07 (FDR<0.05)** | **1.0e-07 (FDR<0.05)** | 0.1212 | -32.2 | +28.2 | 0.1058 \| 0.0902 |
 
 ### Healthy group (no diabetes + pre-diabetes / lifestyle)
 
@@ -978,21 +978,21 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 
 | Predictor (alone) | N | N with time in band | Coef (β) | Std. Err. | 95% CI | t / z | Pr(>\|t\|) | Signif |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| MoCA total score ~ %>180 (pooled) | 1271 | 1094 | -0.03752 | 0.01256 | [-0.06213, -0.01291] | -2.99 | 0.003** | ** |
-| MoCA total score ~ %>180 (daily avg) | 1271 | 1049 | -0.0369 | 0.01251 | [-0.06141, -0.01239] | -2.95 | 0.003** | ** |
-| MoCA total score ~ %>180 nocturnal | 1271 | 446 | -0.03131 | 0.01365 | [-0.05807, -0.004546] | -2.29 | 0.022* | * |
+| MoCA total score ~ %>180 (pooled) | 1271 | 1094 | **-0.03752** | 0.01256 | [-0.06213, -0.01291] | **-2.99** | **0.003**** | ** |
+| MoCA total score ~ %>180 (daily avg) | 1271 | 1049 | **-0.0369** | 0.01251 | [-0.06141, -0.01239] | **-2.95** | **0.003**** | ** |
+| MoCA total score ~ %>180 nocturnal | 1271 | 446 | **-0.03131** | 0.01365 | [-0.05807, -0.004546] | **-2.29** | **0.022*** | * |
 | Cognitive impairment ~ %>180 (pooled) | 1271 | 1094 | +0.007921 | 0.006872 | [-0.005547, 0.02139] | 1.15 | 0.249 |  |
 | Cognitive impairment ~ %>180 (daily avg) | 1271 | 1049 | +0.00766 | 0.006845 | [-0.005756, 0.02108] | 1.12 | 0.263 |  |
 | Cognitive impairment ~ %>180 nocturnal | 1271 | 446 | +0.000215 | 0.007255 | [-0.014, 0.01443] | 0.03 | 0.976 |  |
-| MoCA memory index score ~ %>180 (pooled) | 1271 | 1094 | -0.02173 | 0.007755 | [-0.03693, -0.006533] | -2.80 | 0.005** | ** |
-| MoCA memory index score ~ %>180 (daily avg) | 1271 | 1049 | -0.0215 | 0.007673 | [-0.03654, -0.006463] | -2.80 | 0.005** | ** |
-| MoCA memory index score ~ %>180 nocturnal | 1271 | 446 | -0.01903 | 0.007758 | [-0.03424, -0.003829] | -2.45 | 0.014* | * |
+| MoCA memory index score ~ %>180 (pooled) | 1271 | 1094 | **-0.02173** | 0.007755 | [-0.03693, -0.006533] | **-2.80** | **0.005**** | ** |
+| MoCA memory index score ~ %>180 (daily avg) | 1271 | 1049 | **-0.0215** | 0.007673 | [-0.03654, -0.006463] | **-2.80** | **0.005**** | ** |
+| MoCA memory index score ~ %>180 nocturnal | 1271 | 446 | **-0.01903** | 0.007758 | [-0.03424, -0.003829] | **-2.45** | **0.014*** | * |
 | CES-D-10 depressive symptoms ~ %>180 (pooled) | 1270 | 1093 | +0.008409 | 0.02102 | [-0.03278, 0.0496] | 0.40 | 0.689 |  |
 | CES-D-10 depressive symptoms ~ %>180 (daily avg) | 1270 | 1048 | +0.008275 | 0.02087 | [-0.03263, 0.04918] | 0.40 | 0.692 |  |
 | CES-D-10 depressive symptoms ~ %>180 nocturnal | 1270 | 445 | +0.02219 | 0.02543 | [-0.02766, 0.07204] | 0.87 | 0.383 |  |
 | Clinically relevant depressive symptoms ~ %>180 (pooled) | 1270 | 1093 | +0.01064 | 0.007319 | [-0.003702, 0.02499] | 1.45 | 0.146 |  |
 | Clinically relevant depressive symptoms ~ %>180 (daily avg) | 1270 | 1048 | +0.01069 | 0.007288 | [-0.003597, 0.02497] | 1.47 | 0.143 |  |
-| Clinically relevant depressive symptoms ~ %>180 nocturnal | 1270 | 445 | +0.01809 | 0.007493 | [0.003402, 0.03277] | 2.41 | 0.016* | * |
+| Clinically relevant depressive symptoms ~ %>180 nocturnal | 1270 | 445 | **+0.01809** | 0.007493 | [0.003402, 0.03277] | **2.41** | **0.016*** | * |
 | Indoor PM2.5, log(1 + mean ug/m3) ~ %>180 (pooled) | 1251 | 1077 | -0.003704 | 0.002212 | [-0.00804, 0.0006309] | -1.67 | 0.094 |  |
 | Indoor PM2.5, log(1 + mean ug/m3) ~ %>180 (daily avg) | 1251 | 1033 | -0.003707 | 0.002204 | [-0.008027, 0.0006131] | -1.68 | 0.093 |  |
 | Indoor PM2.5, log(1 + mean ug/m3) ~ %>180 nocturnal | 1251 | 441 | -0.002567 | 0.002194 | [-0.006868, 0.001733] | -1.17 | 0.242 |  |
@@ -1011,8 +1011,8 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 | Brisk-cadence minutes per day ~ %>180 (pooled) | 1125 | 963 | +0.02601 | 0.04501 | [-0.06221, 0.1142] | 0.58 | 0.563 |  |
 | Brisk-cadence minutes per day ~ %>180 (daily avg) | 1125 | 920 | +0.02366 | 0.04496 | [-0.06446, 0.1118] | 0.53 | 0.599 |  |
 | Brisk-cadence minutes per day ~ %>180 nocturnal | 1125 | 392 | +0.002537 | 0.04882 | [-0.09315, 0.09822] | 0.05 | 0.959 |  |
-| Resting heart-rate proxy ~ %>180 (pooled) | 1128 | 964 | +0.08387 | 0.03507 | [0.01514, 0.1526] | 2.39 | 0.017* | * |
-| Resting heart-rate proxy ~ %>180 (daily avg) | 1128 | 921 | +0.08245 | 0.03498 | [0.01389, 0.151] | 2.36 | 0.018* | * |
+| Resting heart-rate proxy ~ %>180 (pooled) | 1128 | 964 | **+0.08387** | 0.03507 | [0.01514, 0.1526] | **2.39** | **0.017*** | * |
+| Resting heart-rate proxy ~ %>180 (daily avg) | 1128 | 921 | **+0.08245** | 0.03498 | [0.01389, 0.151] | **2.36** | **0.018*** | * |
 | Resting heart-rate proxy ~ %>180 nocturnal | 1128 | 392 | +0.03983 | 0.03879 | [-0.0362, 0.1159] | 1.03 | 0.305 |  |
 | Total sleep time per night ~ %>180 (pooled) | 1137 | 976 | +0.1413 | 0.2584 | [-0.3651, 0.6477] | 0.55 | 0.584 |  |
 | Total sleep time per night ~ %>180 (daily avg) | 1137 | 935 | +0.148 | 0.2578 | [-0.3574, 0.6534] | 0.57 | 0.566 |  |
@@ -1025,15 +1025,15 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 
 | Predictor (alone) | β per 1 SD (95% CI) | q, all tests in population | q, this outcome | Adj R² / AUC | ΔAIC vs covs | ΔAIC vs HbA1c | CV R²/AUC (predictor vs covariates-only) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| MoCA total score ~ %>180 (pooled) | -0.333 [-0.552, -0.115] | 0.052 | 0.011 (FDR<0.05) | 0.1104 | -16.8 | -3.1 | 0.0877 \| 0.0789 |
-| MoCA total score ~ %>180 (daily avg) | -0.329 [-0.547, -0.110] | 0.052 | 0.011 (FDR<0.05) | 0.1101 | -16.3 | -2.6 | 0.0874 \| 0.0789 |
+| MoCA total score ~ %>180 (pooled) | -0.333 [-0.552, -0.115] | 0.052 | **0.011 (FDR<0.05)** | 0.1104 | -16.8 | -3.1 | 0.0877 \| 0.0789 |
+| MoCA total score ~ %>180 (daily avg) | -0.329 [-0.547, -0.110] | 0.052 | **0.011 (FDR<0.05)** | 0.1101 | -16.3 | -2.6 | 0.0874 \| 0.0789 |
 | MoCA total score ~ %>180 nocturnal | -0.264 [-0.490, -0.038] | 0.158 | 0.052 | 0.1056 | -9.8 | +3.9 | 0.0833 \| 0.0789 |
 | Cognitive impairment ~ %>180 (pooled) | OR 1.073 [0.952, 1.209] | 0.628 | 0.480 | 0.6602 | +0.7 | +0.5 | 0.6438 \| 0.6443 |
 | Cognitive impairment ~ %>180 (daily avg) | OR 1.071 [0.950, 1.207] | 0.641 | 0.480 | 0.6601 | +0.7 | +0.5 | 0.6435 \| 0.6443 |
 | Cognitive impairment ~ %>180 nocturnal | OR 1.002 [0.888, 1.130] | 0.988 | 0.976 | 0.6598 | +2.0 | +1.8 | 0.6430 \| 0.6443 |
-| MoCA memory index score ~ %>180 (pooled) | -0.193 [-0.328, -0.058] | 0.068 | 0.020 (FDR<0.05) | 0.0762 | -5.2 | -4.5 | 0.0504 \| 0.0477 |
-| MoCA memory index score ~ %>180 (daily avg) | -0.192 [-0.326, -0.058] | 0.068 | 0.020 (FDR<0.05) | 0.0761 | -5.1 | -4.4 | 0.0504 \| 0.0477 |
-| MoCA memory index score ~ %>180 nocturnal | -0.161 [-0.289, -0.032] | 0.137 | 0.037 (FDR<0.05) | 0.0746 | -3.0 | -2.3 | 0.0497 \| 0.0477 |
+| MoCA memory index score ~ %>180 (pooled) | -0.193 [-0.328, -0.058] | 0.068 | **0.020 (FDR<0.05)** | 0.0762 | -5.2 | -4.5 | 0.0504 \| 0.0477 |
+| MoCA memory index score ~ %>180 (daily avg) | -0.192 [-0.326, -0.058] | 0.068 | **0.020 (FDR<0.05)** | 0.0761 | -5.1 | -4.4 | 0.0504 \| 0.0477 |
+| MoCA memory index score ~ %>180 nocturnal | -0.161 [-0.289, -0.032] | 0.137 | **0.037 (FDR<0.05)** | 0.0746 | -3.0 | -2.3 | 0.0497 \| 0.0477 |
 | CES-D-10 depressive symptoms ~ %>180 (pooled) | +0.074 [-0.289, +0.437] | 0.932 | 0.953 | 0.0909 | +1.7 | -0.3 | 0.0626 \| 0.0675 |
 | CES-D-10 depressive symptoms ~ %>180 (daily avg) | +0.073 [-0.288, +0.434] | 0.932 | 0.953 | 0.0909 | +1.7 | -0.3 | 0.0628 \| 0.0675 |
 | CES-D-10 depressive symptoms ~ %>180 nocturnal | +0.187 [-0.234, +0.608] | 0.788 | 0.953 | 0.0922 | -0.1 | -2.1 | 0.0622 \| 0.0675 |
@@ -1058,8 +1058,8 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 | Brisk-cadence minutes per day ~ %>180 (pooled) | +0.223 [-0.533, +0.979] | 0.932 | 0.931 | 0.1389 | +1.6 | +5.1 | 0.1232 \| 0.1245 |
 | Brisk-cadence minutes per day ~ %>180 (daily avg) | +0.203 [-0.554, +0.961] | 0.932 | 0.931 | 0.1389 | +1.7 | +5.1 | 0.1232 \| 0.1245 |
 | Brisk-cadence minutes per day ~ %>180 nocturnal | +0.021 [-0.753, +0.794] | 0.983 | 0.994 | 0.1386 | +2.0 | +5.5 | 0.1232 \| 0.1245 |
-| Resting heart-rate proxy ~ %>180 (pooled) | +0.718 [+0.130, +1.306] | 0.137 | 0.034 (FDR<0.05) | 0.1376 | -8.5 | +2.7 | 0.1079 \| 0.1044 |
-| Resting heart-rate proxy ~ %>180 (daily avg) | +0.708 [+0.119, +1.296] | 0.145 | 0.034 (FDR<0.05) | 0.1374 | -8.2 | +3.0 | 0.1077 \| 0.1044 |
+| Resting heart-rate proxy ~ %>180 (pooled) | +0.718 [+0.130, +1.306] | 0.137 | **0.034 (FDR<0.05)** | 0.1376 | -8.5 | +2.7 | 0.1079 \| 0.1044 |
+| Resting heart-rate proxy ~ %>180 (daily avg) | +0.708 [+0.119, +1.296] | 0.145 | **0.034 (FDR<0.05)** | 0.1374 | -8.2 | +3.0 | 0.1077 \| 0.1044 |
 | Resting heart-rate proxy ~ %>180 nocturnal | +0.322 [-0.292, +0.936] | 0.688 | 0.378 | 0.1312 | -0.1 | +11.1 | 0.1019 \| 0.1044 |
 | Total sleep time per night ~ %>180 (pooled) | +1.134 [-2.929, +5.196] | 0.932 | 0.936 | 0.0208 | +1.7 | +3.7 | -0.0069 \| -0.0051 |
 | Total sleep time per night ~ %>180 (daily avg) | +1.191 [-2.876, +5.258] | 0.932 | 0.936 | 0.0208 | +1.6 | +3.6 | -0.0069 \| -0.0051 |
@@ -1074,12 +1074,12 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 
 | Predictor (alone) | N | N with time in band | Coef (β) | Std. Err. | 95% CI | t / z | Pr(>\|t\|) | Signif |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| MoCA total score ~ %>180 (pooled) | 867 | 833 | -0.00962 | 0.004489 | [-0.01842, -0.0008222] | -2.14 | 0.032* | * |
-| MoCA total score ~ %>180 (daily avg) | 867 | 827 | -0.009297 | 0.00449 | [-0.0181, -0.0004971] | -2.07 | 0.038* | * |
-| MoCA total score ~ %>180 nocturnal | 867 | 663 | -0.009428 | 0.004361 | [-0.01798, -0.0008794] | -2.16 | 0.031* | * |
-| Cognitive impairment ~ %>180 (pooled) | 867 | 833 | +0.005881 | 0.002798 | [0.0003967, 0.01137] | 2.10 | 0.036* | * |
-| Cognitive impairment ~ %>180 (daily avg) | 867 | 827 | +0.005789 | 0.002788 | [0.0003249, 0.01125] | 2.08 | 0.038* | * |
-| Cognitive impairment ~ %>180 nocturnal | 867 | 663 | +0.005648 | 0.002681 | [0.0003926, 0.0109] | 2.11 | 0.035* | * |
+| MoCA total score ~ %>180 (pooled) | 867 | 833 | **-0.00962** | 0.004489 | [-0.01842, -0.0008222] | **-2.14** | **0.032*** | * |
+| MoCA total score ~ %>180 (daily avg) | 867 | 827 | **-0.009297** | 0.00449 | [-0.0181, -0.0004971] | **-2.07** | **0.038*** | * |
+| MoCA total score ~ %>180 nocturnal | 867 | 663 | **-0.009428** | 0.004361 | [-0.01798, -0.0008794] | **-2.16** | **0.031*** | * |
+| Cognitive impairment ~ %>180 (pooled) | 867 | 833 | **+0.005881** | 0.002798 | [0.0003967, 0.01137] | **2.10** | **0.036*** | * |
+| Cognitive impairment ~ %>180 (daily avg) | 867 | 827 | **+0.005789** | 0.002788 | [0.0003249, 0.01125] | **2.08** | **0.038*** | * |
+| Cognitive impairment ~ %>180 nocturnal | 867 | 663 | **+0.005648** | 0.002681 | [0.0003926, 0.0109] | **2.11** | **0.035*** | * |
 | MoCA memory index score ~ %>180 (pooled) | 867 | 833 | -0.006238 | 0.003458 | [-0.01301, 0.0005394] | -1.80 | 0.071 |  |
 | MoCA memory index score ~ %>180 (daily avg) | 867 | 827 | -0.006034 | 0.003459 | [-0.01281, 0.0007458] | -1.74 | 0.081 |  |
 | MoCA memory index score ~ %>180 nocturnal | 867 | 663 | -0.006191 | 0.003338 | [-0.01273, 0.0003509] | -1.85 | 0.064 |  |
@@ -1088,7 +1088,7 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 | CES-D-10 depressive symptoms ~ %>180 nocturnal | 865 | 661 | +0.01094 | 0.006681 | [-0.002157, 0.02403] | 1.64 | 0.102 |  |
 | Clinically relevant depressive symptoms ~ %>180 (pooled) | 865 | 831 | +0.005372 | 0.003143 | [-0.0007878, 0.01153] | 1.71 | 0.087 |  |
 | Clinically relevant depressive symptoms ~ %>180 (daily avg) | 865 | 825 | +0.005047 | 0.003139 | [-0.001105, 0.0112] | 1.61 | 0.108 |  |
-| Clinically relevant depressive symptoms ~ %>180 nocturnal | 865 | 661 | +0.007248 | 0.002943 | [0.00148, 0.01302] | 2.46 | 0.014* | * |
+| Clinically relevant depressive symptoms ~ %>180 nocturnal | 865 | 661 | **+0.007248** | 0.002943 | [0.00148, 0.01302] | **2.46** | **0.014*** | * |
 | Indoor PM2.5, log(1 + mean ug/m3) ~ %>180 (pooled) | 849 | 819 | +0.002467 | 0.001437 | [-0.0003502, 0.005284] | 1.72 | 0.086 |  |
 | Indoor PM2.5, log(1 + mean ug/m3) ~ %>180 (daily avg) | 849 | 813 | +0.002436 | 0.001431 | [-0.0003675, 0.00524] | 1.70 | 0.089 |  |
 | Indoor PM2.5, log(1 + mean ug/m3) ~ %>180 nocturnal | 849 | 654 | +0.002681 | 0.001374 | [-1.261e-05, 0.005374] | 1.95 | 0.051 |  |
@@ -1107,62 +1107,62 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 | Brisk-cadence minutes per day ~ %>180 (pooled) | 747 | 714 | +0.008149 | 0.02259 | [-0.03614, 0.05243] | 0.36 | 0.718 |  |
 | Brisk-cadence minutes per day ~ %>180 (daily avg) | 747 | 708 | +0.008953 | 0.02253 | [-0.03521, 0.05312] | 0.40 | 0.691 |  |
 | Brisk-cadence minutes per day ~ %>180 nocturnal | 747 | 567 | +0.01079 | 0.02222 | [-0.03277, 0.05435] | 0.49 | 0.627 |  |
-| Resting heart-rate proxy ~ %>180 (pooled) | 749 | 716 | +0.04103 | 0.01258 | [0.01636, 0.06569] | 3.26 | 0.001** | ** |
-| Resting heart-rate proxy ~ %>180 (daily avg) | 749 | 710 | +0.04096 | 0.01249 | [0.01649, 0.06543] | 3.28 | 0.001** | ** |
-| Resting heart-rate proxy ~ %>180 nocturnal | 749 | 568 | +0.03475 | 0.01208 | [0.01107, 0.05843] | 2.88 | 0.004** | ** |
+| Resting heart-rate proxy ~ %>180 (pooled) | 749 | 716 | **+0.04103** | 0.01258 | [0.01636, 0.06569] | **3.26** | **0.001**** | ** |
+| Resting heart-rate proxy ~ %>180 (daily avg) | 749 | 710 | **+0.04096** | 0.01249 | [0.01649, 0.06543] | **3.28** | **0.001**** | ** |
+| Resting heart-rate proxy ~ %>180 nocturnal | 749 | 568 | **+0.03475** | 0.01208 | [0.01107, 0.05843] | **2.88** | **0.004**** | ** |
 | Total sleep time per night ~ %>180 (pooled) | 756 | 723 | -0.1073 | 0.09973 | [-0.3028, 0.08817] | -1.08 | 0.282 |  |
 | Total sleep time per night ~ %>180 (daily avg) | 756 | 717 | -0.1051 | 0.09974 | [-0.3006, 0.09036] | -1.05 | 0.292 |  |
 | Total sleep time per night ~ %>180 nocturnal | 756 | 572 | -0.01934 | 0.09315 | [-0.2019, 0.1632] | -0.21 | 0.835 |  |
-| Garmin stress score, mean ~ %>180 (pooled) | 749 | 716 | +0.1005 | 0.02589 | [0.04979, 0.1513] | 3.88 | 1.0e-04*** | *** |
-| Garmin stress score, mean ~ %>180 (daily avg) | 749 | 710 | +0.09984 | 0.02575 | [0.04936, 0.1503] | 3.88 | 1.1e-04*** | *** |
-| Garmin stress score, mean ~ %>180 nocturnal | 749 | 568 | +0.08245 | 0.02465 | [0.03413, 0.1308] | 3.34 | 8.2e-04*** | *** |
+| Garmin stress score, mean ~ %>180 (pooled) | 749 | 716 | **+0.1005** | 0.02589 | [0.04979, 0.1513] | **3.88** | **1.0e-04***** | *** |
+| Garmin stress score, mean ~ %>180 (daily avg) | 749 | 710 | **+0.09984** | 0.02575 | [0.04936, 0.1503] | **3.88** | **1.1e-04***** | *** |
+| Garmin stress score, mean ~ %>180 nocturnal | 749 | 568 | **+0.08245** | 0.02465 | [0.03413, 0.1308] | **3.34** | **8.2e-04***** | *** |
 
 **(B) Standardised effect, multiplicity and fit**
 
 | Predictor (alone) | β per 1 SD (95% CI) | q, all tests in population | q, this outcome | Adj R² / AUC | ΔAIC vs covs | ΔAIC vs HbA1c | CV R²/AUC (predictor vs covariates-only) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| MoCA total score ~ %>180 (pooled) | -0.249 [-0.477, -0.021] | not applied (n < 1000) | not applied (n < 1000) | 0.0860 | -2.9 | -1.3 | 0.0580 \| 0.0541 |
-| MoCA total score ~ %>180 (daily avg) | -0.242 [-0.471, -0.013] | not applied (n < 1000) | not applied (n < 1000) | 0.0857 | -2.6 | -1.1 | 0.0576 \| 0.0541 |
-| MoCA total score ~ %>180 nocturnal | -0.257 [-0.490, -0.024] | not applied (n < 1000) | not applied (n < 1000) | 0.0862 | -3.1 | -1.6 | 0.0574 \| 0.0541 |
-| Cognitive impairment ~ %>180 (pooled) | OR 1.165 [1.010, 1.343] | not applied (n < 1000) | not applied (n < 1000) | 0.6638 | -2.5 | -0.8 | 0.6437 \| 0.6425 |
-| Cognitive impairment ~ %>180 (daily avg) | OR 1.163 [1.008, 1.341] | not applied (n < 1000) | not applied (n < 1000) | 0.6635 | -2.4 | -0.7 | 0.6437 \| 0.6425 |
-| Cognitive impairment ~ %>180 nocturnal | OR 1.166 [1.011, 1.346] | not applied (n < 1000) | not applied (n < 1000) | 0.6642 | -2.5 | -0.8 | 0.6446 \| 0.6425 |
-| MoCA memory index score ~ %>180 (pooled) | -0.162 [-0.337, +0.014] | not applied (n < 1000) | not applied (n < 1000) | 0.0629 | -1.0 | +0.8 | 0.0309 \| 0.0286 |
-| MoCA memory index score ~ %>180 (daily avg) | -0.157 [-0.334, +0.019] | not applied (n < 1000) | not applied (n < 1000) | 0.0627 | -0.8 | +1.0 | 0.0308 \| 0.0286 |
-| MoCA memory index score ~ %>180 nocturnal | -0.169 [-0.347, +0.010] | not applied (n < 1000) | not applied (n < 1000) | 0.0631 | -1.2 | +0.6 | 0.0307 \| 0.0286 |
-| CES-D-10 depressive symptoms ~ %>180 (pooled) | +0.204 [-0.153, +0.561] | not applied (n < 1000) | not applied (n < 1000) | 0.1126 | +0.5 | +1.8 | 0.0780 \| 0.0796 |
-| CES-D-10 depressive symptoms ~ %>180 (daily avg) | +0.191 [-0.167, +0.549] | not applied (n < 1000) | not applied (n < 1000) | 0.1124 | +0.7 | +2.0 | 0.0780 \| 0.0796 |
-| CES-D-10 depressive symptoms ~ %>180 nocturnal | +0.298 [-0.059, +0.656] | not applied (n < 1000) | not applied (n < 1000) | 0.1142 | -1.1 | +0.2 | 0.0797 \| 0.0796 |
-| Clinically relevant depressive symptoms ~ %>180 (pooled) | OR 1.150 [0.980, 1.349] | not applied (n < 1000) | not applied (n < 1000) | 0.6653 | -0.9 | +2.1 | 0.6360 \| 0.6337 |
-| Clinically relevant depressive symptoms ~ %>180 (daily avg) | OR 1.141 [0.972, 1.339] | not applied (n < 1000) | not applied (n < 1000) | 0.6649 | -0.5 | +2.5 | 0.6356 \| 0.6337 |
-| Clinically relevant depressive symptoms ~ %>180 nocturnal | OR 1.219 [1.041, 1.426] | not applied (n < 1000) | not applied (n < 1000) | 0.6701 | -3.9 | -0.9 | 0.6405 \| 0.6337 |
-| Indoor PM2.5, log(1 + mean ug/m3) ~ %>180 (pooled) | +0.064 [-0.009, +0.137] | not applied (n < 1000) | not applied (n < 1000) | 0.1579 | -2.0 | +7.5 | 0.1314 \| 0.1310 |
-| Indoor PM2.5, log(1 + mean ug/m3) ~ %>180 (daily avg) | +0.064 [-0.010, +0.137] | not applied (n < 1000) | not applied (n < 1000) | 0.1578 | -1.9 | +7.5 | 0.1314 \| 0.1310 |
-| Indoor PM2.5, log(1 + mean ug/m3) ~ %>180 nocturnal | +0.073 [-0.000, +0.147] | not applied (n < 1000) | not applied (n < 1000) | 0.1590 | -3.1 | +6.3 | 0.1321 \| 0.1310 |
-| Indoor temperature, mean ~ %>180 (pooled) | -0.062 [-0.220, +0.095] | not applied (n < 1000) | not applied (n < 1000) | 0.2508 | +1.3 | -0.4 | 0.2230 \| 0.2264 |
-| Indoor temperature, mean ~ %>180 (daily avg) | -0.068 [-0.226, +0.089] | not applied (n < 1000) | not applied (n < 1000) | 0.2509 | +1.1 | -0.5 | 0.2231 \| 0.2264 |
-| Indoor temperature, mean ~ %>180 nocturnal | -0.066 [-0.225, +0.094] | not applied (n < 1000) | not applied (n < 1000) | 0.2508 | +1.2 | -0.5 | 0.2235 \| 0.2264 |
-| Indoor relative humidity, mean ~ %>180 (pooled) | -0.137 [-0.589, +0.315] | not applied (n < 1000) | not applied (n < 1000) | 0.2133 | +1.6 | -0.3 | 0.1843 \| 0.1857 |
-| Indoor relative humidity, mean ~ %>180 (daily avg) | -0.129 [-0.581, +0.324] | not applied (n < 1000) | not applied (n < 1000) | 0.2133 | +1.6 | -0.2 | 0.1842 \| 0.1857 |
-| Indoor relative humidity, mean ~ %>180 nocturnal | -0.256 [-0.702, +0.191] | not applied (n < 1000) | not applied (n < 1000) | 0.2142 | +0.6 | -1.3 | 0.1853 \| 0.1857 |
-| Indoor VOC index, mean ~ %>180 (pooled) | -0.483 [-1.799, +0.833] | not applied (n < 1000) | not applied (n < 1000) | 0.0563 | +1.4 | +1.7 | 0.0265 \| 0.0276 |
-| Indoor VOC index, mean ~ %>180 (daily avg) | -0.539 [-1.862, +0.784] | not applied (n < 1000) | not applied (n < 1000) | 0.0565 | +1.2 | +1.5 | 0.0268 \| 0.0276 |
-| Indoor VOC index, mean ~ %>180 nocturnal | -0.376 [-1.859, +1.106] | not applied (n < 1000) | not applied (n < 1000) | 0.0560 | +1.6 | +2.0 | 0.0253 \| 0.0276 |
-| Steps per wear-day ~ %>180 (pooled) | +144.486 [-268.337, +557.310] | not applied (n < 1000) | not applied (n < 1000) | 0.1577 | +1.4 | +1.5 | 0.1372 \| 0.1390 |
-| Steps per wear-day ~ %>180 (daily avg) | +150.615 [-261.757, +562.987] | not applied (n < 1000) | not applied (n < 1000) | 0.1578 | +1.3 | +1.4 | 0.1373 \| 0.1390 |
-| Steps per wear-day ~ %>180 nocturnal | +162.753 [-260.264, +585.771] | not applied (n < 1000) | not applied (n < 1000) | 0.1579 | +1.2 | +1.3 | 0.1372 \| 0.1390 |
-| Brisk-cadence minutes per day ~ %>180 (pooled) | +0.211 [-0.937, +1.360] | not applied (n < 1000) | not applied (n < 1000) | 0.1791 | +1.8 | +1.9 | 0.1525 \| 0.1546 |
-| Brisk-cadence minutes per day ~ %>180 (daily avg) | +0.233 [-0.917, +1.384] | not applied (n < 1000) | not applied (n < 1000) | 0.1791 | +1.8 | +1.8 | 0.1525 \| 0.1546 |
-| Brisk-cadence minutes per day ~ %>180 nocturnal | +0.294 [-0.893, +1.481] | not applied (n < 1000) | not applied (n < 1000) | 0.1792 | +1.7 | +1.7 | 0.1525 \| 0.1546 |
-| Resting heart-rate proxy ~ %>180 (pooled) | +1.065 [+0.425, +1.706] | not applied (n < 1000) | not applied (n < 1000) | 0.1655 | -9.8 | -3.7 | 0.1365 \| 0.1253 |
-| Resting heart-rate proxy ~ %>180 (daily avg) | +1.069 [+0.430, +1.707] | not applied (n < 1000) | not applied (n < 1000) | 0.1656 | -9.9 | -3.8 | 0.1365 \| 0.1253 |
-| Resting heart-rate proxy ~ %>180 nocturnal | +0.947 [+0.302, +1.592] | not applied (n < 1000) | not applied (n < 1000) | 0.1626 | -7.2 | -1.1 | 0.1333 \| 0.1253 |
-| Total sleep time per night ~ %>180 (pooled) | -2.757 [-7.779, +2.265] | not applied (n < 1000) | not applied (n < 1000) | 0.0378 | +0.8 | +3.7 | 0.0055 \| 0.0066 |
-| Total sleep time per night ~ %>180 (daily avg) | -2.714 [-7.760, +2.333] | not applied (n < 1000) | not applied (n < 1000) | 0.0378 | +0.9 | +3.8 | 0.0053 \| 0.0066 |
-| Total sleep time per night ~ %>180 nocturnal | -0.522 [-5.444, +4.401] | not applied (n < 1000) | not applied (n < 1000) | 0.0364 | +2.0 | +4.9 | 0.0041 \| 0.0066 |
-| Garmin stress score, mean ~ %>180 (pooled) | +2.610 [+1.293, +3.927] | not applied (n < 1000) | not applied (n < 1000) | 0.1407 | -14.3 | -1.2 | 0.1121 \| 0.0947 |
-| Garmin stress score, mean ~ %>180 (daily avg) | +2.604 [+1.288, +3.921] | not applied (n < 1000) | not applied (n < 1000) | 0.1406 | -14.2 | -1.1 | 0.1120 \| 0.0947 |
-| Garmin stress score, mean ~ %>180 nocturnal | +2.246 [+0.930, +3.562] | not applied (n < 1000) | not applied (n < 1000) | 0.1356 | -9.9 | +3.2 | 0.1066 \| 0.0947 |
+| MoCA total score ~ %>180 (pooled) | -0.249 [-0.477, -0.021] | 0.161 | 0.071 | 0.0860 | -2.9 | -1.3 | 0.0580 \| 0.0541 |
+| MoCA total score ~ %>180 (daily avg) | -0.242 [-0.471, -0.013] | 0.170 | 0.074 | 0.0857 | -2.6 | -1.1 | 0.0576 \| 0.0541 |
+| MoCA total score ~ %>180 nocturnal | -0.257 [-0.490, -0.024] | 0.160 | 0.071 | 0.0862 | -3.1 | -1.6 | 0.0574 \| 0.0541 |
+| Cognitive impairment ~ %>180 (pooled) | OR 1.165 [1.010, 1.343] | 0.168 | 0.107 | 0.6638 | -2.5 | -0.8 | 0.6437 \| 0.6425 |
+| Cognitive impairment ~ %>180 (daily avg) | OR 1.163 [1.008, 1.341] | 0.169 | 0.107 | 0.6635 | -2.4 | -0.7 | 0.6437 \| 0.6425 |
+| Cognitive impairment ~ %>180 nocturnal | OR 1.166 [1.011, 1.346] | 0.168 | 0.107 | 0.6642 | -2.5 | -0.8 | 0.6446 \| 0.6425 |
+| MoCA memory index score ~ %>180 (pooled) | -0.162 [-0.337, +0.014] | 0.229 | 0.122 | 0.0629 | -1.0 | +0.8 | 0.0309 \| 0.0286 |
+| MoCA memory index score ~ %>180 (daily avg) | -0.157 [-0.334, +0.019] | 0.243 | 0.126 | 0.0627 | -0.8 | +1.0 | 0.0308 \| 0.0286 |
+| MoCA memory index score ~ %>180 nocturnal | -0.169 [-0.347, +0.010] | 0.221 | 0.122 | 0.0631 | -1.2 | +0.6 | 0.0307 \| 0.0286 |
+| CES-D-10 depressive symptoms ~ %>180 (pooled) | +0.204 [-0.153, +0.561] | 0.481 | 0.578 | 0.1126 | +0.5 | +1.8 | 0.0780 \| 0.0796 |
+| CES-D-10 depressive symptoms ~ %>180 (daily avg) | +0.191 [-0.167, +0.549] | 0.515 | 0.578 | 0.1124 | +0.7 | +2.0 | 0.0780 \| 0.0796 |
+| CES-D-10 depressive symptoms ~ %>180 nocturnal | +0.298 [-0.059, +0.656] | 0.264 | 0.578 | 0.1142 | -1.1 | +0.2 | 0.0797 \| 0.0796 |
+| Clinically relevant depressive symptoms ~ %>180 (pooled) | OR 1.150 [0.980, 1.349] | 0.247 | 0.215 | 0.6653 | -0.9 | +2.1 | 0.6360 \| 0.6337 |
+| Clinically relevant depressive symptoms ~ %>180 (daily avg) | OR 1.141 [0.972, 1.339] | 0.270 | 0.215 | 0.6649 | -0.5 | +2.5 | 0.6356 \| 0.6337 |
+| Clinically relevant depressive symptoms ~ %>180 nocturnal | OR 1.219 [1.041, 1.426] | 0.100 | 0.122 | 0.6701 | -3.9 | -0.9 | 0.6405 \| 0.6337 |
+| Indoor PM2.5, log(1 + mean ug/m3) ~ %>180 (pooled) | +0.064 [-0.009, +0.137] | 0.247 | 0.172 | 0.1579 | -2.0 | +7.5 | 0.1314 \| 0.1310 |
+| Indoor PM2.5, log(1 + mean ug/m3) ~ %>180 (daily avg) | +0.064 [-0.010, +0.137] | 0.247 | 0.172 | 0.1578 | -1.9 | +7.5 | 0.1314 \| 0.1310 |
+| Indoor PM2.5, log(1 + mean ug/m3) ~ %>180 nocturnal | +0.073 [-0.000, +0.147] | 0.198 | 0.158 | 0.1590 | -3.1 | +6.3 | 0.1321 \| 0.1310 |
+| Indoor temperature, mean ~ %>180 (pooled) | -0.062 [-0.220, +0.095] | 0.651 | 0.794 | 0.2508 | +1.3 | -0.4 | 0.2230 \| 0.2264 |
+| Indoor temperature, mean ~ %>180 (daily avg) | -0.068 [-0.226, +0.089] | 0.613 | 0.794 | 0.2509 | +1.1 | -0.5 | 0.2231 \| 0.2264 |
+| Indoor temperature, mean ~ %>180 nocturnal | -0.066 [-0.225, +0.094] | 0.634 | 0.794 | 0.2508 | +1.2 | -0.5 | 0.2235 \| 0.2264 |
+| Indoor relative humidity, mean ~ %>180 (pooled) | -0.137 [-0.589, +0.315] | 0.734 | 0.938 | 0.2133 | +1.6 | -0.3 | 0.1843 \| 0.1857 |
+| Indoor relative humidity, mean ~ %>180 (daily avg) | -0.129 [-0.581, +0.324] | 0.757 | 0.938 | 0.2133 | +1.6 | -0.2 | 0.1842 \| 0.1857 |
+| Indoor relative humidity, mean ~ %>180 nocturnal | -0.256 [-0.702, +0.191] | 0.481 | 0.938 | 0.2142 | +0.6 | -1.3 | 0.1853 \| 0.1857 |
+| Indoor VOC index, mean ~ %>180 (pooled) | -0.483 [-1.799, +0.833] | 0.664 | 0.585 | 0.0563 | +1.4 | +1.7 | 0.0265 \| 0.0276 |
+| Indoor VOC index, mean ~ %>180 (daily avg) | -0.539 [-1.862, +0.784] | 0.640 | 0.585 | 0.0565 | +1.2 | +1.5 | 0.0268 \| 0.0276 |
+| Indoor VOC index, mean ~ %>180 nocturnal | -0.376 [-1.859, +1.106] | 0.790 | 0.710 | 0.0560 | +1.6 | +2.0 | 0.0253 \| 0.0276 |
+| Steps per wear-day ~ %>180 (pooled) | +144.486 [-268.337, +557.310] | 0.688 | 0.727 | 0.1577 | +1.4 | +1.5 | 0.1372 \| 0.1390 |
+| Steps per wear-day ~ %>180 (daily avg) | +150.615 [-261.757, +562.987] | 0.664 | 0.727 | 0.1578 | +1.3 | +1.4 | 0.1373 \| 0.1390 |
+| Steps per wear-day ~ %>180 nocturnal | +162.753 [-260.264, +585.771] | 0.656 | 0.727 | 0.1579 | +1.2 | +1.3 | 0.1372 \| 0.1390 |
+| Brisk-cadence minutes per day ~ %>180 (pooled) | +0.211 [-0.937, +1.360] | 0.833 | 0.821 | 0.1791 | +1.8 | +1.9 | 0.1525 \| 0.1546 |
+| Brisk-cadence minutes per day ~ %>180 (daily avg) | +0.233 [-0.917, +1.384] | 0.826 | 0.821 | 0.1791 | +1.8 | +1.8 | 0.1525 \| 0.1546 |
+| Brisk-cadence minutes per day ~ %>180 nocturnal | +0.294 [-0.893, +1.481] | 0.795 | 0.821 | 0.1792 | +1.7 | +1.7 | 0.1525 \| 0.1546 |
+| Resting heart-rate proxy ~ %>180 (pooled) | **+1.065 [+0.425, +1.706]** | **0.024 (FDR<0.05)** | **0.005 (FDR<0.05)** | 0.1655 | -9.8 | -3.7 | 0.1365 \| 0.1253 |
+| Resting heart-rate proxy ~ %>180 (daily avg) | **+1.069 [+0.430, +1.707]** | **0.024 (FDR<0.05)** | **0.005 (FDR<0.05)** | 0.1656 | -9.9 | -3.8 | 0.1365 \| 0.1253 |
+| Resting heart-rate proxy ~ %>180 nocturnal | **+0.947 [+0.302, +1.592]** | **0.046 (FDR<0.05)** | **0.011 (FDR<0.05)** | 0.1626 | -7.2 | -1.1 | 0.1333 \| 0.1253 |
+| Total sleep time per night ~ %>180 (pooled) | -2.757 [-7.779, +2.265] | 0.502 | 0.444 | 0.0378 | +0.8 | +3.7 | 0.0055 \| 0.0066 |
+| Total sleep time per night ~ %>180 (daily avg) | -2.714 [-7.760, +2.333] | 0.513 | 0.444 | 0.0378 | +0.9 | +3.8 | 0.0053 \| 0.0066 |
+| Total sleep time per night ~ %>180 nocturnal | -0.522 [-5.444, +4.401] | 0.891 | 0.863 | 0.0364 | +2.0 | +4.9 | 0.0041 \| 0.0066 |
+| Garmin stress score, mean ~ %>180 (pooled) | **+2.610 [+1.293, +3.927]** | **0.007 (FDR<0.05)** | **5.6e-04 (FDR<0.05)** | 0.1407 | -14.3 | -1.2 | 0.1121 \| 0.0947 |
+| Garmin stress score, mean ~ %>180 (daily avg) | **+2.604 [+1.288, +3.921]** | **0.007 (FDR<0.05)** | **5.6e-04 (FDR<0.05)** | 0.1406 | -14.2 | -1.1 | 0.1120 \| 0.0947 |
+| Garmin stress score, mean ~ %>180 nocturnal | **+2.246 [+0.930, +3.562]** | **0.022 (FDR<0.05)** | **0.002 (FDR<0.05)** | 0.1356 | -9.9 | +3.2 | 0.1066 \| 0.0947 |
 
 
 ---
@@ -1175,12 +1175,12 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 
 | Predictor (alone) | N | N with time in band | Coef (β) | Std. Err. | 95% CI | t / z | Pr(>\|t\|) | Signif |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| MoCA total score ~ %181-250 (pooled) | 2138 | 1927 | -0.02505 | 0.005756 | [-0.03633, -0.01376] | -4.35 | 1.4e-05*** | *** |
-| MoCA total score ~ %181-250 (daily avg) | 2138 | 1876 | -0.0243 | 0.005691 | [-0.03546, -0.01315] | -4.27 | 2.0e-05*** | *** |
-| Cognitive impairment ~ %181-250 (pooled) | 2138 | 1927 | +0.01326 | 0.003672 | [0.006059, 0.02045] | 3.61 | 3.1e-04*** | *** |
-| Cognitive impairment ~ %181-250 (daily avg) | 2138 | 1876 | +0.0131 | 0.003625 | [0.005992, 0.0202] | 3.61 | 3.0e-04*** | *** |
-| MoCA memory index score ~ %181-250 (pooled) | 2138 | 1927 | -0.01191 | 0.004576 | [-0.02088, -0.002941] | -2.60 | 0.009** | ** |
-| MoCA memory index score ~ %181-250 (daily avg) | 2138 | 1876 | -0.01174 | 0.004535 | [-0.02063, -0.002852] | -2.59 | 0.010** | ** |
+| MoCA total score ~ %181-250 (pooled) | 2138 | 1927 | **-0.02505** | 0.005756 | [-0.03633, -0.01376] | **-4.35** | **1.4e-05***** | *** |
+| MoCA total score ~ %181-250 (daily avg) | 2138 | 1876 | **-0.0243** | 0.005691 | [-0.03546, -0.01315] | **-4.27** | **2.0e-05***** | *** |
+| Cognitive impairment ~ %181-250 (pooled) | 2138 | 1927 | **+0.01326** | 0.003672 | [0.006059, 0.02045] | **3.61** | **3.1e-04***** | *** |
+| Cognitive impairment ~ %181-250 (daily avg) | 2138 | 1876 | **+0.0131** | 0.003625 | [0.005992, 0.0202] | **3.61** | **3.0e-04***** | *** |
+| MoCA memory index score ~ %181-250 (pooled) | 2138 | 1927 | **-0.01191** | 0.004576 | [-0.02088, -0.002941] | **-2.60** | **0.009**** | ** |
+| MoCA memory index score ~ %181-250 (daily avg) | 2138 | 1876 | **-0.01174** | 0.004535 | [-0.02063, -0.002852] | **-2.59** | **0.010**** | ** |
 | CES-D-10 depressive symptoms ~ %181-250 (pooled) | 2135 | 1924 | +0.006888 | 0.008824 | [-0.01041, 0.02418] | 0.78 | 0.435 |  |
 | CES-D-10 depressive symptoms ~ %181-250 (daily avg) | 2135 | 1873 | +0.00696 | 0.00871 | [-0.01011, 0.02403] | 0.80 | 0.424 |  |
 | Clinically relevant depressive symptoms ~ %181-250 (pooled) | 2135 | 1924 | +0.008072 | 0.004329 | [-0.000412, 0.01656] | 1.86 | 0.062 |  |
@@ -1197,23 +1197,23 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 | Steps per wear-day ~ %181-250 (daily avg) | 1872 | 1628 | +16.22 | 9.429 | [-2.262, 34.7] | 1.72 | 0.085 |  |
 | Brisk-cadence minutes per day ~ %181-250 (pooled) | 1872 | 1677 | +0.04757 | 0.02741 | [-0.00616, 0.1013] | 1.74 | 0.083 |  |
 | Brisk-cadence minutes per day ~ %181-250 (daily avg) | 1872 | 1628 | +0.04616 | 0.0272 | [-0.007138, 0.09947] | 1.70 | 0.090 |  |
-| Resting heart-rate proxy ~ %181-250 (pooled) | 1877 | 1680 | +0.1368 | 0.01659 | [0.1043, 0.1693] | 8.25 | 1.6e-16*** | *** |
-| Resting heart-rate proxy ~ %181-250 (daily avg) | 1877 | 1631 | +0.1338 | 0.01641 | [0.1017, 0.166] | 8.15 | 3.5e-16*** | *** |
+| Resting heart-rate proxy ~ %181-250 (pooled) | 1877 | 1680 | **+0.1368** | 0.01659 | [0.1043, 0.1693] | **8.25** | **1.6e-16***** | *** |
+| Resting heart-rate proxy ~ %181-250 (daily avg) | 1877 | 1631 | **+0.1338** | 0.01641 | [0.1017, 0.166] | **8.15** | **3.5e-16***** | *** |
 | Total sleep time per night ~ %181-250 (pooled) | 1893 | 1699 | -0.1758 | 0.1328 | [-0.4362, 0.08457] | -1.32 | 0.186 |  |
 | Total sleep time per night ~ %181-250 (daily avg) | 1893 | 1652 | -0.1711 | 0.1311 | [-0.4281, 0.08591] | -1.30 | 0.192 |  |
-| Garmin stress score, mean ~ %181-250 (pooled) | 1879 | 1681 | +0.2369 | 0.03395 | [0.1704, 0.3035] | 6.98 | 3.0e-12*** | *** |
-| Garmin stress score, mean ~ %181-250 (daily avg) | 1879 | 1632 | +0.2305 | 0.03351 | [0.1648, 0.2962] | 6.88 | 6.0e-12*** | *** |
+| Garmin stress score, mean ~ %181-250 (pooled) | 1879 | 1681 | **+0.2369** | 0.03395 | [0.1704, 0.3035] | **6.98** | **3.0e-12***** | *** |
+| Garmin stress score, mean ~ %181-250 (daily avg) | 1879 | 1632 | **+0.2305** | 0.03351 | [0.1648, 0.2962] | **6.88** | **6.0e-12***** | *** |
 
 **(B) Standardised effect, multiplicity and fit**
 
 | Predictor (alone) | β per 1 SD (95% CI) | q, all tests in population | q, this outcome | Adj R² / AUC | ΔAIC vs covs | ΔAIC vs HbA1c | CV R²/AUC (predictor vs covariates-only) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| MoCA total score ~ %181-250 (pooled) | -0.321 [-0.466, -0.177] | 1.1e-04 (FDR<0.05) | 3.5e-05 (FDR<0.05) | 0.1095 | -21.2 | +3.4 | 0.1000 \| 0.0915 |
-| MoCA total score ~ %181-250 (daily avg) | -0.316 [-0.461, -0.171] | 1.4e-04 (FDR<0.05) | 4.3e-05 (FDR<0.05) | 0.1092 | -20.4 | +4.2 | 0.0997 \| 0.0915 |
-| Cognitive impairment ~ %181-250 (pooled) | OR 1.185 [1.081, 1.300] | 0.002 (FDR<0.05) | 7.3e-04 (FDR<0.05) | 0.6739 | -11.1 | +2.5 | 0.6654 \| 0.6603 |
-| Cognitive impairment ~ %181-250 (daily avg) | OR 1.186 [1.081, 1.300] | 0.002 (FDR<0.05) | 7.3e-04 (FDR<0.05) | 0.6739 | -11.1 | +2.5 | 0.6655 \| 0.6603 |
-| MoCA memory index score ~ %181-250 (pooled) | -0.153 [-0.268, -0.038] | 0.033 (FDR<0.05) | 0.021 (FDR<0.05) | 0.0744 | -4.7 | +0.6 | 0.0651 \| 0.0630 |
-| MoCA memory index score ~ %181-250 (daily avg) | -0.153 [-0.268, -0.037] | 0.035 (FDR<0.05) | 0.021 (FDR<0.05) | 0.0744 | -4.7 | +0.6 | 0.0650 \| 0.0630 |
+| MoCA total score ~ %181-250 (pooled) | **-0.321 [-0.466, -0.177]** | **1.1e-04 (FDR<0.05)** | **3.5e-05 (FDR<0.05)** | 0.1095 | -21.2 | +3.4 | 0.1000 \| 0.0915 |
+| MoCA total score ~ %181-250 (daily avg) | **-0.316 [-0.461, -0.171]** | **1.4e-04 (FDR<0.05)** | **4.3e-05 (FDR<0.05)** | 0.1092 | -20.4 | +4.2 | 0.0997 \| 0.0915 |
+| Cognitive impairment ~ %181-250 (pooled) | **OR 1.185 [1.081, 1.300]** | **0.002 (FDR<0.05)** | **7.3e-04 (FDR<0.05)** | 0.6739 | -11.1 | +2.5 | 0.6654 \| 0.6603 |
+| Cognitive impairment ~ %181-250 (daily avg) | **OR 1.186 [1.081, 1.300]** | **0.002 (FDR<0.05)** | **7.3e-04 (FDR<0.05)** | 0.6739 | -11.1 | +2.5 | 0.6655 \| 0.6603 |
+| MoCA memory index score ~ %181-250 (pooled) | **-0.153 [-0.268, -0.038]** | **0.033 (FDR<0.05)** | **0.021 (FDR<0.05)** | 0.0744 | -4.7 | +0.6 | 0.0651 \| 0.0630 |
+| MoCA memory index score ~ %181-250 (daily avg) | **-0.153 [-0.268, -0.037]** | **0.035 (FDR<0.05)** | **0.021 (FDR<0.05)** | 0.0744 | -4.7 | +0.6 | 0.0650 \| 0.0630 |
 | CES-D-10 depressive symptoms ~ %181-250 (pooled) | +0.088 [-0.133, +0.310] | 0.607 | 0.620 | 0.1030 | +1.3 | +1.6 | 0.0914 \| 0.0916 |
 | CES-D-10 depressive symptoms ~ %181-250 (daily avg) | +0.090 [-0.131, +0.312] | 0.596 | 0.620 | 0.1030 | +1.3 | +1.5 | 0.0914 \| 0.0916 |
 | Clinically relevant depressive symptoms ~ %181-250 (pooled) | OR 1.109 [0.995, 1.237] | 0.158 | 0.161 | 0.6816 | -1.4 | +1.3 | 0.6682 \| 0.6681 |
@@ -1230,12 +1230,12 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 | Steps per wear-day ~ %181-250 (daily avg) | +209.917 [-29.277, +449.111] | 0.195 | 0.202 | 0.1368 | -2.3 | +5.7 | 0.1233 \| 0.1222 |
 | Brisk-cadence minutes per day ~ %181-250 (pooled) | +0.607 [-0.079, +1.292] | 0.193 | 0.192 | 0.1574 | -2.0 | +6.2 | 0.1457 \| 0.1447 |
 | Brisk-cadence minutes per day ~ %181-250 (daily avg) | +0.597 [-0.092, +1.287] | 0.202 | 0.192 | 0.1574 | -1.8 | +6.3 | 0.1457 \| 0.1447 |
-| Resting heart-rate proxy ~ %181-250 (pooled) | +1.747 [+1.331, +2.162] | 7.1e-14 (FDR<0.05) | 5.1e-15 (FDR<0.05) | 0.1957 | -80.2 | -9.0 | 0.1829 \| 0.1482 |
-| Resting heart-rate proxy ~ %181-250 (daily avg) | +1.733 [+1.316, +2.149] | 7.6e-14 (FDR<0.05) | 5.4e-15 (FDR<0.05) | 0.1951 | -78.8 | -7.6 | 0.1824 \| 0.1482 |
+| Resting heart-rate proxy ~ %181-250 (pooled) | **+1.747 [+1.331, +2.162]** | **7.1e-14 (FDR<0.05)** | **5.1e-15 (FDR<0.05)** | 0.1957 | -80.2 | -9.0 | 0.1829 \| 0.1482 |
+| Resting heart-rate proxy ~ %181-250 (daily avg) | **+1.733 [+1.316, +2.149]** | **7.6e-14 (FDR<0.05)** | **5.4e-15 (FDR<0.05)** | 0.1951 | -78.8 | -7.6 | 0.1824 \| 0.1482 |
 | Total sleep time per night ~ %181-250 (pooled) | -2.241 [-5.559, +1.078] | 0.346 | 0.397 | 0.0343 | +0.0 | +8.9 | 0.0196 \| 0.0209 |
 | Total sleep time per night ~ %181-250 (daily avg) | -2.210 [-5.530, +1.110] | 0.353 | 0.397 | 0.0342 | +0.1 | +9.0 | 0.0196 \| 0.0209 |
-| Garmin stress score, mean ~ %181-250 (pooled) | +3.023 [+2.174, +3.872] | 8.6e-11 (FDR<0.05) | 4.6e-11 (FDR<0.05) | 0.1302 | -51.6 | +8.8 | 0.1150 \| 0.0902 |
-| Garmin stress score, mean ~ %181-250 (daily avg) | +2.982 [+2.133, +3.832] | 1.6e-10 (FDR<0.05) | 5.6e-11 (FDR<0.05) | 0.1295 | -50.1 | +10.3 | 0.1142 \| 0.0902 |
+| Garmin stress score, mean ~ %181-250 (pooled) | **+3.023 [+2.174, +3.872]** | **8.6e-11 (FDR<0.05)** | **4.6e-11 (FDR<0.05)** | 0.1302 | -51.6 | +8.8 | 0.1150 \| 0.0902 |
+| Garmin stress score, mean ~ %181-250 (daily avg) | **+2.982 [+2.133, +3.832]** | **1.6e-10 (FDR<0.05)** | **5.6e-11 (FDR<0.05)** | 0.1295 | -50.1 | +10.3 | 0.1142 \| 0.0902 |
 
 ### Healthy group (no diabetes + pre-diabetes / lifestyle)
 
@@ -1243,15 +1243,15 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 
 | Predictor (alone) | N | N with time in band | Coef (β) | Std. Err. | 95% CI | t / z | Pr(>\|t\|) | Signif |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| MoCA total score ~ %181-250 (pooled) | 1271 | 1094 | -0.0435 | 0.01422 | [-0.07138, -0.01563] | -3.06 | 0.002** | ** |
-| MoCA total score ~ %181-250 (daily avg) | 1271 | 1049 | -0.04242 | 0.01402 | [-0.0699, -0.01494] | -3.03 | 0.002** | ** |
+| MoCA total score ~ %181-250 (pooled) | 1271 | 1094 | **-0.0435** | 0.01422 | [-0.07138, -0.01563] | **-3.06** | **0.002**** | ** |
+| MoCA total score ~ %181-250 (daily avg) | 1271 | 1049 | **-0.04242** | 0.01402 | [-0.0699, -0.01494] | **-3.03** | **0.002**** | ** |
 | Cognitive impairment ~ %181-250 (pooled) | 1271 | 1094 | +0.01357 | 0.009908 | [-0.005848, 0.03299] | 1.37 | 0.171 |  |
 | Cognitive impairment ~ %181-250 (daily avg) | 1271 | 1049 | +0.0133 | 0.009775 | [-0.005857, 0.03246] | 1.36 | 0.174 |  |
 | MoCA memory index score ~ %181-250 (pooled) | 1271 | 1094 | -0.02266 | 0.01242 | [-0.047, 0.001685] | -1.82 | 0.068 |  |
 | MoCA memory index score ~ %181-250 (daily avg) | 1271 | 1049 | -0.02239 | 0.01206 | [-0.04602, 0.001239] | -1.86 | 0.063 |  |
 | CES-D-10 depressive symptoms ~ %181-250 (pooled) | 1270 | 1093 | +0.03522 | 0.03034 | [-0.02425, 0.09469] | 1.16 | 0.246 |  |
 | CES-D-10 depressive symptoms ~ %181-250 (daily avg) | 1270 | 1048 | +0.03394 | 0.03012 | [-0.0251, 0.09298] | 1.13 | 0.260 |  |
-| Clinically relevant depressive symptoms ~ %181-250 (pooled) | 1270 | 1093 | +0.02234 | 0.01138 | [2.846e-05, 0.04465] | 1.96 | 0.050* | * |
+| Clinically relevant depressive symptoms ~ %181-250 (pooled) | 1270 | 1093 | **+0.02234** | 0.01138 | [2.846e-05, 0.04465] | **1.96** | **0.050*** | * |
 | Clinically relevant depressive symptoms ~ %181-250 (daily avg) | 1270 | 1048 | +0.02181 | 0.01122 | [-0.0001829, 0.04381] | 1.94 | 0.052 |  |
 | Indoor PM2.5, log(1 + mean ug/m3) ~ %181-250 (pooled) | 1251 | 1077 | -0.005637 | 0.004181 | [-0.01383, 0.002558] | -1.35 | 0.178 |  |
 | Indoor PM2.5, log(1 + mean ug/m3) ~ %181-250 (daily avg) | 1251 | 1033 | -0.005634 | 0.004153 | [-0.01377, 0.002505] | -1.36 | 0.175 |  |
@@ -1265,8 +1265,8 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 | Steps per wear-day ~ %181-250 (daily avg) | 1125 | 920 | -19.86 | 16.88 | [-52.94, 13.23] | -1.18 | 0.239 |  |
 | Brisk-cadence minutes per day ~ %181-250 (pooled) | 1125 | 963 | +0.000432 | 0.05763 | [-0.1125, 0.1134] | 0.01 | 0.994 |  |
 | Brisk-cadence minutes per day ~ %181-250 (daily avg) | 1125 | 920 | -0.002001 | 0.05701 | [-0.1137, 0.1097] | -0.04 | 0.972 |  |
-| Resting heart-rate proxy ~ %181-250 (pooled) | 1128 | 964 | +0.1104 | 0.04493 | [0.02234, 0.1985] | 2.46 | 0.014* | * |
-| Resting heart-rate proxy ~ %181-250 (daily avg) | 1128 | 921 | +0.1079 | 0.04488 | [0.01991, 0.1958] | 2.40 | 0.016* | * |
+| Resting heart-rate proxy ~ %181-250 (pooled) | 1128 | 964 | **+0.1104** | 0.04493 | [0.02234, 0.1985] | **2.46** | **0.014*** | * |
+| Resting heart-rate proxy ~ %181-250 (daily avg) | 1128 | 921 | **+0.1079** | 0.04488 | [0.01991, 0.1958] | **2.40** | **0.016*** | * |
 | Total sleep time per night ~ %181-250 (pooled) | 1137 | 976 | +0.2915 | 0.373 | [-0.4396, 1.023] | 0.78 | 0.435 |  |
 | Total sleep time per night ~ %181-250 (daily avg) | 1137 | 935 | +0.2971 | 0.3686 | [-0.4253, 1.02] | 0.81 | 0.420 |  |
 | Garmin stress score, mean ~ %181-250 (pooled) | 1130 | 965 | +0.1195 | 0.09744 | [-0.07145, 0.3105] | 1.23 | 0.220 |  |
@@ -1276,8 +1276,8 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 
 | Predictor (alone) | β per 1 SD (95% CI) | q, all tests in population | q, this outcome | Adj R² / AUC | ΔAIC vs covs | ΔAIC vs HbA1c | CV R²/AUC (predictor vs covariates-only) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| MoCA total score ~ %181-250 (pooled) | -0.265 [-0.435, -0.095] | 0.051 | 0.011 (FDR<0.05) | 0.1055 | -9.8 | +3.9 | 0.0856 \| 0.0789 |
-| MoCA total score ~ %181-250 (daily avg) | -0.262 [-0.431, -0.092] | 0.052 | 0.011 (FDR<0.05) | 0.1053 | -9.4 | +4.3 | 0.0853 \| 0.0789 |
+| MoCA total score ~ %181-250 (pooled) | -0.265 [-0.435, -0.095] | 0.051 | **0.011 (FDR<0.05)** | 0.1055 | -9.8 | +3.9 | 0.0856 \| 0.0789 |
+| MoCA total score ~ %181-250 (daily avg) | -0.262 [-0.431, -0.092] | 0.052 | **0.011 (FDR<0.05)** | 0.1053 | -9.4 | +4.3 | 0.0853 \| 0.0789 |
 | Cognitive impairment ~ %181-250 (pooled) | OR 1.086 [0.965, 1.223] | 0.532 | 0.480 | 0.6611 | +0.2 | -0.1 | 0.6445 \| 0.6443 |
 | Cognitive impairment ~ %181-250 (daily avg) | OR 1.086 [0.965, 1.222] | 0.532 | 0.480 | 0.6610 | +0.2 | -0.0 | 0.6443 \| 0.6443 |
 | MoCA memory index score ~ %181-250 (pooled) | -0.138 [-0.287, +0.010] | 0.352 | 0.127 | 0.0736 | -1.6 | -1.0 | 0.0479 \| 0.0477 |
@@ -1298,8 +1298,8 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 | Steps per wear-day ~ %181-250 (daily avg) | -120.736 [-321.893, +80.422] | 0.619 | 0.958 | 0.1254 | +0.9 | +4.2 | 0.1071 \| 0.1080 |
 | Brisk-cadence minutes per day ~ %181-250 (pooled) | +0.003 [-0.676, +0.681] | 0.994 | 0.994 | 0.1386 | +2.0 | +5.5 | 0.1224 \| 0.1245 |
 | Brisk-cadence minutes per day ~ %181-250 (daily avg) | -0.012 [-0.692, +0.667] | 0.986 | 0.994 | 0.1386 | +2.0 | +5.5 | 0.1225 \| 0.1245 |
-| Resting heart-rate proxy ~ %181-250 (pooled) | +0.662 [+0.134, +1.191] | 0.137 | 0.034 (FDR<0.05) | 0.1363 | -6.8 | +4.4 | 0.1070 \| 0.1044 |
-| Resting heart-rate proxy ~ %181-250 (daily avg) | +0.655 [+0.121, +1.189] | 0.137 | 0.034 (FDR<0.05) | 0.1361 | -6.6 | +4.6 | 0.1067 \| 0.1044 |
+| Resting heart-rate proxy ~ %181-250 (pooled) | +0.662 [+0.134, +1.191] | 0.137 | **0.034 (FDR<0.05)** | 0.1363 | -6.8 | +4.4 | 0.1070 \| 0.1044 |
+| Resting heart-rate proxy ~ %181-250 (daily avg) | +0.655 [+0.121, +1.189] | 0.137 | **0.034 (FDR<0.05)** | 0.1361 | -6.6 | +4.6 | 0.1067 \| 0.1044 |
 | Total sleep time per night ~ %181-250 (pooled) | +1.721 [-2.595, +6.036] | 0.846 | 0.936 | 0.0212 | +1.2 | +3.2 | -0.0073 \| -0.0051 |
 | Total sleep time per night ~ %181-250 (daily avg) | +1.775 [-2.541, +6.090] | 0.822 | 0.936 | 0.0212 | +1.2 | +3.2 | -0.0072 \| -0.0051 |
 | Garmin stress score, mean ~ %181-250 (pooled) | +0.717 [-0.428, +1.861] | 0.594 | 0.471 | 0.0742 | -0.0 | +7.7 | 0.0502 \| 0.0510 |
@@ -1333,45 +1333,45 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 | Steps per wear-day ~ %181-250 (daily avg) | 747 | 708 | +19.71 | 12.04 | [-3.882, 43.3] | 1.64 | 0.102 |  |
 | Brisk-cadence minutes per day ~ %181-250 (pooled) | 747 | 714 | +0.04027 | 0.03467 | [-0.02768, 0.1082] | 1.16 | 0.245 |  |
 | Brisk-cadence minutes per day ~ %181-250 (daily avg) | 747 | 708 | +0.0389 | 0.03428 | [-0.02829, 0.1061] | 1.13 | 0.256 |  |
-| Resting heart-rate proxy ~ %181-250 (pooled) | 749 | 716 | +0.06953 | 0.02008 | [0.03018, 0.1089] | 3.46 | 5.3e-04*** | *** |
-| Resting heart-rate proxy ~ %181-250 (daily avg) | 749 | 710 | +0.06734 | 0.01964 | [0.02885, 0.1058] | 3.43 | 6.1e-04*** | *** |
+| Resting heart-rate proxy ~ %181-250 (pooled) | 749 | 716 | **+0.06953** | 0.02008 | [0.03018, 0.1089] | **3.46** | **5.3e-04***** | *** |
+| Resting heart-rate proxy ~ %181-250 (daily avg) | 749 | 710 | **+0.06734** | 0.01964 | [0.02885, 0.1058] | **3.43** | **6.1e-04***** | *** |
 | Total sleep time per night ~ %181-250 (pooled) | 756 | 723 | -0.2508 | 0.1724 | [-0.5887, 0.08713] | -1.45 | 0.146 |  |
 | Total sleep time per night ~ %181-250 (daily avg) | 756 | 717 | -0.245 | 0.1694 | [-0.5771, 0.08711] | -1.45 | 0.148 |  |
-| Garmin stress score, mean ~ %181-250 (pooled) | 749 | 716 | +0.1619 | 0.04146 | [0.08066, 0.2432] | 3.91 | 9.4e-05*** | *** |
-| Garmin stress score, mean ~ %181-250 (daily avg) | 749 | 710 | +0.1562 | 0.04071 | [0.07645, 0.236] | 3.84 | 1.2e-04*** | *** |
+| Garmin stress score, mean ~ %181-250 (pooled) | 749 | 716 | **+0.1619** | 0.04146 | [0.08066, 0.2432] | **3.91** | **9.4e-05***** | *** |
+| Garmin stress score, mean ~ %181-250 (daily avg) | 749 | 710 | **+0.1562** | 0.04071 | [0.07645, 0.236] | **3.84** | **1.2e-04***** | *** |
 
 **(B) Standardised effect, multiplicity and fit**
 
 | Predictor (alone) | β per 1 SD (95% CI) | q, all tests in population | q, this outcome | Adj R² / AUC | ΔAIC vs covs | ΔAIC vs HbA1c | CV R²/AUC (predictor vs covariates-only) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| MoCA total score ~ %181-250 (pooled) | -0.203 [-0.436, +0.029] | not applied (n < 1000) | not applied (n < 1000) | 0.0843 | -1.2 | +0.3 | 0.0552 \| 0.0541 |
-| MoCA total score ~ %181-250 (daily avg) | -0.196 [-0.429, +0.037] | not applied (n < 1000) | not applied (n < 1000) | 0.0840 | -1.0 | +0.5 | 0.0551 \| 0.0541 |
-| Cognitive impairment ~ %181-250 (pooled) | OR 1.119 [0.971, 1.289] | not applied (n < 1000) | not applied (n < 1000) | 0.6622 | -0.4 | +1.3 | 0.6425 \| 0.6425 |
-| Cognitive impairment ~ %181-250 (daily avg) | OR 1.121 [0.973, 1.291] | not applied (n < 1000) | not applied (n < 1000) | 0.6623 | -0.5 | +1.2 | 0.6422 \| 0.6425 |
-| MoCA memory index score ~ %181-250 (pooled) | -0.146 [-0.326, +0.034] | not applied (n < 1000) | not applied (n < 1000) | 0.0623 | -0.4 | +1.3 | 0.0294 \| 0.0286 |
-| MoCA memory index score ~ %181-250 (daily avg) | -0.147 [-0.328, +0.034] | not applied (n < 1000) | not applied (n < 1000) | 0.0623 | -0.4 | +1.3 | 0.0295 \| 0.0286 |
-| CES-D-10 depressive symptoms ~ %181-250 (pooled) | +0.039 [-0.293, +0.371] | not applied (n < 1000) | not applied (n < 1000) | 0.1111 | +1.9 | +3.2 | 0.0774 \| 0.0796 |
-| CES-D-10 depressive symptoms ~ %181-250 (daily avg) | +0.047 [-0.284, +0.378] | not applied (n < 1000) | not applied (n < 1000) | 0.1111 | +1.9 | +3.2 | 0.0774 \| 0.0796 |
-| Clinically relevant depressive symptoms ~ %181-250 (pooled) | OR 1.107 [0.936, 1.307] | not applied (n < 1000) | not applied (n < 1000) | 0.6631 | +0.6 | +3.6 | 0.6314 \| 0.6337 |
-| Clinically relevant depressive symptoms ~ %181-250 (daily avg) | OR 1.114 [0.943, 1.316] | not applied (n < 1000) | not applied (n < 1000) | 0.6634 | +0.4 | +3.4 | 0.6319 \| 0.6337 |
-| Indoor PM2.5, log(1 + mean ug/m3) ~ %181-250 (pooled) | +0.042 [-0.024, +0.107] | not applied (n < 1000) | not applied (n < 1000) | 0.1556 | +0.3 | +9.7 | 0.1296 \| 0.1310 |
-| Indoor PM2.5, log(1 + mean ug/m3) ~ %181-250 (daily avg) | +0.041 [-0.025, +0.106] | not applied (n < 1000) | not applied (n < 1000) | 0.1555 | +0.4 | +9.8 | 0.1296 \| 0.1310 |
-| Indoor temperature, mean ~ %181-250 (pooled) | -0.077 [-0.226, +0.071] | not applied (n < 1000) | not applied (n < 1000) | 0.2511 | +0.9 | -0.8 | 0.2241 \| 0.2264 |
-| Indoor temperature, mean ~ %181-250 (daily avg) | -0.084 [-0.233, +0.065] | not applied (n < 1000) | not applied (n < 1000) | 0.2513 | +0.7 | -1.0 | 0.2243 \| 0.2264 |
-| Indoor relative humidity, mean ~ %181-250 (pooled) | -0.144 [-0.587, +0.300] | not applied (n < 1000) | not applied (n < 1000) | 0.2133 | +1.6 | -0.3 | 0.1840 \| 0.1857 |
-| Indoor relative humidity, mean ~ %181-250 (daily avg) | -0.131 [-0.572, +0.311] | not applied (n < 1000) | not applied (n < 1000) | 0.2133 | +1.6 | -0.2 | 0.1839 \| 0.1857 |
-| Indoor VOC index, mean ~ %181-250 (pooled) | +0.311 [-1.122, +1.744] | not applied (n < 1000) | not applied (n < 1000) | 0.0559 | +1.7 | +2.1 | 0.0244 \| 0.0276 |
-| Indoor VOC index, mean ~ %181-250 (daily avg) | +0.258 [-1.153, +1.670] | not applied (n < 1000) | not applied (n < 1000) | 0.0558 | +1.8 | +2.2 | 0.0246 \| 0.0276 |
-| Steps per wear-day ~ %181-250 (pooled) | +321.951 [-53.387, +697.290] | not applied (n < 1000) | not applied (n < 1000) | 0.1606 | -1.2 | -1.1 | 0.1404 \| 0.1390 |
-| Steps per wear-day ~ %181-250 (daily avg) | +315.059 [-62.054, +692.172] | not applied (n < 1000) | not applied (n < 1000) | 0.1605 | -1.1 | -1.0 | 0.1401 \| 0.1390 |
-| Brisk-cadence minutes per day ~ %181-250 (pooled) | +0.633 [-0.435, +1.701] | not applied (n < 1000) | not applied (n < 1000) | 0.1805 | +0.5 | +0.5 | 0.1543 \| 0.1546 |
-| Brisk-cadence minutes per day ~ %181-250 (daily avg) | +0.622 [-0.452, +1.696] | not applied (n < 1000) | not applied (n < 1000) | 0.1805 | +0.5 | +0.6 | 0.1541 \| 0.1546 |
-| Resting heart-rate proxy ~ %181-250 (pooled) | +1.093 [+0.475, +1.712] | not applied (n < 1000) | not applied (n < 1000) | 0.1662 | -10.4 | -4.4 | 0.1366 \| 0.1253 |
-| Resting heart-rate proxy ~ %181-250 (daily avg) | +1.077 [+0.461, +1.692] | not applied (n < 1000) | not applied (n < 1000) | 0.1658 | -10.1 | -4.0 | 0.1362 \| 0.1253 |
-| Total sleep time per night ~ %181-250 (pooled) | -3.935 [-9.237, +1.367] | not applied (n < 1000) | not applied (n < 1000) | 0.0394 | -0.4 | +2.5 | 0.0067 \| 0.0066 |
-| Total sleep time per night ~ %181-250 (daily avg) | -3.908 [-9.205, +1.389] | not applied (n < 1000) | not applied (n < 1000) | 0.0393 | -0.4 | +2.5 | 0.0065 \| 0.0066 |
-| Garmin stress score, mean ~ %181-250 (pooled) | +2.545 [+1.268, +3.822] | not applied (n < 1000) | not applied (n < 1000) | 0.1397 | -13.4 | -0.4 | 0.1103 \| 0.0947 |
-| Garmin stress score, mean ~ %181-250 (daily avg) | +2.497 [+1.222, +3.773] | not applied (n < 1000) | not applied (n < 1000) | 0.1391 | -12.9 | +0.2 | 0.1096 \| 0.0947 |
+| MoCA total score ~ %181-250 (pooled) | -0.203 [-0.436, +0.029] | 0.247 | 0.117 | 0.0843 | -1.2 | +0.3 | 0.0552 \| 0.0541 |
+| MoCA total score ~ %181-250 (daily avg) | -0.196 [-0.429, +0.037] | 0.264 | 0.128 | 0.0840 | -1.0 | +0.5 | 0.0551 \| 0.0541 |
+| Cognitive impairment ~ %181-250 (pooled) | OR 1.119 [0.971, 1.289] | 0.284 | 0.176 | 0.6622 | -0.4 | +1.3 | 0.6425 \| 0.6425 |
+| Cognitive impairment ~ %181-250 (daily avg) | OR 1.121 [0.973, 1.291] | 0.275 | 0.176 | 0.6623 | -0.5 | +1.2 | 0.6422 \| 0.6425 |
+| MoCA memory index score ~ %181-250 (pooled) | -0.146 [-0.326, +0.034] | 0.270 | 0.158 | 0.0623 | -0.4 | +1.3 | 0.0294 \| 0.0286 |
+| MoCA memory index score ~ %181-250 (daily avg) | -0.147 [-0.328, +0.034] | 0.271 | 0.158 | 0.0623 | -0.4 | +1.3 | 0.0295 \| 0.0286 |
+| CES-D-10 depressive symptoms ~ %181-250 (pooled) | +0.039 [-0.293, +0.371] | 0.886 | 0.875 | 0.1111 | +1.9 | +3.2 | 0.0774 \| 0.0796 |
+| CES-D-10 depressive symptoms ~ %181-250 (daily avg) | +0.047 [-0.284, +0.378] | 0.868 | 0.875 | 0.1111 | +1.9 | +3.2 | 0.0774 \| 0.0796 |
+| Clinically relevant depressive symptoms ~ %181-250 (pooled) | OR 1.107 [0.936, 1.307] | 0.450 | 0.346 | 0.6631 | +0.6 | +3.6 | 0.6314 \| 0.6337 |
+| Clinically relevant depressive symptoms ~ %181-250 (daily avg) | OR 1.114 [0.943, 1.316] | 0.406 | 0.333 | 0.6634 | +0.4 | +3.4 | 0.6319 \| 0.6337 |
+| Indoor PM2.5, log(1 + mean ug/m3) ~ %181-250 (pooled) | +0.042 [-0.024, +0.107] | 0.421 | 0.236 | 0.1556 | +0.3 | +9.7 | 0.1296 \| 0.1310 |
+| Indoor PM2.5, log(1 + mean ug/m3) ~ %181-250 (daily avg) | +0.041 [-0.025, +0.106] | 0.432 | 0.236 | 0.1555 | +0.4 | +9.8 | 0.1296 \| 0.1310 |
+| Indoor temperature, mean ~ %181-250 (pooled) | -0.077 [-0.226, +0.071] | 0.533 | 0.794 | 0.2511 | +0.9 | -0.8 | 0.2241 \| 0.2264 |
+| Indoor temperature, mean ~ %181-250 (daily avg) | -0.084 [-0.233, +0.065] | 0.483 | 0.794 | 0.2513 | +0.7 | -1.0 | 0.2243 \| 0.2264 |
+| Indoor relative humidity, mean ~ %181-250 (pooled) | -0.144 [-0.587, +0.300] | 0.715 | 0.938 | 0.2133 | +1.6 | -0.3 | 0.1840 \| 0.1857 |
+| Indoor relative humidity, mean ~ %181-250 (daily avg) | -0.131 [-0.572, +0.311] | 0.743 | 0.938 | 0.2133 | +1.6 | -0.2 | 0.1839 \| 0.1857 |
+| Indoor VOC index, mean ~ %181-250 (pooled) | +0.311 [-1.122, +1.744] | 0.813 | 0.743 | 0.0559 | +1.7 | +2.1 | 0.0244 \| 0.0276 |
+| Indoor VOC index, mean ~ %181-250 (daily avg) | +0.258 [-1.153, +1.670] | 0.833 | 0.769 | 0.0558 | +1.8 | +2.2 | 0.0246 \| 0.0276 |
+| Steps per wear-day ~ %181-250 (pooled) | +321.951 [-53.387, +697.290] | 0.256 | 0.315 | 0.1606 | -1.2 | -1.1 | 0.1404 \| 0.1390 |
+| Steps per wear-day ~ %181-250 (daily avg) | +315.059 [-62.054, +692.172] | 0.264 | 0.315 | 0.1605 | -1.1 | -1.0 | 0.1401 \| 0.1390 |
+| Brisk-cadence minutes per day ~ %181-250 (pooled) | +0.633 [-0.435, +1.701] | 0.461 | 0.663 | 0.1805 | +0.5 | +0.5 | 0.1543 \| 0.1546 |
+| Brisk-cadence minutes per day ~ %181-250 (daily avg) | +0.622 [-0.452, +1.696] | 0.480 | 0.663 | 0.1805 | +0.5 | +0.6 | 0.1541 \| 0.1546 |
+| Resting heart-rate proxy ~ %181-250 (pooled) | **+1.093 [+0.475, +1.712]** | **0.019 (FDR<0.05)** | **0.005 (FDR<0.05)** | 0.1662 | -10.4 | -4.4 | 0.1366 \| 0.1253 |
+| Resting heart-rate proxy ~ %181-250 (daily avg) | **+1.077 [+0.461, +1.692]** | **0.020 (FDR<0.05)** | **0.005 (FDR<0.05)** | 0.1658 | -10.1 | -4.0 | 0.1362 \| 0.1253 |
+| Total sleep time per night ~ %181-250 (pooled) | -3.935 [-9.237, +1.367] | 0.329 | 0.328 | 0.0394 | -0.4 | +2.5 | 0.0067 \| 0.0066 |
+| Total sleep time per night ~ %181-250 (daily avg) | -3.908 [-9.205, +1.389] | 0.332 | 0.328 | 0.0393 | -0.4 | +2.5 | 0.0065 \| 0.0066 |
+| Garmin stress score, mean ~ %181-250 (pooled) | **+2.545 [+1.268, +3.822]** | **0.007 (FDR<0.05)** | **5.6e-04 (FDR<0.05)** | 0.1397 | -13.4 | -0.4 | 0.1103 \| 0.0947 |
+| Garmin stress score, mean ~ %181-250 (daily avg) | **+2.497 [+1.222, +3.773]** | **0.007 (FDR<0.05)** | **5.6e-04 (FDR<0.05)** | 0.1391 | -12.9 | +0.2 | 0.1096 \| 0.0947 |
 
 
 ---
@@ -1384,15 +1384,15 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 
 | Predictor (alone) | N | N with time in band | Coef (β) | Std. Err. | 95% CI | t / z | Pr(>\|t\|) | Signif |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| MoCA total score ~ Any >250 (0/1) | 2138 | 795 | -0.6184 | 0.1433 | [-0.8993, -0.3375] | -4.32 | 1.6e-05*** | *** |
-| MoCA total score ~ %>250 (pooled) | 2138 | 795 | -0.02449 | 0.007291 | [-0.03878, -0.0102] | -3.36 | 7.8e-04*** | *** |
-| MoCA total score ~ %>250 (daily avg) | 2138 | 735 | -0.02439 | 0.00751 | [-0.03911, -0.009669] | -3.25 | 0.001** | ** |
-| Cognitive impairment ~ Any >250 (0/1) | 2138 | 795 | +0.2899 | 0.09696 | [0.09989, 0.4799] | 2.99 | 0.003** | ** |
-| Cognitive impairment ~ %>250 (pooled) | 2138 | 795 | +0.01273 | 0.004411 | [0.004079, 0.02137] | 2.88 | 0.004** | ** |
-| Cognitive impairment ~ %>250 (daily avg) | 2138 | 735 | +0.0125 | 0.004467 | [0.003741, 0.02125] | 2.80 | 0.005** | ** |
-| MoCA memory index score ~ Any >250 (0/1) | 2138 | 795 | -0.2804 | 0.1247 | [-0.5249, -0.03588] | -2.25 | 0.025* | * |
-| MoCA memory index score ~ %>250 (pooled) | 2138 | 795 | -0.01139 | 0.005082 | [-0.02135, -0.001429] | -2.24 | 0.025* | * |
-| MoCA memory index score ~ %>250 (daily avg) | 2138 | 735 | -0.01103 | 0.005127 | [-0.02108, -0.0009824] | -2.15 | 0.031* | * |
+| MoCA total score ~ Any >250 (0/1) | 2138 | 795 | **-0.6184** | 0.1433 | [-0.8993, -0.3375] | **-4.32** | **1.6e-05***** | *** |
+| MoCA total score ~ %>250 (pooled) | 2138 | 795 | **-0.02449** | 0.007291 | [-0.03878, -0.0102] | **-3.36** | **7.8e-04***** | *** |
+| MoCA total score ~ %>250 (daily avg) | 2138 | 735 | **-0.02439** | 0.00751 | [-0.03911, -0.009669] | **-3.25** | **0.001**** | ** |
+| Cognitive impairment ~ Any >250 (0/1) | 2138 | 795 | **+0.2899** | 0.09696 | [0.09989, 0.4799] | **2.99** | **0.003**** | ** |
+| Cognitive impairment ~ %>250 (pooled) | 2138 | 795 | **+0.01273** | 0.004411 | [0.004079, 0.02137] | **2.88** | **0.004**** | ** |
+| Cognitive impairment ~ %>250 (daily avg) | 2138 | 735 | **+0.0125** | 0.004467 | [0.003741, 0.02125] | **2.80** | **0.005**** | ** |
+| MoCA memory index score ~ Any >250 (0/1) | 2138 | 795 | **-0.2804** | 0.1247 | [-0.5249, -0.03588] | **-2.25** | **0.025*** | * |
+| MoCA memory index score ~ %>250 (pooled) | 2138 | 795 | **-0.01139** | 0.005082 | [-0.02135, -0.001429] | **-2.24** | **0.025*** | * |
+| MoCA memory index score ~ %>250 (daily avg) | 2138 | 735 | **-0.01103** | 0.005127 | [-0.02108, -0.0009824] | **-2.15** | **0.031*** | * |
 | CES-D-10 depressive symptoms ~ Any >250 (0/1) | 2135 | 793 | +0.07286 | 0.2174 | [-0.3533, 0.499] | 0.34 | 0.738 |  |
 | CES-D-10 depressive symptoms ~ %>250 (pooled) | 2135 | 793 | +0.01325 | 0.01202 | [-0.01031, 0.03682] | 1.10 | 0.270 |  |
 | CES-D-10 depressive symptoms ~ %>250 (daily avg) | 2135 | 733 | +0.01204 | 0.01226 | [-0.01199, 0.03607] | 0.98 | 0.326 |  |
@@ -1414,31 +1414,31 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 | Steps per wear-day ~ Any >250 (0/1) | 1872 | 690 | +424.7 | 221.3 | [-9.001, 858.3] | 1.92 | 0.055 |  |
 | Steps per wear-day ~ %>250 (pooled) | 1872 | 690 | +1.594 | 12.22 | [-22.36, 25.55] | 0.13 | 0.896 |  |
 | Steps per wear-day ~ %>250 (daily avg) | 1872 | 637 | +1.822 | 12.07 | [-21.84, 25.48] | 0.15 | 0.880 |  |
-| Brisk-cadence minutes per day ~ Any >250 (0/1) | 1872 | 690 | +1.322 | 0.6608 | [0.0265, 2.617] | 2.00 | 0.045* | * |
+| Brisk-cadence minutes per day ~ Any >250 (0/1) | 1872 | 690 | **+1.322** | 0.6608 | [0.0265, 2.617] | **2.00** | **0.045*** | * |
 | Brisk-cadence minutes per day ~ %>250 (pooled) | 1872 | 690 | +0.009263 | 0.03436 | [-0.05808, 0.07661] | 0.27 | 0.787 |  |
 | Brisk-cadence minutes per day ~ %>250 (daily avg) | 1872 | 637 | +0.01013 | 0.03394 | [-0.05639, 0.07664] | 0.30 | 0.765 |  |
-| Resting heart-rate proxy ~ Any >250 (0/1) | 1877 | 692 | +2.658 | 0.4056 | [1.863, 3.453] | 6.55 | 5.6e-11*** | *** |
-| Resting heart-rate proxy ~ %>250 (pooled) | 1877 | 692 | +0.09123 | 0.02068 | [0.05069, 0.1318] | 4.41 | 1.0e-05*** | *** |
-| Resting heart-rate proxy ~ %>250 (daily avg) | 1877 | 638 | +0.09273 | 0.02141 | [0.05076, 0.1347] | 4.33 | 1.5e-05*** | *** |
-| Total sleep time per night ~ Any >250 (0/1) | 1893 | 694 | -7.063 | 3.289 | [-13.51, -0.6173] | -2.15 | 0.032* | * |
+| Resting heart-rate proxy ~ Any >250 (0/1) | 1877 | 692 | **+2.658** | 0.4056 | [1.863, 3.453] | **6.55** | **5.6e-11***** | *** |
+| Resting heart-rate proxy ~ %>250 (pooled) | 1877 | 692 | **+0.09123** | 0.02068 | [0.05069, 0.1318] | **4.41** | **1.0e-05***** | *** |
+| Resting heart-rate proxy ~ %>250 (daily avg) | 1877 | 638 | **+0.09273** | 0.02141 | [0.05076, 0.1347] | **4.33** | **1.5e-05***** | *** |
+| Total sleep time per night ~ Any >250 (0/1) | 1893 | 694 | **-7.063** | 3.289 | [-13.51, -0.6173] | **-2.15** | **0.032*** | * |
 | Total sleep time per night ~ %>250 (pooled) | 1893 | 694 | -0.09953 | 0.1422 | [-0.3783, 0.1792] | -0.70 | 0.484 |  |
 | Total sleep time per night ~ %>250 (daily avg) | 1893 | 641 | -0.09255 | 0.1458 | [-0.3782, 0.1931] | -0.63 | 0.525 |  |
-| Garmin stress score, mean ~ Any >250 (0/1) | 1879 | 692 | +4.706 | 0.8561 | [3.028, 6.384] | 5.50 | 3.9e-08*** | *** |
-| Garmin stress score, mean ~ %>250 (pooled) | 1879 | 692 | +0.1758 | 0.04546 | [0.08673, 0.2649] | 3.87 | 1.1e-04*** | *** |
-| Garmin stress score, mean ~ %>250 (daily avg) | 1879 | 640 | +0.1787 | 0.04687 | [0.0868, 0.2705] | 3.81 | 1.4e-04*** | *** |
+| Garmin stress score, mean ~ Any >250 (0/1) | 1879 | 692 | **+4.706** | 0.8561 | [3.028, 6.384] | **5.50** | **3.9e-08***** | *** |
+| Garmin stress score, mean ~ %>250 (pooled) | 1879 | 692 | **+0.1758** | 0.04546 | [0.08673, 0.2649] | **3.87** | **1.1e-04***** | *** |
+| Garmin stress score, mean ~ %>250 (daily avg) | 1879 | 640 | **+0.1787** | 0.04687 | [0.0868, 0.2705] | **3.81** | **1.4e-04***** | *** |
 
 **(B) Standardised effect, multiplicity and fit**
 
 | Predictor (alone) | β per 1 SD (95% CI) | q, all tests in population | q, this outcome | Adj R² / AUC | ΔAIC vs covs | ΔAIC vs HbA1c | CV R²/AUC (predictor vs covariates-only) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| MoCA total score ~ Any >250 (0/1) | -0.299 [-0.435, -0.163] | 1.2e-04 (FDR<0.05) | 3.8e-05 (FDR<0.05) | 0.1084 | -18.5 | +6.2 | 0.0988 \| 0.0915 |
-| MoCA total score ~ %>250 (pooled) | -0.270 [-0.428, -0.112] | 0.004 (FDR<0.05) | 0.001 (FDR<0.05) | 0.1069 | -14.8 | +9.8 | 0.0974 \| 0.0915 |
-| MoCA total score ~ %>250 (daily avg) | -0.265 [-0.426, -0.105] | 0.005 (FDR<0.05) | 0.002 (FDR<0.05) | 0.1066 | -14.3 | +10.4 | 0.0971 \| 0.0915 |
-| Cognitive impairment ~ Any >250 (0/1) | OR 1.150 [1.049, 1.261] | 0.012 (FDR<0.05) | 0.005 (FDR<0.05) | 0.6735 | -6.9 | +6.7 | 0.6654 \| 0.6603 |
-| Cognitive impairment ~ %>250 (pooled) | OR 1.151 [1.046, 1.266] | 0.017 (FDR<0.05) | 0.007 (FDR<0.05) | 0.6706 | -6.9 | +6.8 | 0.6629 \| 0.6603 |
-| Cognitive impairment ~ %>250 (daily avg) | OR 1.146 [1.042, 1.260] | 0.021 (FDR<0.05) | 0.008 (FDR<0.05) | 0.6703 | -6.3 | +7.3 | 0.6627 \| 0.6603 |
-| MoCA memory index score ~ Any >250 (0/1) | -0.136 [-0.254, -0.017] | 0.080 | 0.048 (FDR<0.05) | 0.0738 | -3.4 | +2.0 | 0.0641 \| 0.0630 |
-| MoCA memory index score ~ %>250 (pooled) | -0.126 [-0.235, -0.016] | 0.080 | 0.048 (FDR<0.05) | 0.0735 | -2.7 | +2.7 | 0.0644 \| 0.0630 |
+| MoCA total score ~ Any >250 (0/1) | **-0.299 [-0.435, -0.163]** | **1.2e-04 (FDR<0.05)** | **3.8e-05 (FDR<0.05)** | 0.1084 | -18.5 | +6.2 | 0.0988 \| 0.0915 |
+| MoCA total score ~ %>250 (pooled) | **-0.270 [-0.428, -0.112]** | **0.004 (FDR<0.05)** | **0.001 (FDR<0.05)** | 0.1069 | -14.8 | +9.8 | 0.0974 \| 0.0915 |
+| MoCA total score ~ %>250 (daily avg) | **-0.265 [-0.426, -0.105]** | **0.005 (FDR<0.05)** | **0.002 (FDR<0.05)** | 0.1066 | -14.3 | +10.4 | 0.0971 \| 0.0915 |
+| Cognitive impairment ~ Any >250 (0/1) | **OR 1.150 [1.049, 1.261]** | **0.012 (FDR<0.05)** | **0.005 (FDR<0.05)** | 0.6735 | -6.9 | +6.7 | 0.6654 \| 0.6603 |
+| Cognitive impairment ~ %>250 (pooled) | **OR 1.151 [1.046, 1.266]** | **0.017 (FDR<0.05)** | **0.007 (FDR<0.05)** | 0.6706 | -6.9 | +6.8 | 0.6629 \| 0.6603 |
+| Cognitive impairment ~ %>250 (daily avg) | **OR 1.146 [1.042, 1.260]** | **0.021 (FDR<0.05)** | **0.008 (FDR<0.05)** | 0.6703 | -6.3 | +7.3 | 0.6627 \| 0.6603 |
+| MoCA memory index score ~ Any >250 (0/1) | -0.136 [-0.254, -0.017] | 0.080 | **0.048 (FDR<0.05)** | 0.0738 | -3.4 | +2.0 | 0.0641 \| 0.0630 |
+| MoCA memory index score ~ %>250 (pooled) | -0.126 [-0.235, -0.016] | 0.080 | **0.048 (FDR<0.05)** | 0.0735 | -2.7 | +2.7 | 0.0644 \| 0.0630 |
 | MoCA memory index score ~ %>250 (daily avg) | -0.120 [-0.229, -0.011] | 0.093 | 0.051 | 0.0733 | -2.3 | +3.1 | 0.0642 \| 0.0630 |
 | CES-D-10 depressive symptoms ~ Any >250 (0/1) | +0.035 [-0.171, +0.241] | 0.842 | 0.788 | 0.1028 | +1.9 | +2.1 | 0.0908 \| 0.0916 |
 | CES-D-10 depressive symptoms ~ %>250 (pooled) | +0.146 [-0.114, +0.406] | 0.440 | 0.620 | 0.1036 | +0.0 | +0.3 | 0.0916 \| 0.0916 |
@@ -1464,15 +1464,15 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 | Brisk-cadence minutes per day ~ Any >250 (0/1) | +0.638 [+0.013, +1.263] | 0.128 | 0.192 | 0.1577 | -2.5 | +5.7 | 0.1460 \| 0.1447 |
 | Brisk-cadence minutes per day ~ %>250 (pooled) | +0.102 [-0.637, +0.840] | 0.868 | 0.828 | 0.1557 | +1.9 | +10.1 | 0.1432 \| 0.1447 |
 | Brisk-cadence minutes per day ~ %>250 (daily avg) | +0.109 [-0.608, +0.826] | 0.852 | 0.828 | 0.1557 | +1.9 | +10.1 | 0.1433 \| 0.1447 |
-| Resting heart-rate proxy ~ Any >250 (0/1) | +1.283 [+0.899, +1.666] | 1.0e-09 (FDR<0.05) | 1.2e-10 (FDR<0.05) | 0.1795 | -42.8 | +28.4 | 0.1667 \| 0.1482 |
-| Resting heart-rate proxy ~ %>250 (pooled) | +1.001 [+0.556, +1.445] | 8.3e-05 (FDR<0.05) | 1.5e-05 (FDR<0.05) | 0.1719 | -25.5 | +45.8 | 0.1595 \| 0.1482 |
-| Resting heart-rate proxy ~ %>250 (daily avg) | +1.000 [+0.548, +1.453] | 1.1e-04 (FDR<0.05) | 1.9e-05 (FDR<0.05) | 0.1719 | -25.4 | +45.8 | 0.1594 \| 0.1482 |
+| Resting heart-rate proxy ~ Any >250 (0/1) | **+1.283 [+0.899, +1.666]** | **1.0e-09 (FDR<0.05)** | **1.2e-10 (FDR<0.05)** | 0.1795 | -42.8 | +28.4 | 0.1667 \| 0.1482 |
+| Resting heart-rate proxy ~ %>250 (pooled) | **+1.001 [+0.556, +1.445]** | **8.3e-05 (FDR<0.05)** | **1.5e-05 (FDR<0.05)** | 0.1719 | -25.5 | +45.8 | 0.1595 \| 0.1482 |
+| Resting heart-rate proxy ~ %>250 (daily avg) | **+1.000 [+0.548, +1.453]** | **1.1e-04 (FDR<0.05)** | **1.9e-05 (FDR<0.05)** | 0.1719 | -25.4 | +45.8 | 0.1594 \| 0.1482 |
 | Total sleep time per night ~ Any >250 (0/1) | -3.404 [-6.511, -0.298] | 0.093 | 0.123 | 0.0356 | -2.6 | +6.3 | 0.0214 \| 0.0209 |
 | Total sleep time per night ~ %>250 (pooled) | -1.051 [-3.995, +1.893] | 0.654 | 0.582 | 0.0335 | +1.6 | +10.5 | 0.0205 \| 0.0209 |
 | Total sleep time per night ~ %>250 (daily avg) | -0.961 [-3.926, +2.005] | 0.693 | 0.582 | 0.0334 | +1.6 | +10.5 | 0.0204 \| 0.0209 |
-| Garmin stress score, mean ~ Any >250 (0/1) | +2.270 [+1.461, +3.080] | 5.1e-07 (FDR<0.05) | 8.0e-08 (FDR<0.05) | 0.1195 | -28.7 | +31.7 | 0.1039 \| 0.0902 |
-| Garmin stress score, mean ~ %>250 (pooled) | +1.927 [+0.951, +2.904] | 6.5e-04 (FDR<0.05) | 1.6e-04 (FDR<0.05) | 0.1156 | -20.3 | +40.1 | 0.0997 \| 0.0902 |
-| Garmin stress score, mean ~ %>250 (daily avg) | +1.926 [+0.936, +2.917] | 7.9e-04 (FDR<0.05) | 1.9e-04 (FDR<0.05) | 0.1156 | -20.3 | +40.1 | 0.0996 \| 0.0902 |
+| Garmin stress score, mean ~ Any >250 (0/1) | **+2.270 [+1.461, +3.080]** | **5.1e-07 (FDR<0.05)** | **8.0e-08 (FDR<0.05)** | 0.1195 | -28.7 | +31.7 | 0.1039 \| 0.0902 |
+| Garmin stress score, mean ~ %>250 (pooled) | **+1.927 [+0.951, +2.904]** | **6.5e-04 (FDR<0.05)** | **1.6e-04 (FDR<0.05)** | 0.1156 | -20.3 | +40.1 | 0.0997 \| 0.0902 |
+| Garmin stress score, mean ~ %>250 (daily avg) | **+1.926 [+0.936, +2.917]** | **7.9e-04 (FDR<0.05)** | **1.9e-04 (FDR<0.05)** | 0.1156 | -20.3 | +40.1 | 0.0996 \| 0.0902 |
 
 ### Healthy group (no diabetes + pre-diabetes / lifestyle)
 
@@ -1480,15 +1480,15 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 
 | Predictor (alone) | N | N with time in band | Coef (β) | Std. Err. | 95% CI | t / z | Pr(>\|t\|) | Signif |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| MoCA total score ~ Any >250 (0/1) | 1271 | 244 | -0.4572 | 0.2262 | [-0.9005, -0.01383] | -2.02 | 0.043* | * |
+| MoCA total score ~ Any >250 (0/1) | 1271 | 244 | **-0.4572** | 0.2262 | [-0.9005, -0.01383] | **-2.02** | **0.043*** | * |
 | MoCA total score ~ %>250 (pooled) | 1271 | 244 | -0.05711 | 0.03288 | [-0.1216, 0.007323] | -1.74 | 0.082 |  |
 | MoCA total score ~ %>250 (daily avg) | 1271 | 207 | -0.05806 | 0.0339 | [-0.1245, 0.008393] | -1.71 | 0.087 |  |
 | Cognitive impairment ~ Any >250 (0/1) | 1271 | 244 | +0.1423 | 0.1549 | [-0.1613, 0.4459] | 0.92 | 0.358 |  |
 | Cognitive impairment ~ %>250 (pooled) | 1271 | 244 | +0.00508 | 0.01248 | [-0.01939, 0.02955] | 0.41 | 0.684 |  |
 | Cognitive impairment ~ %>250 (daily avg) | 1271 | 207 | +0.004448 | 0.01269 | [-0.02043, 0.02933] | 0.35 | 0.726 |  |
 | MoCA memory index score ~ Any >250 (0/1) | 1271 | 244 | -0.04361 | 0.1947 | [-0.4251, 0.3379] | -0.22 | 0.823 |  |
-| MoCA memory index score ~ %>250 (pooled) | 1271 | 244 | -0.03702 | 0.0127 | [-0.06192, -0.01212] | -2.91 | 0.004** | ** |
-| MoCA memory index score ~ %>250 (daily avg) | 1271 | 207 | -0.03768 | 0.01287 | [-0.0629, -0.01246] | -2.93 | 0.003** | ** |
+| MoCA memory index score ~ %>250 (pooled) | 1271 | 244 | **-0.03702** | 0.0127 | [-0.06192, -0.01212] | **-2.91** | **0.004**** | ** |
+| MoCA memory index score ~ %>250 (daily avg) | 1271 | 207 | **-0.03768** | 0.01287 | [-0.0629, -0.01246] | **-2.93** | **0.003**** | ** |
 | CES-D-10 depressive symptoms ~ Any >250 (0/1) | 1270 | 243 | +0.1666 | 0.3351 | [-0.4902, 0.8234] | 0.50 | 0.619 |  |
 | CES-D-10 depressive symptoms ~ %>250 (pooled) | 1270 | 243 | -0.02618 | 0.03088 | [-0.08669, 0.03433] | -0.85 | 0.396 |  |
 | CES-D-10 depressive symptoms ~ %>250 (daily avg) | 1270 | 206 | -0.02678 | 0.0322 | [-0.08988, 0.03633] | -0.83 | 0.406 |  |
@@ -1534,8 +1534,8 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 | Cognitive impairment ~ %>250 (pooled) | OR 1.025 [0.910, 1.154] | 0.932 | 0.834 | 0.6595 | +1.8 | +1.6 | 0.6433 \| 0.6443 |
 | Cognitive impairment ~ %>250 (daily avg) | OR 1.021 [0.907, 1.150] | 0.932 | 0.834 | 0.6595 | +1.9 | +1.7 | 0.6432 \| 0.6443 |
 | MoCA memory index score ~ Any >250 (0/1) | -0.017 [-0.168, +0.133] | 0.940 | 0.823 | 0.0710 | +1.9 | +2.6 | 0.0455 \| 0.0477 |
-| MoCA memory index score ~ %>250 (pooled) | -0.180 [-0.300, -0.059] | 0.053 | 0.020 (FDR<0.05) | 0.0756 | -4.3 | -3.6 | 0.0510 \| 0.0477 |
-| MoCA memory index score ~ %>250 (daily avg) | -0.179 [-0.300, -0.059] | 0.053 | 0.020 (FDR<0.05) | 0.0755 | -4.3 | -3.6 | 0.0509 \| 0.0477 |
+| MoCA memory index score ~ %>250 (pooled) | -0.180 [-0.300, -0.059] | 0.053 | **0.020 (FDR<0.05)** | 0.0756 | -4.3 | -3.6 | 0.0510 \| 0.0477 |
+| MoCA memory index score ~ %>250 (daily avg) | -0.179 [-0.300, -0.059] | 0.053 | **0.020 (FDR<0.05)** | 0.0755 | -4.3 | -3.6 | 0.0509 \| 0.0477 |
 | CES-D-10 depressive symptoms ~ Any >250 (0/1) | +0.066 [-0.193, +0.324] | 0.932 | 0.953 | 0.0909 | +1.7 | -0.2 | 0.0656 \| 0.0675 |
 | CES-D-10 depressive symptoms ~ %>250 (pooled) | -0.127 [-0.420, +0.166] | 0.797 | 0.953 | 0.0914 | +1.0 | -1.0 | 0.0662 \| 0.0675 |
 | CES-D-10 depressive symptoms ~ %>250 (daily avg) | -0.127 [-0.427, +0.173] | 0.808 | 0.953 | 0.0914 | +1.0 | -1.0 | 0.0662 \| 0.0675 |
@@ -1582,7 +1582,7 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 | Cognitive impairment ~ Any >250 (0/1) | 867 | 551 | +0.1706 | 0.1511 | [-0.1256, 0.4668] | 1.13 | 0.259 |  |
 | Cognitive impairment ~ %>250 (pooled) | 867 | 551 | +0.009194 | 0.004797 | [-0.0002091, 0.0186] | 1.92 | 0.055 |  |
 | Cognitive impairment ~ %>250 (daily avg) | 867 | 528 | +0.009035 | 0.004851 | [-0.0004728, 0.01854] | 1.86 | 0.063 |  |
-| MoCA memory index score ~ Any >250 (0/1) | 867 | 551 | -0.49 | 0.1945 | [-0.8712, -0.1088] | -2.52 | 0.012* | * |
+| MoCA memory index score ~ Any >250 (0/1) | 867 | 551 | **-0.49** | 0.1945 | [-0.8712, -0.1088] | **-2.52** | **0.012*** | * |
 | MoCA memory index score ~ %>250 (pooled) | 867 | 551 | -0.00784 | 0.005467 | [-0.01856, 0.002876] | -1.43 | 0.152 |  |
 | MoCA memory index score ~ %>250 (daily avg) | 867 | 528 | -0.007382 | 0.005484 | [-0.01813, 0.003367] | -1.35 | 0.178 |  |
 | CES-D-10 depressive symptoms ~ Any >250 (0/1) | 865 | 550 | -0.03675 | 0.3628 | [-0.7478, 0.6743] | -0.10 | 0.919 |  |
@@ -1610,61 +1610,61 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 | Brisk-cadence minutes per day ~ %>250 (pooled) | 747 | 472 | -0.01786 | 0.03757 | [-0.0915, 0.05579] | -0.48 | 0.635 |  |
 | Brisk-cadence minutes per day ~ %>250 (daily avg) | 747 | 451 | -0.01595 | 0.03673 | [-0.08793, 0.05603] | -0.43 | 0.664 |  |
 | Resting heart-rate proxy ~ Any >250 (0/1) | 749 | 474 | +1.288 | 0.6609 | [-0.007651, 2.583] | 1.95 | 0.051 |  |
-| Resting heart-rate proxy ~ %>250 (pooled) | 749 | 474 | +0.04225 | 0.02136 | [0.0003932, 0.08411] | 1.98 | 0.048* | * |
-| Resting heart-rate proxy ~ %>250 (daily avg) | 749 | 453 | +0.04395 | 0.02176 | [0.001304, 0.08659] | 2.02 | 0.043* | * |
-| Total sleep time per night ~ Any >250 (0/1) | 756 | 479 | -13.96 | 5.671 | [-25.07, -2.844] | -2.46 | 0.014* | * |
+| Resting heart-rate proxy ~ %>250 (pooled) | 749 | 474 | **+0.04225** | 0.02136 | [0.0003932, 0.08411] | **1.98** | **0.048*** | * |
+| Resting heart-rate proxy ~ %>250 (daily avg) | 749 | 453 | **+0.04395** | 0.02176 | [0.001304, 0.08659] | **2.02** | **0.043*** | * |
+| Total sleep time per night ~ Any >250 (0/1) | 756 | 479 | **-13.96** | 5.671 | [-25.07, -2.844] | **-2.46** | **0.014*** | * |
 | Total sleep time per night ~ %>250 (pooled) | 756 | 479 | -0.03984 | 0.1601 | [-0.3537, 0.274] | -0.25 | 0.804 |  |
 | Total sleep time per night ~ %>250 (daily avg) | 756 | 458 | -0.03427 | 0.1632 | [-0.3542, 0.2856] | -0.21 | 0.834 |  |
-| Garmin stress score, mean ~ Any >250 (0/1) | 749 | 474 | +3.273 | 1.383 | [0.5626, 5.983] | 2.37 | 0.018* | * |
-| Garmin stress score, mean ~ %>250 (pooled) | 749 | 474 | +0.1119 | 0.04815 | [0.01753, 0.2063] | 2.32 | 0.020* | * |
-| Garmin stress score, mean ~ %>250 (daily avg) | 749 | 454 | +0.1154 | 0.04926 | [0.01889, 0.212] | 2.34 | 0.019* | * |
+| Garmin stress score, mean ~ Any >250 (0/1) | 749 | 474 | **+3.273** | 1.383 | [0.5626, 5.983] | **2.37** | **0.018*** | * |
+| Garmin stress score, mean ~ %>250 (pooled) | 749 | 474 | **+0.1119** | 0.04815 | [0.01753, 0.2063] | **2.32** | **0.020*** | * |
+| Garmin stress score, mean ~ %>250 (daily avg) | 749 | 454 | **+0.1154** | 0.04926 | [0.01889, 0.212] | **2.34** | **0.019*** | * |
 
 **(B) Standardised effect, multiplicity and fit**
 
 | Predictor (alone) | β per 1 SD (95% CI) | q, all tests in population | q, this outcome | Adj R² / AUC | ΔAIC vs covs | ΔAIC vs HbA1c | CV R²/AUC (predictor vs covariates-only) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| MoCA total score ~ Any >250 (0/1) | -0.210 [-0.428, +0.008] | not applied (n < 1000) | not applied (n < 1000) | 0.0844 | -1.4 | +0.1 | 0.0559 \| 0.0541 |
-| MoCA total score ~ %>250 (pooled) | -0.210 [-0.438, +0.017] | not applied (n < 1000) | not applied (n < 1000) | 0.0845 | -1.5 | +0.1 | 0.0565 \| 0.0541 |
-| MoCA total score ~ %>250 (daily avg) | -0.206 [-0.436, +0.024] | not applied (n < 1000) | not applied (n < 1000) | 0.0844 | -1.3 | +0.2 | 0.0564 \| 0.0541 |
-| Cognitive impairment ~ Any >250 (0/1) | OR 1.086 [0.941, 1.252] | not applied (n < 1000) | not applied (n < 1000) | 0.6615 | +0.7 | +2.4 | 0.6414 \| 0.6425 |
-| Cognitive impairment ~ %>250 (pooled) | OR 1.154 [0.997, 1.336] | not applied (n < 1000) | not applied (n < 1000) | 0.6640 | -1.8 | -0.1 | 0.6447 \| 0.6425 |
-| Cognitive impairment ~ %>250 (daily avg) | OR 1.149 [0.993, 1.330] | not applied (n < 1000) | not applied (n < 1000) | 0.6636 | -1.6 | +0.1 | 0.6446 \| 0.6425 |
-| MoCA memory index score ~ Any >250 (0/1) | -0.236 [-0.420, -0.052] | not applied (n < 1000) | not applied (n < 1000) | 0.0664 | -4.2 | -2.5 | 0.0335 \| 0.0286 |
-| MoCA memory index score ~ %>250 (pooled) | -0.122 [-0.289, +0.045] | not applied (n < 1000) | not applied (n < 1000) | 0.0615 | +0.3 | +2.1 | 0.0298 \| 0.0286 |
-| MoCA memory index score ~ %>250 (daily avg) | -0.114 [-0.279, +0.052] | not applied (n < 1000) | not applied (n < 1000) | 0.0612 | +0.5 | +2.3 | 0.0296 \| 0.0286 |
-| CES-D-10 depressive symptoms ~ Any >250 (0/1) | -0.018 [-0.360, +0.325] | not applied (n < 1000) | not applied (n < 1000) | 0.1111 | +2.0 | +3.3 | 0.0769 \| 0.0796 |
-| CES-D-10 depressive symptoms ~ %>250 (pooled) | +0.300 [-0.109, +0.709] | not applied (n < 1000) | not applied (n < 1000) | 0.1143 | -1.2 | +0.1 | 0.0788 \| 0.0796 |
-| CES-D-10 depressive symptoms ~ %>250 (daily avg) | +0.274 [-0.139, +0.687] | not applied (n < 1000) | not applied (n < 1000) | 0.1138 | -0.6 | +0.6 | 0.0784 \| 0.0796 |
-| Clinically relevant depressive symptoms ~ Any >250 (0/1) | OR 1.024 [0.862, 1.216] | not applied (n < 1000) | not applied (n < 1000) | 0.6604 | +1.9 | +4.9 | 0.6298 \| 0.6337 |
-| Clinically relevant depressive symptoms ~ %>250 (pooled) | OR 1.129 [0.973, 1.309] | not applied (n < 1000) | not applied (n < 1000) | 0.6655 | -0.5 | +2.5 | 0.6366 \| 0.6337 |
-| Clinically relevant depressive symptoms ~ %>250 (daily avg) | OR 1.110 [0.956, 1.289] | not applied (n < 1000) | not applied (n < 1000) | 0.6649 | +0.2 | +3.2 | 0.6350 \| 0.6337 |
-| Indoor PM2.5, log(1 + mean ug/m3) ~ Any >250 (0/1) | +0.010 [-0.056, +0.075] | not applied (n < 1000) | not applied (n < 1000) | 0.1540 | +1.9 | +11.3 | 0.1296 \| 0.1310 |
-| Indoor PM2.5, log(1 + mean ug/m3) ~ %>250 (pooled) | +0.065 [-0.019, +0.149] | not applied (n < 1000) | not applied (n < 1000) | 0.1579 | -2.0 | +7.4 | 0.1309 \| 0.1310 |
-| Indoor PM2.5, log(1 + mean ug/m3) ~ %>250 (daily avg) | +0.065 [-0.018, +0.148] | not applied (n < 1000) | not applied (n < 1000) | 0.1580 | -2.1 | +7.3 | 0.1310 \| 0.1310 |
-| Indoor temperature, mean ~ Any >250 (0/1) | -0.032 [-0.185, +0.120] | not applied (n < 1000) | not applied (n < 1000) | 0.2503 | +1.8 | +0.1 | 0.2242 \| 0.2264 |
-| Indoor temperature, mean ~ %>250 (pooled) | -0.026 [-0.186, +0.134] | not applied (n < 1000) | not applied (n < 1000) | 0.2503 | +1.9 | +0.2 | 0.2227 \| 0.2264 |
-| Indoor temperature, mean ~ %>250 (daily avg) | -0.028 [-0.189, +0.133] | not applied (n < 1000) | not applied (n < 1000) | 0.2503 | +1.9 | +0.2 | 0.2227 \| 0.2264 |
-| Indoor relative humidity, mean ~ Any >250 (0/1) | -0.372 [-0.808, +0.064] | not applied (n < 1000) | not applied (n < 1000) | 0.2157 | -0.9 | -2.8 | 0.1862 \| 0.1857 |
-| Indoor relative humidity, mean ~ %>250 (pooled) | -0.083 [-0.529, +0.362] | not applied (n < 1000) | not applied (n < 1000) | 0.2131 | +1.9 | -0.0 | 0.1840 \| 0.1857 |
-| Indoor relative humidity, mean ~ %>250 (daily avg) | -0.082 [-0.534, +0.370] | not applied (n < 1000) | not applied (n < 1000) | 0.2131 | +1.9 | -0.0 | 0.1839 \| 0.1857 |
-| Indoor VOC index, mean ~ Any >250 (0/1) | +0.857 [-0.283, +1.997] | not applied (n < 1000) | not applied (n < 1000) | 0.0579 | -0.0 | +0.3 | 0.0281 \| 0.0276 |
-| Indoor VOC index, mean ~ %>250 (pooled) | -1.116 [-2.427, +0.196] | not applied (n < 1000) | not applied (n < 1000) | 0.0595 | -1.5 | -1.1 | 0.0291 \| 0.0276 |
-| Indoor VOC index, mean ~ %>250 (daily avg) | -1.176 [-2.513, +0.161] | not applied (n < 1000) | not applied (n < 1000) | 0.0599 | -1.8 | -1.5 | 0.0295 \| 0.0276 |
-| Steps per wear-day ~ Any >250 (0/1) | +250.915 [-120.671, +622.500] | not applied (n < 1000) | not applied (n < 1000) | 0.1592 | +0.1 | +0.2 | 0.1385 \| 0.1390 |
-| Steps per wear-day ~ %>250 (pooled) | -82.285 [-504.678, +340.108] | not applied (n < 1000) | not applied (n < 1000) | 0.1572 | +1.8 | +1.9 | 0.1373 \| 0.1390 |
-| Steps per wear-day ~ %>250 (daily avg) | -71.239 [-478.205, +335.726] | not applied (n < 1000) | not applied (n < 1000) | 0.1572 | +1.8 | +2.0 | 0.1374 \| 0.1390 |
-| Brisk-cadence minutes per day ~ Any >250 (0/1) | +0.399 [-0.667, +1.465] | not applied (n < 1000) | not applied (n < 1000) | 0.1795 | +1.4 | +1.5 | 0.1525 \| 0.1546 |
-| Brisk-cadence minutes per day ~ %>250 (pooled) | -0.281 [-1.440, +0.878] | not applied (n < 1000) | not applied (n < 1000) | 0.1792 | +1.7 | +1.7 | 0.1532 \| 0.1546 |
-| Brisk-cadence minutes per day ~ %>250 (daily avg) | -0.247 [-1.364, +0.869] | not applied (n < 1000) | not applied (n < 1000) | 0.1791 | +1.8 | +1.8 | 0.1532 \| 0.1546 |
-| Resting heart-rate proxy ~ Any >250 (0/1) | +0.621 [-0.004, +1.246] | not applied (n < 1000) | not applied (n < 1000) | 0.1567 | -1.9 | +4.1 | 0.1264 \| 0.1253 |
-| Resting heart-rate proxy ~ %>250 (pooled) | +0.665 [+0.006, +1.324] | not applied (n < 1000) | not applied (n < 1000) | 0.1575 | -2.6 | +3.5 | 0.1281 \| 0.1253 |
-| Resting heart-rate proxy ~ %>250 (daily avg) | +0.682 [+0.020, +1.344] | not applied (n < 1000) | not applied (n < 1000) | 0.1577 | -2.8 | +3.2 | 0.1281 \| 0.1253 |
-| Total sleep time per night ~ Any >250 (0/1) | -6.730 [-12.089, -1.371] | not applied (n < 1000) | not applied (n < 1000) | 0.0451 | -4.9 | -2.0 | 0.0121 \| 0.0066 |
-| Total sleep time per night ~ %>250 (pooled) | -0.609 [-5.403, +4.186] | not applied (n < 1000) | not applied (n < 1000) | 0.0364 | +1.9 | +4.8 | 0.0044 \| 0.0066 |
-| Total sleep time per night ~ %>250 (daily avg) | -0.516 [-5.334, +4.302] | not applied (n < 1000) | not applied (n < 1000) | 0.0364 | +2.0 | +4.9 | 0.0043 \| 0.0066 |
-| Garmin stress score, mean ~ Any >250 (0/1) | +1.579 [+0.271, +2.886] | not applied (n < 1000) | not applied (n < 1000) | 0.1286 | -3.8 | +9.2 | 0.0990 \| 0.0947 |
-| Garmin stress score, mean ~ %>250 (pooled) | +1.762 [+0.276, +3.248] | not applied (n < 1000) | not applied (n < 1000) | 0.1304 | -5.4 | +7.7 | 0.1010 \| 0.0947 |
-| Garmin stress score, mean ~ %>250 (daily avg) | +1.792 [+0.293, +3.291] | not applied (n < 1000) | not applied (n < 1000) | 0.1307 | -5.7 | +7.4 | 0.1012 \| 0.0947 |
+| MoCA total score ~ Any >250 (0/1) | -0.210 [-0.428, +0.008] | 0.212 | 0.101 | 0.0844 | -1.4 | +0.1 | 0.0559 \| 0.0541 |
+| MoCA total score ~ %>250 (pooled) | -0.210 [-0.438, +0.017] | 0.229 | 0.109 | 0.0845 | -1.5 | +0.1 | 0.0565 \| 0.0541 |
+| MoCA total score ~ %>250 (daily avg) | -0.206 [-0.436, +0.024] | 0.242 | 0.112 | 0.0844 | -1.3 | +0.2 | 0.0564 \| 0.0541 |
+| Cognitive impairment ~ Any >250 (0/1) | OR 1.086 [0.941, 1.252] | 0.480 | 0.335 | 0.6615 | +0.7 | +2.4 | 0.6414 \| 0.6425 |
+| Cognitive impairment ~ %>250 (pooled) | OR 1.154 [0.997, 1.336] | 0.205 | 0.114 | 0.6640 | -1.8 | -0.1 | 0.6447 \| 0.6425 |
+| Cognitive impairment ~ %>250 (daily avg) | OR 1.149 [0.993, 1.330] | 0.219 | 0.114 | 0.6636 | -1.6 | +0.1 | 0.6446 \| 0.6425 |
+| MoCA memory index score ~ Any >250 (0/1) | -0.236 [-0.420, -0.052] | 0.091 | 0.052 | 0.0664 | -4.2 | -2.5 | 0.0335 \| 0.0286 |
+| MoCA memory index score ~ %>250 (pooled) | -0.122 [-0.289, +0.045] | 0.334 | 0.181 | 0.0615 | +0.3 | +2.1 | 0.0298 \| 0.0286 |
+| MoCA memory index score ~ %>250 (daily avg) | -0.114 [-0.279, +0.052] | 0.374 | 0.197 | 0.0612 | +0.5 | +2.3 | 0.0296 \| 0.0286 |
+| CES-D-10 depressive symptoms ~ Any >250 (0/1) | -0.018 [-0.360, +0.325] | 0.948 | 0.950 | 0.1111 | +2.0 | +3.3 | 0.0769 \| 0.0796 |
+| CES-D-10 depressive symptoms ~ %>250 (pooled) | +0.300 [-0.109, +0.709] | 0.334 | 0.578 | 0.1143 | -1.2 | +0.1 | 0.0788 \| 0.0796 |
+| CES-D-10 depressive symptoms ~ %>250 (daily avg) | +0.274 [-0.139, +0.687] | 0.390 | 0.578 | 0.1138 | -0.6 | +0.6 | 0.0784 \| 0.0796 |
+| Clinically relevant depressive symptoms ~ Any >250 (0/1) | OR 1.024 [0.862, 1.216] | 0.871 | 0.871 | 0.6604 | +1.9 | +4.9 | 0.6298 \| 0.6337 |
+| Clinically relevant depressive symptoms ~ %>250 (pooled) | OR 1.129 [0.973, 1.309] | 0.270 | 0.215 | 0.6655 | -0.5 | +2.5 | 0.6366 \| 0.6337 |
+| Clinically relevant depressive symptoms ~ %>250 (daily avg) | OR 1.110 [0.956, 1.289] | 0.360 | 0.291 | 0.6649 | +0.2 | +3.2 | 0.6350 \| 0.6337 |
+| Indoor PM2.5, log(1 + mean ug/m3) ~ Any >250 (0/1) | +0.010 [-0.056, +0.075] | 0.860 | 0.769 | 0.1540 | +1.9 | +11.3 | 0.1296 \| 0.1310 |
+| Indoor PM2.5, log(1 + mean ug/m3) ~ %>250 (pooled) | +0.065 [-0.019, +0.149] | 0.304 | 0.183 | 0.1579 | -2.0 | +7.4 | 0.1309 \| 0.1310 |
+| Indoor PM2.5, log(1 + mean ug/m3) ~ %>250 (daily avg) | +0.065 [-0.018, +0.148] | 0.297 | 0.183 | 0.1580 | -2.1 | +7.3 | 0.1310 \| 0.1310 |
+| Indoor temperature, mean ~ Any >250 (0/1) | -0.032 [-0.185, +0.120] | 0.815 | 0.907 | 0.2503 | +1.8 | +0.1 | 0.2242 \| 0.2264 |
+| Indoor temperature, mean ~ %>250 (pooled) | -0.026 [-0.186, +0.134] | 0.850 | 0.907 | 0.2503 | +1.9 | +0.2 | 0.2227 \| 0.2264 |
+| Indoor temperature, mean ~ %>250 (daily avg) | -0.028 [-0.189, +0.133] | 0.838 | 0.907 | 0.2503 | +1.9 | +0.2 | 0.2227 \| 0.2264 |
+| Indoor relative humidity, mean ~ Any >250 (0/1) | -0.372 [-0.808, +0.064] | 0.259 | 0.938 | 0.2157 | -0.9 | -2.8 | 0.1862 \| 0.1857 |
+| Indoor relative humidity, mean ~ %>250 (pooled) | -0.083 [-0.529, +0.362] | 0.832 | 0.938 | 0.2131 | +1.9 | -0.0 | 0.1840 \| 0.1857 |
+| Indoor relative humidity, mean ~ %>250 (daily avg) | -0.082 [-0.534, +0.370] | 0.835 | 0.938 | 0.2131 | +1.9 | -0.0 | 0.1839 \| 0.1857 |
+| Indoor VOC index, mean ~ Any >250 (0/1) | +0.857 [-0.283, +1.997] | 0.321 | 0.585 | 0.0579 | -0.0 | +0.3 | 0.0281 \| 0.0276 |
+| Indoor VOC index, mean ~ %>250 (pooled) | -1.116 [-2.427, +0.196] | 0.259 | 0.504 | 0.0595 | -1.5 | -1.1 | 0.0291 \| 0.0276 |
+| Indoor VOC index, mean ~ %>250 (daily avg) | -1.176 [-2.513, +0.161] | 0.247 | 0.504 | 0.0599 | -1.8 | -1.5 | 0.0295 \| 0.0276 |
+| Steps per wear-day ~ Any >250 (0/1) | +250.915 [-120.671, +622.500] | 0.382 | 0.480 | 0.1592 | +0.1 | +0.2 | 0.1385 \| 0.1390 |
+| Steps per wear-day ~ %>250 (pooled) | -82.285 [-504.678, +340.108] | 0.829 | 0.751 | 0.1572 | +1.8 | +1.9 | 0.1373 \| 0.1390 |
+| Steps per wear-day ~ %>250 (daily avg) | -71.239 [-478.205, +335.726] | 0.838 | 0.756 | 0.1572 | +1.8 | +2.0 | 0.1374 \| 0.1390 |
+| Brisk-cadence minutes per day ~ Any >250 (0/1) | +0.399 [-0.667, +1.465] | 0.657 | 0.821 | 0.1795 | +1.4 | +1.5 | 0.1525 \| 0.1546 |
+| Brisk-cadence minutes per day ~ %>250 (pooled) | -0.281 [-1.440, +0.878] | 0.798 | 0.821 | 0.1792 | +1.7 | +1.7 | 0.1532 \| 0.1546 |
+| Brisk-cadence minutes per day ~ %>250 (daily avg) | -0.247 [-1.364, +0.869] | 0.812 | 0.821 | 0.1791 | +1.8 | +1.8 | 0.1532 \| 0.1546 |
+| Resting heart-rate proxy ~ Any >250 (0/1) | +0.621 [-0.004, +1.246] | 0.198 | 0.088 | 0.1567 | -1.9 | +4.1 | 0.1264 \| 0.1253 |
+| Resting heart-rate proxy ~ %>250 (pooled) | +0.665 [+0.006, +1.324] | 0.192 | 0.087 | 0.1575 | -2.6 | +3.5 | 0.1281 \| 0.1253 |
+| Resting heart-rate proxy ~ %>250 (daily avg) | +0.682 [+0.020, +1.344] | 0.182 | 0.087 | 0.1577 | -2.8 | +3.2 | 0.1281 \| 0.1253 |
+| Total sleep time per night ~ Any >250 (0/1) | -6.730 [-12.089, -1.371] | 0.100 | 0.143 | 0.0451 | -4.9 | -2.0 | 0.0121 \| 0.0066 |
+| Total sleep time per night ~ %>250 (pooled) | -0.609 [-5.403, +4.186] | 0.878 | 0.863 | 0.0364 | +1.9 | +4.8 | 0.0044 \| 0.0066 |
+| Total sleep time per night ~ %>250 (daily avg) | -0.516 [-5.334, +4.302] | 0.891 | 0.863 | 0.0364 | +2.0 | +4.9 | 0.0043 \| 0.0066 |
+| Garmin stress score, mean ~ Any >250 (0/1) | +1.579 [+0.271, +2.886] | 0.116 | **0.034 (FDR<0.05)** | 0.1286 | -3.8 | +9.2 | 0.0990 \| 0.0947 |
+| Garmin stress score, mean ~ %>250 (pooled) | +1.762 [+0.276, +3.248] | 0.116 | **0.034 (FDR<0.05)** | 0.1304 | -5.4 | +7.7 | 0.1010 \| 0.0947 |
+| Garmin stress score, mean ~ %>250 (daily avg) | +1.792 [+0.293, +3.291] | 0.116 | **0.034 (FDR<0.05)** | 0.1307 | -5.7 | +7.4 | 0.1012 \| 0.0947 |
 
 
 ---
@@ -1677,10 +1677,10 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 
 | Predictor (alone) | N | N with time in band | Coef (β) | Std. Err. | 95% CI | t / z | Pr(>\|t\|) | Signif |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| MoCA total score ~ Any <54 (0/1) | 2138 | 638 | +0.2967 | 0.1422 | [0.01796, 0.5753] | 2.09 | 0.037* | * |
+| MoCA total score ~ Any <54 (0/1) | 2138 | 638 | **+0.2967** | 0.1422 | [0.01796, 0.5753] | **2.09** | **0.037*** | * |
 | MoCA total score ~ %<54 (pooled) | 2138 | 638 | +0.07538 | 0.1199 | [-0.1596, 0.3103] | 0.63 | 0.530 |  |
 | MoCA total score ~ %<54 (daily avg) | 2138 | 420 | +0.05418 | 0.1529 | [-0.2455, 0.3539] | 0.35 | 0.723 |  |
-| Cognitive impairment ~ Any <54 (0/1) | 2138 | 638 | -0.231 | 0.1035 | [-0.4338, -0.0281] | -2.23 | 0.026* | * |
+| Cognitive impairment ~ Any <54 (0/1) | 2138 | 638 | **-0.231** | 0.1035 | [-0.4338, -0.0281] | **-2.23** | **0.026*** | * |
 | Cognitive impairment ~ %<54 (pooled) | 2138 | 638 | +0.008243 | 0.08935 | [-0.1669, 0.1834] | 0.09 | 0.926 |  |
 | Cognitive impairment ~ %<54 (daily avg) | 2138 | 420 | +0.04552 | 0.1054 | [-0.1611, 0.2521] | 0.43 | 0.666 |  |
 | MoCA memory index score ~ Any <54 (0/1) | 2138 | 638 | +0.2038 | 0.1226 | [-0.03654, 0.444] | 1.66 | 0.097 |  |
@@ -1699,14 +1699,14 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 | Indoor temperature, mean ~ %<54 (pooled) | 2100 | 628 | +0.1554 | 0.09539 | [-0.03156, 0.3423] | 1.63 | 0.103 |  |
 | Indoor temperature, mean ~ %<54 (daily avg) | 2100 | 415 | +0.1638 | 0.1283 | [-0.08765, 0.4152] | 1.28 | 0.202 |  |
 | Indoor relative humidity, mean ~ Any <54 (0/1) | 2100 | 628 | -0.2906 | 0.2931 | [-0.865, 0.2838] | -0.99 | 0.321 |  |
-| Indoor relative humidity, mean ~ %<54 (pooled) | 2100 | 628 | -0.4596 | 0.2117 | [-0.8745, -0.04474] | -2.17 | 0.030* | * |
-| Indoor relative humidity, mean ~ %<54 (daily avg) | 2100 | 415 | -0.6104 | 0.3041 | [-1.206, -0.01444] | -2.01 | 0.045* | * |
+| Indoor relative humidity, mean ~ %<54 (pooled) | 2100 | 628 | **-0.4596** | 0.2117 | [-0.8745, -0.04474] | **-2.17** | **0.030*** | * |
+| Indoor relative humidity, mean ~ %<54 (daily avg) | 2100 | 415 | **-0.6104** | 0.3041 | [-1.206, -0.01444] | **-2.01** | **0.045*** | * |
 | Indoor VOC index, mean ~ Any <54 (0/1) | 2100 | 628 | -0.7848 | 0.7883 | [-2.33, 0.7602] | -1.00 | 0.319 |  |
 | Indoor VOC index, mean ~ %<54 (pooled) | 2100 | 628 | +0.04589 | 0.6379 | [-1.204, 1.296] | 0.07 | 0.943 |  |
 | Indoor VOC index, mean ~ %<54 (daily avg) | 2100 | 415 | +0.3536 | 0.7188 | [-1.055, 1.762] | 0.49 | 0.623 |  |
-| Steps per wear-day ~ Any <54 (0/1) | 1872 | 575 | -479 | 212.5 | [-895.5, -62.64] | -2.25 | 0.024* | * |
-| Steps per wear-day ~ %<54 (pooled) | 1872 | 575 | -348.6 | 152 | [-646.5, -50.72] | -2.29 | 0.022* | * |
-| Steps per wear-day ~ %<54 (daily avg) | 1872 | 373 | -410 | 153.2 | [-710.4, -109.7] | -2.68 | 0.007** | ** |
+| Steps per wear-day ~ Any <54 (0/1) | 1872 | 575 | **-479** | 212.5 | [-895.5, -62.64] | **-2.25** | **0.024*** | * |
+| Steps per wear-day ~ %<54 (pooled) | 1872 | 575 | **-348.6** | 152 | [-646.5, -50.72] | **-2.29** | **0.022*** | * |
+| Steps per wear-day ~ %<54 (daily avg) | 1872 | 373 | **-410** | 153.2 | [-710.4, -109.7] | **-2.68** | **0.007**** | ** |
 | Brisk-cadence minutes per day ~ Any <54 (0/1) | 1872 | 575 | -0.8998 | 0.6428 | [-2.16, 0.36] | -1.40 | 0.162 |  |
 | Brisk-cadence minutes per day ~ %<54 (pooled) | 1872 | 575 | -0.7158 | 0.3662 | [-1.434, 0.001971] | -1.95 | 0.051 |  |
 | Brisk-cadence minutes per day ~ %<54 (daily avg) | 1872 | 373 | -0.9642 | 0.4963 | [-1.937, 0.008477] | -1.94 | 0.052 |  |
@@ -1724,10 +1724,10 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 
 | Predictor (alone) | β per 1 SD (95% CI) | q, all tests in population | q, this outcome | Adj R² / AUC | ΔAIC vs covs | ΔAIC vs HbA1c | CV R²/AUC (predictor vs covariates-only) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| MoCA total score ~ Any <54 (0/1) | +0.136 [+0.008, +0.263] | 0.108 | 0.046 (FDR<0.05) | 0.1016 | -2.3 | +22.3 | 0.0925 \| 0.0915 |
+| MoCA total score ~ Any <54 (0/1) | +0.136 [+0.008, +0.263] | 0.108 | **0.046 (FDR<0.05)** | 0.1016 | -2.3 | +22.3 | 0.0925 \| 0.0915 |
 | MoCA total score ~ %<54 (pooled) | +0.039 [-0.082, +0.160] | 0.693 | 0.631 | 0.0999 | +1.6 | +26.3 | 0.0907 \| 0.0915 |
 | MoCA total score ~ %<54 (daily avg) | +0.023 [-0.105, +0.151] | 0.837 | 0.782 | 0.0998 | +1.9 | +26.5 | 0.0906 \| 0.0915 |
-| Cognitive impairment ~ Any <54 (0/1) | OR 0.900 [0.820, 0.987] | 0.081 | 0.032 (FDR<0.05) | 0.6704 | -3.0 | +10.6 | 0.6619 \| 0.6603 |
+| Cognitive impairment ~ Any <54 (0/1) | OR 0.900 [0.820, 0.987] | 0.081 | **0.032 (FDR<0.05)** | 0.6704 | -3.0 | +10.6 | 0.6619 \| 0.6603 |
 | Cognitive impairment ~ %<54 (pooled) | OR 1.004 [0.918, 1.099] | 0.957 | 0.926 | 0.6678 | +2.0 | +15.6 | 0.6593 \| 0.6603 |
 | Cognitive impairment ~ %<54 (daily avg) | OR 1.020 [0.933, 1.114] | 0.803 | 0.688 | 0.6679 | +1.8 | +15.4 | 0.6593 \| 0.6603 |
 | MoCA memory index score ~ Any <54 (0/1) | +0.093 [-0.017, +0.203] | 0.210 | 0.136 | 0.0726 | -0.6 | +4.7 | 0.0635 \| 0.0630 |
@@ -1753,7 +1753,7 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 | Indoor VOC index, mean ~ %<54 (daily avg) | +0.152 [-0.455, +0.759] | 0.778 | 0.868 | 0.0427 | +1.8 | +1.8 | 0.0264 \| 0.0271 |
 | Steps per wear-day ~ Any <54 (0/1) | -221.052 [-413.199, -28.905] | 0.079 | 0.083 | 0.1371 | -3.0 | +5.0 | 0.1234 \| 0.1222 |
 | Steps per wear-day ~ %<54 (pooled) | -189.439 [-351.316, -27.562] | 0.072 | 0.083 | 0.1365 | -1.7 | +6.3 | 0.1231 \| 0.1222 |
-| Steps per wear-day ~ %<54 (daily avg) | -186.542 [-323.191, -49.893] | 0.028 (FDR<0.05) | 0.077 | 0.1365 | -1.6 | +6.4 | 0.1234 \| 0.1222 |
+| Steps per wear-day ~ %<54 (daily avg) | **-186.542 [-323.191, -49.893]** | **0.028 (FDR<0.05)** | 0.077 | 0.1365 | -1.6 | +6.4 | 0.1234 \| 0.1222 |
 | Brisk-cadence minutes per day ~ Any <54 (0/1) | -0.415 [-0.997, +0.166] | 0.315 | 0.250 | 0.1565 | +0.1 | +8.2 | 0.1445 \| 0.1447 |
 | Brisk-cadence minutes per day ~ %<54 (pooled) | -0.389 [-0.779, +0.001] | 0.138 | 0.192 | 0.1564 | +0.3 | +8.5 | 0.1448 \| 0.1447 |
 | Brisk-cadence minutes per day ~ %<54 (daily avg) | -0.439 [-0.881, +0.004] | 0.141 | 0.192 | 0.1567 | -0.2 | +8.0 | 0.1449 \| 0.1447 |
@@ -1773,13 +1773,13 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 
 | Predictor (alone) | N | N with time in band | Coef (β) | Std. Err. | 95% CI | t / z | Pr(>\|t\|) | Signif |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| MoCA total score ~ Any <54 (0/1) | 1271 | 408 | +0.3559 | 0.1636 | [0.03526, 0.6765] | 2.18 | 0.030* | * |
+| MoCA total score ~ Any <54 (0/1) | 1271 | 408 | **+0.3559** | 0.1636 | [0.03526, 0.6765] | **2.18** | **0.030*** | * |
 | MoCA total score ~ %<54 (pooled) | 1271 | 408 | +0.05016 | 0.1398 | [-0.2238, 0.3241] | 0.36 | 0.720 |  |
 | MoCA total score ~ %<54 (daily avg) | 1271 | 265 | +0.07201 | 0.1679 | [-0.2571, 0.4011] | 0.43 | 0.668 |  |
-| Cognitive impairment ~ Any <54 (0/1) | 1271 | 408 | -0.2719 | 0.1365 | [-0.5395, -0.004358] | -1.99 | 0.046* | * |
+| Cognitive impairment ~ Any <54 (0/1) | 1271 | 408 | **-0.2719** | 0.1365 | [-0.5395, -0.004358] | **-1.99** | **0.046*** | * |
 | Cognitive impairment ~ %<54 (pooled) | 1271 | 408 | +0.03169 | 0.1063 | [-0.1767, 0.2401] | 0.30 | 0.766 |  |
 | Cognitive impairment ~ %<54 (daily avg) | 1271 | 265 | +0.05371 | 0.1424 | [-0.2254, 0.3328] | 0.38 | 0.706 |  |
-| MoCA memory index score ~ Any <54 (0/1) | 1271 | 408 | +0.3472 | 0.1511 | [0.05112, 0.6433] | 2.30 | 0.022* | * |
+| MoCA memory index score ~ Any <54 (0/1) | 1271 | 408 | **+0.3472** | 0.1511 | [0.05112, 0.6433] | **2.30** | **0.022*** | * |
 | MoCA memory index score ~ %<54 (pooled) | 1271 | 408 | +0.1869 | 0.2093 | [-0.2233, 0.5972] | 0.89 | 0.372 |  |
 | MoCA memory index score ~ %<54 (daily avg) | 1271 | 265 | +0.1601 | 0.1796 | [-0.192, 0.5121] | 0.89 | 0.373 |  |
 | CES-D-10 depressive symptoms ~ Any <54 (0/1) | 1270 | 408 | +0.07489 | 0.2896 | [-0.4926, 0.6424] | 0.26 | 0.796 |  |
@@ -1795,8 +1795,8 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 | Indoor temperature, mean ~ %<54 (pooled) | 1251 | 400 | +0.1995 | 0.1129 | [-0.02173, 0.4207] | 1.77 | 0.077 |  |
 | Indoor temperature, mean ~ %<54 (daily avg) | 1251 | 260 | +0.2442 | 0.1802 | [-0.1089, 0.5974] | 1.36 | 0.175 |  |
 | Indoor relative humidity, mean ~ Any <54 (0/1) | 1251 | 400 | -0.3568 | 0.3644 | [-1.071, 0.3573] | -0.98 | 0.327 |  |
-| Indoor relative humidity, mean ~ %<54 (pooled) | 1251 | 400 | -0.4995 | 0.1696 | [-0.832, -0.167] | -2.94 | 0.003** | ** |
-| Indoor relative humidity, mean ~ %<54 (daily avg) | 1251 | 260 | -0.7639 | 0.2373 | [-1.229, -0.2987] | -3.22 | 0.001** | ** |
+| Indoor relative humidity, mean ~ %<54 (pooled) | 1251 | 400 | **-0.4995** | 0.1696 | [-0.832, -0.167] | **-2.94** | **0.003**** | ** |
+| Indoor relative humidity, mean ~ %<54 (daily avg) | 1251 | 260 | **-0.7639** | 0.2373 | [-1.229, -0.2987] | **-3.22** | **0.001**** | ** |
 | Indoor VOC index, mean ~ Any <54 (0/1) | 1251 | 400 | -1.036 | 0.9449 | [-2.888, 0.8159] | -1.10 | 0.273 |  |
 | Indoor VOC index, mean ~ %<54 (pooled) | 1251 | 400 | -0.2529 | 0.6931 | [-1.611, 1.106] | -0.36 | 0.715 |  |
 | Indoor VOC index, mean ~ %<54 (daily avg) | 1251 | 260 | -0.3362 | 0.99 | [-2.277, 1.604] | -0.34 | 0.734 |  |
@@ -1843,7 +1843,7 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 | Indoor temperature, mean ~ %<54 (daily avg) | +0.103 [-0.046, +0.253] | 0.532 | 0.776 | 0.3117 | -1.7 | -3.7 | 0.2891 \| 0.2892 |
 | Indoor relative humidity, mean ~ Any <54 (0/1) | -0.166 [-0.500, +0.167] | 0.717 | 0.597 | 0.2602 | +1.0 | +1.5 | 0.2391 \| 0.2403 |
 | Indoor relative humidity, mean ~ %<54 (pooled) | -0.286 [-0.477, -0.096] | 0.052 | 0.050 | 0.2613 | -1.0 | -0.5 | 0.2415 \| 0.2403 |
-| Indoor relative humidity, mean ~ %<54 (daily avg) | -0.324 [-0.521, -0.127] | 0.036 (FDR<0.05) | 0.040 (FDR<0.05) | 0.2618 | -1.8 | -1.3 | 0.2417 \| 0.2403 |
+| Indoor relative humidity, mean ~ %<54 (daily avg) | **-0.324 [-0.521, -0.127]** | **0.036 (FDR<0.05)** | **0.040 (FDR<0.05)** | 0.2618 | -1.8 | -1.3 | 0.2417 \| 0.2403 |
 | Indoor VOC index, mean ~ Any <54 (0/1) | -0.483 [-1.347, +0.381] | 0.648 | 0.564 | 0.0247 | +0.8 | +0.1 | 0.0026 \| 0.0025 |
 | Indoor VOC index, mean ~ %<54 (pooled) | -0.145 [-0.923, +0.633] | 0.932 | 0.784 | 0.0238 | +1.9 | +1.3 | 0.0019 \| 0.0025 |
 | Indoor VOC index, mean ~ %<54 (daily avg) | -0.142 [-0.964, +0.679] | 0.932 | 0.784 | 0.0238 | +1.9 | +1.3 | 0.0018 \| 0.0025 |
@@ -1885,7 +1885,7 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 | Clinically relevant depressive symptoms ~ %<54 (pooled) | 865 | 229 | -0.1044 | 0.2218 | [-0.539, 0.3303] | -0.47 | 0.638 |  |
 | Clinically relevant depressive symptoms ~ %<54 (daily avg) | 865 | 154 | +0.02887 | 0.1779 | [-0.3198, 0.3776] | 0.16 | 0.871 |  |
 | Indoor PM2.5, log(1 + mean ug/m3) ~ Any <54 (0/1) | 849 | 228 | +0.1365 | 0.07856 | [-0.0175, 0.2904] | 1.74 | 0.082 |  |
-| Indoor PM2.5, log(1 + mean ug/m3) ~ %<54 (pooled) | 849 | 228 | +0.2665 | 0.0959 | [0.07851, 0.4544] | 2.78 | 0.005** | ** |
+| Indoor PM2.5, log(1 + mean ug/m3) ~ %<54 (pooled) | 849 | 228 | **+0.2665** | 0.0959 | [0.07851, 0.4544] | **2.78** | **0.005**** | ** |
 | Indoor PM2.5, log(1 + mean ug/m3) ~ %<54 (daily avg) | 849 | 155 | +0.2695 | 0.1462 | [-0.01697, 0.556] | 1.84 | 0.065 |  |
 | Indoor temperature, mean ~ Any <54 (0/1) | 849 | 228 | -0.08461 | 0.1658 | [-0.4096, 0.2404] | -0.51 | 0.610 |  |
 | Indoor temperature, mean ~ %<54 (pooled) | 849 | 228 | +0.04314 | 0.1788 | [-0.3073, 0.3936] | 0.24 | 0.809 |  |
@@ -1896,17 +1896,17 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 | Indoor VOC index, mean ~ Any <54 (0/1) | 849 | 228 | -0.3089 | 1.44 | [-3.131, 2.513] | -0.21 | 0.830 |  |
 | Indoor VOC index, mean ~ %<54 (pooled) | 849 | 228 | +0.8004 | 0.9856 | [-1.131, 2.732] | 0.81 | 0.417 |  |
 | Indoor VOC index, mean ~ %<54 (daily avg) | 849 | 155 | +1.276 | 1.045 | [-0.773, 3.325] | 1.22 | 0.222 |  |
-| Steps per wear-day ~ Any <54 (0/1) | 747 | 201 | -1131 | 403.6 | [-1922, -340.2] | -2.80 | 0.005** | ** |
+| Steps per wear-day ~ Any <54 (0/1) | 747 | 201 | **-1131** | 403.6 | [-1922, -340.2] | **-2.80** | **0.005**** | ** |
 | Steps per wear-day ~ %<54 (pooled) | 747 | 201 | -909.1 | 530 | [-1948, 129.6] | -1.72 | 0.086 |  |
-| Steps per wear-day ~ %<54 (daily avg) | 747 | 132 | -825 | 327.4 | [-1467, -183.3] | -2.52 | 0.012* | * |
-| Brisk-cadence minutes per day ~ Any <54 (0/1) | 747 | 201 | -2.4 | 1.155 | [-4.665, -0.1356] | -2.08 | 0.038* | * |
+| Steps per wear-day ~ %<54 (daily avg) | 747 | 132 | **-825** | 327.4 | [-1467, -183.3] | **-2.52** | **0.012*** | * |
+| Brisk-cadence minutes per day ~ Any <54 (0/1) | 747 | 201 | **-2.4** | 1.155 | [-4.665, -0.1356] | **-2.08** | **0.038*** | * |
 | Brisk-cadence minutes per day ~ %<54 (pooled) | 747 | 201 | -2.009 | 1.714 | [-5.367, 1.35] | -1.17 | 0.241 |  |
 | Brisk-cadence minutes per day ~ %<54 (daily avg) | 747 | 132 | -1.918 | 1.276 | [-4.419, 0.584] | -1.50 | 0.133 |  |
 | Resting heart-rate proxy ~ Any <54 (0/1) | 749 | 203 | -0.127 | 0.6844 | [-1.468, 1.215] | -0.19 | 0.853 |  |
 | Resting heart-rate proxy ~ %<54 (pooled) | 749 | 203 | +0.4269 | 0.631 | [-0.8097, 1.664] | 0.68 | 0.499 |  |
 | Resting heart-rate proxy ~ %<54 (daily avg) | 749 | 134 | -0.05779 | 1.038 | [-2.091, 1.976] | -0.06 | 0.956 |  |
 | Total sleep time per night ~ Any <54 (0/1) | 756 | 205 | +6.788 | 5.753 | [-4.487, 18.06] | 1.18 | 0.238 |  |
-| Total sleep time per night ~ %<54 (pooled) | 756 | 205 | +9.374 | 4.617 | [0.3248, 18.42] | 2.03 | 0.042* | * |
+| Total sleep time per night ~ %<54 (pooled) | 756 | 205 | **+9.374** | 4.617 | [0.3248, 18.42] | **2.03** | **0.042*** | * |
 | Total sleep time per night ~ %<54 (daily avg) | 756 | 138 | +6.407 | 3.821 | [-1.082, 13.9] | 1.68 | 0.094 |  |
 | Garmin stress score, mean ~ Any <54 (0/1) | 749 | 203 | -1.39 | 1.466 | [-4.263, 1.483] | -0.95 | 0.343 |  |
 | Garmin stress score, mean ~ %<54 (pooled) | 749 | 203 | +0.8143 | 1.373 | [-1.877, 3.505] | 0.59 | 0.553 |  |
@@ -1916,45 +1916,274 @@ Total CGM readings below 54 mg/dL across the base: 7,215; above 250: 165,251.
 
 | Predictor (alone) | β per 1 SD (95% CI) | q, all tests in population | q, this outcome | Adj R² / AUC | ΔAIC vs covs | ΔAIC vs HbA1c | CV R²/AUC (predictor vs covariates-only) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| MoCA total score ~ Any <54 (0/1) | +0.049 [-0.178, +0.276] | not applied (n < 1000) | not applied (n < 1000) | 0.0810 | +1.8 | +3.3 | 0.0515 \| 0.0541 |
-| MoCA total score ~ %<54 (pooled) | +0.023 [-0.313, +0.358] | not applied (n < 1000) | not applied (n < 1000) | 0.0809 | +2.0 | +3.5 | 0.0494 \| 0.0541 |
-| MoCA total score ~ %<54 (daily avg) | +0.000 [-0.269, +0.269] | not applied (n < 1000) | not applied (n < 1000) | 0.0808 | +2.0 | +3.5 | 0.0502 \| 0.0541 |
-| Cognitive impairment ~ Any <54 (0/1) | OR 0.947 [0.822, 1.091] | not applied (n < 1000) | not applied (n < 1000) | 0.6621 | +1.4 | +3.1 | 0.6412 \| 0.6425 |
-| Cognitive impairment ~ %<54 (pooled) | OR 1.008 [0.878, 1.157] | not applied (n < 1000) | not applied (n < 1000) | 0.6601 | +2.0 | +3.7 | 0.6398 \| 0.6425 |
-| Cognitive impairment ~ %<54 (daily avg) | OR 1.028 [0.895, 1.181] | not applied (n < 1000) | not applied (n < 1000) | 0.6607 | +1.8 | +3.5 | 0.6402 \| 0.6425 |
-| MoCA memory index score ~ Any <54 (0/1) | -0.029 [-0.211, +0.153] | not applied (n < 1000) | not applied (n < 1000) | 0.0598 | +1.9 | +3.7 | 0.0271 \| 0.0286 |
-| MoCA memory index score ~ %<54 (pooled) | -0.060 [-0.188, +0.068] | not applied (n < 1000) | not applied (n < 1000) | 0.0601 | +1.6 | +3.4 | 0.0281 \| 0.0286 |
-| MoCA memory index score ~ %<54 (daily avg) | -0.103 [-0.255, +0.050] | not applied (n < 1000) | not applied (n < 1000) | 0.0610 | +0.8 | +2.5 | 0.0292 \| 0.0286 |
-| CES-D-10 depressive symptoms ~ Any <54 (0/1) | +0.122 [-0.201, +0.446] | not applied (n < 1000) | not applied (n < 1000) | 0.1116 | +1.5 | +2.8 | 0.0779 \| 0.0796 |
-| CES-D-10 depressive symptoms ~ %<54 (pooled) | -0.049 [-0.423, +0.325] | not applied (n < 1000) | not applied (n < 1000) | 0.1111 | +1.9 | +3.2 | 0.0780 \| 0.0796 |
-| CES-D-10 depressive symptoms ~ %<54 (daily avg) | -0.008 [-0.519, +0.502] | not applied (n < 1000) | not applied (n < 1000) | 0.1111 | +2.0 | +3.3 | 0.0755 \| 0.0796 |
-| Clinically relevant depressive symptoms ~ Any <54 (0/1) | OR 1.046 [0.886, 1.236] | not applied (n < 1000) | not applied (n < 1000) | 0.6612 | +1.7 | +4.7 | 0.6306 \| 0.6337 |
-| Clinically relevant depressive symptoms ~ %<54 (pooled) | OR 0.957 [0.797, 1.149] | not applied (n < 1000) | not applied (n < 1000) | 0.6597 | +1.8 | +4.8 | 0.6294 \| 0.6337 |
-| Clinically relevant depressive symptoms ~ %<54 (daily avg) | OR 1.013 [0.869, 1.180] | not applied (n < 1000) | not applied (n < 1000) | 0.6605 | +2.0 | +5.0 | 0.6290 \| 0.6337 |
-| Indoor PM2.5, log(1 + mean ug/m3) ~ Any <54 (0/1) | +0.061 [-0.008, +0.129] | not applied (n < 1000) | not applied (n < 1000) | 0.1575 | -1.6 | +7.8 | 0.1324 \| 0.1310 |
-| Indoor PM2.5, log(1 + mean ug/m3) ~ %<54 (pooled) | +0.113 [+0.033, +0.193] | not applied (n < 1000) | not applied (n < 1000) | 0.1664 | -10.6 | -1.2 | 0.1385 \| 0.1310 |
-| Indoor PM2.5, log(1 + mean ug/m3) ~ %<54 (daily avg) | +0.119 [-0.007, +0.246] | not applied (n < 1000) | not applied (n < 1000) | 0.1679 | -12.1 | -2.7 | 0.1309 \| 0.1310 |
-| Indoor temperature, mean ~ Any <54 (0/1) | -0.038 [-0.182, +0.107] | not applied (n < 1000) | not applied (n < 1000) | 0.2504 | +1.7 | +0.1 | 0.2238 \| 0.2264 |
-| Indoor temperature, mean ~ %<54 (pooled) | +0.018 [-0.130, +0.167] | not applied (n < 1000) | not applied (n < 1000) | 0.2502 | +1.9 | +0.2 | 0.2243 \| 0.2264 |
-| Indoor temperature, mean ~ %<54 (daily avg) | +0.026 [-0.147, +0.199] | not applied (n < 1000) | not applied (n < 1000) | 0.2503 | +1.9 | +0.2 | 0.2230 \| 0.2264 |
-| Indoor relative humidity, mean ~ Any <54 (0/1) | -0.048 [-0.486, +0.391] | not applied (n < 1000) | not applied (n < 1000) | 0.2130 | +2.0 | +0.1 | 0.1833 \| 0.1857 |
-| Indoor relative humidity, mean ~ %<54 (pooled) | -0.117 [-0.751, +0.516] | not applied (n < 1000) | not applied (n < 1000) | 0.2132 | +1.7 | -0.2 | 0.1824 \| 0.1857 |
-| Indoor relative humidity, mean ~ %<54 (daily avg) | -0.166 [-0.761, +0.429] | not applied (n < 1000) | not applied (n < 1000) | 0.2135 | +1.4 | -0.5 | 0.1805 \| 0.1857 |
-| Indoor VOC index, mean ~ Any <54 (0/1) | -0.137 [-1.388, +1.114] | not applied (n < 1000) | not applied (n < 1000) | 0.0557 | +1.9 | +2.3 | 0.0255 \| 0.0276 |
-| Indoor VOC index, mean ~ %<54 (pooled) | +0.339 [-0.480, +1.159] | not applied (n < 1000) | not applied (n < 1000) | 0.0560 | +1.7 | +2.0 | 0.0274 \| 0.0276 |
-| Indoor VOC index, mean ~ %<54 (daily avg) | +0.564 [-0.341, +1.469] | not applied (n < 1000) | not applied (n < 1000) | 0.0566 | +1.1 | +1.4 | 0.0268 \| 0.0276 |
-| Steps per wear-day ~ Any <54 (0/1) | -502.034 [-853.109, -150.960] | not applied (n < 1000) | not applied (n < 1000) | 0.1659 | -5.9 | -5.8 | 0.1442 \| 0.1390 |
-| Steps per wear-day ~ %<54 (pooled) | -407.095 [-872.220, +58.030] | not applied (n < 1000) | not applied (n < 1000) | 0.1629 | -3.2 | -3.1 | 0.1400 \| 0.1390 |
-| Steps per wear-day ~ %<54 (daily avg) | -386.633 [-687.348, -85.917] | not applied (n < 1000) | not applied (n < 1000) | 0.1624 | -2.8 | -2.7 | 0.1427 \| 0.1390 |
-| Brisk-cadence minutes per day ~ Any <54 (0/1) | -1.065 [-2.070, -0.060] | not applied (n < 1000) | not applied (n < 1000) | 0.1836 | -2.3 | -2.3 | 0.1559 \| 0.1546 |
-| Brisk-cadence minutes per day ~ %<54 (pooled) | -0.900 [-2.403, +0.604] | not applied (n < 1000) | not applied (n < 1000) | 0.1823 | -1.1 | -1.1 | 0.1530 \| 0.1546 |
-| Brisk-cadence minutes per day ~ %<54 (daily avg) | -0.899 [-2.071, +0.274] | not applied (n < 1000) | not applied (n < 1000) | 0.1823 | -1.1 | -1.1 | 0.1554 \| 0.1546 |
-| Resting heart-rate proxy ~ Any <54 (0/1) | -0.056 [-0.653, +0.540] | not applied (n < 1000) | not applied (n < 1000) | 0.1523 | +2.0 | +8.0 | 0.1220 \| 0.1253 |
-| Resting heart-rate proxy ~ %<54 (pooled) | +0.191 [-0.362, +0.744] | not applied (n < 1000) | not applied (n < 1000) | 0.1527 | +1.6 | +7.7 | 0.1239 \| 0.1253 |
-| Resting heart-rate proxy ~ %<54 (daily avg) | -0.027 [-0.979, +0.925] | not applied (n < 1000) | not applied (n < 1000) | 0.1523 | +2.0 | +8.1 | 0.1219 \| 0.1253 |
-| Total sleep time per night ~ Any <54 (0/1) | +3.020 [-1.996, +8.036] | not applied (n < 1000) | not applied (n < 1000) | 0.0382 | +0.6 | +3.5 | 0.0046 \| 0.0066 |
-| Total sleep time per night ~ %<54 (pooled) | +4.193 [+0.145, +8.240] | not applied (n < 1000) | not applied (n < 1000) | 0.0399 | -0.8 | +2.1 | 0.0094 \| 0.0066 |
-| Total sleep time per night ~ %<54 (daily avg) | +2.990 [-0.505, +6.485] | not applied (n < 1000) | not applied (n < 1000) | 0.0381 | +0.6 | +3.5 | 0.0070 \| 0.0066 |
-| Garmin stress score, mean ~ Any <54 (0/1) | -0.618 [-1.896, +0.660] | not applied (n < 1000) | not applied (n < 1000) | 0.1229 | +1.1 | +14.2 | 0.0931 \| 0.0947 |
-| Garmin stress score, mean ~ %<54 (pooled) | +0.364 [-0.839, +1.568] | not applied (n < 1000) | not applied (n < 1000) | 0.1222 | +1.7 | +14.8 | 0.0936 \| 0.0947 |
-| Garmin stress score, mean ~ %<54 (daily avg) | +0.039 [-1.729, +1.808] | not applied (n < 1000) | not applied (n < 1000) | 0.1218 | +2.0 | +15.1 | 0.0921 \| 0.0947 |
+| MoCA total score ~ Any <54 (0/1) | +0.049 [-0.178, +0.276] | 0.814 | 0.835 | 0.0810 | +1.8 | +3.3 | 0.0515 \| 0.0541 |
+| MoCA total score ~ %<54 (pooled) | +0.023 [-0.313, +0.358] | 0.932 | 0.997 | 0.0809 | +2.0 | +3.5 | 0.0494 \| 0.0541 |
+| MoCA total score ~ %<54 (daily avg) | +0.000 [-0.269, +0.269] | 0.997 | 0.997 | 0.0808 | +2.0 | +3.5 | 0.0502 \| 0.0541 |
+| Cognitive impairment ~ Any <54 (0/1) | OR 0.947 [0.822, 1.091] | 0.656 | 0.557 | 0.6621 | +1.4 | +3.1 | 0.6412 \| 0.6425 |
+| Cognitive impairment ~ %<54 (pooled) | OR 1.008 [0.878, 1.157] | 0.943 | 0.912 | 0.6601 | +2.0 | +3.7 | 0.6398 \| 0.6425 |
+| Cognitive impairment ~ %<54 (daily avg) | OR 1.028 [0.895, 1.181] | 0.829 | 0.722 | 0.6607 | +1.8 | +3.5 | 0.6402 \| 0.6425 |
+| MoCA memory index score ~ Any <54 (0/1) | -0.029 [-0.211, +0.153] | 0.854 | 0.758 | 0.0598 | +1.9 | +3.7 | 0.0271 \| 0.0286 |
+| MoCA memory index score ~ %<54 (pooled) | -0.060 [-0.188, +0.068] | 0.579 | 0.372 | 0.0601 | +1.6 | +3.4 | 0.0281 \| 0.0286 |
+| MoCA memory index score ~ %<54 (daily avg) | -0.103 [-0.255, +0.050] | 0.382 | 0.200 | 0.0610 | +0.8 | +2.5 | 0.0292 \| 0.0286 |
+| CES-D-10 depressive symptoms ~ Any <54 (0/1) | +0.122 [-0.201, +0.446] | 0.656 | 0.593 | 0.1116 | +1.5 | +2.8 | 0.0779 \| 0.0796 |
+| CES-D-10 depressive symptoms ~ %<54 (pooled) | -0.049 [-0.423, +0.325] | 0.874 | 0.875 | 0.1111 | +1.9 | +3.2 | 0.0780 \| 0.0796 |
+| CES-D-10 depressive symptoms ~ %<54 (daily avg) | -0.008 [-0.519, +0.502] | 0.979 | 0.974 | 0.1111 | +2.0 | +3.3 | 0.0755 \| 0.0796 |
+| Clinically relevant depressive symptoms ~ Any <54 (0/1) | OR 1.046 [0.886, 1.236] | 0.770 | 0.799 | 0.6612 | +1.7 | +4.7 | 0.6306 \| 0.6337 |
+| Clinically relevant depressive symptoms ~ %<54 (pooled) | OR 0.957 [0.797, 1.149] | 0.800 | 0.824 | 0.6597 | +1.8 | +4.8 | 0.6294 \| 0.6337 |
+| Clinically relevant depressive symptoms ~ %<54 (daily avg) | OR 1.013 [0.869, 1.180] | 0.916 | 0.901 | 0.6605 | +2.0 | +5.0 | 0.6290 \| 0.6337 |
+| Indoor PM2.5, log(1 + mean ug/m3) ~ Any <54 (0/1) | +0.061 [-0.008, +0.129] | 0.243 | 0.172 | 0.1575 | -1.6 | +7.8 | 0.1324 \| 0.1310 |
+| Indoor PM2.5, log(1 + mean ug/m3) ~ %<54 (pooled) | +0.113 [+0.033, +0.193] | 0.054 | **0.034 (FDR<0.05)** | 0.1664 | -10.6 | -1.2 | 0.1385 \| 0.1310 |
+| Indoor PM2.5, log(1 + mean ug/m3) ~ %<54 (daily avg) | +0.119 [-0.007, +0.246] | 0.222 | 0.158 | 0.1679 | -12.1 | -2.7 | 0.1309 \| 0.1310 |
+| Indoor temperature, mean ~ Any <54 (0/1) | -0.038 [-0.182, +0.107] | 0.783 | 0.907 | 0.2504 | +1.7 | +0.1 | 0.2238 \| 0.2264 |
+| Indoor temperature, mean ~ %<54 (pooled) | +0.018 [-0.130, +0.167] | 0.883 | 0.907 | 0.2502 | +1.9 | +0.2 | 0.2243 \| 0.2264 |
+| Indoor temperature, mean ~ %<54 (daily avg) | +0.026 [-0.147, +0.199] | 0.860 | 0.907 | 0.2503 | +1.9 | +0.2 | 0.2230 \| 0.2264 |
+| Indoor relative humidity, mean ~ Any <54 (0/1) | -0.048 [-0.486, +0.391] | 0.891 | 0.938 | 0.2130 | +2.0 | +0.1 | 0.1833 \| 0.1857 |
+| Indoor relative humidity, mean ~ %<54 (pooled) | -0.117 [-0.751, +0.516] | 0.833 | 0.938 | 0.2132 | +1.7 | -0.2 | 0.1824 \| 0.1857 |
+| Indoor relative humidity, mean ~ %<54 (daily avg) | -0.166 [-0.761, +0.429] | 0.763 | 0.938 | 0.2135 | +1.4 | -0.5 | 0.1805 \| 0.1857 |
+| Indoor VOC index, mean ~ Any <54 (0/1) | -0.137 [-1.388, +1.114] | 0.891 | 0.858 | 0.0557 | +1.9 | +2.3 | 0.0255 \| 0.0276 |
+| Indoor VOC index, mean ~ %<54 (pooled) | +0.339 [-0.480, +1.159] | 0.634 | 0.585 | 0.0560 | +1.7 | +2.0 | 0.0274 \| 0.0276 |
+| Indoor VOC index, mean ~ %<54 (daily avg) | +0.564 [-0.341, +1.469] | 0.433 | 0.585 | 0.0566 | +1.1 | +1.4 | 0.0268 \| 0.0276 |
+| Steps per wear-day ~ Any <54 (0/1) | -502.034 [-853.109, -150.960] | 0.052 | **0.039 (FDR<0.05)** | 0.1659 | -5.9 | -5.8 | 0.1442 \| 0.1390 |
+| Steps per wear-day ~ %<54 (pooled) | -407.095 [-872.220, +58.030] | 0.247 | 0.315 | 0.1629 | -3.2 | -3.1 | 0.1400 \| 0.1390 |
+| Steps per wear-day ~ %<54 (daily avg) | -386.633 [-687.348, -85.917] | 0.091 | 0.061 | 0.1624 | -2.8 | -2.7 | 0.1427 \| 0.1390 |
+| Brisk-cadence minutes per day ~ Any <54 (0/1) | -1.065 [-2.070, -0.060] | 0.169 | 0.380 | 0.1836 | -2.3 | -2.3 | 0.1559 \| 0.1546 |
+| Brisk-cadence minutes per day ~ %<54 (pooled) | -0.900 [-2.403, +0.604] | 0.455 | 0.663 | 0.1823 | -1.1 | -1.1 | 0.1530 \| 0.1546 |
+| Brisk-cadence minutes per day ~ %<54 (daily avg) | -0.899 [-2.071, +0.274] | 0.307 | 0.589 | 0.1823 | -1.1 | -1.1 | 0.1554 \| 0.1546 |
+| Resting heart-rate proxy ~ Any <54 (0/1) | -0.056 [-0.653, +0.540] | 0.903 | 0.881 | 0.1523 | +2.0 | +8.0 | 0.1220 \| 0.1253 |
+| Resting heart-rate proxy ~ %<54 (pooled) | +0.191 [-0.362, +0.744] | 0.689 | 0.618 | 0.1527 | +1.6 | +7.7 | 0.1239 \| 0.1253 |
+| Resting heart-rate proxy ~ %<54 (daily avg) | -0.027 [-0.979, +0.925] | 0.968 | 0.956 | 0.1523 | +2.0 | +8.1 | 0.1219 \| 0.1253 |
+| Total sleep time per night ~ Any <54 (0/1) | +3.020 [-1.996, +8.036] | 0.453 | 0.444 | 0.0382 | +0.6 | +3.5 | 0.0046 \| 0.0066 |
+| Total sleep time per night ~ %<54 (pooled) | +4.193 [+0.145, +8.240] | 0.182 | 0.219 | 0.0399 | -0.8 | +2.1 | 0.0094 \| 0.0066 |
+| Total sleep time per night ~ %<54 (daily avg) | +2.990 [-0.505, +6.485] | 0.257 | 0.290 | 0.0381 | +0.6 | +3.5 | 0.0070 \| 0.0066 |
+| Garmin stress score, mean ~ Any <54 (0/1) | -0.618 [-1.896, +0.660] | 0.566 | 0.443 | 0.1229 | +1.1 | +14.2 | 0.0931 \| 0.0947 |
+| Garmin stress score, mean ~ %<54 (pooled) | +0.364 [-0.839, +1.568] | 0.734 | 0.612 | 0.1222 | +1.7 | +14.8 | 0.0936 \| 0.0947 |
+| Garmin stress score, mean ~ %<54 (daily avg) | +0.039 [-1.729, +1.808] | 0.972 | 0.965 | 0.1218 | +2.0 | +15.1 | 0.0921 \| 0.0947 |
+
+
+---
+
+# Interpretation of the band analyses
+
+
+## Interpretation - band 70-180 (all populations pooled in the counts; see tables for population-specific rows)
+
+**Scope.** 84 single-predictor tests; 28 with raw p < 0.05 (about 4 expected by chance); FDR rule applied to 84 tests (samples with n >= 500), of which **14** are significant at BH q < 0.05 in the all-tests family and 20 in the within-outcome family.
+
+**By outcome (best out-of-sample predictor, then the associations that survive FDR):**
+
+- **MoCA total score (0-30)** (n = 2,138): best single predictor out of sample is **TIR 70-180 (pooled)** (CV R² 0.102 vs 0.092 for covariates alone, gain +0.011; +0.356 per SD, p = 2.3e-06, q = 2.3e-05). FDR-robust associations (2): TIR 70-180 (pooled) (higher outcome, +0.356 per SD, q = 2.3e-05); TIR 70-180 (daily avg) (higher outcome, +0.35 per SD, q = 3.4e-05).
+- **Cognitive impairment (MoCA < 26)** (n = 2,138): best single predictor out of sample is **TIR 70-180 (pooled)** (CV AUC 0.666 vs 0.660 for covariates alone, gain +0.005; OR 0.83 per SD, p = 6.4e-05, q = 4.2e-04). FDR-robust associations (2): TIR 70-180 (pooled) (lower outcome, OR 0.83 per SD, q = 4.2e-04); TIR 70-180 (daily avg) (lower outcome, OR 0.83 per SD, q = 4.7e-04).
+- **MoCA memory index score (0-15)** (n = 2,138): best single predictor out of sample is **TIR 70-180 (pooled)** (CV R² 0.031 vs 0.029 for covariates alone, gain +0.003; +0.173 per SD, p = 0.055, q = 0.204). FDR-robust associations (2): TIR 70-180 (pooled) (higher outcome, +0.167 per SD, q = 0.017); TIR 70-180 (daily avg) (higher outcome, +0.167 per SD, q = 0.017).
+- **CES-D-10 depressive symptoms (0-30)** (n = 2,135): best single predictor out of sample is **TIR 70-180 (pooled)** (CV R² 0.092 vs 0.092 for covariates alone, gain +0.000; -0.144 per SD, p = 0.231, q = 0.400). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Clinically relevant depressive symptoms (CES-D-10 >= 10)** (n = 2,135): best single predictor out of sample is **TIR 70-180 (daily avg)** (CV AUC 0.636 vs 0.634 for covariates alone, gain +0.002; OR 0.87 per SD, p = 0.099, q = 0.264). No association survives FDR; nominal only: TIR 70-180 (pooled) (p = 0.038), TIR 70-180 (daily avg) (p = 0.047).
+- **Indoor PM2.5, log(1 + mean ug/m3)** (n = 2,100): best single predictor out of sample is **TIR 70-180 (pooled)** (CV R² 0.133 vs 0.131 for covariates alone, gain +0.002; -0.0749 per SD, p = 0.043, q = 0.182). No association survives FDR; nominal only: TIR 70-180 (pooled) (p = 0.043), TIR 70-180 (daily avg) (p = 0.043). Not predictable from glycaemia in this sample.
+- **Indoor temperature, mean (deg C)** (n = 2,100): best single predictor out of sample is **TIR 70-180 (daily avg)** (CV R² 0.289 vs 0.289 for covariates alone, gain -0.000; -0.0479 per SD, p = 0.392, q = 0.794). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Indoor relative humidity, mean (%)** (n = 2,100): best single predictor out of sample is **TIR 70-180 (pooled)** (CV R² 0.230 vs 0.231 for covariates alone, gain -0.001; +0.0682 per SD, p = 0.632, q = 0.781). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Indoor VOC index, mean** (n = 2,100): best single predictor out of sample is **TIR 70-180 (daily avg)** (CV R² 0.027 vs 0.028 for covariates alone, gain -0.001; +0.505 per SD, p = 0.455, q = 0.656). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Steps per wear-day** (n = 1,872): best single predictor out of sample is **TIR 70-180 (pooled)** (CV R² 0.122 vs 0.122 for covariates alone, gain -0.001; -125 per SD, p = 0.339, q = 0.500). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Brisk-cadence minutes per day (>= 100 steps/min)** (n = 1,872): best single predictor out of sample is **TIR 70-180 (pooled)** (CV R² 0.144 vs 0.145 for covariates alone, gain -0.000; -0.401 per SD, p = 0.280, q = 0.447). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Resting heart-rate proxy (daily 5th pct, bpm)** (n = 1,877): best single predictor out of sample is **TIR 70-180 (pooled)** (CV R² 0.181 vs 0.148 for covariates alone, gain +0.032; -1.68 per SD, p = 1.1e-14, q = 6.3e-13). FDR-robust associations (4): TIR 70-180 (pooled) (lower outcome, -1.68 per SD, q = 6.3e-13); TIR 70-180 (daily avg) (lower outcome, -1.67 per SD, q = 7.4e-13); TIR 70-180 (pooled) (lower outcome, -1.07 per SD, q = 0.024); TIR 70-180 (daily avg) (lower outcome, -1.06 per SD, q = 0.024).
+- **Total sleep time per night (min)** (n = 1,893): best single predictor out of sample is **TIR 70-180 (pooled)** (CV R² 0.020 vs 0.021 for covariates alone, gain -0.001; +1.92 per SD, p = 0.234, q = 0.400). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Garmin stress score, mean (0-100)** (n = 1,879): best single predictor out of sample is **TIR 70-180 (pooled)** (CV R² 0.114 vs 0.090 for covariates alone, gain +0.024; -3 per SD, p = 2.1e-11, q = 4.6e-10). FDR-robust associations (4): TIR 70-180 (pooled) (lower outcome, -3 per SD, q = 4.6e-10); TIR 70-180 (daily avg) (lower outcome, -2.96 per SD, q = 7.1e-10); TIR 70-180 (pooled) (lower outcome, -2.61 per SD, q = 0.007); TIR 70-180 (daily avg) (lower outcome, -2.59 per SD, q = 0.007).
+
+**Most predictable outcomes (largest out-of-sample gain over covariates):** Resting heart-rate proxy (daily 5th pct, bpm) (+0.032, via TIR 70-180 (pooled)); Garmin stress score, mean (0-100) (+0.024, via TIR 70-180 (pooled)); MoCA total score (0-30) (+0.011, via TIR 70-180 (pooled)); Cognitive impairment (MoCA < 26) (+0.005, via TIR 70-180 (pooled)). Gains below about 0.01 are negligible for individual-level prediction even when statistically significant.
+
+**Predictor families carrying the signal:** Range 70-180 (14 FDR-significant / 28 raw-significant of 84).
+
+_Interpretation note: all models are cross-sectional and covariate-adjusted (age, BMI, education, site, hypertension, high cholesterol, kidney disease, circulatory disease; season for environmental outcomes). Effects are per 1 SD of the predictor in this sample. Bold cells in the tables mark raw p < 0.05; q-values follow the FDR rule (BH applied when n >= 500)._
+
+
+## Interpretation - band 54-69 (all populations pooled in the counts; see tables for population-specific rows)
+
+**Scope.** 84 single-predictor tests; 7 with raw p < 0.05 (about 4 expected by chance); FDR rule applied to 84 tests (samples with n >= 500), of which **1** are significant at BH q < 0.05 in the all-tests family and 4 in the within-outcome family.
+
+**By outcome (best out-of-sample predictor, then the associations that survive FDR):**
+
+- **MoCA total score (0-30)** (n = 2,138): best single predictor out of sample is **%54-69 (daily avg)** (CV R² 0.078 vs 0.079 for covariates alone, gain -0.001; +0.0161 per SD, p = 0.791, q = 0.936). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Cognitive impairment (MoCA < 26)** (n = 2,138): best single predictor out of sample is **%54-69 (daily avg)** (CV AUC 0.660 vs 0.660 for covariates alone, gain +0.000; OR 1.06 per SD, p = 0.236, q = 0.401). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **MoCA memory index score (0-15)** (n = 2,138): best single predictor out of sample is **%54-69 (daily avg)** (CV R² 0.031 vs 0.029 for covariates alone, gain +0.002; -0.16 per SD, p = 0.073, q = 0.232). No glycaemic measure is associated with this outcome (all p > 0.05).
+- **CES-D-10 depressive symptoms (0-30)** (n = 2,135): best single predictor out of sample is **%54-69 (daily avg)** (CV R² 0.091 vs 0.092 for covariates alone, gain -0.000; +0.0985 per SD, p = 0.337, q = 0.500). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Clinically relevant depressive symptoms (CES-D-10 >= 10)** (n = 2,135): best single predictor out of sample is **%54-69 (daily avg)** (CV AUC 0.667 vs 0.668 for covariates alone, gain -0.001; OR 1.03 per SD, p = 0.561, q = 0.718). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Indoor PM2.5, log(1 + mean ug/m3)** (n = 2,100): best single predictor out of sample is **%54-69 (daily avg)** (CV R² 0.143 vs 0.131 for covariates alone, gain +0.012; +0.135 per SD, p = 0.007, q = 0.061). No association survives FDR; nominal only: %54-69 (pooled) (p = 0.006), %54-69 (daily avg) (p = 0.007).
+- **Indoor temperature, mean (deg C)** (n = 2,100): best single predictor out of sample is **%54-69 (daily avg)** (CV R² 0.290 vs 0.290 for covariates alone, gain +0.000; +0.0687 per SD, p = 0.085, q = 0.195). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Indoor relative humidity, mean (%)** (n = 2,100): best single predictor out of sample is **%54-69 (daily avg)** (CV R² 0.230 vs 0.231 for covariates alone, gain -0.000; -0.156 per SD, p = 0.238, q = 0.404). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Indoor VOC index, mean** (n = 2,100): best single predictor out of sample is **%54-69 (pooled)** (CV R² 0.027 vs 0.028 for covariates alone, gain -0.001; +0.548 per SD, p = 0.311, q = 0.533). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Steps per wear-day** (n = 1,872): best single predictor out of sample is **%54-69 (daily avg)** (CV R² 0.143 vs 0.139 for covariates alone, gain +0.004; -401 per SD, p = 0.004, q = 0.043). FDR-robust associations (1): %54-69 (daily avg) (lower outcome, -401 per SD, q = 0.043).
+- **Brisk-cadence minutes per day (>= 100 steps/min)** (n = 1,872): best single predictor out of sample is **%54-69 (daily avg)** (CV R² 0.156 vs 0.155 for covariates alone, gain +0.001; -0.806 per SD, p = 0.047, q = 0.189). No association survives FDR; nominal only: %54-69 (daily avg) (p = 0.047). Not predictable from glycaemia in this sample.
+- **Resting heart-rate proxy (daily 5th pct, bpm)** (n = 1,877): best single predictor out of sample is **%54-69 (daily avg)** (CV R² 0.148 vs 0.148 for covariates alone, gain -0.000; -0.181 per SD, p = 0.309, q = 0.482). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Total sleep time per night (min)** (n = 1,893): best single predictor out of sample is **%54-69 (pooled)** (CV R² 0.020 vs 0.021 for covariates alone, gain -0.000; +1.45 per SD, p = 0.305, q = 0.480). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Garmin stress score, mean (0-100)** (n = 1,879): best single predictor out of sample is **%54-69 (pooled)** (CV R² 0.090 vs 0.090 for covariates alone, gain -0.000; -0.521 per SD, p = 0.212, q = 0.378). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+
+**Most predictable outcomes (largest out-of-sample gain over covariates):** Indoor PM2.5, log(1 + mean ug/m3) (+0.012, via %54-69 (daily avg)); Steps per wear-day (+0.004, via %54-69 (daily avg)); MoCA memory index score (0-15) (+0.002, via %54-69 (daily avg)); Brisk-cadence minutes per day (>= 100 steps/min) (+0.001, via %54-69 (daily avg)). Gains below about 0.01 are negligible for individual-level prediction even when statistically significant.
+
+**Predictor families carrying the signal:** Band 54-69 (1 FDR-significant / 7 raw-significant of 84).
+
+_Interpretation note: all models are cross-sectional and covariate-adjusted (age, BMI, education, site, hypertension, high cholesterol, kidney disease, circulatory disease; season for environmental outcomes). Effects are per 1 SD of the predictor in this sample. Bold cells in the tables mark raw p < 0.05; q-values follow the FDR rule (BH applied when n >= 500)._
+
+
+## Interpretation - band <70 (all populations pooled in the counts; see tables for population-specific rows)
+
+**Scope.** 84 single-predictor tests; 8 with raw p < 0.05 (about 4 expected by chance); FDR rule applied to 84 tests (samples with n >= 500), of which **5** are significant at BH q < 0.05 in the all-tests family and 4 in the within-outcome family.
+
+**By outcome (best out-of-sample predictor, then the associations that survive FDR):**
+
+- **MoCA total score (0-30)** (n = 2,138): best single predictor out of sample is **%<70 (daily avg)** (CV R² 0.078 vs 0.079 for covariates alone, gain -0.001; +0.0212 per SD, p = 0.736, q = 0.932). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Cognitive impairment (MoCA < 26)** (n = 2,138): best single predictor out of sample is **%<70 (pooled)** (CV AUC 0.644 vs 0.644 for covariates alone, gain +0.000; OR 1.07 per SD, p = 0.280, q = 0.654). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **MoCA memory index score (0-15)** (n = 2,138): best single predictor out of sample is **%<70 (daily avg)** (CV R² 0.031 vs 0.029 for covariates alone, gain +0.002; -0.157 per SD, p = 0.066, q = 0.222). No association survives FDR; nominal only: %<70 (pooled) (p = 0.027).
+- **CES-D-10 depressive symptoms (0-30)** (n = 2,135): best single predictor out of sample is **%<70 (daily avg)** (CV R² 0.091 vs 0.092 for covariates alone, gain -0.001; +0.0797 per SD, p = 0.441, q = 0.611). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Clinically relevant depressive symptoms (CES-D-10 >= 10)** (n = 2,135): best single predictor out of sample is **%<70 (daily avg)** (CV AUC 0.667 vs 0.668 for covariates alone, gain -0.001; OR 1.02 per SD, p = 0.665, q = 0.803). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Indoor PM2.5, log(1 + mean ug/m3)** (n = 2,100): best single predictor out of sample is **%<70 (daily avg)** (CV R² 0.144 vs 0.131 for covariates alone, gain +0.013; +0.14 per SD, p = 0.004, q = 0.047). FDR-robust associations (2): %<70 (pooled) (higher outcome, +0.137 per SD, q = 0.040); %<70 (daily avg) (higher outcome, +0.14 per SD, q = 0.047).
+- **Indoor temperature, mean (deg C)** (n = 2,100): best single predictor out of sample is **%<70 (pooled)** (CV R² 0.290 vs 0.289 for covariates alone, gain +0.000; +0.0863 per SD, p = 0.085, q = 0.404). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Indoor relative humidity, mean (%)** (n = 2,100): best single predictor out of sample is **%<70 (pooled)** (CV R² 0.240 vs 0.240 for covariates alone, gain -0.000; -0.256 per SD, p = 0.073, q = 0.367). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Indoor VOC index, mean** (n = 2,100): best single predictor out of sample is **%<70 (daily avg)** (CV R² 0.027 vs 0.028 for covariates alone, gain -0.000; +0.541 per SD, p = 0.267, q = 0.483). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Steps per wear-day** (n = 1,872): best single predictor out of sample is **%<70 (daily avg)** (CV R² 0.144 vs 0.139 for covariates alone, gain +0.005; -424 per SD, p = 0.001, q = 0.024). FDR-robust associations (3): %<70 (daily avg) (lower outcome, -424 per SD, q = 0.024); %<70 (pooled) (lower outcome, -231 per SD, q = 0.033); %<70 (daily avg) (lower outcome, -230 per SD, q = 0.035).
+- **Brisk-cadence minutes per day (>= 100 steps/min)** (n = 1,872): best single predictor out of sample is **%<70 (daily avg)** (CV R² 0.156 vs 0.155 for covariates alone, gain +0.001; -0.881 per SD, p = 0.033, q = 0.165). No association survives FDR; nominal only: %<70 (daily avg) (p = 0.033). Not predictable from glycaemia in this sample.
+- **Resting heart-rate proxy (daily 5th pct, bpm)** (n = 1,877): best single predictor out of sample is **%<70 (daily avg)** (CV R² 0.148 vs 0.148 for covariates alone, gain -0.000; -0.144 per SD, p = 0.422, q = 0.595). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Total sleep time per night (min)** (n = 1,893): best single predictor out of sample is **%<70 (pooled)** (CV R² 0.021 vs 0.021 for covariates alone, gain -0.000; +1.23 per SD, p = 0.364, q = 0.528). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Garmin stress score, mean (0-100)** (n = 1,879): best single predictor out of sample is **%<70 (pooled)** (CV R² 0.090 vs 0.090 for covariates alone, gain -0.000; -0.417 per SD, p = 0.311, q = 0.482). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+
+**Most predictable outcomes (largest out-of-sample gain over covariates):** Indoor PM2.5, log(1 + mean ug/m3) (+0.013, via %<70 (daily avg)); Steps per wear-day (+0.005, via %<70 (daily avg)); MoCA memory index score (0-15) (+0.002, via %<70 (daily avg)); Brisk-cadence minutes per day (>= 100 steps/min) (+0.001, via %<70 (daily avg)). Gains below about 0.01 are negligible for individual-level prediction even when statistically significant.
+
+**Predictor families carrying the signal:** Band < 70 (5 FDR-significant / 8 raw-significant of 84).
+
+_Interpretation note: all models are cross-sectional and covariate-adjusted (age, BMI, education, site, hypertension, high cholesterol, kidney disease, circulatory disease; season for environmental outcomes). Effects are per 1 SD of the predictor in this sample. Bold cells in the tables mark raw p < 0.05; q-values follow the FDR rule (BH applied when n >= 500)._
+
+
+## Interpretation - band 54-250 (all populations pooled in the counts; see tables for population-specific rows)
+
+**Scope.** 84 single-predictor tests; 16 with raw p < 0.05 (about 4 expected by chance); FDR rule applied to 84 tests (samples with n >= 500), of which **8** are significant at BH q < 0.05 in the all-tests family and 12 in the within-outcome family.
+
+**By outcome (best out-of-sample predictor, then the associations that survive FDR):**
+
+- **MoCA total score (0-30)** (n = 2,138): best single predictor out of sample is **%54-250 (pooled)** (CV R² 0.097 vs 0.092 for covariates alone, gain +0.006; +0.268 per SD, p = 8.2e-04, q = 0.004). FDR-robust associations (2): %54-250 (pooled) (higher outcome, +0.268 per SD, q = 0.004); %54-250 (daily avg) (higher outcome, +0.265 per SD, q = 0.006).
+- **Cognitive impairment (MoCA < 26)** (n = 2,138): best single predictor out of sample is **%54-250 (pooled)** (CV AUC 0.663 vs 0.660 for covariates alone, gain +0.003; OR 0.87 per SD, p = 0.004, q = 0.017). FDR-robust associations (2): %54-250 (pooled) (lower outcome, OR 0.87 per SD, q = 0.017); %54-250 (daily avg) (lower outcome, OR 0.87 per SD, q = 0.020).
+- **MoCA memory index score (0-15)** (n = 2,138): best single predictor out of sample is **%54-250 (daily avg)** (CV R² 0.051 vs 0.048 for covariates alone, gain +0.003; +0.173 per SD, p = 0.005, q = 0.068). No association survives FDR; nominal only: %54-250 (daily avg) (p = 0.005), %54-250 (pooled) (p = 0.007), %54-250 (pooled) (p = 0.028), %54-250 (daily avg) (p = 0.032).
+- **CES-D-10 depressive symptoms (0-30)** (n = 2,135): best single predictor out of sample is **%54-250 (pooled)** (CV R² 0.092 vs 0.092 for covariates alone, gain -0.000; -0.144 per SD, p = 0.278, q = 0.445). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Clinically relevant depressive symptoms (CES-D-10 >= 10)** (n = 2,135): best single predictor out of sample is **%54-250 (pooled)** (CV AUC 0.637 vs 0.634 for covariates alone, gain +0.003; OR 0.89 per SD, p = 0.111, q = 0.270). No glycaemic measure is associated with this outcome (all p > 0.05).
+- **Indoor PM2.5, log(1 + mean ug/m3)** (n = 2,100): best single predictor out of sample is **%54-250 (daily avg)** (CV R² 0.139 vs 0.139 for covariates alone, gain +0.001; -0.043 per SD, p = 0.097, q = 0.210). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Indoor temperature, mean (deg C)** (n = 2,100): best single predictor out of sample is **%54-250 (pooled)** (CV R² 0.289 vs 0.290 for covariates alone, gain -0.001; -0.0244 per SD, p = 0.625, q = 0.778). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Indoor relative humidity, mean (%)** (n = 2,100): best single predictor out of sample is **%54-250 (daily avg)** (CV R² 0.240 vs 0.240 for covariates alone, gain -0.000; -0.147 per SD, p = 0.252, q = 0.629). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Indoor VOC index, mean** (n = 2,100): best single predictor out of sample is **%54-250 (daily avg)** (CV R² 0.029 vs 0.028 for covariates alone, gain +0.002; +1.16 per SD, p = 0.089, q = 0.247). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Steps per wear-day** (n = 1,872): best single predictor out of sample is **%54-250 (daily avg)** (CV R² 0.107 vs 0.108 for covariates alone, gain -0.001; -82.1 per SD, p = 0.488, q = 0.884). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Brisk-cadence minutes per day (>= 100 steps/min)** (n = 1,872): best single predictor out of sample is **%54-250 (pooled)** (CV R² 0.125 vs 0.124 for covariates alone, gain +0.000; -0.404 per SD, p = 0.342, q = 0.734). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Resting heart-rate proxy (daily 5th pct, bpm)** (n = 1,877): best single predictor out of sample is **%54-250 (pooled)** (CV R² 0.160 vs 0.148 for covariates alone, gain +0.011; -1.01 per SD, p = 9.8e-06, q = 8.0e-05). FDR-robust associations (2): %54-250 (pooled) (lower outcome, -1.01 per SD, q = 8.0e-05); %54-250 (daily avg) (lower outcome, -1 per SD, q = 1.1e-04).
+- **Total sleep time per night (min)** (n = 1,893): best single predictor out of sample is **%54-250 (pooled)** (CV R² 0.021 vs 0.021 for covariates alone, gain -0.000; +1.04 per SD, p = 0.488, q = 0.656). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Garmin stress score, mean (0-100)** (n = 1,879): best single predictor out of sample is **%54-250 (pooled)** (CV R² 0.100 vs 0.090 for covariates alone, gain +0.010; -1.93 per SD, p = 1.1e-04, q = 6.5e-04). FDR-robust associations (2): %54-250 (pooled) (lower outcome, -1.93 per SD, q = 6.5e-04); %54-250 (daily avg) (lower outcome, -1.92 per SD, q = 8.0e-04).
+
+**Most predictable outcomes (largest out-of-sample gain over covariates):** Resting heart-rate proxy (daily 5th pct, bpm) (+0.011, via %54-250 (pooled)); Garmin stress score, mean (0-100) (+0.010, via %54-250 (pooled)); MoCA total score (0-30) (+0.006, via %54-250 (pooled)); MoCA memory index score (0-15) (+0.003, via %54-250 (daily avg)). Gains below about 0.01 are negligible for individual-level prediction even when statistically significant.
+
+**Predictor families carrying the signal:** Band 54-250 (8 FDR-significant / 16 raw-significant of 84).
+
+_Interpretation note: all models are cross-sectional and covariate-adjusted (age, BMI, education, site, hypertension, high cholesterol, kidney disease, circulatory disease; season for environmental outcomes). Effects are per 1 SD of the predictor in this sample. Bold cells in the tables mark raw p < 0.05; q-values follow the FDR rule (BH applied when n >= 500)._
+
+
+## Interpretation - band >180 (all populations pooled in the counts; see tables for population-specific rows)
+
+**Scope.** 126 single-predictor tests; 40 with raw p < 0.05 (about 6 expected by chance); FDR rule applied to 126 tests (samples with n >= 500), of which **22** are significant at BH q < 0.05 in the all-tests family and 29 in the within-outcome family.
+
+**By outcome (best out-of-sample predictor, then the associations that survive FDR):**
+
+- **MoCA total score (0-30)** (n = 2,138): best single predictor out of sample is **%>180 (pooled)** (CV R² 0.102 vs 0.092 for covariates alone, gain +0.011; -0.355 per SD, p = 2.4e-06, q = 2.4e-05). FDR-robust associations (3): %>180 (pooled) (lower outcome, -0.355 per SD, q = 2.4e-05); %>180 (daily avg) (lower outcome, -0.349 per SD, q = 3.7e-05); %>180 nocturnal (lower outcome, -0.317 per SD, q = 2.3e-04).
+- **Cognitive impairment (MoCA < 26)** (n = 2,138): best single predictor out of sample is **%>180 (pooled)** (CV AUC 0.665 vs 0.660 for covariates alone, gain +0.005; OR 1.20 per SD, p = 9.9e-05, q = 6.1e-04). FDR-robust associations (3): %>180 (pooled) (higher outcome, OR 1.20 per SD, q = 6.1e-04); %>180 (daily avg) (higher outcome, OR 1.20 per SD, q = 7.0e-04); %>180 nocturnal (higher outcome, OR 1.17 per SD, q = 0.005).
+- **MoCA memory index score (0-15)** (n = 2,138): best single predictor out of sample is **%>180 (pooled)** (CV R² 0.050 vs 0.048 for covariates alone, gain +0.003; -0.193 per SD, p = 0.005, q = 0.068). FDR-robust associations (3): %>180 (pooled) (lower outcome, -0.167 per SD, q = 0.017); %>180 (daily avg) (lower outcome, -0.164 per SD, q = 0.020); %>180 nocturnal (lower outcome, -0.154 per SD, q = 0.029).
+- **CES-D-10 depressive symptoms (0-30)** (n = 2,135): best single predictor out of sample is **%>180 nocturnal** (CV R² 0.093 vs 0.092 for covariates alone, gain +0.001; +0.222 per SD, p = 0.069, q = 0.172). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Clinically relevant depressive symptoms (CES-D-10 >= 10)** (n = 2,135): best single predictor out of sample is **%>180 nocturnal** (CV AUC 0.641 vs 0.634 for covariates alone, gain +0.007; OR 1.22 per SD, p = 0.014, q = 0.100). FDR-robust associations (1): %>180 nocturnal (higher outcome, OR 1.17 per SD, q = 0.012).
+- **Indoor PM2.5, log(1 + mean ug/m3)** (n = 2,100): best single predictor out of sample is **%>180 nocturnal** (CV R² 0.132 vs 0.131 for covariates alone, gain +0.001; +0.0731 per SD, p = 0.051, q = 0.198). No association survives FDR; nominal only: %>180 nocturnal (p = 0.048). Not predictable from glycaemia in this sample.
+- **Indoor temperature, mean (deg C)** (n = 2,100): best single predictor out of sample is **%>180 nocturnal** (CV R² 0.289 vs 0.289 for covariates alone, gain -0.001; +0.0458 per SD, p = 0.445, q = 0.852). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Indoor relative humidity, mean (%)** (n = 2,100): best single predictor out of sample is **%>180 nocturnal** (CV R² 0.185 vs 0.186 for covariates alone, gain -0.000; -0.256 per SD, p = 0.262, q = 0.481). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Indoor VOC index, mean** (n = 2,100): best single predictor out of sample is **%>180 (daily avg)** (CV R² 0.027 vs 0.028 for covariates alone, gain -0.001; -0.539 per SD, p = 0.425, q = 0.640). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Steps per wear-day** (n = 1,872): best single predictor out of sample is **%>180 (pooled)** (CV R² 0.122 vs 0.122 for covariates alone, gain -0.000; +147 per SD, p = 0.263, q = 0.438). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Brisk-cadence minutes per day (>= 100 steps/min)** (n = 1,872): best single predictor out of sample is **%>180 (pooled)** (CV R² 0.145 vs 0.145 for covariates alone, gain -0.000; +0.443 per SD, p = 0.232, q = 0.400). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Resting heart-rate proxy (daily 5th pct, bpm)** (n = 1,877): best single predictor out of sample is **%>180 (pooled)** (CV R² 0.180 vs 0.148 for covariates alone, gain +0.032; +1.67 per SD, p = 1.2e-14, q = 6.3e-13). FDR-robust associations (6): %>180 (pooled) (higher outcome, +1.67 per SD, q = 6.3e-13); %>180 (daily avg) (higher outcome, +1.67 per SD, q = 6.8e-13); %>180 nocturnal (higher outcome, +1.37 per SD, q = 5.5e-09); %>180 (daily avg) (higher outcome, +1.07 per SD, q = 0.024); %>180 (pooled) (higher outcome, +1.07 per SD, q = 0.024); %>180 nocturnal (higher outcome, +0.947 per SD, q = 0.046).
+- **Total sleep time per night (min)** (n = 1,893): best single predictor out of sample is **%>180 (pooled)** (CV R² 0.020 vs 0.021 for covariates alone, gain -0.001; -2.02 per SD, p = 0.211, q = 0.376). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Garmin stress score, mean (0-100)** (n = 1,879): best single predictor out of sample is **%>180 (pooled)** (CV R² 0.114 vs 0.090 for covariates alone, gain +0.024; +3.01 per SD, p = 1.7e-11, q = 3.8e-10). FDR-robust associations (6): %>180 (pooled) (higher outcome, +3.01 per SD, q = 3.8e-10); %>180 (daily avg) (higher outcome, +2.98 per SD, q = 4.8e-10); %>180 nocturnal (higher outcome, +2.42 per SD, q = 6.4e-07); %>180 (pooled) (higher outcome, +2.61 per SD, q = 0.007); %>180 (daily avg) (higher outcome, +2.6 per SD, q = 0.007); %>180 nocturnal (higher outcome, +2.25 per SD, q = 0.022).
+
+**Most predictable outcomes (largest out-of-sample gain over covariates):** Resting heart-rate proxy (daily 5th pct, bpm) (+0.032, via %>180 (pooled)); Garmin stress score, mean (0-100) (+0.024, via %>180 (pooled)); MoCA total score (0-30) (+0.011, via %>180 (pooled)); Clinically relevant depressive symptoms (CES-D-10 >= 10) (+0.007, via %>180 nocturnal). Gains below about 0.01 are negligible for individual-level prediction even when statistically significant.
+
+**Predictor families carrying the signal:** Band > 180 (22 FDR-significant / 40 raw-significant of 126).
+
+_Interpretation note: all models are cross-sectional and covariate-adjusted (age, BMI, education, site, hypertension, high cholesterol, kidney disease, circulatory disease; season for environmental outcomes). Effects are per 1 SD of the predictor in this sample. Bold cells in the tables mark raw p < 0.05; q-values follow the FDR rule (BH applied when n >= 500)._
+
+
+## Interpretation - band 181-250 (all populations pooled in the counts; see tables for population-specific rows)
+
+**Scope.** 84 single-predictor tests; 19 with raw p < 0.05 (about 4 expected by chance); FDR rule applied to 84 tests (samples with n >= 500), of which **14** are significant at BH q < 0.05 in the all-tests family and 18 in the within-outcome family.
+
+**By outcome (best out-of-sample predictor, then the associations that survive FDR):**
+
+- **MoCA total score (0-30)** (n = 2,138): best single predictor out of sample is **%181-250 (pooled)** (CV R² 0.100 vs 0.092 for covariates alone, gain +0.009; -0.321 per SD, p = 1.4e-05, q = 1.1e-04). FDR-robust associations (2): %181-250 (pooled) (lower outcome, -0.321 per SD, q = 1.1e-04); %181-250 (daily avg) (lower outcome, -0.316 per SD, q = 1.4e-04).
+- **Cognitive impairment (MoCA < 26)** (n = 2,138): best single predictor out of sample is **%181-250 (daily avg)** (CV AUC 0.666 vs 0.660 for covariates alone, gain +0.005; OR 1.19 per SD, p = 3.0e-04, q = 0.002). FDR-robust associations (2): %181-250 (daily avg) (higher outcome, OR 1.19 per SD, q = 0.002); %181-250 (pooled) (higher outcome, OR 1.19 per SD, q = 0.002).
+- **MoCA memory index score (0-15)** (n = 2,138): best single predictor out of sample is **%181-250 (pooled)** (CV R² 0.065 vs 0.063 for covariates alone, gain +0.002; -0.153 per SD, p = 0.009, q = 0.033). FDR-robust associations (2): %181-250 (pooled) (lower outcome, -0.153 per SD, q = 0.033); %181-250 (daily avg) (lower outcome, -0.153 per SD, q = 0.035).
+- **CES-D-10 depressive symptoms (0-30)** (n = 2,135): best single predictor out of sample is **%181-250 (daily avg)** (CV R² 0.091 vs 0.092 for covariates alone, gain -0.000; +0.0904 per SD, p = 0.424, q = 0.596). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Clinically relevant depressive symptoms (CES-D-10 >= 10)** (n = 2,135): best single predictor out of sample is **%181-250 (pooled)** (CV AUC 0.677 vs 0.676 for covariates alone, gain +0.001; OR 1.14 per SD, p = 0.050, q = 0.296). No association survives FDR; nominal only: %181-250 (pooled) (p = 0.050). Not predictable from glycaemia in this sample.
+- **Indoor PM2.5, log(1 + mean ug/m3)** (n = 2,100): best single predictor out of sample is **%181-250 (pooled)** (CV R² 0.138 vs 0.139 for covariates alone, gain -0.000; +0.0261 per SD, p = 0.222, q = 0.393). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Indoor temperature, mean (deg C)** (n = 2,100): best single predictor out of sample is **%181-250 (daily avg)** (CV R² 0.289 vs 0.290 for covariates alone, gain -0.001; +0.00993 per SD, p = 0.830, q = 0.892). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Indoor relative humidity, mean (%)** (n = 2,100): best single predictor out of sample is **%181-250 (pooled)** (CV R² 0.230 vs 0.231 for covariates alone, gain -0.000; -0.085 per SD, p = 0.542, q = 0.701). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Indoor VOC index, mean** (n = 2,100): best single predictor out of sample is **%181-250 (daily avg)** (CV R² 0.026 vs 0.027 for covariates alone, gain -0.001; +0.307 per SD, p = 0.524, q = 0.693). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Steps per wear-day** (n = 1,872): best single predictor out of sample is **%181-250 (pooled)** (CV R² 0.140 vs 0.139 for covariates alone, gain +0.001; +322 per SD, p = 0.093, q = 0.256). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Brisk-cadence minutes per day (>= 100 steps/min)** (n = 1,872): best single predictor out of sample is **%181-250 (pooled)** (CV R² 0.146 vs 0.145 for covariates alone, gain +0.001; +0.607 per SD, p = 0.083, q = 0.193). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Resting heart-rate proxy (daily 5th pct, bpm)** (n = 1,877): best single predictor out of sample is **%181-250 (pooled)** (CV R² 0.183 vs 0.148 for covariates alone, gain +0.035; +1.75 per SD, p = 1.6e-16, q = 7.1e-14). FDR-robust associations (4): %181-250 (pooled) (higher outcome, +1.75 per SD, q = 7.1e-14); %181-250 (daily avg) (higher outcome, +1.73 per SD, q = 7.6e-14); %181-250 (pooled) (higher outcome, +1.09 per SD, q = 0.019); %181-250 (daily avg) (higher outcome, +1.08 per SD, q = 0.020).
+- **Total sleep time per night (min)** (n = 1,893): best single predictor out of sample is **%181-250 (pooled)** (CV R² 0.007 vs 0.007 for covariates alone, gain +0.000; -3.93 per SD, p = 0.146, q = 0.329). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Garmin stress score, mean (0-100)** (n = 1,879): best single predictor out of sample is **%181-250 (pooled)** (CV R² 0.115 vs 0.090 for covariates alone, gain +0.025; +3.02 per SD, p = 3.0e-12, q = 8.6e-11). FDR-robust associations (4): %181-250 (pooled) (higher outcome, +3.02 per SD, q = 8.6e-11); %181-250 (daily avg) (higher outcome, +2.98 per SD, q = 1.6e-10); %181-250 (pooled) (higher outcome, +2.55 per SD, q = 0.007); %181-250 (daily avg) (higher outcome, +2.5 per SD, q = 0.007).
+
+**Most predictable outcomes (largest out-of-sample gain over covariates):** Resting heart-rate proxy (daily 5th pct, bpm) (+0.035, via %181-250 (pooled)); Garmin stress score, mean (0-100) (+0.025, via %181-250 (pooled)); MoCA total score (0-30) (+0.009, via %181-250 (pooled)); Cognitive impairment (MoCA < 26) (+0.005, via %181-250 (daily avg)). Gains below about 0.01 are negligible for individual-level prediction even when statistically significant.
+
+**Predictor families carrying the signal:** Band 181-250 (14 FDR-significant / 19 raw-significant of 84).
+
+_Interpretation note: all models are cross-sectional and covariate-adjusted (age, BMI, education, site, hypertension, high cholesterol, kidney disease, circulatory disease; season for environmental outcomes). Effects are per 1 SD of the predictor in this sample. Bold cells in the tables mark raw p < 0.05; q-values follow the FDR rule (BH applied when n >= 500)._
+
+
+## Interpretation - band >250 (all populations pooled in the counts; see tables for population-specific rows)
+
+**Scope.** 126 single-predictor tests; 27 with raw p < 0.05 (about 6 expected by chance); FDR rule applied to 126 tests (samples with n >= 500), of which **12** are significant at BH q < 0.05 in the all-tests family and 19 in the within-outcome family.
+
+**By outcome (best out-of-sample predictor, then the associations that survive FDR):**
+
+- **MoCA total score (0-30)** (n = 2,138): best single predictor out of sample is **Any >250 (0/1)** (CV R² 0.099 vs 0.092 for covariates alone, gain +0.007; -0.299 per SD, p = 1.6e-05, q = 1.2e-04). FDR-robust associations (3): Any >250 (0/1) (lower outcome, -0.299 per SD, q = 1.2e-04); %>250 (pooled) (lower outcome, -0.27 per SD, q = 0.004); %>250 (daily avg) (lower outcome, -0.265 per SD, q = 0.005).
+- **Cognitive impairment (MoCA < 26)** (n = 2,138): best single predictor out of sample is **Any >250 (0/1)** (CV AUC 0.665 vs 0.660 for covariates alone, gain +0.005; OR 1.15 per SD, p = 0.003, q = 0.012). FDR-robust associations (3): Any >250 (0/1) (higher outcome, OR 1.15 per SD, q = 0.012); %>250 (pooled) (higher outcome, OR 1.15 per SD, q = 0.017); %>250 (daily avg) (higher outcome, OR 1.15 per SD, q = 0.021).
+- **MoCA memory index score (0-15)** (n = 2,138): best single predictor out of sample is **Any >250 (0/1)** (CV R² 0.033 vs 0.029 for covariates alone, gain +0.005; -0.236 per SD, p = 0.012, q = 0.091). No association survives FDR; nominal only: %>250 (daily avg) (p = 0.003), %>250 (pooled) (p = 0.004), Any >250 (0/1) (p = 0.012), Any >250 (0/1) (p = 0.025).
+- **CES-D-10 depressive symptoms (0-30)** (n = 2,135): best single predictor out of sample is **%>250 (pooled)** (CV R² 0.092 vs 0.092 for covariates alone, gain -0.000; +0.146 per SD, p = 0.270, q = 0.440). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Clinically relevant depressive symptoms (CES-D-10 >= 10)** (n = 2,135): best single predictor out of sample is **%>250 (pooled)** (CV AUC 0.637 vs 0.634 for covariates alone, gain +0.003; OR 1.13 per SD, p = 0.109, q = 0.270). No glycaemic measure is associated with this outcome (all p > 0.05).
+- **Indoor PM2.5, log(1 + mean ug/m3)** (n = 2,100): best single predictor out of sample is **%>250 (daily avg)** (CV R² 0.139 vs 0.139 for covariates alone, gain +0.000; +0.0413 per SD, p = 0.111, q = 0.230). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Indoor temperature, mean (deg C)** (n = 2,100): best single predictor out of sample is **Any >250 (0/1)** (CV R² 0.290 vs 0.289 for covariates alone, gain +0.001; -0.103 per SD, p = 0.061, q = 0.340). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Indoor relative humidity, mean (%)** (n = 2,100): best single predictor out of sample is **Any >250 (0/1)** (CV R² 0.186 vs 0.186 for covariates alone, gain +0.000; -0.372 per SD, p = 0.095, q = 0.259). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Indoor VOC index, mean** (n = 2,100): best single predictor out of sample is **%>250 (daily avg)** (CV R² 0.029 vs 0.028 for covariates alone, gain +0.002; -1.18 per SD, p = 0.085, q = 0.247). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Steps per wear-day** (n = 1,872): best single predictor out of sample is **Any >250 (0/1)** (CV R² 0.123 vs 0.122 for covariates alone, gain +0.001; +205 per SD, p = 0.055, q = 0.145). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Brisk-cadence minutes per day (>= 100 steps/min)** (n = 1,872): best single predictor out of sample is **Any >250 (0/1)** (CV R² 0.146 vs 0.145 for covariates alone, gain +0.001; +0.638 per SD, p = 0.045, q = 0.128). No association survives FDR; nominal only: Any >250 (0/1) (p = 0.045). Not predictable from glycaemia in this sample.
+- **Resting heart-rate proxy (daily 5th pct, bpm)** (n = 1,877): best single predictor out of sample is **Any >250 (0/1)** (CV R² 0.167 vs 0.148 for covariates alone, gain +0.019; +1.28 per SD, p = 5.6e-11, q = 1.0e-09). FDR-robust associations (3): Any >250 (0/1) (higher outcome, +1.28 per SD, q = 1.0e-09); %>250 (pooled) (higher outcome, +1 per SD, q = 8.3e-05); %>250 (daily avg) (higher outcome, +1 per SD, q = 1.1e-04).
+- **Total sleep time per night (min)** (n = 1,893): best single predictor out of sample is **Any >250 (0/1)** (CV R² 0.012 vs 0.007 for covariates alone, gain +0.005; -6.73 per SD, p = 0.014, q = 0.100). No association survives FDR; nominal only: Any >250 (0/1) (p = 0.014), Any >250 (0/1) (p = 0.032).
+- **Garmin stress score, mean (0-100)** (n = 1,879): best single predictor out of sample is **Any >250 (0/1)** (CV R² 0.104 vs 0.090 for covariates alone, gain +0.014; +2.27 per SD, p = 3.9e-08, q = 5.1e-07). FDR-robust associations (3): Any >250 (0/1) (higher outcome, +2.27 per SD, q = 5.1e-07); %>250 (pooled) (higher outcome, +1.93 per SD, q = 6.5e-04); %>250 (daily avg) (higher outcome, +1.93 per SD, q = 7.9e-04).
+
+**Most predictable outcomes (largest out-of-sample gain over covariates):** Resting heart-rate proxy (daily 5th pct, bpm) (+0.019, via Any >250 (0/1)); Garmin stress score, mean (0-100) (+0.014, via Any >250 (0/1)); MoCA total score (0-30) (+0.007, via Any >250 (0/1)); Total sleep time per night (min) (+0.005, via Any >250 (0/1)). Gains below about 0.01 are negligible for individual-level prediction even when statistically significant.
+
+**Predictor families carrying the signal:** Band > 250 (12 FDR-significant / 27 raw-significant of 126).
+
+_Interpretation note: all models are cross-sectional and covariate-adjusted (age, BMI, education, site, hypertension, high cholesterol, kidney disease, circulatory disease; season for environmental outcomes). Effects are per 1 SD of the predictor in this sample. Bold cells in the tables mark raw p < 0.05; q-values follow the FDR rule (BH applied when n >= 500)._
+
+
+## Interpretation - band <54 (all populations pooled in the counts; see tables for population-specific rows)
+
+**Scope.** 126 single-predictor tests; 17 with raw p < 0.05 (about 6 expected by chance); FDR rule applied to 126 tests (samples with n >= 500), of which **2** are significant at BH q < 0.05 in the all-tests family and 5 in the within-outcome family.
+
+**By outcome (best out-of-sample predictor, then the associations that survive FDR):**
+
+- **MoCA total score (0-30)** (n = 2,138): best single predictor out of sample is **Any <54 (0/1)** (CV R² 0.081 vs 0.079 for covariates alone, gain +0.002; +0.166 per SD, p = 0.030, q = 0.201). No association survives FDR; nominal only: Any <54 (0/1) (p = 0.030), Any <54 (0/1) (p = 0.037).
+- **Cognitive impairment (MoCA < 26)** (n = 2,138): best single predictor out of sample is **Any <54 (0/1)** (CV AUC 0.646 vs 0.644 for covariates alone, gain +0.002; OR 0.88 per SD, p = 0.046, q = 0.280). No association survives FDR; nominal only: Any <54 (0/1) (p = 0.026), Any <54 (0/1) (p = 0.046). Not predictable from glycaemia in this sample.
+- **MoCA memory index score (0-15)** (n = 2,138): best single predictor out of sample is **Any <54 (0/1)** (CV R² 0.049 vs 0.048 for covariates alone, gain +0.001; +0.162 per SD, p = 0.022, q = 0.158). No association survives FDR; nominal only: Any <54 (0/1) (p = 0.022). Not predictable from glycaemia in this sample.
+- **CES-D-10 depressive symptoms (0-30)** (n = 2,135): best single predictor out of sample is **Any <54 (0/1)** (CV R² 0.091 vs 0.092 for covariates alone, gain -0.001; +0.066 per SD, p = 0.527, q = 0.693). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Clinically relevant depressive symptoms (CES-D-10 >= 10)** (n = 2,135): best single predictor out of sample is **%<54 (daily avg)** (CV AUC 0.676 vs 0.676 for covariates alone, gain +0.000; OR 0.95 per SD, p = 0.620, q = 0.932). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Indoor PM2.5, log(1 + mean ug/m3)** (n = 2,100): best single predictor out of sample is **%<54 (pooled)** (CV R² 0.138 vs 0.131 for covariates alone, gain +0.007; +0.113 per SD, p = 0.005, q = 0.054). No association survives FDR; nominal only: %<54 (pooled) (p = 0.005).
+- **Indoor temperature, mean (deg C)** (n = 2,100): best single predictor out of sample is **%<54 (pooled)** (CV R² 0.290 vs 0.289 for covariates alone, gain +0.001; +0.114 per SD, p = 0.077, q = 0.385). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Indoor relative humidity, mean (%)** (n = 2,100): best single predictor out of sample is **%<54 (daily avg)** (CV R² 0.242 vs 0.240 for covariates alone, gain +0.001; -0.324 per SD, p = 0.001, q = 0.036). FDR-robust associations (1): %<54 (daily avg) (lower outcome, -0.324 per SD, q = 0.036).
+- **Indoor VOC index, mean** (n = 2,100): best single predictor out of sample is **Any <54 (0/1)** (CV R² 0.003 vs 0.002 for covariates alone, gain +0.000; -0.483 per SD, p = 0.273, q = 0.648). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Steps per wear-day** (n = 1,872): best single predictor out of sample is **Any <54 (0/1)** (CV R² 0.144 vs 0.139 for covariates alone, gain +0.005; -502 per SD, p = 0.005, q = 0.052). FDR-robust associations (1): %<54 (daily avg) (lower outcome, -187 per SD, q = 0.028).
+- **Brisk-cadence minutes per day (>= 100 steps/min)** (n = 1,872): best single predictor out of sample is **Any <54 (0/1)** (CV R² 0.156 vs 0.155 for covariates alone, gain +0.001; -1.07 per SD, p = 0.038, q = 0.169). No association survives FDR; nominal only: Any <54 (0/1) (p = 0.038). Not predictable from glycaemia in this sample.
+- **Resting heart-rate proxy (daily 5th pct, bpm)** (n = 1,877): best single predictor out of sample is **%<54 (pooled)** (CV R² 0.104 vs 0.104 for covariates alone, gain -0.000; +0.172 per SD, p = 0.267, q = 0.645). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Total sleep time per night (min)** (n = 1,893): best single predictor out of sample is **%<54 (pooled)** (CV R² 0.009 vs 0.007 for covariates alone, gain +0.003; +4.19 per SD, p = 0.042, q = 0.182). No association survives FDR; nominal only: %<54 (pooled) (p = 0.042).
+- **Garmin stress score, mean (0-100)** (n = 1,879): best single predictor out of sample is **%<54 (pooled)** (CV R² 0.089 vs 0.090 for covariates alone, gain -0.001; +0.011 per SD, p = 0.977, q = 0.986). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+
+**Most predictable outcomes (largest out-of-sample gain over covariates):** Indoor PM2.5, log(1 + mean ug/m3) (+0.007, via %<54 (pooled)); Steps per wear-day (+0.005, via Any <54 (0/1)); Total sleep time per night (min) (+0.003, via %<54 (pooled)); MoCA total score (0-30) (+0.002, via Any <54 (0/1)). Gains below about 0.01 are negligible for individual-level prediction even when statistically significant.
+
+**Predictor families carrying the signal:** Band < 54 (2 FDR-significant / 17 raw-significant of 126).
+
+_Interpretation note: all models are cross-sectional and covariate-adjusted (age, BMI, education, site, hypertension, high cholesterol, kidney disease, circulatory disease; season for environmental outcomes). Effects are per 1 SD of the predictor in this sample. Bold cells in the tables mark raw p < 0.05; q-values follow the FDR rule (BH applied when n >= 500)._

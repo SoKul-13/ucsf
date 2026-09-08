@@ -14,6 +14,7 @@ sys.path.insert(0, SCRIPT_DIR)
 from run_phase6_analysis import PREDICTORS, GROUPS, OUT_DATA, REPORT_DIR, FDR_MIN_N, OUTCOMES  # noqa: E402
 from run_phase6b_glucose_cohorts import COHORTS, MIN_COHORT_N  # noqa: E402
 from generate_phase6_reports import fmt_p, stars, md_table, eff, SHORT  # noqa: E402
+from interpretation import interpret  # noqa: E402
 
 
 def main():
@@ -32,11 +33,20 @@ def main():
     r.loc[ok, "dAIC covs"] = r[ok]["delta_aic_vs_covariates"].map(lambda v: f"{v:+.1f}")
     r.loc[ok, "dAIC HbA1c"] = r[ok]["delta_aic_vs_hba1c_model"].map(lambda v: "-" if pd.isna(v) else f"{v:+.1f}")
     r.loc[ok, "CV"] = r[ok].apply(lambda x: f"{x['cv_score']:.4f} | {x['cv_score_covariates_only']:.4f}", axis=1)
-    r.loc[ok, "coef"] = r[ok]["beta_raw"].map(lambda v: f"{v:+.4g}")
+    B = lambda cond, txt: f"**{txt}**" if cond else txt
+    sig05 = r["p"] < 0.05
+    r.loc[ok, "coef"] = [B(c, f"{v:+.4g}") for v, c in zip(r[ok]["beta_raw"], sig05[ok])]
     r.loc[ok, "se"] = r[ok]["se_raw"].map(lambda v: f"{v:.4g}")
     r.loc[ok, "ci"] = r[ok].apply(lambda x: f"[{x['ci_low_raw']:.4g}, {x['ci_high_raw']:.4g}]", axis=1)
+    r.loc[ok, "t / z"] = [B(c, f"{v:.2f}") for v, c in zip(r[ok]["stat"], sig05[ok])]
+    r.loc[ok, "p (raw)"] = [B(c, fmt_p(v) + stars(v)) for v, c in zip(r[ok]["p"], sig05[ok])]
     r.loc[ok, "sig"] = r[ok]["p"].map(stars)
     r.loc[ok, "fit"] = r[ok].apply(lambda x: f"{x['adj_r2']:.4f}" if x["kind"] == "ols" else f"{x['auc_in_sample']:.4f}", axis=1)
+    qsig = r["fdr_applied"] & (r["q_bh_group_all_tests"] < 0.05)
+    r.loc[ok, "Effect per 1 SD (95% CI)"] = [B(c, t) for t, c in zip(r[ok]["Effect per 1 SD (95% CI)"], qsig[ok])]
+    r.loc[ok, "q rule"] = [B(c, t) for t, c in zip(r[ok]["q rule"], qsig[ok])]
+    qinfo = r["q_bh_informational_group_all"] < 0.05
+    r.loc[ok, "q info"] = [B(c, t) for t, c in zip(r[ok]["q info"], qinfo[ok])]
     r["Predictor"] = r["predictor"].map(lambda p: SHORT.get(p, PREDICTORS.get(p, (p,))[0]))
     r["_po"] = r["predictor"].map({p: i for i, p in enumerate(PREDICTORS)}).fillna(999)
     cols_a = ["Predictor", "n", "coef", "se", "ci", "t / z", "p (raw)", "sig"]
@@ -53,7 +63,7 @@ def main():
     L.append(md_table(cs, ["cohort", "cohort_label", "n_total", "n_healthy", "n_non_healthy", "n_moca", "moca_lt26_events", "cesd_ge10_events", "n_env", "n_steps", "n_resting_hr", "n_sleep", "feasible"],
                       ["Cohort", "Definition", "N", "Healthy", "Non-healthy", "MoCA", "MoCA<26 events", "CES-D>=10 events", "Environment", "Steps", "Resting HR", "Sleep", "Feasible?"]))
     L += ["", f"Overlap of the exposure cohorts (total): hypoglycaemia only {overlap['hypo_only']}, hyperglycaemia only {overlap['hyper_only']}, both {overlap['both']}, neither (within 54-250) {overlap['neither (within 54-250)']}.", "",
-          f"**FDR.** The Phase 6 rule (BH only when n >= {FDR_MIN_N}) is not met by any cohort, so the rule column reads 'not applied'. An informational BH q over all tests in the population is shown alongside and must be read as such.", "",
+          f"**FDR.** The Phase 6 rule (BH only when the test's sample has n >= {FDR_MIN_N}) is applied test by test: it is met in the total population of the within-54-250, hypoglycaemia and hyperglycaemia cohorts, in the healthy stratum of the within-54-250 cohort and in part of the non-healthy hyperglycaemia stratum; elsewhere the rule column reads 'not applied' and an informational BH q over all tests in that population is shown alongside. Bold in table (A) = raw p < 0.05; bold in table (B) = q < 0.05.", "",
           "## Significance counts", ""]
     c = counts.copy(); c["cohort"] = c["cohort"].map(lambda k: COHORTS[k][0]); c["group"] = c["group"].map(lambda g: GROUPS[g][0])
     L.append(md_table(c, ["cohort", "group", "tests", "n_min", "n_max", "sig_raw", "sig_q_informational"], ["Cohort", "Population", "Tests", "n min", "n max", "Raw p < 0.05", "Informational q < 0.05"]))
@@ -87,8 +97,18 @@ def main():
                     if len(sk):
                         C.append("\nSkipped: " + "; ".join(f"{PREDICTORS.get(p, (p,))[0]} ({why})" for p, why in zip(sk["predictor"], sk["skipped_reason"])))
                     C.append("")
+        C += ["", "---", "", f"# Interpretation - {COHORTS[ck][0]}", ""]
+        for g, (glabel, _) in GROUPS.items():
+            sg = sub_c[sub_c.group == g]
+            if len(sg):
+                C.append(interpret(sg, heading=f"Interpretation - {glabel}", short=SHORT))
         with open(os.path.join(REPORT_DIR, fname), "w") as f:
             f.write("\n".join(C))
+    index += ["", "---", "", "# Interpretation across cohorts (total population of each cohort)", ""]
+    for ck in COHORTS:
+        sub_c = r[(r.cohort == ck) & (r.group == "total")]
+        if len(sub_c):
+            index.append(interpret(sub_c, heading=f"Interpretation - {COHORTS[ck][0]} - total population", short=SHORT))
     with open(os.path.join(REPORT_DIR, "research_report_05_glucose_cohort_tables.md"), "w") as f:
         f.write("\n".join(index))
     print("written")

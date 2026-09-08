@@ -233,7 +233,7 @@ python3 "new research/src/5_multimodal_cgm_analysis/run_phase5_followups.py"
 
 ### Phase 6: Subgroup Single-Predictor Analysis & Glucose Bands
 ```bash
-# 24. Phase 6 dataset (Phase 5 extractor + glucose-band metrics), then every glycaemic measure alone in total / healthy / non-healthy; raw + FDR p (FDR only when n >= 1,000); band feasibility
+# 24. Phase 6 dataset (Phase 5 extractor + glucose-band metrics), then every glycaemic measure alone in total / healthy / non-healthy; raw + FDR p (FDR only when n >= 500); band feasibility
 python3 "new research/src/6_subgroup_single_predictor_analysis/extract_phase6_dataset.py"
 python3 "new research/src/6_subgroup_single_predictor_analysis/run_phase6_analysis.py"
 

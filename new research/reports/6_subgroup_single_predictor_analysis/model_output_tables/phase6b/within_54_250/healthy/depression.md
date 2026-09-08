@@ -1017,3 +1017,24 @@ Each glycaemic measure is entered alone with the Phase 5 covariates; all terms s
 | **Nocturnal time > 180 (%)** | **+0.0961** | 0.0338 | ±0.0676 | **+2.845** | **0.0044** | 1.1009 | ** |
 
 *Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1*
+
+
+## Interpretation - Healthy group (no diabetes + pre-diabetes / lifestyle) - Depression
+
+Computed from the same models as the tables above (summary statistics in `data/`); bold rows in the tables above mark terms with p < 0.05.
+
+**Scope.** 46 single-predictor tests; 2 with raw p < 0.05 (about 2 expected by chance); FDR rule applied to 46 tests (samples with n >= 500), of which **0** are significant at BH q < 0.05 in the all-tests family and 0 in the within-outcome family.
+
+**By outcome (best out-of-sample predictor, then the associations that survive FDR):**
+
+- **CES-D-10 depressive symptoms (0-30)** (n = 685): best single predictor out of sample is **%>180 nocturnal** (CV R² 0.033 vs 0.025 for covariates alone, gain +0.008; +0.384 per SD, p = 0.031, q = 0.323). No association survives FDR; nominal only: %>180 nocturnal (p = 0.031).
+- **Clinically relevant depressive symptoms (CES-D-10 >= 10)** (n = 685): best single predictor out of sample is **%>180 nocturnal** (CV AUC 0.653 vs 0.641 for covariates alone, gain +0.012; OR 1.34 per SD, p = 0.004, q = 0.102). No association survives FDR; nominal only: %>180 nocturnal (p = 0.004).
+
+**Most predictable outcomes (largest out-of-sample gain over covariates):** Clinically relevant depressive symptoms (CES-D-10 >= 10) (+0.012, via %>180 nocturnal); CES-D-10 depressive symptoms (0-30) (+0.008, via %>180 nocturnal). Gains below about 0.01 are negligible for individual-level prediction even when statistically significant.
+
+**Predictor families carrying the signal:** Band > 180 (0 FDR-significant / 2 raw-significant of 6); HbA1c (0 FDR-significant / 0 raw-significant of 2); CGM level (0 FDR-significant / 0 raw-significant of 6).
+Level metrics: 0 FDR-significant (0 raw); variability metrics: 0 FDR-significant (0 raw); HbA1c alone: 0 FDR-significant (0 raw) across the outcomes in this file.
+
+**Where a CGM metric beats HbA1c by more than 2 AIC on the same rows:** CES-D-10 depressive symptoms (%>180 nocturnal, ΔAIC -5.0); Clinically relevant depressive symptoms (%>180 nocturnal, ΔAIC -10.2).
+
+_Interpretation note: all models are cross-sectional and covariate-adjusted (age, BMI, education, site, hypertension, high cholesterol, kidney disease, circulatory disease; season for environmental outcomes). Effects are per 1 SD of the predictor in this sample. Bold cells in the tables mark raw p < 0.05; q-values follow the FDR rule (BH applied when n >= 500)._

@@ -21,16 +21,16 @@ Cohorts are defined from each participant's **own valid CGM readings** over the 
 
 Overlap: 453 people have < 54 exposure only, 610 have > 250 only, 185 have both, 890 neither. A stricter hypoglycaemia definition (≥ 1 % of time < 54) leaves 56 people and is not possible; a stricter hyperglycaemia definition (≥ 1 % of time > 250) leaves 461 and could be run on request.
 
-**FDR.** No cohort reaches the Phase 6 rule (n ≥ 1,000), so by rule #3 the reported q column reads "not applied". Because that leaves 420 raw tests per cohort-population uncorrected, an *informational* Benjamini-Hochberg q over all tests in the cohort-population is also shown and flagged "**" in the tables and Fig. 4; it is a guide, not the rule.
+**FDR.** The Phase 6 rule (BH when the test's sample has n ≥ 500) is met in the total population of the within-54-250, hypoglycaemia and hyperglycaemia cohorts, in the healthy stratum of within-54-250 and in part of the non-healthy hyperglycaemia stratum (outcomes with n ≥ 500). Elsewhere (all near-normal strata, the healthy hypo/hyper strata, the non-healthy within-54-250 and hypo strata) the rule is not met and an *informational* BH q over all tests in that cohort-population is shown instead, flagged "**" in the tables and Fig. 4. Bold in the tables marks raw p < 0.05 (model-output columns) and q < 0.05 (effect columns).
 
-Counts of raw p < 0.05 (out of ~420 tests per cohort-population; ~21 expected under the null):
+Counts of raw p < 0.05 (out of ~420 tests per cohort-population; ~21 expected under the null), with the number surviving BH q < 0.05 in brackets (rule-based where n ≥ 500, otherwise informational and marked *i*):
 
 | Cohort | Total | Healthy | Non-healthy |
 | :--- | :---: | :---: | :---: |
-| Near-normal (≥ 99 % TIR) | 26 (0 informational q < 0.05) | 26 (0) | 0 of 96 estimable tests |
-| Within 54-250 | 73 of 322 (22) | 38 (10) | 30 (0) |
-| Hypoglycaemia exposure | **144 (66)** | 31 (0) | 81 (10) |
-| Hyperglycaemia exposure | **117 (50)** | 49 (10) | 70 (4) |
+| Near-normal (≥ 99 % TIR) | 26 (0 *i*) | 26 (0 *i*) | 0 of 96 estimable tests |
+| Within 54-250 | 73 of 322 (**22**) | 38 (**10**) | 30 (0 *i*) |
+| Hypoglycaemia exposure | **144 (66)** | 31 (0 *i*) | 81 (10 *i*) |
+| Hyperglycaemia exposure | **117 (50)** | 49 (10 *i*) | 70 (**2** rule-based, 4 *i*) |
 
 (Within 54-250 and near-normal have fewer tests because the < 54 and > 250 band predictors are constant there and are skipped.)
 
@@ -52,7 +52,7 @@ Once glycaemia is restricted to this narrow band, the level and variability metr
 
 ### 2.2 Within 54-250 (no severe hypo- or hyperglycaemia; n = 890)
 
-- **Cognition**: mean glucose −0.38 MoCA points per SD (p = 3 × 10⁻⁴, informational q < 0.05) and MoCA < 26 log-OR +0.27 (p = 3.5 × 10⁻⁴, q < 0.05); HbA1c −0.28 (p = 0.007); TIR +0.23 (p = 0.043); SD −0.21 (p = 0.04). In the non-healthy stratum (205) the variability metrics are as strong as level (pooled SD −0.55, p = 0.011; mean glucose −0.49, p = 0.011).
+- **Cognition**: mean glucose −0.38 MoCA points per SD (p = 3 × 10⁻⁴, q < 0.05) and MoCA < 26 log-OR +0.27 (p = 3.5 × 10⁻⁴, q < 0.05); HbA1c −0.28 (p = 0.007); TIR +0.23 (p = 0.043); SD −0.21 (p = 0.04). In the non-healthy stratum (205) the variability metrics are as strong as level (pooled SD −0.55, p = 0.011; mean glucose −0.49, p = 0.011).
 - **Resting heart rate and stress**: mean glucose +1.16 bpm per SD (p = 2 × 10⁻⁵, q < 0.05) and +1.88 stress points (p = 0.003, q < 0.05); TIR −0.77 bpm (p = 0.005); time > 180 +0.88 bpm (p = 0.002, q < 0.05). In the healthy stratum TIR −0.73 bpm (p = 4 × 10⁻⁴, q < 0.05) and time > 180 +0.83 (p = 6.5 × 10⁻⁵, q < 0.05).
 - **Activity and sleep**: MAG +557 steps and +1.85 brisk minutes per SD (p = 2 × 10⁻⁴ and 2 × 10⁻⁵, both q < 0.05); HbA1c +364 steps (p = 0.019) and −7.1 min sleep (p = 0.006).
 - **Depression**: nothing in the total or healthy populations; in the non-healthy stratum MAG → CES-D-10 ≥ 10 log-OR +0.56 (p = 0.002).
@@ -62,7 +62,7 @@ Once glycaemia is restricted to this narrow band, the level and variability metr
 
 ### 2.3 Hypoglycaemia-exposed cohort (≥ 1 reading < 54; n = 638)
 
-This is the cohort with the most signal per test (144 raw hits, 66 informational q < 0.05), and it is where the depression-glycaemia association is concentrated.
+This is the cohort with the most signal per test (144 raw hits, 66 surviving the FDR rule), and it is where the depression-glycaemia association is concentrated.
 
 - **Cognition** (total): HbA1c −0.52 MoCA points per SD (p = 1.7 × 10⁻⁵), mean glucose −0.44 (p = 8 × 10⁻⁴), TIR +0.47 (p = 4 × 10⁻⁴), time > 180 −0.45 (p = 0.001), time > 250 −0.42 (p = 0.004); MoCA < 26 log-OR +0.36 per SD HbA1c (p = 3 × 10⁻⁴). All informational q < 0.05.
 - **Depression** (total): CES-D-10 total rises with pooled SD (+0.55, p = 0.006), between-day SD (+0.60, p = 0.003), time > 250 (+0.64, p = 6.5 × 10⁻⁶) and falls with TIR (−0.55, p = 0.003); CES-D-10 ≥ 10 log-OR +0.27 to +0.43 per SD for HbA1c, mean glucose, SD, TIR (negative), time > 180 and time > 250 (all p ≤ 0.004). In the non-healthy stratum (230) time > 250 → CES-D-10 +1.00 points per SD (p = 1.4 × 10⁻⁵) and between-day SD → CES-D-10 ≥ 10 log-OR +0.63 (p = 3.5 × 10⁻⁴); in the healthy stratum (408) only TIR (−0.33, p = 0.005) and time > 180 (+0.36, p = 0.003) relate to CES-D-10 ≥ 10.
@@ -90,7 +90,7 @@ This is the cohort with the most signal per test (144 raw hits, 66 informational
 2. **Depression tracks glycaemic instability, and only where instability exists.** Between-day SD and MAG relate to CES-D-10 in the hypo-exposed and hyper-exposed cohorts (strongest in their non-healthy members, p ≈ 10⁻⁴-10⁻⁵) and MAG alone does so even inside the near-normal cohort, while nothing relates to depression in the within-54-250 total population.
 3. **Hypoglycaemia exposure in a healthy person is not a risk marker.** In the 408 healthy participants with a reading below 54, glycaemic measures predict nothing about cognition, mood, activity or heart rate. In the 230 non-healthy participants with such a reading they predict almost everything, so "< 54" is a marker of treatment-related instability, not of harm from the low reading itself.
 4. **HbA1c keeps its behavioural associations in every cohort** (shorter sleep in near-normal, within-54-250, hypo- and hyper-exposed; more steps in within-54-250), even where sensor glucose is uninformative, consistent with Phase 5b's discordance result.
-5. **Statistical caution.** No cohort meets the FDR rule; the informational q identifies 66 (hypo), 50 (hyper), 22 (within 54-250) and 0 (near-normal) robust tests. Stratum-level results with n ≈ 200-250 (non-healthy within 54-250, healthy hyper-exposed, non-healthy hypo-exposed) should be read as hypothesis-generating; the near-normal non-healthy stratum (61) is uninformative.
+5. **Statistical caution.** Under the n ≥ 500 rule, FDR-robust tests number 66 (hypoglycaemia cohort, total), 50 (hyperglycaemia, total), 22 (within 54-250, total), 10 (within 54-250, healthy) and 2 (hyperglycaemia, non-healthy: SD of daily means for both depression outcomes); the near-normal cohort has none. Stratum-level results with n ≈ 200-250 (non-healthy within 54-250, healthy hyper-exposed, non-healthy hypo-exposed) are below the rule and should be read as hypothesis-generating; the near-normal non-healthy stratum (61) is uninformative.
 
 ---
 

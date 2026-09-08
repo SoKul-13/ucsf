@@ -3066,3 +3066,27 @@ Each glycaemic measure is entered alone with the Phase 5 covariates; all terms s
 | **Nocturnal time > 180 (%)** | **+5.6971** | 2.4600 | ±4.9199 | **+2.316** | **0.0206** | * |
 
 *Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1*
+
+
+## Interpretation - Healthy group (no diabetes + pre-diabetes / lifestyle) - Wearable activity
+
+Computed from the same models as the tables above (summary statistics in `data/`); bold rows in the tables above mark terms with p < 0.05.
+
+**Scope.** 140 single-predictor tests; 15 with raw p < 0.05 (about 7 expected by chance); FDR rule applied to 0 tests (samples with n >= 500), of which **0** are significant at BH q < 0.05 in the all-tests family; no test met the FDR rule, so only raw p-values are available.
+
+**By outcome (best out-of-sample predictor, then the associations that survive FDR):**
+
+- **Steps per wear-day** (n = 344): best single predictor out of sample is **SD (pooled)** (CV R² 0.086 vs 0.084 for covariates alone, gain +0.002; -275 per SD, p = 0.178). No glycaemic measure is associated with this outcome (all p > 0.05).
+- **Brisk-cadence minutes per day (>= 100 steps/min)** (n = 344): best single predictor out of sample is **TIR 70-180 (daily avg)** (CV R² 0.108 vs 0.092 for covariates alone, gain +0.016; -1.81 per SD, p = 0.003). Raw p < 0.05 (FDR not applicable here): TIR 70-180 (daily avg) (p = 0.003), TIR 70-180 (pooled) (p = 0.003), %>180 (daily avg) (p = 0.030), %181-250 (daily avg) (p = 0.031).
+- **Resting heart-rate proxy (daily 5th pct, bpm)** (n = 346): best single predictor out of sample is **%>180 nocturnal** (CV R² 0.076 vs 0.074 for covariates alone, gain +0.002; +0.702 per SD, p = 0.092). Raw p < 0.05 (FDR not applicable here): %<54 (pooled) (p = 0.045).
+- **Total sleep time per night (min)** (n = 349): best single predictor out of sample is **HbA1c** (CV R² 0.005 vs -0.023 for covariates alone, gain +0.028; -11.4 per SD, p = 9.7e-04). Raw p < 0.05 (FDR not applicable here): HbA1c (p = 9.7e-04), %54-69 (pooled) (p = 0.007), %<70 (daily avg) (p = 0.008), %54-69 (daily avg) (p = 0.009), %<70 (pooled) (p = 0.010).
+- **Garmin stress score, mean (0-100)** (n = 346): best single predictor out of sample is **%181-250 (daily avg)** (CV R² 0.049 vs 0.034 for covariates alone, gain +0.015; +2.05 per SD, p = 0.022). Raw p < 0.05 (FDR not applicable here): %>180 nocturnal (p = 0.021), %181-250 (daily avg) (p = 0.022), %>180 (daily avg) (p = 0.022), TIR 70-180 (daily avg) (p = 0.032), SD of daily means (p = 0.048).
+
+**Most predictable outcomes (largest out-of-sample gain over covariates):** Total sleep time per night (min) (+0.028, via HbA1c); Brisk-cadence minutes per day (>= 100 steps/min) (+0.016, via TIR 70-180 (daily avg)); Garmin stress score, mean (0-100) (+0.015, via %181-250 (daily avg)); Resting heart-rate proxy (daily 5th pct, bpm) (+0.002, via %>180 nocturnal). Gains below about 0.01 are negligible for individual-level prediction even when statistically significant.
+
+**Predictor families carrying the signal:** Range 70-180 (0 FDR-significant / 3 raw-significant of 10); Band > 180 (0 FDR-significant / 3 raw-significant of 15); Band 54-69 (0 FDR-significant / 2 raw-significant of 10).
+Level metrics: 0 FDR-significant (0 raw); variability metrics: 0 FDR-significant (1 raw); HbA1c alone: 0 FDR-significant (1 raw) across the outcomes in this file.
+
+**Where a CGM metric beats HbA1c by more than 2 AIC on the same rows:** Steps per wear-day (%<54 (daily avg), ΔAIC -2.4); Brisk-cadence minutes per day (TIR 70-180 (daily avg), ΔAIC -8.2); Resting heart-rate proxy (SD of daily means, ΔAIC -4.0); Garmin stress score, mean (%181-250 (daily avg), ΔAIC -5.5).
+
+_Interpretation note: all models are cross-sectional and covariate-adjusted (age, BMI, education, site, hypertension, high cholesterol, kidney disease, circulatory disease; season for environmental outcomes). Effects are per 1 SD of the predictor in this sample. Bold cells in the tables mark raw p < 0.05; q-values follow the FDR rule (BH applied when n >= 500)._

@@ -16,6 +16,7 @@ import pandas as pd
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, SCRIPT_DIR)
 from run_phase6_analysis import (PREDICTORS, GROUPS, BANDS, OUT_DATA, REPORT_DIR, FDR_MIN_N, OUTCOMES, HBA1C)  # noqa: E402
+from interpretation import interpret  # noqa: E402
 
 
 def fmt_p(p):
@@ -70,11 +71,20 @@ def prep(res):
     r.loc[ok, "dAIC vs covariates"] = r[ok]["delta_aic_vs_covariates"].map(lambda v: f"{v:+.1f}")
     r.loc[ok, "dAIC vs HbA1c model"] = r[ok]["delta_aic_vs_hba1c_model"].map(lambda v: "-" if pd.isna(v) else f"{v:+.1f}")
     r.loc[ok, "CV R2/AUC (pred | covs only)"] = r[ok].apply(lambda x: f"{x['cv_score']:.4f} | {x['cv_score_covariates_only']:.4f}", axis=1)
-    r.loc[ok, "coef"] = r[ok]["beta_raw"].map(lambda v: f"{v:+.4g}")
+    B = lambda cond, txt: f"**{txt}**" if cond else txt
+    sig05 = r["p"] < 0.05
+    r.loc[ok, "coef"] = [B(c, f"{v:+.4g}") for v, c in zip(r[ok]["beta_raw"], sig05[ok])]
     r.loc[ok, "se"] = r[ok]["se_raw"].map(lambda v: f"{v:.4g}")
     r.loc[ok, "ci"] = r[ok].apply(lambda x: f"[{x['ci_low_raw']:.4g}, {x['ci_high_raw']:.4g}]", axis=1)
+    r.loc[ok, "t / z"] = [B(c, f"{v:.2f}") for v, c in zip(r[ok]["stat"], sig05[ok])]
+    r.loc[ok, "p (raw)"] = [B(c, fmt_p(v) + stars(v)) for v, c in zip(r[ok]["p"], sig05[ok])]
     r.loc[ok, "sig"] = r[ok]["p"].map(stars)
     r.loc[ok, "fit"] = r[ok].apply(lambda x: f"{x['adj_r2']:.4f}" if x["kind"] == "ols" else f"{x['auc_in_sample']:.4f}", axis=1)
+    qsig = r["fdr_applied"] & (r["q_bh_group_all_tests"] < 0.05)
+    r.loc[ok, "Effect per 1 SD (95% CI)"] = [B(c, t) for t, c in zip(r[ok]["Effect per 1 SD (95% CI)"], qsig[ok])]
+    r.loc[ok, "q (BH, all tests in population)"] = [B(c, t) for t, c in zip(r[ok]["q (BH, all tests in population)"], qsig[ok])]
+    qsig2 = r["fdr_applied"] & (r["q_bh_group_outcome"] < 0.05)
+    r.loc[ok, "q (BH, within outcome)"] = [B(c, t) for t, c in zip(r[ok]["q (BH, within outcome)"], qsig2[ok])]
     r["Predictor"] = r["predictor"].map(lambda p: SHORT.get(p, PREDICTORS.get(p, (p,))[0]))
     r["_po"] = r["predictor"].map({p: i for i, p in enumerate(PREDICTORS)}).fillna(999)
     r["_oo"] = r["outcome"].map({c: i for i, (_, c, *_) in enumerate(OUTCOMES)})
@@ -115,7 +125,7 @@ def write_full(res, fe, counts, cfg):
          "",
          "**Design.** Every glycaemic measure is entered on its own: `outcome ~ covariates + predictor`. Covariates are identical to Phase 5 "
          "(age, BMI, education level, clinical site, hypertension, high cholesterol, kidney disease, circulatory disease; season of visit for home-environment outcomes). "
-         "Continuous outcomes: OLS with HC3-robust t-tests; binary outcomes: logistic regression with Wald z-tests. Effects are per 1 SD of the predictor, "
+         "Bold in table (A) = raw p < 0.05; bold in table (B) = BH q < 0.05 under the FDR rule. Continuous outcomes: OLS with HC3-robust t-tests; binary outcomes: logistic regression with Wald z-tests. Effects are per 1 SD of the predictor, "
          "with the SD computed in the population and outcome sample shown. dAIC compares the predictor model with the covariates-only model and with the HbA1c-only model fitted on the same rows "
          "(negative = better than the comparator). CV = repeated 3 x 10-fold out-of-sample R2 (continuous) or AUC (binary).",
          "",
@@ -147,6 +157,9 @@ def write_full(res, fe, counts, cfg):
                 if len(sk):
                     L.append("\nSkipped: " + "; ".join(f"{PREDICTORS[p][0]} ({why})" for p, why in zip(sk["predictor"], sk["skipped_reason"])))
                 L.append("")
+    L += ["", "---", "", "# Interpretation of results", ""]
+    for g, (glabel, _) in GROUPS.items():
+        L.append(interpret(res[res.group == g], heading=f"Interpretation - {glabel}", short=SHORT))
     with open(os.path.join(REPORT_DIR, "research_report_02_full_single_predictor_tables.md"), "w") as f:
         f.write("\n".join(L))
 
@@ -182,6 +195,11 @@ def write_bands(res, fe, cfg):
             if len(sk):
                 L.append("\nSkipped: " + "; ".join(f"{lab}: {PREDICTORS[p][0]} ({why})" for lab, p, why in zip(sk["label"], sk["predictor"], sk["skipped_reason"])))
             L.append("")
+    L += ["", "---", "", "# Interpretation of the band analyses", ""]
+    for band in ["70-180", "54-69", "<70", "54-250", ">180", "181-250", ">250", "<54"]:
+        sub = res[res.band == band]
+        if len(sub):
+            L.append(interpret(sub, heading=f"Interpretation - band {band} (all populations pooled in the counts; see tables for population-specific rows)", short=SHORT))
     with open(os.path.join(REPORT_DIR, "research_report_03_glucose_band_analyses.md"), "w") as f:
         f.write("\n".join(L))
 
@@ -207,7 +225,7 @@ def write_methods(res, cfg):
          "- Effects per 1 SD of the predictor (SD in that population and outcome sample); raw slope per unit also reported.",
          "- AIC of the predictor model minus AIC of (a) the covariates-only model and (b) the HbA1c-only model on the same rows.",
          "- Out-of-sample R2 / AUC from repeated 3 x 10-fold cross-validation for the predictor model and the covariates-only model.",
-         f"- FDR (rule #3): Benjamini-Hochberg applied only to tests whose sample has n >= {FDR_MIN_N}; families = (i) all tests in the population, (ii) all predictors within one outcome, (iii) all outcomes within one predictor, (iv) all tests within one band. Raw p-values are always reported alongside.", "",
+         f"- FDR (rule #3): Benjamini-Hochberg applied only to tests whose sample has n >= {FDR_MIN_N} (this includes the non-healthy group, n = 747-867); families = (i) all tests in the population, (ii) all predictors within one outcome, (iii) all outcomes within one predictor, (iv) all tests within one band. Raw p-values are always reported alongside; an informational q is also stored for tests below the threshold.", "",
          "## How 'pooled' and 'day-averaged' metrics are calculated", "",
          "Let g_1 ... g_N be every valid Dexcom reading of a participant over the whole wear (all days concatenated, 5-min sampling, values 39-401 mg/dL, site-local time; N is typically ~2,850 for 10 days). "
          "Let D be the set of *valid* calendar days (days holding >= 70 % of the expected 288 readings) and g_{d,1} ... g_{d,n_d} the readings on day d.", "",
@@ -241,6 +259,11 @@ def write_methods(res, cfg):
             L.append(f"| {v['label']} | {v['n']:,}" + (f" ({v['events']} events)" if v.get("events") else "") + f" | {v['lost_from_base_due_to_missing_outcome']} |")
         L += ["", "Covariate losses at step 4: BMI 4, education 11. Wearable losses: 248 with no Garmin record plus 18 with < 3 wear-days. Environment losses: 38 without >= 1 h of sensor data "
               "(84 participants with sensor data but < 3 sensor days were retained for the environmental outcomes, as in Phase 5). Populations: healthy = no diabetes + pre-diabetes/lifestyle; non-healthy = T2D oral/non-insulin + insulin."]
+    L += ["", "## How to read the result files", "",
+          "- Tables (A) give the model output on the raw scale (coefficient per unit of the predictor, HC3 SE, 95% CI, t or z, p); bold = raw p < 0.05.",
+          "- Tables (B) give the effect per 1 SD, the BH q-values (bold = q < 0.05 under the rule), adjusted R² or AUC, the AIC difference against the covariates-only and HbA1c-only models on the same rows, and the cross-validated R²/AUC of the predictor model next to the covariates-only model. A predictor matters for *prediction* only if the CV gain is positive; a gain below ~0.01 is negligible.",
+          "- Each results file ends with an auto-generated interpretation: the best out-of-sample predictor per outcome, the associations that survive FDR, the outcomes that are not predictable from glycaemia, the predictor families carrying the signal, and where a CGM metric beats HbA1c by more than 2 AIC.",
+          "- Full term-by-term model output (intercept and covariates) is in `model_output_tables/`."]
     with open(os.path.join(REPORT_DIR, "research_report_04_methods_and_sample_log.md"), "w") as f:
         f.write("\n".join(L))
 

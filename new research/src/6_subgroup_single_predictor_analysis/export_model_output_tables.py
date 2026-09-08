@@ -33,6 +33,8 @@ sys.path.insert(0, os.path.join(PROJECT_ROOT, "src", "5_multimodal_cgm_analysis"
 from run_multimodal_cgm_models import (COV_FORMULA, BASE_COVS, OUTCOMES, CORE_CGM, HBA1C, PRED_LABEL, DATA_DIR)  # noqa: E402
 import run_phase6_analysis as P6  # noqa: E402
 import run_phase6b_glucose_cohorts as P6B  # noqa: E402
+from interpretation import interpret  # noqa: E402
+from generate_phase6_reports import SHORT  # noqa: E402
 
 warnings.filterwarnings("ignore")
 
@@ -137,8 +139,15 @@ DOMAINS = ["Cognition", "Depression", "Home environment", "Wearable activity"]
 INDEX = []   # (phase, cohort, population, domain, relative path)
 
 
+def _results_for(cohort_key):
+    f = os.path.join(PROJECT_ROOT, "reports", "6_subgroup_single_predictor_analysis", "data",
+                     "single_predictor_results_all_groups.csv" if cohort_key == "all" else f"cohort_{cohort_key}_results.csv")
+    return pd.read_csv(f) if os.path.exists(f) else None
+
+
 def single_predictor_tables(base, phase_tag, out_dir, csv_name, cohort_key="all", cohort_label="All (analysis base)", md_prefix="phase6"):
     all_rows = []
+    results = _results_for(cohort_key)
     for gkey, (glabel, gsel) in P6.GROUPS.items():
         dg = gsel(base)
         blocks_by_domain = {d: [] for d in DOMAINS}
@@ -184,6 +193,11 @@ def single_predictor_tables(base, phase_tag, out_dir, csv_name, cohort_key="all"
             if not blocks:
                 continue
             fname = dom.lower().replace(" ", "_") + ".md"
+            if results is not None:
+                sub_res = results[(results.group == gkey) & (results.domain == dom)]
+                if len(sub_res):
+                    blocks.append(interpret(sub_res, heading=f"Interpretation - {glabel} - {dom}", short=SHORT,
+                                            context="Computed from the same models as the tables above (summary statistics in `data/`); bold rows in the tables above mark terms with p < 0.05."))
             write_md(os.path.join(sub_dir, fname),
                      [f"# {phase_tag} model output tables - {cohort_label} - {glabel} - {dom}", "",
                       "Each glycaemic measure is entered alone with the Phase 5 covariates; all terms shown in the standard OLS-output format "

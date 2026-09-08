@@ -3276,3 +3276,27 @@ Each glycaemic measure is entered alone with the Phase 5 covariates; all terms s
 | Avg. daily time > 250 (%) | +0.1356 | 0.1991 | ±0.3981 | +0.681 | 0.4959 |  |
 
 *Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1*
+
+
+## Interpretation - Total analysis base - Wearable activity
+
+Computed from the same models as the tables above (summary statistics in `data/`); bold rows in the tables above mark terms with p < 0.05.
+
+**Scope.** 150 single-predictor tests; 45 with raw p < 0.05 (about 8 expected by chance); FDR rule applied to 150 tests (samples with n >= 500), of which **12** are significant at BH q < 0.05 in the all-tests family and 20 in the within-outcome family.
+
+**By outcome (best out-of-sample predictor, then the associations that survive FDR):**
+
+- **Steps per wear-day** (n = 575): best single predictor out of sample is **HbA1c** (CV R² 0.126 vs 0.124 for covariates alone, gain +0.001; +312 per SD, p = 0.217, q = 0.425). No glycaemic measure is associated with this outcome (all p > 0.05). Not predictable from glycaemia in this sample.
+- **Brisk-cadence minutes per day (>= 100 steps/min)** (n = 575): best single predictor out of sample is **HbA1c** (CV R² 0.147 vs 0.141 for covariates alone, gain +0.006; +1.24 per SD, p = 0.096, q = 0.233). No glycaemic measure is associated with this outcome (all p > 0.05).
+- **Resting heart-rate proxy (daily 5th pct, bpm)** (n = 576): best single predictor out of sample is **Mean/SD** (CV R² 0.155 vs 0.144 for covariates alone, gain +0.010; -1.07 per SD, p = 0.001, q = 0.023). FDR-robust associations (5): Mean/SD (lower outcome, -1.07 per SD, q = 0.023); %181-250 (pooled) (higher outcome, +1.19 per SD, q = 0.028); SD of daily means (higher outcome, +0.979 per SD, q = 0.029); Mean/SD (daily avg) (lower outcome, -0.962 per SD, q = 0.032); %181-250 (daily avg) (higher outcome, +1.11 per SD, q = 0.042).
+- **Total sleep time per night (min)** (n = 588): best single predictor out of sample is **MAG** (CV R² 0.004 vs -0.017 for covariates alone, gain +0.021; -12.1 per SD, p = 2.3e-05, q = 0.002). FDR-robust associations (4): MAG (lower outcome, -12.1 per SD, q = 0.002); HbA1c (lower outcome, -8.46 per SD, q = 0.023); %54-250 (daily avg) (higher outcome, +7.03 per SD, q = 0.036); %>250 (daily avg) (lower outcome, -7.14 per SD, q = 0.036).
+- **Garmin stress score, mean (0-100)** (n = 577): best single predictor out of sample is **HbA1c** (CV R² 0.095 vs 0.086 for covariates alone, gain +0.009; +2.28 per SD, p = 0.014, q = 0.071). FDR-robust associations (3): Mean/SD (lower outcome, -2.11 per SD, q = 0.029); SD of daily means (higher outcome, +1.87 per SD, q = 0.047); %181-250 (pooled) (higher outcome, +2.17 per SD, q = 0.047).
+
+**Most predictable outcomes (largest out-of-sample gain over covariates):** Total sleep time per night (min) (+0.021, via MAG); Resting heart-rate proxy (daily 5th pct, bpm) (+0.010, via Mean/SD); Garmin stress score, mean (0-100) (+0.009, via HbA1c); Brisk-cadence minutes per day (>= 100 steps/min) (+0.006, via HbA1c). Gains below about 0.01 are negligible for individual-level prediction even when statistically significant.
+
+**Predictor families carrying the signal:** CGM variability (6 FDR-significant / 13 raw-significant of 40); Band 181-250 (3 FDR-significant / 4 raw-significant of 10); Band > 250 (1 FDR-significant / 4 raw-significant of 15).
+Level metrics: 0 FDR-significant (8 raw); variability metrics: 6 FDR-significant (13 raw); HbA1c alone: 1 FDR-significant (3 raw) across the outcomes in this file.
+
+**Where a CGM metric beats HbA1c by more than 2 AIC on the same rows:** Total sleep time per night (MAG, ΔAIC -10.9).
+
+_Interpretation note: all models are cross-sectional and covariate-adjusted (age, BMI, education, site, hypertension, high cholesterol, kidney disease, circulatory disease; season for environmental outcomes). Effects are per 1 SD of the predictor in this sample. Bold cells in the tables mark raw p < 0.05; q-values follow the FDR rule (BH applied when n >= 500)._
