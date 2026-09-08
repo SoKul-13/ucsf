@@ -3,6 +3,7 @@
 **Phase 6b research report** · AI-READI v3.0.0 · 2026-09-07
 **Companion files**: [cohort tables](research_report_05_glucose_cohort_tables.md) · [Phase 6 narrative](research_report_01_subgroup_single_predictor_findings.md) · [methods and sample log](research_report_04_methods_and_sample_log.md) (section "How pooled and day-averaged metrics are calculated") · CSVs `data/cohort_*.csv` · figures `figures/fig4-fig5`
 **Code**: `src/6_subgroup_single_predictor_analysis/run_phase6b_glucose_cohorts.py` → `generate_phase6b_reports.py`
+**Full model outputs**: `model_output_tables/phase6b_<cohort>_<population>.md` and `phase6b_model_outputs.csv` (all terms, standard OLS-output format).
 
 ---
 

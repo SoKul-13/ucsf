@@ -64,10 +64,12 @@ python3 "new research/src/5_multimodal_cgm_analysis/generate_reports.py"        
 python3 "new research/src/5_multimodal_cgm_analysis/run_phase5_followups.py"          # Phase 5b follow-ups (research_report_05)
 
 # ─── PHASE 6: SUBGROUP SINGLE-PREDICTOR ANALYSIS & GLUCOSE BANDS ─────────
+python3 "new research/src/6_subgroup_single_predictor_analysis/extract_phase6_dataset.py"   # Phase 5 extractor + glucose-band metrics -> data/master_phase6_dataset.csv
 python3 "new research/src/6_subgroup_single_predictor_analysis/run_phase6_analysis.py"      # total / healthy / non-healthy, one predictor at a time, FDR rule
 python3 "new research/src/6_subgroup_single_predictor_analysis/generate_phase6_reports.py"  # markdown tables
 python3 "new research/src/6_subgroup_single_predictor_analysis/run_phase6b_glucose_cohorts.py" # actual-value glucose cohorts (within 54-250, <54, >250, near-normal)
 python3 "new research/src/6_subgroup_single_predictor_analysis/generate_phase6b_reports.py"    # cohort tables (research_report_05)
+python3 "new research/src/6_subgroup_single_predictor_analysis/export_model_output_tables.py"  # full term-by-term model outputs (OLS-output format) -> reports/6_.../model_output_tables/
 python3 "new research/src/5_multimodal_cgm_analysis/run_phase5_followups.py"          # follow-ups: CGM pair, HGI discordance, replication, splines (research_report_05)
 ```
 

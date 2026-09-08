@@ -87,10 +87,6 @@ Exploratory outcomes: MoCA delayed recall, PAID-5, NOx, % time PM2.5 > 15 µg/m�
 
 For each outcome, on one complete-case sample: M0 (covariates), M1 (+ HbA1c), M2[x] (+ one CGM metric), M2 (+ all four), M3[x] (+ HbA1c + one metric), M3 (+ HbA1c + all four). Covariates: age, BMI, education (≤ 12 / 13-16 / > 16 years), clinical site, hypertension, high cholesterol, kidney disease, circulatory disease; season of visit for environmental outcomes. Sex and race are not released at individual level in this dataset version and could not be adjusted for. Effects are reported per 1 SD of the predictor so that HbA1c and CGM metrics are comparable.
 
-### 2.5 Sample construction and "same-size" samples
-
-No participant or wear period was truncated. From 2,280 participants, 2,216 had >= 3 valid CGM days (valid = >= 70 % of 288 readings; all valid readings are used, 3-12 days, median 9), 2,153 also had a laboratory HbA1c, and 2,138 had complete covariates (4 missing BMI, 11 missing education). This is the analysis base. Each outcome's sample is then the base minus participants missing that outcome (MoCA 0 lost -> 2,138; CES-D-10 3 -> 2,135; environment 38 -> 2,100; steps 266 -> 1,872; resting HR 261 -> 1,877; sleep 245 -> 1,893; stress 259 -> 1,879). Within an outcome, every specification (covariates only, HbA1c, each single CGM metric, the four-metric block, and the combined models) is fitted on exactly the same participants, so nested tests and AIC comparisons are valid; person-level membership is exported in `data/analysis_sample_membership_by_outcome.csv`, and the full rules are in section 8 of the methods log.
-
 ---
 
 ## 3. Cohort

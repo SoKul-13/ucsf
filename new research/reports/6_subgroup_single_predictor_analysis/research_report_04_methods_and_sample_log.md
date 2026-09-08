@@ -4,14 +4,17 @@
 
 ```bash
 source "new research/.venv/bin/activate"
-python3 "new research/src/5_multimodal_cgm_analysis/extract_multimodal_dataset.py"       # shared with Phase 5 (adds the band metrics)
+python3 "new research/src/6_subgroup_single_predictor_analysis/extract_phase6_dataset.py"   # Phase 5 extractor + glucose-band metrics -> data/master_phase6_dataset.csv
 python3 "new research/src/6_subgroup_single_predictor_analysis/run_phase6_analysis.py"     # ~10 min
 python3 "new research/src/6_subgroup_single_predictor_analysis/generate_phase6_reports.py"
+python3 "new research/src/6_subgroup_single_predictor_analysis/run_phase6b_glucose_cohorts.py"
+python3 "new research/src/6_subgroup_single_predictor_analysis/generate_phase6b_reports.py"
+python3 "new research/src/6_subgroup_single_predictor_analysis/export_model_output_tables.py"   # full term-by-term model outputs
 ```
 
 ## Sample construction (identical to Phase 5)
 
-1. `master_multimodal_dataset.csv` (2,280 rows) from the shared extractor; CGM readings 39-401 mg/dL, site-local time, valid day = >= 70 % of 288 readings, no truncation of the wear period.
+1. `master_phase6_dataset.csv` (2,280 rows) from `extract_phase6_dataset.py` (the Phase 5 extractor plus band metrics); CGM readings 39-401 mg/dL, site-local time, valid day = >= 70 % of 288 readings, no truncation of the wear period.
 2. Analysis base = >= 3 valid CGM days, laboratory HbA1c present, four core CGM metrics present, complete covariates -> N = 2,138.
 3. Populations: total (2,138); healthy = study groups `healthy` + `pre_diabetes_lifestyle_controlled` (1,271); non-healthy = `oral_medication_and_or_non_insulin_injectable_medication_controlled` + `insulin_dependent` (867).
 4. For each population and outcome: complete cases on the outcome and covariates (season for environmental outcomes). For each predictor: the outcome sample minus participants missing that predictor (day-level band metrics can be missing only for very short wear). Every predictor for a given population x outcome is therefore fitted on the same rows except for those rare predictor-specific losses, which are visible in the `n` column.
@@ -90,3 +93,45 @@ Let g_1 ... g_N be every valid Dexcom reading of a participant over the whole we
 | Wearable activity | `hr_resting_proxy` | OLS | Resting heart-rate proxy (daily 5th pct, bpm) |
 | Wearable activity | `sleep_tst_min` | OLS | Total sleep time per night (min) |
 | Wearable activity | `stress_mean` | OLS | Garmin stress score, mean (0-100) |
+
+## Exact sample construction (how the 'same-size' samples are made; shared with Phase 5)
+
+No participant was truncated to a fixed number of days and no outcome sample was trimmed to match another. 'Same size' means one rule applied within each outcome: every model for that outcome is fitted on the identical participants, obtained by list-wise deletion on the union of the variables it uses. Person-level membership is in `data/analysis_sample_membership_by_outcome.csv` (one row per participant, one 0/1 column per step and per outcome); counts are in `data/analysis_sample_construction.json`.
+
+| Step | Rule | Participants |
+| :--- | :--- | :---: |
+| 0 | AI-READI v3.0.0 participants | 2,280 |
+| 1 | >= 3 valid CGM days (valid day = >= 70% of 288 readings; all valid readings used, 3-12 days, median 9) | 2,216 |
+| 2 | + laboratory HbA1c present | 2,153 |
+| 3 | + four core CGM metrics present | 2,153 |
+| 4 | + complete covariates (age, BMI, education, site, hypertension, high cholesterol, kidney disease, circulatory disease) | **2,138** (analysis base) |
+
+Per-outcome samples (base minus participants missing that outcome; season of visit was never missing):
+
+| Outcome | N | Lost from base (missing outcome) |
+| :--- | :---: | :---: |
+| MoCA total score (0-30) | 2,138 | 0 |
+| Cognitive impairment (MoCA < 26) | 2,138 (857 events) | 0 |
+| MoCA memory index score (0-15) | 2,138 | 0 |
+| CES-D-10 depressive symptoms (0-30) | 2,135 | 3 |
+| Clinically relevant depressive symptoms (CES-D-10 >= 10) | 2,135 (403 events) | 3 |
+| Indoor PM2.5, log(1 + mean ug/m3) | 2,100 | 38 |
+| Indoor temperature, mean (deg C) | 2,100 | 38 |
+| Indoor relative humidity, mean (%) | 2,100 | 38 |
+| Indoor VOC index, mean | 2,100 | 38 |
+| Steps per wear-day | 1,872 | 266 |
+| Brisk-cadence minutes per day (>= 100 steps/min) | 1,872 | 266 |
+| Resting heart-rate proxy (daily 5th pct, bpm) | 1,877 | 261 |
+| Total sleep time per night (min) | 1,893 | 245 |
+| Garmin stress score, mean (0-100) | 1,879 | 259 |
+| MoCA delayed recall (0-5) | 2,138 | 0 |
+| PAID-5 diabetes distress (0-20) | 2,093 | 45 |
+| Indoor NOx index, mean | 2,100 | 38 |
+| % time indoor PM2.5 > 15 ug/m3 | 2,100 | 38 |
+| Sedentary time (% of labelled minutes) | 1,872 | 266 |
+| Sleep efficiency (%) | 1,893 | 245 |
+| Nocturnal SpO2, mean (%) | 1,510 | 628 |
+| Mean heart rate (bpm) | 1,877 | 261 |
+| % time high stress (> 50) | 1,879 | 259 |
+
+Covariate losses at step 4: BMI 4, education 11. Wearable losses: 248 with no Garmin record plus 18 with < 3 wear-days. Environment losses: 38 without >= 1 h of sensor data (84 participants with sensor data but < 3 sensor days were retained for the environmental outcomes, as in Phase 5). Populations: healthy = no diabetes + pre-diabetes/lifestyle; non-healthy = T2D oral/non-insulin + insulin.

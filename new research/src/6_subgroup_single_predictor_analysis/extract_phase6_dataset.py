@@ -1,8 +1,13 @@
 """
-Phase 5 - Multimodal master dataset extraction
-==============================================
+Phase 6 - Multimodal master dataset extraction (Phase 5 extractor + glucose-band metrics)
+=========================================================================================
 
-Builds `data/master_multimodal_dataset.csv`, one row per AI-READI participant, by
+Identical to the Phase 5 extractor (`5_multimodal_cgm_analysis/extract_multimodal_dataset.py`,
+same readings, valid-day rule, covariates and wearable / environment processing) plus the
+glucose-band quantities used in Phase 6: % time in 54-250, any reading < 54 / > 250,
+reading counts below 54 / above 250, and the day-averaged % time in each band.
+
+Builds `data/master_phase6_dataset.csv`, one row per AI-READI participant, by
 merging five raw sources:
 
   1. Dexcom G6 CGM streams          -> overall + day-level glycaemic metrics
@@ -140,6 +145,11 @@ def parse_cgm(args):
         rec["mean_to_sd_ratio"] = rec["mean_glucose"] / rec["glucose_sd"] if rec["glucose_sd"] > 0 else np.nan
         rec["tbr_below_70"] = rec["pct_severe_hypo"] + rec["pct_mod_hypo"]
         rec["tar_above_180"] = rec["pct_mod_hyper"] + rec["pct_severe_hyper"]
+        rec["pct_54_250"] = 100.0 - rec["pct_severe_hypo"] - rec["pct_severe_hyper"]   # wide band 54-250 inclusive
+        rec["any_below_54"] = int((g < SEV_HYPO).any())
+        rec["any_above_250"] = int((g > SEV_HYPER).any())
+        rec["n_readings_below_54"] = int((g < SEV_HYPO).sum())
+        rec["n_readings_above_250"] = int((g > SEV_HYPER).sum())
         # mean absolute glucose change per hour (MAG)
         dt_h = df["t"].diff().dt.total_seconds().to_numpy()[1:] / 3600.0
         dg = np.abs(np.diff(g))
@@ -154,7 +164,11 @@ def parse_cgm(args):
             tir=lambda s: ((s >= TIR_LOW) & (s <= TIR_HIGH)).mean() * 100,
             tar=lambda s: (s > TIR_HIGH).mean() * 100,
             tbr=lambda s: (s < TIR_LOW).mean() * 100,
+            sev_hypo=lambda s: (s < SEV_HYPO).mean() * 100,
+            mod_hypo=lambda s: ((s >= SEV_HYPO) & (s < TIR_LOW)).mean() * 100,
+            mod_hyper=lambda s: ((s > TIR_HIGH) & (s <= SEV_HYPER)).mean() * 100,
             sev_hyper=lambda s: (s > SEV_HYPER).mean() * 100,
+            wide_54_250=lambda s: ((s >= SEV_HYPO) & (s <= SEV_HYPER)).mean() * 100,
             rng=lambda s: s.max() - s.min(),
         )
         valid = daily[daily["n"] >= DAY_COMPLETENESS * READINGS_PER_DAY]
@@ -168,6 +182,11 @@ def parse_cgm(args):
             rec["avg_daily_tar"] = float(valid["tar"].mean())
             rec["avg_daily_tbr"] = float(valid["tbr"].mean())
             rec["avg_daily_range"] = float(valid["rng"].mean())
+            rec["avg_daily_pct_below_54"] = float(valid["sev_hypo"].mean())
+            rec["avg_daily_pct_54_69"] = float(valid["mod_hypo"].mean())
+            rec["avg_daily_pct_181_250"] = float(valid["mod_hyper"].mean())
+            rec["avg_daily_pct_above_250"] = float(valid["sev_hyper"].mean())
+            rec["avg_daily_pct_54_250"] = float(valid["wide_54_250"].mean())
             rec["sd_of_daily_means"] = float(valid["mean"].std(ddof=1)) if len(valid) > 1 else np.nan
             rec["avg_daily_mean_to_sd"] = float((valid["mean"] / valid["sd"]).replace([np.inf, -np.inf], np.nan).mean())
         # nocturnal (00:00-05:59) and daytime means
@@ -689,7 +708,7 @@ def main():
     df["has_wearable"] = df["wear_days_hr"].fillna(0).ge(3).astype(int) if "wear_days_hr" in df else 0
     df["log_pm25_mean"] = np.log1p(df["env_pm25_mean"]) if "env_pm25_mean" in df else np.nan
 
-    out = os.path.join(DATA_DIR, "master_multimodal_dataset.csv")
+    out = os.path.join(DATA_DIR, "master_phase6_dataset.csv")
     df.to_csv(out, index=False)
     print(f"Saved {out}: {len(df)} rows x {df.shape[1]} columns")
     print("Coverage: CGM>=3 valid days:", int(df["has_cgm"].sum()),

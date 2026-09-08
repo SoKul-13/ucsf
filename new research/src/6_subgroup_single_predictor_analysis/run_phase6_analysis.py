@@ -2,8 +2,9 @@
 Phase 6 - Single-predictor glycaemic models by diabetes subgroup, with explicit FDR policy
 =========================================================================================
 
-Same data pipeline, covariates, outcome definitions and complete-case rules as Phase 5
-(`master_multimodal_dataset.csv` from `5_multimodal_cgm_analysis/extract_multimodal_dataset.py`).
+Same data pipeline, covariates, outcome definitions and complete-case rules as Phase 5.
+Dataset: `data/master_phase6_dataset.csv` from `extract_phase6_dataset.py` (the Phase 5 extractor
+plus the glucose-band metrics). Model helpers are imported from the unchanged Phase 5 module.
 
 What is new
   1. Three analysis populations: TOTAL, HEALTHY (no diabetes + pre-diabetes / lifestyle),
@@ -332,7 +333,7 @@ def make_figures(ok, fe):
 
 
 def main():
-    df = pd.read_csv(os.path.join(DATA_DIR, "master_multimodal_dataset.csv"), low_memory=False)
+    df = pd.read_csv(os.path.join(DATA_DIR, "master_phase6_dataset.csv"), low_memory=False)
     core = ["mean_glucose", "mean_to_sd_ratio", "avg_daily_tir", "avg_daily_sd"]
     base = df[df["has_cgm"] == 1].dropna(subset=[HBA1C] + core + BASE_COVS).copy()      # identical to Phase 5 analysis base
     print(f"analysis base n = {len(base)}; healthy = {(base.any_diabetes == 0).sum()}; non-healthy = {(base.any_diabetes == 1).sum()}")
